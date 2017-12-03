@@ -260,6 +260,7 @@
         <pathelement location="${libdir}/cucumber-junit-1.2.5.jar"/>
         <pathelement location="${libdir}/cucumber-jvm-deps-1.0.5.jar"/>
         <pathelement location="${libdir}/cucumber-picocontainer-1.2.5.jar"/>
+        <pathelement location="${libdir}/cucumber-jython-1.2.5.jar"/>
         <pathelement location="${libdir}/gherkin-2.12.2.jar"/>
         <pathelement location="${libdir}/gherkin3-3.0.0.jar"/>
         <pathelement location="${libdir}/gherkin-jvm-deps-1.0.3.jar"/>

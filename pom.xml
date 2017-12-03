@@ -715,6 +715,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-jython</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.6.0</version>
