@@ -89,6 +89,7 @@ public class PackageTest extends TestCase {
         suite.addTest(new JUnit4TestAdapter(TurnoutOperationManagerTest.class));
         suite.addTest(new JUnit4TestAdapter(EntryPointTest.class));
         suite.addTest(new JUnit4TestAdapter(RunCucumberTest.class));
+        suite.addTest(new JUnit4TestAdapter(RunJythonCucumberTest.class));
         return suite;
     }
 
