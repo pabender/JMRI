@@ -31,7 +31,7 @@ public class RunJythonCucumberTest {
    @BeforeClass
    public static void beforeTests(){
       jmri.util.JUnitUtil.setUp();
-      jmri.script.JmriScriptEngineManager.getDefault();
+      //jmri.script.JmriScriptEngineManager.getDefault();
    }
 
    @AfterClass
