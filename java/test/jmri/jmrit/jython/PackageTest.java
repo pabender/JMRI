@@ -19,6 +19,7 @@ import org.junit.runners.Suite;
         JynstrumentTest.class,
         JynstrumentPopupMenuTest.class,
         RunJythonScriptTest.class,
+        RunJythonCucumberTest.class,
 })
 
 /**
