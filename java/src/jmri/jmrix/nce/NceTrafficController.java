@@ -27,6 +27,9 @@ import org.slf4j.LoggerFactory;
  */
 public class NceTrafficController extends AbstractMRTrafficController implements NceInterface, CommandStation {
 
+    /**
+     * Create a new NCE SerialTrafficController instance. Simple implementation.
+     */
     public NceTrafficController() {
         super();
     }
@@ -52,7 +55,7 @@ public class NceTrafficController extends AbstractMRTrafficController implements
      * CommandStation implementation
      */
     @Override
-    public void sendPacket(byte[] packet, int count) {
+    public boolean sendPacket(byte[] packet, int count) {
         NceMessage m;
 
         boolean isUsb = ((getUsbSystem() == NceTrafficController.USB_SYSTEM_POWERCAB
@@ -84,8 +87,12 @@ public class NceTrafficController extends AbstractMRTrafficController implements
             m = NceMessage.createAccDecoderPktOpsMode(this, accyAddr, cvAddr, cvData);
         } else {
             m = NceMessage.sendPacketMessage(this, packet);
+            if (m == null) {
+                return false;
+            }
         }
         this.sendNceMessage(m, null);
+        return true;
     }
 
     /**
@@ -182,7 +189,6 @@ public class NceTrafficController extends AbstractMRTrafficController implements
         commandOptions = val;
         if (commandOptionSet) {
             log.warn("setCommandOptions called more than once");
-            //new Exception().printStackTrace(); TODO need to remove for testing
         }
         commandOptionSet = true;
     }
@@ -262,7 +268,6 @@ public class NceTrafficController extends AbstractMRTrafficController implements
         usbSystem = val;
         if (usbSystemSet) {
             log.warn("setUsbSystem called more than once");
-            //new Exception().printStackTrace();
         }
         usbSystemSet = true;
     }
@@ -360,7 +365,6 @@ public class NceTrafficController extends AbstractMRTrafficController implements
         cmdGroups = val;
         if (cmdGroupsSet) {
             log.warn("setCmdGroups called more than once");
-            //new Exception().printStackTrace();
         }
         cmdGroupsSet = true;
     }
@@ -477,8 +481,7 @@ public class NceTrafficController extends AbstractMRTrafficController implements
         try {
             NceMessageCheck.checkMessage(getAdapterMemo(), m);
         } catch (JmriException e) {
-            log.error(e.getMessage());
-            new Exception().printStackTrace();
+            log.error(e.getMessage(), e);
             return;  // don't send bogus message to interface
         }
         sendMessage(m, reply);
@@ -505,25 +508,6 @@ public class NceTrafficController extends AbstractMRTrafficController implements
         return NceMessage.getExitProgMode(this);
     }
 
-    /**
-     * static function returning the NceTrafficController instance to use.
-     *
-     * @return The registered NceTrafficController instance for general use, if
-     *         need be creating one.
-     */
-    @Deprecated
-    public static synchronized NceTrafficController instance() {
-        if (self == null) {
-            if (log.isDebugEnabled()) {
-                log.debug("creating a new NceTrafficController object");
-            }
-            self = new NceTrafficController();
-            // set as command station too
-            jmri.InstanceManager.setCommandStation(self);
-        }
-        return self;
-    }
-
     public void setAdapterMemo(NceSystemConnectionMemo adaptermemo) {
         memo = adaptermemo;
     }
@@ -533,20 +517,6 @@ public class NceTrafficController extends AbstractMRTrafficController implements
     }
 
     private NceSystemConnectionMemo memo = null;
-    static NceTrafficController self = null;
-
-    /**
-     * instance use of the traffic controller is no longer used for multiple
-     * connections
-     */
-    @Override
-    @Deprecated
-    public void setInstance() {
-    }
-
-    @SuppressFBWarnings(value = "ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD",
-            justification = "temporary until mult-system; only set at startup")
-//    protected synchronized void setInstance() { self = this; }
 
     @Override
     protected AbstractMRReply newReply() {

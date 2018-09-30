@@ -209,7 +209,7 @@ public class NXFrameTest {
         jfo.requestClose();
         // we may want to use jemmy to close the panel as well.
         ControlPanelEditor panel = (ControlPanelEditor) jmri.util.JmriJFrame.getFrame("NXWarrantTest");
-        panel.dispose(true);    // disposing this way allows test to be rerun (i.e. reload panel file) multiple times
+        panel.dispose();    // disposing this way allows test to be rerun (i.e. reload panel file) multiple times
     }
 
     private void pressButton(WindowOperator frame, String text) {
@@ -293,6 +293,7 @@ public class NXFrameTest {
     public void setUp() throws Exception {
         JUnitUtil.setUp();
         JUnitUtil.resetInstanceManager();
+        JUnitUtil.resetProfileManager();
         JUnitUtil.initConfigureManager();
         JUnitUtil.initInternalTurnoutManager();
         JUnitUtil.initInternalLightManager();

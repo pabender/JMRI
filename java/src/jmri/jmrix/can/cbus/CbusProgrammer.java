@@ -18,12 +18,6 @@ import org.slf4j.LoggerFactory;
  */
 public class CbusProgrammer extends AbstractProgrammer implements CanListener, AddressedProgrammer {
 
-    public CbusProgrammer() {
-        Exception e = new Exception("Dummy method called");
-        e.printStackTrace();
-        // throw e;
-    }
-
     public CbusProgrammer(int nodenumber, TrafficController tc) {
         this.nodenumber = nodenumber;
         // need a longer LONG_TIMEOUT
@@ -58,6 +52,7 @@ public class CbusProgrammer extends AbstractProgrammer implements CanListener, A
 
     // programming interface
     @Override
+    @Deprecated // 4.1.1
     synchronized public void writeCV(int varnum, int val, jmri.ProgListener p) throws jmri.ProgrammerException {
         if (log.isDebugEnabled()) {
             log.debug("write " + varnum + " listens " + p);
@@ -85,6 +80,7 @@ public class CbusProgrammer extends AbstractProgrammer implements CanListener, A
     }
 
     @Override
+    @Deprecated // 4.1.1
     synchronized public void readCV(int varnum, jmri.ProgListener p) throws jmri.ProgrammerException {
         if (log.isDebugEnabled()) {
             log.debug("readCV " + varnum + " listens " + p);

@@ -15,9 +15,6 @@ import org.junit.Test;
   */
 public class SerialAddressTest {
 
-    private InputBits ibits = null;
-    private OutputBits obits = null;
-
     @Test
     public void testValidateSystemNameFormat() {
         Assert.assertTrue("valid format - KL2", NameValidity.VALID == SerialAddress.validSystemNameFormat("KL2", 'L', "K"));
@@ -166,7 +163,7 @@ public class SerialAddressTest {
 
     @Test
     public void testGetUserNameFromSystemName() {
-        jmri.SensorManager sMgr = memo.getSensorManager();
+        jmri.SensorManager sMgr = jmri.InstanceManager.sensorManagerInstance();
         // create 4 new sensors
         sMgr.newSensor("KS16", "userS16");
         sMgr.newSensor("KS014", "userS14");
@@ -202,8 +199,8 @@ public class SerialAddressTest {
         SerialTrafficControlScaffold tc = new SerialTrafficControlScaffold();
         memo = new MapleSystemConnectionMemo("K", "Maple");
         memo.setTrafficController(tc);
-        ibits = new InputBits(tc);
-        obits = new OutputBits(tc);
+        new InputBits(tc);
+        new OutputBits(tc);
         new SerialNode(4, 0,tc);
         new SerialNode(10, 0,tc);
         new SerialNode(99, 0,tc);

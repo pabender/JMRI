@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
-<!-- $Id$ -->
 
 <html lang="en">
 <head>
@@ -8,7 +7,7 @@
   "HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.17), see www.w3.org">
 
   <title>JMRI: Names and Naming</title>
-  <meta content="Bob Jacobsen" name="Author">
+  <meta name="author" content="Bob Jacobsen">
   <meta name="keywords" content=
   "JMRI technical code names user name system name">
   <!-- The combination of "Define" and {Header, Style, Logo and Footer} comments -->
@@ -25,17 +24,17 @@
   media="print">
   <link rel="icon" href="/images/jmri.ico" type="image/png">
   <link rel="home" title="Home" href="/"><!-- /Style -->
-</head><!--#include virtual="/Header" -->
+</head><!--#include virtual="/Header.shtml" -->
 
 <body>
   <div id="mBody">
-    <!--#include virtual="Sidebar" -->
+    <!--#include virtual="Sidebar.shtml" -->
 
     <div id="mainContent">
-      <h1>JMRI: Names and Naming</h1>This page discusses how JMRI
-      objects are named, how those names are used to reference the
-      objects (hardware and software), and how user-readable names
-      are used.
+      <h1>JMRI: Names and Naming</h1>
+      <p>This page discusses how JMRI objects are named, how those
+      names are used to reference the objects (hardware and software),
+      and how user-readable names are used.</p>
 
       <span class="since">Since JMRI 4.7.4</span>
         <b>As of March 2017, we have changed
@@ -67,28 +66,23 @@
 
       <ul>
         <li>Aspects for signals</li>
-
         <li>Blocks (track segments)</li>
-
         <li>Conditionals (for logiX, although these are not entirely named beans)</li>
-
+        <li>signal mast Groups</li>
         <li>signal Heads</li>
-
+        <li>signal masts (F, for some reason)</li>
         <li>Lights (a type of output)</li>
-
+        <li>eNtry/exit destiNation points</li>
         <li>Memories</li>
-
         <li>Outputs</li>
-
         <li>Power districts and subdistricts</li>
-
-        <li>Routes</li>
-
+        <li>Reporters</li>
+        <li>Routes (shared for historical reasons with Reporters)</li>
         <li>input Sensors</li>
-
         <li>Turnouts</li>
-
         <li>logiX</li>
+        <li>Sections (Y, for some reason)</li>
+        
       </ul>Some of these are associated with a specific hardware
       device, e.g. a particular turnout. Others are more virtual,
       e.g. a route, which is a collection on control information
@@ -113,7 +107,7 @@
       these "system names". JMRI code will map these to and from
       whatever information the hardware may need.</p>
 
-      <h2>System Name Format</h2>
+      <h2 id="format">System Name Format</h2>
       
       A system name is formed from a
       short "system prefix" representing the hardware system, followed by a
@@ -190,8 +184,12 @@
         serial</a></li>
 
         <li>D <a href=
-        "../../hardware/SRCP/index.shtml">SRCP</a></li>
-
+        "../../hardware/SRCP/index.shtml">SRCP</a>,
+        <br>Anyma DX512
+        <br><a href="../../hardware/dccpp/index.shtml">DCC++</a> (previously written DCCpp)
+        <br><a href="../../hardware/dcc4pc/index.shtml">DCC4PC</a>
+        </li>
+        
         <li>E <a href=
         "../../hardware/easydcc/EasyDCC.shtml">EasyDCC</a></li>
 
@@ -216,10 +214,9 @@
 
         <li>M Model railroad layout control buses, including
         <a href="../../hardware/openlcb/index.shtml">OpenLCB</a>
-        and <a href="../../hardware/can/cbus/index.shtml">MERG
-        CBUS</a>. Also used for the <a href=
-        "../../hardware/modbus/index.shtml">Modbus</a> master and
-        slave implementation.
+        and <a href="../../hardware/can/cbus/index.shtml">MERG CBUS</a>
+        <br><a href="../../hardware/mrc/index.shtml">Model Rectifier Corp (MRC)</a>
+        <br><a href="../../hardware/marklin/index.shtml">Marklin CS2</a>
         </li>
 
         <li>N <a href="../../hardware/nce/NCE.shtml">NCE</a> (also
@@ -231,7 +228,9 @@
 
         <li>P <a href=
         "../../hardware/powerline/index.shtml">Powerline
-        transmission</a>, e.g. X10 and Insteon</li>
+        transmission</a>, e.g. X10 and Insteon,
+        <br>Raspberry Pi native pins
+        </li>
 
         <li>Q <a href="../../hardware/qsi/index.shtml">QSI
         programmer interface</a></li>
@@ -242,9 +241,10 @@
         <li>S <a href=
         "../../hardware/sprog/SPROG.shtml">SPROG</a></li>
 
-        <li>T <a href="../../hardware/tmcc/index.shtml">Lionel
-        TMCC</a></li>
-
+        <li>T <a href="../../hardware/tmcc/index.shtml">Lionel TMCC</a>, 
+        <br><a href="../../hardware/tams/index.shtml">TAMS</a>
+        </li>
+        
         <li>U <a href="../../hardware/ecos/index.shtml">ESU
         ECoS</a></li>
 
@@ -280,7 +280,8 @@
         position in 3d space</li>
 
         <li>B Block - A software object that keeps track of the
-        contents of a specific block of track</li>
+        contents of a specific block of track.
+        Block system names are all upper case, have no trailing whitespace and start with IB.</li>
 
         <li>D iDentity - A software object that holds information
         about an identity tag that is, typically, attached to a
@@ -297,14 +298,20 @@
         <li>H signal Head - One part of a signal (which may have
         multiple heads). Also interpreted to include indicators on
         control panels that are acting to display signal
-        aspects</li>
+        aspects.
+        SignalHead system names are all upper case, have no trailing whitespace and mostly, 
+        but not always, start with IH.
+        </li>
 
         <li>M Memory - As yet, this has no real equivalent in the
         layout hardware, but is used as a place to store
-        information temporarily and display it on panels, etc.</li>
+        information temporarily and display it on panels, etc.
+        Memory system names are all upper case, have no trailing whitespace and start with IM.</li>
 
         <li>L Light - another form of output, used to e.g. control
         lights on a layout</li>
+
+        <li>N eNtry/exit destination points</li>
 
         <li>P Power manager i.e. layout, district, subdistrict; not
         all systems distinguish between these, so the device type
@@ -318,16 +325,31 @@
         identification from some transponding hardware, RFID tag
         numbers, etc.</li>
 
+        <li>R Routes - a tool for setting multiple Turnout states at once.
+        The "R" letter is shared with Reporters for historical reasons.</li>
+
         <li>S Sensors - general purpose input sensors that can
         generally be either ACTIVE or INACTIVE. This is most
         commonly used for block occupancy detectors.</li>
+
+        <li>Y Sections - holds a map of trackwork.
+        Section system names are all upper case, have no trailing whitespace and start with IY.</li>
+        
+        <li>SignalGroups - hold a set of signal heads or masts.
+            SignalGroup system names are all upper case and have no trailing whitespace.
+            For historical reasons, they're not required to have a system prefix or 
+            type letter; the example name is "R12".  This might change, so
+            using "IG" at the start is recommended.
 
         <li>T Turnout - actually a general purpose output on the
         layout</li>
 
         <li>X logiX - a set of logic equations used to control the
-        layout</li>
+        layout.
+        Logix system names are all upper case, have no trailing whitespace and start with IX.</li>
       </ul>
+
+
 
       <a name="systeminfo" id="systeminfo"></a>
       <h3>System-specific suffix</h3>
@@ -359,7 +381,10 @@
         <li><a href=
         "../../hardware/XPressNet/XNetAddressing.shtml">Lenz
         XPressNet</a></li>
-
+        
+        <li><a href=
+        "../../hardware/can/cbus/Names.shtml">MERG-CBUS</a></li>
+        
         <li><a href=
         "../../hardware/nce/NCE.shtml#names">NCE</a></li>
 
@@ -453,7 +478,7 @@
           <td>i</td>
           <td>4:3</td>
           <td>(converts to 50)</td>
-          <td>DCCPP50</td>
+          <td>DT50</td>
           <td>node : pin</td>
           <td> </td>
           <td>0</td>
@@ -464,7 +489,7 @@
           <td>o</td>
           <td>12</td>
           <td>ID in internal DCC++ table</td>
-          <td>DCCPP12</td>
+          <td>DT1212</td>
           <td>integer</td>
           <td> </td>
           <td>0</td>
@@ -636,7 +661,30 @@
           <td>8000</td>
         </tr>
         <tr>
-          <td>MERG CBUS</td>
+          <td>MERG-CBUS</td>
+          <td>io</td>
+          <td>18</td>
+          <td>Event 18 On; 18 Off</td>
+          <td>MT+18</td>
+          <td>integer</td>
+          <td>+18;-18</td>
+          <td>01</td>
+          <td>65535</td>
+        </tr>
+        <tr>
+          <td>MERG-CBUS</td>
+          <td>io</td>
+          <td>+N2E18;-N2E18;</td>
+          <td>Node 2 Event 18; On Event = Active; Off Event = Inactive</td>
+          <td>MS+N2E18;-N2E18</td>
+          <td></td>
+          <td> </td>
+          <td>Node 1 Event 1</td>
+          <td>Node 65535 Event 65535 </td>
+
+        </tr>
+        <tr>
+          <td>MERG-CBUS</td>
           <td>i</td>
           <td>200018M07</td>
           <td>listen to Events 18 .. 1F</td>
@@ -647,70 +695,49 @@
           <td> </td>
         </tr>
         <tr>
-          <td>MERG CBUS</td>
-          <td>i</td>
-          <td>X91012;X91019</td>
-          <td>hex CAN frame msg. Active; Inactive</td>
-          <td>MTX91012;X91019</td>
+          <td>MERG-CBUS</td>
+          <td>io</td>
+          <td>X9000020012;X91FFFFFFFE</td>
+          <td>hex CAN frame msg. Active; Inactive
+          <br>N2 E18 active; N65535 E65534 inactive
+          </td>
+          <td>MSX9000020012;X91FFFFFFFE</td>
           <td>hex ; hex</td>
           <td>N/A</td>
-          <td> </td>
-          <td> </td>
+          <td colspan="2">Depends on Opscode</td>
         </tr>
         <tr>
-          <td>MERG CBUS</td>
+          <td>MERG-CBUS</td>
           <td>io</td>
-          <td>18</td>
-          <td>event 18 On; 18 Off</td>
-          <td>MT18</td>
-          <td>integer</td>
-          <td>+18;-18</td>
-          <td> </td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td>MERG CBUS</td>
-          <td>io</td>
-          <td>18;21</td>
-          <td>event 18 On; 21 On</td>
+          <td>+18;+21</td>
+          <td>Event 18 On; 21 On</td>
           <td>MT18;21</td>
           <td>integer ; integer</td>
           <td>+18;+21</td>
-          <td> </td>
-          <td> </td>
+          <td>1;1</td>
+          <td>65535;65535</td>
         </tr>
         <tr>
-          <td>MERG CBUS</td>
+          <td>MERG-CBUS</td>
           <td>io</td>
           <td>+18;-21</td>
-          <td>event 18 On; 21 Off</td>
-          <td>MT+18;-21</td>
+          <td>Event 18 On; 21 Off</td>
+          <td>ML+18;-21</td>
           <td>idem signed</td>
           <td>N/A</td>
-          <td> </td>
-          <td> </td>
+          <td>1;1</td>
+          <td>65535,65535</td>
         </tr>
         <tr>
-          <td>MERG CBUS</td>
+          <td>MERG-CBUS</td>
           <td>io</td>
-          <td>2000018</td>
+          <td>200018</td>
           <td>Node 2 Event 18; On Event = Active; Off Event = Inactive</td>
-          <td>MT200018</td>
+          <td>MS+200018</td>
           <td>node + (5 digits)</td>
           <td>N2E18</td>
-          <td>Note: not working</td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td>MERG CBUS</td>
-          <td>io</td>
-          <td>N2E18</td>
-          <td>Node 2 Event 18; On Event = Active; Off Event = Inactive</td>
-          <td>MTN2E18</td>
-          <td>N + number + E + number</td>
-          <td>2000018</td>
-          <td>Note: not working</td>
-          <td> </td>
+          <td>100001</td>
+          <td>6553565535</td>
         </tr>
         <tr>
           <td>NCE</td>
@@ -814,7 +841,7 @@
         </tbody></table>
       <!-- this table is maintained on the help/en/html/doc/Technical/Names.shtml based on information from the
       Hardware help pages by Egbert Broerse @silverailscolo July 2017 -->
-
+    
       <h2>Naming Conventions For Automated Use</h2>Some
       higher-level constructs create their own items. For example,
       a "Sensor Group" is really just a collection of Routes that
@@ -926,7 +953,7 @@ SENSOR GROUP:my group:LS2
         now:
         <ul>
         <li>JComboBox format:
-            <a href="images/ComboBox.png"><img src="images/ComboBox.png" align="right" height="50" width="75"/></a>
+            <a href="images/ComboBox.png"><img src="images/ComboBox.png" align="right" height="50" width="75" alt="combobox"></a>
             
 <pre style="font-family: monospace;">
         import jmri.util.swing.JmriBeanComboBox;
@@ -945,7 +972,7 @@ SENSOR GROUP:my group:LS2
 </pre>
 
         <li>Table format:
-            <a href="images/TableSelector.png"><img src="images/TableSelector.png" align="right" height="119" width="175"/></a>
+            <a href="images/TableSelector.png"><img src="images/TableSelector.png" align="right" height="119" width="175" alt="table selector"></a>
 <pre style="font-family: monospace;">
 
         import jmri.jmrit.picker.*;
@@ -1009,7 +1036,7 @@ SENSOR GROUP:my group:LS2
         For an example, see the bottom of jmri.jmrix.cmri.serial.SerialTurnout
         and jmri.jmrix.cmri.serial.SerialTurnoutTest.
       
-      <!--#include virtual="/Footer" -->
+      <!--#include virtual="/Footer.shtml" -->
     </div><!-- closes #mainContent-->
   </div><!-- closes #mBody-->
 </body>

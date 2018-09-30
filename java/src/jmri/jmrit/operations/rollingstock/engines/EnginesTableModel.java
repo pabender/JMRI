@@ -240,6 +240,9 @@ public class EnginesTableModel extends javax.swing.table.AbstractTableModel impl
         tcm.setColumnVisible(tcm.getColumnByModelIndex(RFID_WHEN_LAST_SEEN_COLUMN), false);
         tcm.setColumnVisible(tcm.getColumnByModelIndex(RFID_WHERE_LAST_SEEN_COLUMN), false);
         tcm.setColumnVisible(tcm.getColumnByModelIndex(LAST_COLUMN), false);
+        
+        // turn on default
+        tcm.setColumnVisible(tcm.getColumnByModelIndex(MOVES_COLUMN), true);
     }
 
     @Override
@@ -306,7 +309,6 @@ public class EnginesTableModel extends javax.swing.table.AbstractTableModel impl
             case SET_COLUMN:
             case EDIT_COLUMN:
                 return JButton.class;
-            case HP_COLUMN:
             case LENGTH_COLUMN:
             case MOVES_COLUMN:
                 return Integer.class;
@@ -348,7 +350,7 @@ public class EnginesTableModel extends javax.swing.table.AbstractTableModel impl
             case MODEL_COLUMN:
                 return eng.getModel();
             case HP_COLUMN:
-                return eng.getHpInteger();
+                return eng.getHp();
             case TYPE_COLUMN: {
                 if (eng.isBunit()) {
                     return eng.getTypeName() + " " + Bundle.getMessage("(B)");

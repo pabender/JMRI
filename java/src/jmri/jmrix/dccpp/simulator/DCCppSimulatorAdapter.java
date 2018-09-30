@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  * @author Paul Bender, Copyright (C) 2009-2010
  * @author Mark Underwood, Copyright (C) 2015
  *
- * Based on jmri.jmrix.lenz.xnetsimulator.XNetSimulatorAdapter
+ * Based on {@link jmri.jmrix.lenz.xnetsimulator.XNetSimulatorAdapter}
  */
 public class DCCppSimulatorAdapter extends DCCppSimulatorPortController implements Runnable {
 
@@ -135,24 +135,34 @@ public class DCCppSimulatorAdapter extends DCCppSimulatorPortController implemen
     }
 
     // base class methods for the DCCppSimulatorPortController interface
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DataInputStream getInputStream() {
         if (pin == null) {
             log.error("getInputStream called before load(), stream not available");
-            ConnectionStatus.instance().setConnectionState(this.getCurrentPortName(), ConnectionStatus.CONNECTION_DOWN);
+            ConnectionStatus.instance().setConnectionState(getUserName(), getCurrentPortName(), ConnectionStatus.CONNECTION_DOWN);
         }
         return pin;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public DataOutputStream getOutputStream() {
         if (pout == null) {
             log.error("getOutputStream called before load(), stream not available");
-            ConnectionStatus.instance().setConnectionState(this.getCurrentPortName(), ConnectionStatus.CONNECTION_DOWN);
+            ConnectionStatus.instance().setConnectionState(getUserName(), getCurrentPortName(), ConnectionStatus.CONNECTION_DOWN);
         }
         return pout;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean status() {
         return (pout != null && pin != null);
@@ -160,7 +170,7 @@ public class DCCppSimulatorAdapter extends DCCppSimulatorPortController implemen
 
     /**
      * Get an array of valid baud rates. This is currently just a message saying
-     * its fixed.
+     * it's fixed.
      *
      * @return null
      */
@@ -188,7 +198,7 @@ public class DCCppSimulatorAdapter extends DCCppSimulatorPortController implemen
 
         rgen = new Random();
 
-        ConnectionStatus.instance().setConnectionState(this.getCurrentPortName(), ConnectionStatus.CONNECTION_UP);
+        ConnectionStatus.instance().setConnectionState(getUserName(), getCurrentPortName(), ConnectionStatus.CONNECTION_UP);
         for (;;) {
             DCCppMessage m = readMessage();
             if (log.isDebugEnabled()) {
@@ -219,7 +229,7 @@ public class DCCppSimulatorAdapter extends DCCppSimulatorPortController implemen
             msg = loadChars();
         } catch (java.io.IOException e) {
             // should do something meaningful here.
-            ConnectionStatus.instance().setConnectionState(this.getCurrentPortName(), ConnectionStatus.CONNECTION_DOWN);
+            ConnectionStatus.instance().setConnectionState(getUserName(), getCurrentPortName(), ConnectionStatus.CONNECTION_DOWN);
 
         }
         setOutputBufferEmpty(true);
@@ -228,7 +238,6 @@ public class DCCppSimulatorAdapter extends DCCppSimulatorPortController implemen
 
     // generateReply is the heart of the simulation.  It translates an
     // incoming DCCppMessage into an outgoing DCCppReply.
-    @SuppressWarnings("fallthrough")
     private DCCppReply generateReply(DCCppMessage msg) {
         String s, r;
         Pattern p;
@@ -517,18 +526,18 @@ public class DCCppSimulatorAdapter extends DCCppSimulatorPortController implemen
             }
             outpipe.writeByte((byte) '>');
         } catch (java.io.IOException ex) {
-            ConnectionStatus.instance().setConnectionState(this.getCurrentPortName(), ConnectionStatus.CONNECTION_DOWN);
+            ConnectionStatus.instance().setConnectionState(getUserName(), getCurrentPortName(), ConnectionStatus.CONNECTION_DOWN);
         }
     }
 
     /**
      * Get characters from the input source, and file a message.
-     * <P>
+     * <p>
      * Returns only when the message is complete.
-     * <P>
+     * <p>
      * Only used in the Receive thread.
      *
-     * @returns filled message
+     * @return filled message
      * @throws IOException when presented by the input source.
      */
     private DCCppMessage loadChars() throws java.io.IOException {

@@ -16,6 +16,7 @@ import org.junit.runners.Suite;
     LightTest.class,
     ManagerTest.class,
     NmraPacketTest.class,
+    ConditionalTest.class,
     ConditionalVariableTest.class,
     PathTest.class,
     PathLengthTest.class,
@@ -66,6 +67,8 @@ import org.junit.runners.Suite;
     TransitManagerTest.class,
     TurnoutOperationManagerTest.class,
     EntryPointTest.class,
+    NamedBeanPropertyDescriptorTest.class,
+    BooleanPropertyDescriptorTest.class,
     RunCucumberTest.class,})
 
 /**

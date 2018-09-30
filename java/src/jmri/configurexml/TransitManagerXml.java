@@ -150,13 +150,13 @@ public class TransitManagerXml extends jmri.managers.configurexml.AbstractNamedB
      * @param perNodeTransits Per-node Element containing the Transit elements
      *                        to load.
      */
-    @SuppressWarnings("null")
     public void loadTransits(Element sharedTransits, Element perNodeTransits) {
         List<Element> transitList = sharedTransits.getChildren("transit");
         if (log.isDebugEnabled()) {
             log.debug("Found " + transitList.size() + " transits");
         }
         TransitManager tm = InstanceManager.getDefault(jmri.TransitManager.class);
+        tm.setDataListenerMute(true);
 
         for (int i = 0; i < transitList.size(); i++) {
             String sysName = getSystemName(transitList.get(i));
@@ -223,6 +223,8 @@ public class TransitManagerXml extends jmri.managers.configurexml.AbstractNamedB
                 }
             }
         }
+        
+        tm.setDataListenerMute(false);
     }
 
     @Override

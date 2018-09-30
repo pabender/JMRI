@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Handles reading and writing of Dispatcher options to disk as an XML file
- * called "dispatcher-options.xml" in the user's preferences area
+ * called "dispatcher-options.xml" in the user's preferences area.
  * <p>
  * This class manipulates the files conforming to the dispatcher-options DTD
  * <p>
@@ -51,9 +51,12 @@ public class OptionsFile extends jmri.jmrit.XmlFile implements InstanceManagerAu
     private Document doc = null;
     private Element root = null;
 
-    /*
-     *  Reads Dispatcher Options from a file in the user's preferences directory
-     *  If the file containing Dispatcher Options does not exist this routine returns quietly.
+    /**
+     * Read Dispatcher Options from a file in the user's preferences directory.
+     * If the file containing Dispatcher Options does not exist, this routine returns quietly.
+     * @param f   The dispatcher instance.
+     * @throws org.jdom2.JDOMException  if dispatcher parameter logically incorrect
+     * @throws java.io.IOException    if dispatcher parameter not found
      */
     public void readDispatcherOptions(DispatcherFrame f) throws org.jdom2.JDOMException, java.io.IOException {
         // check if file exists
@@ -206,8 +209,10 @@ public class OptionsFile extends jmri.jmrit.XmlFile implements InstanceManagerAu
         }
     }
 
-    /*
-     *  Writes out Dispatcher options to a file in the user's preferences directory
+    /**
+     * Write out Dispatcher options to a file in the user's preferences directory.
+     * @param f Dispatcher instance.
+     * @throws java.io.IOException Thrown if dispatcher option file not found
      */
     public void writeDispatcherOptions(DispatcherFrame f) throws java.io.IOException {
         log.debug("Saving Dispatcher options to file {}", defaultFileName);

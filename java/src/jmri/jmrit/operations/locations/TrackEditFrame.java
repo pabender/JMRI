@@ -64,7 +64,7 @@ public class TrackEditFrame extends OperationsFrame implements java.beans.Proper
     String _type = "";
     JMenu _toolMenu = null;
 
-    List<JCheckBox> checkBoxes = new ArrayList<JCheckBox>();
+    List<JCheckBox> checkBoxes = new ArrayList<>();
 
     // panels
     JPanel panelCheckBoxes = new JPanel();
@@ -138,7 +138,7 @@ public class TrackEditFrame extends OperationsFrame implements java.beans.Proper
     JPanel panelOpt4 = new JPanel();
 
     // Reader selection dropdown.
-    JComboBox<Reporter> readerSelector = new JComboBox<Reporter>();
+    JComboBox<Reporter> readerSelector = new JComboBox<>();
 
     public static final String DISPOSE = "dispose"; // NOI18N
     public static final int MAX_NAME_LENGTH = Control.max_len_string_track_name;
@@ -339,7 +339,7 @@ public class TrackEditFrame extends OperationsFrame implements java.beans.Proper
         if (Setup.isRfidEnabled()) {
             // setup the Reader dropdown.
             readerSelector.addItem(null); // add an empty entry.
-            for (jmri.NamedBean r : jmri.InstanceManager.getDefault(jmri.ReporterManager.class).getNamedBeanList()) {
+            for (jmri.NamedBean r : jmri.InstanceManager.getDefault(jmri.ReporterManager.class).getNamedBeanSet()) {
                 readerSelector.addItem((Reporter) r);
             }
         }
@@ -394,6 +394,7 @@ public class TrackEditFrame extends OperationsFrame implements java.beans.Proper
                     return;
                 }
                 saveTrack(_track);
+                checkTrackPickups(_track); // warn user if there are car types that will be stranded
             } else {
                 addNewTrack();
             }
@@ -581,21 +582,9 @@ public class TrackEditFrame extends OperationsFrame implements java.beans.Proper
     }
 
     protected void saveTrack(Track track) {
-        // save train directions serviced by this location
-        int direction = 0;
-        if (northCheckBox.isSelected()) {
-            direction += Track.NORTH;
-        }
-        if (southCheckBox.isSelected()) {
-            direction += Track.SOUTH;
-        }
-        if (eastCheckBox.isSelected()) {
-            direction += Track.EAST;
-        }
-        if (westCheckBox.isSelected()) {
-            direction += Track.WEST;
-        }
-        track.setTrainDirections(direction);
+        
+        saveTrackDirections(track);
+
         track.setName(trackNameTextField.getText());
 
         track.setComment(commentTextArea.getText());
@@ -611,6 +600,24 @@ public class TrackEditFrame extends OperationsFrame implements java.beans.Proper
         enableButtons(true);
         // save location file
         OperationsXml.save();
+    }
+    
+    private void saveTrackDirections(Track track) {
+        // save train directions serviced by this location
+        int direction = 0;
+        if (northCheckBox.isSelected()) {
+            direction += Track.NORTH;
+        }
+        if (southCheckBox.isSelected()) {
+            direction += Track.SOUTH;
+        }
+        if (eastCheckBox.isSelected()) {
+            direction += Track.EAST;
+        }
+        if (westCheckBox.isSelected()) {
+            direction += Track.WEST;
+        }
+        track.setTrainDirections(direction);
     }
 
     private boolean checkUserInputs(Track track) {
@@ -738,6 +745,16 @@ public class TrackEditFrame extends OperationsFrame implements java.beans.Proper
             return false;
         }
         return true;
+    }
+    
+    private boolean checkTrackPickups(Track track) {
+        // check to see if all car types can be pulled from this track
+        String status = track.checkPickups();
+        if (!status.equals(Track.PICKUP_OKAY) && !track.getPickupOption().equals(Track.ANY)) {
+            JOptionPane.showMessageDialog(this, status, Bundle.getMessage("ErrorStrandedCar"), JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        return true; 
     }
 
     private void reportTrackExists(String s) {
@@ -1091,57 +1108,14 @@ public class TrackEditFrame extends OperationsFrame implements java.beans.Proper
 
     private void updateRoadOption() {
         if (_track != null) {
-            if (_track.getRoadOption().equals(Track.INCLUDE_ROADS)) {
-                roadOption.setText(Bundle.getMessage("AcceptOnly") +
-                        " " +
-                        _track.getRoadNames().length +
-                        " " +
-                        Bundle.getMessage("Roads"));
-            } else if (_track.getRoadOption().equals(Track.EXCLUDE_ROADS)) {
-                roadOption.setText(Bundle.getMessage("Exclude") +
-                        " " +
-                        _track.getRoadNames().length +
-                        " " +
-                        Bundle.getMessage("Roads"));
-            } else {
-                roadOption.setText(Bundle.getMessage("AcceptsAllRoads"));
-            }
+            roadOption.setText(_track.getRoadOptionString());
         }
     }
 
     private void updateLoadOption() {
         if (_track != null) {
-            if (_track.getLoadOption().equals(Track.INCLUDE_LOADS)) {
-                loadOption.setText(Bundle.getMessage("AcceptOnly") +
-                        " " +
-                        _track.getLoadNames().length +
-                        " " +
-                        Bundle.getMessage("Loads"));
-            } else if (_track.getLoadOption().equals(Track.EXCLUDE_LOADS)) {
-                loadOption.setText(Bundle.getMessage("Exclude") +
-                        " " +
-                        _track.getLoadNames().length +
-                        " " +
-                        Bundle.getMessage("Loads"));
-            } else {
-                loadOption.setText(Bundle.getMessage("AcceptsAllLoads"));
-            }
-
-            if (_track.getShipLoadOption().equals(Track.INCLUDE_LOADS)) {
-                shipLoadOption.setText(Bundle.getMessage("ShipOnly") +
-                        " " +
-                        _track.getShipLoadNames().length +
-                        " " +
-                        Bundle.getMessage("Loads"));
-            } else if (_track.getShipLoadOption().equals(Track.EXCLUDE_LOADS)) {
-                shipLoadOption.setText(Bundle.getMessage("Exclude") +
-                        " " +
-                        _track.getShipLoadNames().length +
-                        " " +
-                        Bundle.getMessage("Loads"));
-            } else {
-                shipLoadOption.setText(Bundle.getMessage("ShipAll"));
-            }
+            loadOption.setText(_track.getLoadOptionString());
+            shipLoadOption.setText(_track.getShipLoadOptionString());
         }
     }
 

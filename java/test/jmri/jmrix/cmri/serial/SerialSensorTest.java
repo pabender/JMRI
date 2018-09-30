@@ -11,16 +11,22 @@ import org.junit.Test;
  *
  * @author Paul Bender Copyright (C) 2017	
  */
-public class SerialSensorTest {
+public class SerialSensorTest extends jmri.implementation.AbstractSensorTestBase {
 
     private jmri.jmrix.cmri.CMRISystemConnectionMemo memo = null;
     private SerialTrafficControlScaffold tcis = null;
 
-    @Test
-    public void testCTor() {
-        SerialSensor t = new SerialSensor("CS4");
-        Assert.assertNotNull("exists",t);
-    }
+    @Override
+    public int numListeners() {return 0;}
+
+    @Override
+    public void checkOnMsgSent() {}
+
+    @Override
+    public void checkOffMsgSent() {}
+
+    @Override
+    public void checkStatusRequestMsgSent() {}
 
     @Test
     public void test2ParamCTor() {
@@ -30,25 +36,25 @@ public class SerialSensorTest {
 
     @Test
     public void testSystemSpecificComparisonOfStandardNames() {
-        jmri.util.NamedBeanComparator t = new jmri.util.NamedBeanComparator();
+        jmri.util.NamedBeanComparator c = new jmri.util.NamedBeanComparator();
         
         Sensor t1 = new SerialSensor("CS1");
         Sensor t2 = new SerialSensor("CS2");
         Sensor t10 = new SerialSensor("CS10");
 
-        Assert.assertEquals("S1 == S1", 0, t.compare(t1, t1));
+        Assert.assertEquals("S1 == S1", 0, c.compare(t1, t1));
 
-        Assert.assertEquals("S1 < S2", -1, t.compare(t1, t2));
-        Assert.assertEquals("S2 > S1", +1, t.compare(t2, t1));
+        Assert.assertEquals("S1 < S2", -1, c.compare(t1, t2));
+        Assert.assertEquals("S2 > S1", +1, c.compare(t2, t1));
 
-        Assert.assertEquals("S10 > S2", +1, t.compare(t10, t2));
-        Assert.assertEquals("S2 < S10", -1, t.compare(t2, t10));    
+        Assert.assertEquals("S10 > S2", +1, c.compare(t10, t2));
+        Assert.assertEquals("S2 < S10", -1, c.compare(t2, t10));    
     }
 
     @Test
     public void testSystemSpecificComparisonOfSpecificFormats() {
         // test by putting into a tree set, then extracting and checking order
-        java.util.TreeSet<Sensor> set = new java.util.TreeSet(new jmri.util.NamedBeanComparator());
+        java.util.TreeSet<Sensor> set = new java.util.TreeSet<>(new jmri.util.NamedBeanComparator());
         
         set.add(new SerialSensor("CS3B4"));
         set.add(new SerialSensor("CS3003"));
@@ -96,6 +102,7 @@ public class SerialSensorTest {
         memo = new jmri.jmrix.cmri.CMRISystemConnectionMemo();
         memo.setTrafficController(tcis);
         new SerialNode(0, SerialNode.SMINI,tcis);
+        t = new SerialSensor("CS4");
     }
 
     @After

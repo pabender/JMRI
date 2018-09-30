@@ -3,36 +3,36 @@ package jmri;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A Conditional is layout control logic, consisting of a logical expression and
  * an action.
- * <P>
+ * <p>
  * A Conditional does not exist on its own, but is part of a Logix. The system
  * name of each Conditional is set automatically when the conditional is
  * created. It begins with the system name of its parent Logix. There is no
  * Conditional Table. Conditionals are created, editted, and deleted via the
  * Logix Table.
- * <P>
+ * <p>
  * A Conditional has a "state", which changes depending on whether its logical
  * expression calculates to TRUE or FALSE. The "state" may not be changed by the
  * user. It only changes in response to changes in the "state variables" used in
  * its logical expression.
- * <P>
+ * <p>
  * Listeners may be set to monitor a change in the state of a conditional.
  *
  * <hr>
  * This file is part of JMRI.
- * <P>
+ * <p>
  * JMRI is free software; you can redistribute it and/or modify it under the
  * terms of version 2 of the GNU General Public License as published by the Free
  * Software Foundation. See the "COPYING" file for a copy of this license.
- * <P>
+ * <p>
  * JMRI is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
  * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- * <P>
+ * <p>
  * @author Dave Duchamp Copyright (C) 2007, 2008
  * @author Pete Cressman Copyright (C) 2009, 2010, 2011
  * @author Matthew Harris copyright (c) 2009
@@ -53,13 +53,57 @@ public interface Conditional extends NamedBean {
     public static final int ALL_OR = 0x02;
     public static final int MIXED = 0x03;
 
-    // state variable definitions
+    public enum Operator {
+        NONE,
+        AND,
+        OR;
+        
+        // This method is used by DefaultConditionalManagerXml.store() for backward compatibility
+        public int getIntValue() {
+            switch (this) {
+                case NONE: return OPERATOR_NONE;
+                case AND: return OPERATOR_AND;
+                case OR: return OPERATOR_OR;
+                default: throw new IllegalArgumentException(String.format("operator %s is unknown", this.name()));
+            }
+        }
+        
+        // This method is used by DefaultConditionalManagerXml.loadConditionals() for backward compatibility
+        public static Operator getOperatorFromIntValue(int opern) {
+            switch (opern) {
+                case OPERATOR_AND: return Operator.AND;
+                case OPERATOR_NOT: return Operator.NONE;
+                case OPERATOR_AND_NOT: return Operator.AND;
+                case OPERATOR_NONE: return Operator.NONE;
+                case OPERATOR_OR: return Operator.OR;
+                case OPERATOR_OR_NOT: return Operator.OR;
+                default: throw new IllegalArgumentException(String.format("operator %d is unknown", opern));
+            }
+        }
+    }
+    
+    // state variable definitions. Keep these since they are needed
+    // for backward compatibility in DefaultConditionalManagerXml.
+    // But they are not used elsewhere.
     public static final int OPERATOR_AND = 1;
-    public static final int OPERATOR_NOT = 2;
-    public static final int OPERATOR_AND_NOT = 3;
     public static final int OPERATOR_NONE = 4;
     public static final int OPERATOR_OR = 5;
+    /**
+     * @deprecated since 4.13.4; It is not stored in the XML file since 4.13.4.
+     */
+    @Deprecated
+    public static final int OPERATOR_NOT = 2;
+    /**
+     * @deprecated since 4.13.4; It is not stored in the XML file since 4.13.4.
+     */
+    @Deprecated
+    public static final int OPERATOR_AND_NOT = 3;
+    /**
+     * @deprecated since 4.13.4; It is not stored in the XML file since 4.13.4.
+     */
+    @Deprecated
     public static final int OPERATOR_OR_NOT = 6;
+    
     // state variable types
     public static final int TYPE_NONE = 0;
     public static final int TYPE_SENSOR_ACTIVE = 1;
@@ -265,7 +309,7 @@ public interface Conditional extends NamedBean {
         ITEM_TYPE_OBLOCK, // TYPE_BLOCK_STATUS_EQUALS = 34
         ITEM_TYPE_ENTRYEXIT, // TYPE_ENTRYEXIT_ACTIVE = 35
         ITEM_TYPE_ENTRYEXIT // TYPE_ENTRYEXIT_INACTIVE = 36
-};
+    };
 
     // Map SignalHead comboBox items to SignalHead Conditional variable types
     @SuppressFBWarnings(value = "MS_MUTABLE_ARRAY") // with existing code structure, 
@@ -571,31 +615,31 @@ public interface Conditional extends NamedBean {
      *
      * @param arrayList the actions
      */
-    public void setAction(ArrayList<ConditionalAction> arrayList);
+    public void setAction(List<ConditionalAction> arrayList);
 
     /**
      * Make deep clone of actions
      *
      * @return a list of copies of actionss
      */
-    public ArrayList<ConditionalAction> getCopyOfActions();
+    public List<ConditionalAction> getCopyOfActions();
 
     /**
      * Set State Variables for this Conditional. Each state variable will
      * evaluate either True or False when this Conditional is calculated.
-     * <P>
+     * <p>
      * This method assumes that all information has been validated.
      *
      * @param arrayList the list of variables
      */
-    public void setStateVariables(ArrayList<ConditionalVariable> arrayList);
+    public void setStateVariables(List<ConditionalVariable> arrayList);
 
     /**
      * Make deep clone of variables
      *
      * @return a list containing copies of variables
      */
-    public ArrayList<ConditionalVariable> getCopyOfStateVariables();
+    public List<ConditionalVariable> getCopyOfStateVariables();
 
     /**
      * Calculate this Conditional, triggering either or both actions if the user
@@ -616,7 +660,7 @@ public interface Conditional extends NamedBean {
      * @param variableList list of variables
      * @return true if well formed; false otherwise
      */
-    public String validateAntecedent(String ant, ArrayList<ConditionalVariable> variableList);
+    public String validateAntecedent(String ant, List<ConditionalVariable> variableList);
 
     /**
      * Stop a sensor timer if one is actively delaying setting of the specified

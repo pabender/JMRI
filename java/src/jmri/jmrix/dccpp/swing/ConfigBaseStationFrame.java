@@ -359,8 +359,25 @@ public class ConfigBaseStationFrame extends JmriJFrame implements DCCppListener 
                     "Delete Item",
                     JOptionPane.OK_CANCEL_OPTION);
             if (value == JOptionPane.OK_OPTION) {
-                model.removeRow(sel);
-                log.debug("Delete sensor {}", idx);
+               if (null != cTab) {
+                  switch (cTab) {
+                     case SENSOR:
+                       tc.sendDCCppMessage(DCCppMessage.makeSensorDeleteMsg(idx), this);
+                       model.removeRow(sel);
+                       log.debug("Delete sensor {}", idx);
+                       break;
+                      case TURNOUT:
+                        String m = "T " + Integer.toString(idx);
+                        tc.sendDCCppMessage(DCCppMessage.parseDCCppMessage(m), this);
+                        log.debug("Sending: {}", m);
+                        turnoutModel.getRowData().remove(row);
+                        break;
+                      case OUTPUT:
+                        tc.sendDCCppMessage(DCCppMessage.makeOutputDeleteMsg(idx), this);
+                        outputModel.getRowData().remove(row);
+                        break;
+                   }
+                }
             }
 
         }
@@ -613,7 +630,6 @@ public class ConfigBaseStationFrame extends JmriJFrame implements DCCppListener 
     /**
      * Private class to serve as TableModel for Sensors
      */
-    @SuppressWarnings("unused")
     private static class SensorTableModel extends DCCppTableModel {
 
         public SensorTableModel() {
@@ -652,7 +668,6 @@ public class ConfigBaseStationFrame extends JmriJFrame implements DCCppListener 
     /**
      * Private class to serve as TableModel for Reporters and Ops Locations
      */
-    @SuppressWarnings("unused")
     private static class TurnoutTableModel extends DCCppTableModel {
 
         public TurnoutTableModel() {
@@ -690,7 +705,6 @@ public class ConfigBaseStationFrame extends JmriJFrame implements DCCppListener 
     /**
      * Private class to serve as TableModel for Reporters and Ops Locations
      */
-    @SuppressWarnings("unused")
     private static class OutputTableModel extends DCCppTableModel {
 
         public OutputTableModel() {

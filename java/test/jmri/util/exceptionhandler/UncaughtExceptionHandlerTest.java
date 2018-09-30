@@ -25,7 +25,7 @@ public class UncaughtExceptionHandlerTest extends SwingTestCase {
             Object o = null;
             o.toString();
         });
-
+        t.setName("Uncaught Exception Handler Test Thread");
         t.start();
         jmri.util.JUnitUtil.releaseThread(this);
         JUnitAppender.assertErrorMessage("Uncaught Exception caught by jmri.util.exceptionhandler.UncaughtExceptionHandler");
@@ -69,7 +69,8 @@ public class UncaughtExceptionHandlerTest extends SwingTestCase {
     @Before
     @Override
     public void setUp() throws Exception {
-        apps.tests.Log4JFixture.setUp();
+        jmri.util.JUnitUtil.setUp();
+
         this.defaultExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandler());
         super.setUp();
@@ -80,6 +81,7 @@ public class UncaughtExceptionHandlerTest extends SwingTestCase {
     public void tearDown() throws Exception {
         super.tearDown();
         Thread.setDefaultUncaughtExceptionHandler(this.defaultExceptionHandler);
-        apps.tests.Log4JFixture.tearDown();
+        jmri.util.JUnitUtil.tearDown();
+
     }
 }

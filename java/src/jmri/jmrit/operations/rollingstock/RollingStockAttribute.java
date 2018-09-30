@@ -33,7 +33,7 @@ public class RollingStockAttribute {
 //   pcs.removePropertyChangeListener(p);
     }
 
-    protected List<String> list = new ArrayList<String>();
+    protected List<String> list = new ArrayList<>();
 
     public String[] getNames() {
         if (list.size() == 0) {
@@ -56,7 +56,7 @@ public class RollingStockAttribute {
         if (names.length == 0) {
             return;
         }
-        jmri.util.StringUtil.sort(names);
+        java.util.Arrays.sort(names);
         for (String name : names) {
             if (!list.contains(name)) {
                 list.add(name);
@@ -175,7 +175,6 @@ public class RollingStockAttribute {
     public void load(Element root, String eNames, String eName, String oldName) {
         // new format using elements starting version 3.3.1
         if (root.getChild(eNames) != null) {
-            @SuppressWarnings("unchecked")
             List<Element> l = root.getChild(eNames).getChildren(eName);
             Attribute a;
             String[] names = new String[l.size()];

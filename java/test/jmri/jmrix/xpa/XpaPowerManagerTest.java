@@ -14,7 +14,7 @@ public class XpaPowerManagerTest extends jmri.jmrix.AbstractPowerManagerTestBase
 
     private XpaTrafficControlScaffold tc = null;
 
-    // service routines to simulate recieving on, off from interface
+    // service routines to simulate receiving on, off from interface
     @Override
     protected void hearOn() {
     }
@@ -69,14 +69,14 @@ public class XpaPowerManagerTest extends jmri.jmrix.AbstractPowerManagerTestBase
     @Before
     @Override
     public void setUp() {
-        apps.tests.Log4JFixture.setUp();
+        jmri.util.JUnitUtil.setUp();
         tc = new XpaTrafficControlScaffold();
         p = new XpaPowerManager(tc);
     }
 
     @After
     public void tearDown() {
-        apps.tests.Log4JFixture.tearDown();
+        jmri.util.JUnitUtil.tearDown();
         tc = null;
     }
 

@@ -3,9 +3,11 @@ package jmri.jmrix.openlcb;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
+import java.util.List;
 import java.util.ResourceBundle;
 import jmri.GlobalProgrammerManager;
 import jmri.InstanceManager;
+import jmri.LightManager;
 import jmri.jmrix.can.CanListener;
 import jmri.jmrix.can.CanMessage;
 import jmri.jmrix.can.CanReply;
@@ -66,9 +68,13 @@ public class OlcbConfigurationManager extends jmri.jmrix.can.ConfigurationManage
 
         InstanceManager.setThrottleManager(
                 getThrottleManager());
+        
+        InstanceManager.setLightManager(
+                getLightManager()
+        );
 
         if (getProgrammerManager().isAddressedModePossible()) {
-            InstanceManager.setAddressedProgrammerManager(getProgrammerManager());
+            InstanceManager.store(getProgrammerManager(), jmri.AddressedProgrammerManager.class);
         }
         if (getProgrammerManager().isGlobalProgrammerAvailable()) {
             jmri.InstanceManager.store(getProgrammerManager(), GlobalProgrammerManager.class);
@@ -142,6 +148,9 @@ public class OlcbConfigurationManager extends jmri.jmrix.can.ConfigurationManage
         if (type.equals(jmri.TurnoutManager.class)) {
             return true;
         }
+        if (type.equals(jmri.LightManager.class)) {
+            return true;
+        }
         if (type.equals(AliasMap.class)) {
             return true;
         }
@@ -186,6 +195,9 @@ public class OlcbConfigurationManager extends jmri.jmrix.can.ConfigurationManage
         }
         if (T.equals(jmri.TurnoutManager.class)) {
             return (T) getTurnoutManager();
+        }
+        if (T.equals(jmri.LightManager.class)) {
+            return (T) getLightManager();
         }
         if (T.equals(AliasMap.class)) {
             return (T) aliasMap;
@@ -276,10 +288,25 @@ public class OlcbConfigurationManager extends jmri.jmrix.can.ConfigurationManage
         if (sensorManager != null) {
             InstanceManager.deregister(sensorManager, jmri.jmrix.openlcb.OlcbSensorManager.class);
         }
+        if (lightManager != null) {
+            InstanceManager.deregister(lightManager, jmri.jmrix.openlcb.OlcbLightManager.class);
+        }
         if (cf != null) {
             InstanceManager.deregister(cf, jmri.jmrix.swing.ComponentFactory.class);
         }
         InstanceManager.deregister(this, OlcbConfigurationManager.class);
+    }
+
+    protected OlcbLightManager lightManager;
+    
+    public OlcbLightManager getLightManager() {
+        if (adapterMemo.getDisabled()) {
+            return null;
+        }
+        if (lightManager == null) {
+            lightManager = new OlcbLightManager(adapterMemo);
+        }
+        return lightManager;
     }
 
     class SimpleNodeIdentInfoHandler extends MessageDecoder {
@@ -334,6 +361,12 @@ public class OlcbConfigurationManager extends jmri.jmrix.can.ConfigurationManage
      * bytes of PID. That changes each time, which isn't perhaps what's wanted.
      */
     protected void getOurNodeID() {
+        List<NodeID> previous = InstanceManager.getList(NodeID.class);
+        if (!previous.isEmpty()) {
+            nodeID = previous.get(0);
+            return;
+        }
+
         long pid = getProcessId(1);
         log.debug("Process ID: {}", pid);
 

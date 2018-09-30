@@ -103,9 +103,9 @@ public class XNetProgrammer extends AbstractProgrammer implements XNetListener {
     @Override
     public List<ProgrammingMode> getSupportedModes() {
         List<ProgrammingMode> ret = new ArrayList<ProgrammingMode>();
-        ret.add(ProgrammingMode.PAGEMODE);
-        ret.add(ProgrammingMode.DIRECTBITMODE);
         ret.add(ProgrammingMode.DIRECTBYTEMODE);
+        ret.add(ProgrammingMode.DIRECTBITMODE);
+        ret.add(ProgrammingMode.PAGEMODE);
         ret.add(ProgrammingMode.REGISTERMODE);
         return ret;
     }
@@ -188,6 +188,7 @@ public class XNetProgrammer extends AbstractProgrammer implements XNetListener {
 
     // programming interface
     @Override
+    @Deprecated // 4.1.1
     synchronized public void writeCV(int CV, int val, jmri.ProgListener p) throws jmri.ProgrammerException {
         if (log.isDebugEnabled()) {
             log.debug("writeCV " + CV + " listens " + p);
@@ -226,6 +227,7 @@ public class XNetProgrammer extends AbstractProgrammer implements XNetListener {
     }
 
     @Override
+    @Deprecated // 4.1.1
     synchronized public void readCV(int CV, jmri.ProgListener p) throws jmri.ProgrammerException {
         if (log.isDebugEnabled()) {
             log.debug("readCV " + CV + " listens " + p);
@@ -365,11 +367,13 @@ public class XNetProgrammer extends AbstractProgrammer implements XNetListener {
                 return;  
             } else if (m.isCommErrorMessage()) {
                 // We experienced a communications error
-                // report it as an error
-                log.error("Communications error in REQUESTSENT state while programming.  Error: " + m.toString());
-                progState = NOTPROGRAMMING;
-                stopTimer();
-                notifyProgListenerEnd(_val, jmri.ProgListener.CommError);
+                if(_controller.hasTimeSlot()) {
+                   // We have a timeslot, so report it as an error
+                   log.error("Communications error in REQUESTSENT state while programming.  Error: " + m.toString());
+                   progState = NOTPROGRAMMING;
+                   stopTimer();
+                   notifyProgListenerEnd(_val, jmri.ProgListener.CommError);
+                }
             }
         } else if (progState == INQUIRESENT) {
             if (log.isDebugEnabled()) {
@@ -477,11 +481,13 @@ public class XNetProgrammer extends AbstractProgrammer implements XNetListener {
                 return;  
             } else if (m.isCommErrorMessage()) {
                 // We experienced a communications error
-                // report it as an error
-                log.error("Communications error in INQUIRESENT state while programming.  Error: " + m.toString());
-                progState = NOTPROGRAMMING;
-                stopTimer();
-                notifyProgListenerEnd(_val, jmri.ProgListener.CommError);
+                if(_controller.hasTimeSlot()) {
+                   // We have a timeslot, so report it as an error
+                   log.error("Communications error in INQUIRESENT state while programming.  Error: " + m.toString());
+                   progState = NOTPROGRAMMING;
+                   stopTimer();
+                   notifyProgListenerEnd(_val, jmri.ProgListener.CommError);
+               }
             } else {
                 // nothing important, ignore
                 log.debug("Ignoring message " + m.toString());

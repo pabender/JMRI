@@ -41,7 +41,7 @@ public abstract class AbstractLightManagerConfigXML extends AbstractNamedBeanMan
         LightManager tm = (LightManager) o;
         if (tm != null) {
             java.util.Iterator<String> iter
-                    = tm.getSystemNameList().iterator();
+                    = tm.getSystemNameAddedOrderList().iterator();
 
             // don't return an element if there are not lights to include
             if (!iter.hasNext()) {
@@ -124,7 +124,6 @@ public abstract class AbstractLightManagerConfigXML extends AbstractNamedBeanMan
      *
      * @param lights Element containing the Light elements to load.
      */
-    @SuppressWarnings("unchecked")
     public boolean loadLights(Element lights) {
         boolean result = true;
         List<Element> lightList = lights.getChildren("light");
@@ -132,6 +131,7 @@ public abstract class AbstractLightManagerConfigXML extends AbstractNamedBeanMan
             log.debug("Found " + lightList.size() + " lights");
         }
         LightManager tm = InstanceManager.lightManagerInstance();
+        tm.setDataListenerMute(true);
 
         for (int i = 0; i < lightList.size(); i++) {
 
@@ -319,6 +319,8 @@ public abstract class AbstractLightManagerConfigXML extends AbstractNamedBeanMan
             // done, start it working
             lgt.activateLight();
         }
+
+        tm.setDataListenerMute(false);
         return result;
     }
 

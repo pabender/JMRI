@@ -49,6 +49,8 @@ public class XBeeNodeConfigFrameTest {
     @Before
     public void setUp() {
         JUnitUtil.setUp();
+        jmri.util.JUnitUtil.resetProfileManager();
+
         tc = new XBeeInterfaceScaffold();
         m = new XBeeConnectionMemo();
         m.setSystemPrefix("ABC");
@@ -56,6 +58,8 @@ public class XBeeNodeConfigFrameTest {
     }
 
     @After
-    public void tearDown() {        JUnitUtil.tearDown();        tc = null;
+    public void tearDown() {        
+        tc = null;
+        JUnitUtil.tearDown();
     }
 }

@@ -53,7 +53,10 @@ public class Z21XNetTurnout extends XNetTurnout implements XNetListener {
      */
     @Override
     public void requestUpdateFromLayout() {
-        // On the z21, we send a LAN_X_GET_TURNOUT_INFO message 
+        // This will handle ONESENSOR and TWOSENSOR feedback modes.
+        super.requestUpdateFromLayout();
+
+        // On the z21, we send a LAN_X_GET_TURNOUT_INFO message
         // (see section 5.1 of the protocol documenation ).
         XNetMessage msg = Z21XNetMessage.getZ21TurnoutInfoRequestMessage(mNumber);
         synchronized (this) {
@@ -82,7 +85,7 @@ public class Z21XNetTurnout extends XNetTurnout implements XNetListener {
      * turnout with respect to whether or not a feedback request was sent.
      * This is used only when the turnout is created by on layout feedback.
      */
-    synchronized void initmessage(XNetReply l) {
+    synchronized void initMessageZ21(XNetReply l) {
         int oldState = internalState;
         message(l);
         internalState = oldState;
@@ -122,7 +125,7 @@ public class Z21XNetTurnout extends XNetTurnout implements XNetListener {
              if(internalState == COMMANDSENT) {
                 sendOffMessage();  // turn off the repition on the track.
              } else if(internalState == OFFSENT ) {
-                /* the command was successfully recieved */
+                /* the command was successfully received */
                 newKnownState(getCommandedState());
                 internalState = IDLE;
              }

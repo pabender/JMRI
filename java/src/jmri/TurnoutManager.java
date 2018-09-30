@@ -42,7 +42,7 @@ import javax.annotation.Nullable;
  * @see jmri.InstanceManager
  * @see jmri.jmrit.simpleturnoutctrl.SimpleTurnoutCtrlFrame
  */
-public interface TurnoutManager extends Manager<Turnout> {
+public interface TurnoutManager extends ProvidingManager<Turnout> {
 
     /**
      * Locate via user name, then system name if needed. If that fails, create a
@@ -61,6 +61,10 @@ public interface TurnoutManager extends Manager<Turnout> {
     @Nonnull
     public Turnout provideTurnout(@Nonnull String name) throws IllegalArgumentException;
 
+    @Override
+    /** {@inheritDoc} */
+    default public Turnout provide(@Nonnull String name) throws IllegalArgumentException { return provideTurnout(name); }
+    
     /**
      * Locate via user name, then system name if needed. If that fails, return
      * null
@@ -122,16 +126,6 @@ public interface TurnoutManager extends Manager<Turnout> {
      */
     @Nonnull
     public Turnout newTurnout(@Nonnull String systemName, @Nullable String userName) throws IllegalArgumentException;
-
-    /**
-     * Get a list of all Turnout system names.
-     *
-     * @return the list of names or an empty list if no turnouts have been
-     *         defined
-     */
-    @Nonnull
-    @Override
-    public List<String> getSystemNameList();
 
     /**
      * Get text to be used for the Turnout.CLOSED state in user communication.
@@ -229,8 +223,8 @@ public interface TurnoutManager extends Manager<Turnout> {
 
     /**
      * Determine if the address supplied is valid and free, if not then it shall
-     * return the next free valid address up to a maximum of 10 address away
-     * from the initial address.
+     * return the next free valid address up to a maximum of 10 addresses away
+     * from the initial address. Used when adding add a range of Turnouts.
      *
      * @param prefix     System prefix used in system name
      * @param curAddress desired hardware address
@@ -257,9 +251,9 @@ public interface TurnoutManager extends Manager<Turnout> {
      */
     public String createSystemName(@Nonnull String curAddress, @Nonnull String prefix) throws JmriException;
 
-    public void setDefaultClosedSpeed(String speed) throws JmriException;
+    public void setDefaultClosedSpeed(@Nonnull String speed) throws JmriException;
 
-    public void setDefaultThrownSpeed(String speed) throws JmriException;
+    public void setDefaultThrownSpeed(@Nonnull String speed) throws JmriException;
 
     public String getDefaultThrownSpeed();
 

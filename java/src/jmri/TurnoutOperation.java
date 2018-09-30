@@ -92,7 +92,7 @@ public abstract class TurnoutOperation implements Comparable<Object> {
 
     TurnoutOperation(@Nonnull String n) {
         name = n;
-        TurnoutOperationManager.getInstance().addOperation(this);
+        InstanceManager.getDefault(TurnoutOperationManager.class).addOperation(this);
     }
 
     /**
@@ -168,7 +168,7 @@ public abstract class TurnoutOperation implements Comparable<Object> {
      */
     public boolean rename(@Nonnull String newName) {
         boolean result = false;
-        TurnoutOperationManager mgr = TurnoutOperationManager.getInstance();
+        TurnoutOperationManager mgr = InstanceManager.getDefault(TurnoutOperationManager.class);
         if (!isDefinitive() && mgr.getOperation(newName) == null) {
             mgr.removeOperation(this);
             name = newName;
@@ -185,10 +185,10 @@ public abstract class TurnoutOperation implements Comparable<Object> {
      * @return definitive operation
      */
     public TurnoutOperation getDefinitive() {
-        String[] myClass = jmri.util.StringUtil.split(this.getClass().getName(), ".");
+        String[] myClass = this.getClass().getName().split("\\.");
         String finalClass = myClass[myClass.length - 1];
         String mySubclass = finalClass.substring(0, finalClass.indexOf("TurnoutOperation"));
-        return TurnoutOperationManager.getInstance().getOperation(mySubclass);
+        return InstanceManager.getDefault(TurnoutOperationManager.class).getOperation(mySubclass);
     }
 
     /**
@@ -198,7 +198,7 @@ public abstract class TurnoutOperation implements Comparable<Object> {
      *         prefix of the class
      */
     public boolean isDefinitive() {
-        String[] classNames = jmri.util.StringUtil.split(this.getClass().getName(), ".");
+        String[] classNames = this.getClass().getName().split("\\.");
         String className = classNames[classNames.length - 1];
         String opName = getName() + "TurnoutOperation";
         return (className.equalsIgnoreCase(opName));
@@ -220,7 +220,7 @@ public abstract class TurnoutOperation implements Comparable<Object> {
      */
     public void dispose() {
         if (!isDefinitive()) {
-            TurnoutOperationManager.getInstance().removeOperation(this);
+            InstanceManager.getDefault(TurnoutOperationManager.class).removeOperation(this);
             name = "*deleted";
             pcs.firePropertyChange("Deleted", null, null);  // this will remove all dangling references
         }
@@ -263,7 +263,7 @@ public abstract class TurnoutOperation implements Comparable<Object> {
 
     public void setNonce(boolean n) {
         nonce = n;
-        TurnoutOperationManager.getInstance().firePropertyChange("Content", null, null);
+        InstanceManager.getDefault(TurnoutOperationManager.class).firePropertyChange("Content", null, null);
     }
 
     public TurnoutOperation makeNonce(Turnout t) {

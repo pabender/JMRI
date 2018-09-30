@@ -1,4 +1,3 @@
-//InterchangeEditFrameTest.java
 package jmri.jmrit.operations.locations;
 
 import java.awt.GraphicsEnvironment;
@@ -7,6 +6,7 @@ import jmri.jmrit.operations.OperationsSwingTestCase;
 import jmri.jmrit.operations.rollingstock.cars.CarRoads;
 import jmri.jmrit.operations.rollingstock.cars.CarTypes;
 import jmri.util.JUnitUtil;
+import jmri.util.swing.JemmyUtil;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -36,7 +36,7 @@ public class InterchangeEditFrameTest extends OperationsSwingTestCase {
         // create one interchange track
         f.trackNameTextField.setText("new interchange track");
         f.trackLengthTextField.setText("321");
-        enterClickAndLeave(f.addTrackButton);
+        JemmyUtil.enterClickAndLeave(f.addTrackButton);
 
         Track t = l.getTrackByName("new interchange track", Track.INTERCHANGE);
         Assert.assertNotNull("new interchange track", t);
@@ -61,17 +61,17 @@ public class InterchangeEditFrameTest extends OperationsSwingTestCase {
         // create one interchange tracks
         f.trackNameTextField.setText("2nd interchange track");
         f.trackLengthTextField.setText("4331");
-        enterClickAndLeave(f.addTrackButton);
+        JemmyUtil.enterClickAndLeave(f.addTrackButton);
         Track t = l.getTrackByName("2nd interchange track", Track.INTERCHANGE);
         Assert.assertNotNull("2nd interchange track", t);
         Assert.assertEquals("2nd interchange track length", 4331, t.getLength());
         Assert.assertEquals("Direction All before change", ALL, t.getTrainDirections());
 
         // deselect east and south check boxes
-        enterClickAndLeave(f.eastCheckBox);
-        enterClickAndLeave(f.southCheckBox);
+        JemmyUtil.enterClickAndLeave(f.eastCheckBox);
+        JemmyUtil.enterClickAndLeave(f.southCheckBox);
 
-        enterClickAndLeave(f.saveTrackButton);
+        JemmyUtil.enterClickAndLeave(f.saveTrackButton);
 
         Assert.assertEquals("west and north", Track.NORTH + Track.WEST, t.getTrainDirections());
 
@@ -91,19 +91,19 @@ public class InterchangeEditFrameTest extends OperationsSwingTestCase {
         // create one interchange tracks
         f.trackNameTextField.setText("2nd interchange track");
         f.trackLengthTextField.setText("4331");
-        enterClickAndLeave(f.addTrackButton);
+        JemmyUtil.enterClickAndLeave(f.addTrackButton);
 
         Track t = l.getTrackByName("2nd interchange track", Track.INTERCHANGE);
 
         // check track accepts Boxcars
         Assert.assertTrue("2nd interchange track accepts Boxcars", t.acceptsTypeName("Boxcar"));
         // test clear car types button
-        enterClickAndLeave(f.clearButton);
-        enterClickAndLeave(f.saveTrackButton);
+        JemmyUtil.enterClickAndLeave(f.clearButton);
+        JemmyUtil.enterClickAndLeave(f.saveTrackButton);
         Assert.assertFalse("2nd interchange track doesn't accept Boxcars", t.acceptsTypeName("Boxcar"));
 
-        enterClickAndLeave(f.setButton);
-        enterClickAndLeave(f.saveTrackButton);
+        JemmyUtil.enterClickAndLeave(f.setButton);
+        JemmyUtil.enterClickAndLeave(f.saveTrackButton);
         Assert.assertTrue("2nd interchange track accepts Boxcars again", t.acceptsTypeName("Boxcar"));
 
         JUnitUtil.dispose(f);
@@ -122,17 +122,17 @@ public class InterchangeEditFrameTest extends OperationsSwingTestCase {
         // create two interchange tracks
         f.trackNameTextField.setText("new interchange track");
         f.trackLengthTextField.setText("321");
-        enterClickAndLeave(f.addTrackButton);
+        JemmyUtil.enterClickAndLeave(f.addTrackButton);
 
         f.trackNameTextField.setText("2nd interchange track");
         f.trackLengthTextField.setText("4331");
-        enterClickAndLeave(f.addTrackButton);
+        JemmyUtil.enterClickAndLeave(f.addTrackButton);
 
         // deselect east and south check boxes
-        enterClickAndLeave(f.eastCheckBox);
-        enterClickAndLeave(f.southCheckBox);
+        JemmyUtil.enterClickAndLeave(f.eastCheckBox);
+        JemmyUtil.enterClickAndLeave(f.southCheckBox);
 
-        enterClickAndLeave(f.saveTrackButton);
+        JemmyUtil.enterClickAndLeave(f.saveTrackButton);
 
         JUnitUtil.dispose(f);
 
@@ -152,22 +152,6 @@ public class InterchangeEditFrameTest extends OperationsSwingTestCase {
         JUnitUtil.dispose(fl);
     }
 
-    private void loadLocations() {
-        // create 5 locations
-        LocationManager lManager = InstanceManager.getDefault(LocationManager.class);
-        Location l1 = lManager.newLocation("Test Loc E");
-        l1.setLength(1001);
-        Location l2 = lManager.newLocation("Test Loc D");
-        l2.setLength(1002);
-        Location l3 = lManager.newLocation("Test Loc C");
-        l3.setLength(1003);
-        Location l4 = lManager.newLocation("Test Loc B");
-        l4.setLength(1004);
-        Location l5 = lManager.newLocation("Test Loc A");
-        l5.setLength(1005);
-
-    }
-
     // Ensure minimal setup for log4J
     @Override
     @Before
@@ -184,6 +168,8 @@ public class InterchangeEditFrameTest extends OperationsSwingTestCase {
 
         lManager = InstanceManager.getDefault(LocationManager.class);
         l = lManager.getLocationByName("Test Loc C");
+        
+        loadTrain(l);
        
     }
 

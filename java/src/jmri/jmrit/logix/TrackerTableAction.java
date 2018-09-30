@@ -65,7 +65,7 @@ public class TrackerTableAction extends AbstractAction {
      * {@link jmri.InstanceManager#getDefault(java.lang.Class)} instead
      */
     @Deprecated
-    public static TrackerTableAction getInstance() {
+    public static TrackerTableAction xetInstance() {
         return InstanceManager.getDefault(TrackerTableAction.class);
     }
 
@@ -800,7 +800,7 @@ public class TrackerTableAction extends AbstractAction {
 
         @Override
         public Set<Class<?>> getInitalizes() {
-            Set set = super.getInitalizes();
+            Set<Class<?>> set = super.getInitalizes();
             set.add(TrackerTableAction.class);
             return set;
         }

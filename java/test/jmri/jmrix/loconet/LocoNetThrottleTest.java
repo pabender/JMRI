@@ -478,6 +478,16 @@ public class LocoNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
     public void testSendFunctionGroup5() {
     }
 
+    /**
+     * Test of getF2Momentary method, of class AbstractThrottle.
+     */
+    @Test
+    @Override
+    public void testGetF2Momentary() {
+        boolean expResult = true;
+        boolean result = instance.getF2Momentary();
+        Assert.assertEquals(expResult, result);
+    }
 
     private LocoNetInterfaceScaffold lnis;
     private SlotManager slotmanager;
@@ -517,6 +527,7 @@ public class LocoNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
     @Override
     public void tearDown() {
         ((LnThrottleManager)memo.getThrottleManager()).dispose();
+        memo.dispose();
         JUnitUtil.tearDown();
     }
 

@@ -29,7 +29,7 @@ public class AutomationsTableFrameTest extends OperationsSwingTestCase {
         // now create the add automation frame
         f.addButton.doClick();
         // the following fails on a 13" laptop
-        //enterClickAndLeave(f.addButton);
+        //JemmyUtil.enterClickAndLeave(f.addButton);
         addAutomationFrame = JmriJFrame.getFrame(Bundle.getMessage("TitleAutomationAdd"));
         Assert.assertNotNull(addAutomationFrame);
 
@@ -48,7 +48,8 @@ public class AutomationsTableFrameTest extends OperationsSwingTestCase {
     @Override
     @After
     public void tearDown() throws Exception {
-        // apps.tests.Log4JFixture.tearDown();
+        // jmri.util.JUnitUtil.tearDown();
+
         super.tearDown();
     }
 }

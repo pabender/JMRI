@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Provides an Ops mode proxy programming interface for a RailCom Reader. This
  * forwards the read request to the command station to forward on and handles
- * sending back the CV reading results from the Rail Com message
+ * sending back the CV reading results from the RailCom message
  *
  * @see jmri.Programmer
  * @author Kevin Dickerson Copyright (C) 2012
@@ -46,6 +46,7 @@ public class Dcc4PcOpsModeProgrammer extends jmri.jmrix.AbstractProgrammer imple
      * Send an ops-mode write request to the XPressnet.
      */
     @Override
+    @Deprecated // 4.1.1
     synchronized public void writeCV(int CV, int val, ProgListener p) throws ProgrammerException {
         rcTag.setExpectedCv(cv);
         progListener = p;
@@ -53,6 +54,7 @@ public class Dcc4PcOpsModeProgrammer extends jmri.jmrix.AbstractProgrammer imple
     }
 
     @Override
+    @Deprecated // 4.1.1
     synchronized public void readCV(int cv, ProgListener p) throws ProgrammerException {
         rcTag.addPropertyChangeListener(this);
         rcTag.setExpectedCv(cv);

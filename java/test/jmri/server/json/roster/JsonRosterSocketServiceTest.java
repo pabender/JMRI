@@ -23,20 +23,26 @@ import org.junit.Test;
  */
 public class JsonRosterSocketServiceTest {
 
-    private final JsonMockConnection connection = new JsonMockConnection((DataOutputStream) null);
+    private JsonMockConnection connection;
 
     @Before
     public void setUp() throws Exception {
         JUnitUtil.setUp();
-
+        JUnitUtil.resetProfileManager();
         JUnitUtil.initConfigureManager();
+        
+        connection = new JsonMockConnection((DataOutputStream) null);
+        
         InstanceManager.setDefault(Roster.class, new Roster("java/test/jmri/server/json/roster/data/roster.xml"));
         // clear the last message (if any) from the connection
         this.connection.sendMessage((JsonNode) null);
     }
 
     @After
-    public void tearDown() throws Exception {        JUnitUtil.tearDown();    }
+    public void tearDown() throws Exception {
+        connection = null;
+        JUnitUtil.tearDown();
+    }
 
     /**
      * Test of listen method, of class JsonRosterSocketService.
@@ -70,12 +76,12 @@ public class JsonRosterSocketServiceTest {
      */
     @Test
     public void testOnMessageDeleteRoster() throws IOException, JmriException {
-        JsonNode data = this.connection.getObjectMapper().createObjectNode().put(JSON.METHOD, JSON.DELETE);
+        JsonNode data = this.connection.getObjectMapper().createObjectNode();
         Locale locale = Locale.ENGLISH;
         JsonException exception = null;
         JsonRosterSocketService instance = new JsonRosterSocketService(this.connection);
         try {
-            instance.onMessage(JsonRoster.ROSTER, data, locale);
+            instance.onMessage(JsonRoster.ROSTER, data, JSON.DELETE, locale);
         } catch (JsonException ex) {
             exception = ex;
         }
@@ -96,7 +102,7 @@ public class JsonRosterSocketServiceTest {
         JsonException exception = null;
         JsonRosterSocketService instance = new JsonRosterSocketService(this.connection);
         try {
-            instance.onMessage(JsonRoster.ROSTER, data, locale);
+            instance.onMessage(JsonRoster.ROSTER, data, JSON.POST, locale);
         } catch (JsonException ex) {
             exception = ex;
         }
@@ -117,7 +123,7 @@ public class JsonRosterSocketServiceTest {
         JsonException exception = null;
         JsonRosterSocketService instance = new JsonRosterSocketService(this.connection);
         try {
-            instance.onMessage(JsonRoster.ROSTER, data, locale);
+            instance.onMessage(JsonRoster.ROSTER, data, JSON.POST, locale);
         } catch (JsonException ex) {
             exception = ex;
         }
@@ -137,7 +143,7 @@ public class JsonRosterSocketServiceTest {
      */
     @Test
     public void testOnMessageGetRoster() throws IOException, JmriException, JsonException {
-        JsonNode data = this.connection.getObjectMapper().createObjectNode().put(JSON.METHOD, JSON.GET);
+        JsonNode data = this.connection.getObjectMapper().createObjectNode();
         Locale locale = Locale.ENGLISH;
         JsonRosterSocketService instance = new JsonRosterSocketService(this.connection);
         // assert we have not been listening
@@ -146,7 +152,7 @@ public class JsonRosterSocketServiceTest {
             Assert.assertEquals(1, entry.getPropertyChangeListeners().length);
         });
         // onMessage should cause listening to start if it hasn't already
-        instance.onMessage(JsonRoster.ROSTER, data, locale);
+        instance.onMessage(JsonRoster.ROSTER, data, JSON.GET, locale);
         Assert.assertEquals(Roster.getDefault().numEntries(), this.connection.getMessage().size());
         // assert we are listening
         Assert.assertEquals(2, Roster.getDefault().getPropertyChangeListeners().length);
@@ -167,10 +173,10 @@ public class JsonRosterSocketServiceTest {
      */
     @Test
     public void testOnMessageInvalidRoster() throws IOException, JmriException, JsonException {
-        JsonNode data = this.connection.getObjectMapper().createObjectNode().put(JSON.METHOD, "Invalid");
+        JsonNode data = this.connection.getObjectMapper().createObjectNode();
         Locale locale = Locale.ENGLISH;
         JsonRosterSocketService instance = new JsonRosterSocketService(this.connection);
-        instance.onMessage(JsonRoster.ROSTER, data, locale);
+        instance.onMessage(JsonRoster.ROSTER, data, "Invalid", locale);
         Assert.assertNotNull(this.connection.getMessage());
         Assert.assertEquals(Roster.getDefault().numEntries(), this.connection.getMessage().size());
     }

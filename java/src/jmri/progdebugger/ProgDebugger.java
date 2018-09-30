@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Debugging implementation of Programmer interface.
- * <P>
+ * <p>
  * Remembers writes, and returns the last written value when a read to the same
  * CV is made.
  * <p>
@@ -116,6 +116,7 @@ public class ProgDebugger implements AddressedProgrammer {
     }
 
     @Override
+    @Deprecated // 4.1.1
     public void writeCV(int CV, int val, ProgListener p) throws ProgrammerException {
         nOperations++;
         final ProgListener m = p;
@@ -158,7 +159,7 @@ public class ProgDebugger implements AddressedProgrammer {
     boolean confirmOK;  // cached result of last compare
 
     @Override
-    @SuppressWarnings("deprecation") // parent Programmer method deprecated, will remove at same time
+    @Deprecated // 4.1.1
     public final void confirmCV(int CV, int val, ProgListener p) throws ProgrammerException {
         confirmCV("" + CV, val, p);
     }
@@ -208,6 +209,7 @@ public class ProgDebugger implements AddressedProgrammer {
     }
 
     @Override
+    @Deprecated // 4.1.1
     public void readCV(int CV, ProgListener p) throws ProgrammerException {
         final ProgListener m = p;
         _lastReadCv = CV;

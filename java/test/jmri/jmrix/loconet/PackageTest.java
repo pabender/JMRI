@@ -5,13 +5,14 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        jmri.jmrix.loconet.LocoNetThrottledTransmitterTest.class,
+        LocoNetThrottledTransmitterTest.class,
         jmri.jmrix.loconet.locostats.PackageTest.class,
         jmri.jmrix.loconet.sdf.PackageTest.class,
         jmri.jmrix.loconet.sdfeditor.PackageTest.class,
         jmri.jmrix.loconet.locomon.PackageTest.class,
         jmri.jmrix.loconet.soundloader.PackageTest.class,
         jmri.jmrix.loconet.spjfile.PackageTest.class,
+        jmri.jmrix.loconet.messageinterp.PackageTest.class,
         SlotManagerTest.class,
         LocoNetSlotTest.class,
         LnOpsModeProgrammerTest.class,
@@ -82,6 +83,9 @@ import org.junit.runners.Suite;
         SE8cSignalHeadTest.class,
         UhlenbrockSlotManagerTest.class,
         UhlenbrockSlotTest.class,
+        jmri.jmrix.loconet.streamport.PackageTest.class,
+        CsOpSwAccessTest.class,
+        LnPacketizerStrictTest.class,
 })
 
 /**
