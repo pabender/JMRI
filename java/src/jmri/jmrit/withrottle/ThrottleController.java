@@ -52,6 +52,7 @@ public class ThrottleController implements ThrottleListener, PropertyChangeListe
     RosterEntry rosterLoco = null;
     DccLocoAddress leadAddress;
     char whichThrottle;
+    protected float newSpeed;
     float speedMultiplier;
     boolean isAddressSet;
     protected ArrayList<ThrottleControllerListener> listeners;
@@ -567,7 +568,7 @@ public class ThrottleController implements ThrottleListener, PropertyChangeListe
      */
     protected void setSpeed(int rawSpeed) {
 
-        float newSpeed = (rawSpeed * speedMultiplier);
+        newSpeed = (rawSpeed * speedMultiplier);
 
         log.debug("raw: {}, NewSpd: {}", rawSpeed, newSpeed);
         throttle.setSpeedSetting(newSpeed);

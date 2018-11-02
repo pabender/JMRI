@@ -78,7 +78,10 @@ public class MultiThrottleController extends ThrottleController {
             sendCurrentDirection(throttle);
         }
         if (eventName.matches("SpeedSetting")) {
-            sendCurrentSpeed(throttle);
+            if (newSpeed != throttle.getSpeedSetting()) {
+                //  Only send speed if different from last received speed from this device
+                sendCurrentSpeed(throttle);
+            }
         }
     }
 
