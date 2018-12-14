@@ -1026,7 +1026,7 @@ public class JUnitUtil {
         ThreadingUtil.runOnGUI(() -> {
             try {
                window.dispose();
-            } catch ( NullPointerEception npe) {
+            } catch ( java.lang.NullPointerException npe) {
               // npe during window close.  it may have been disposed on while waiting.
             }
         });
