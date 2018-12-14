@@ -1024,7 +1024,11 @@ public class JUnitUtil {
         java.util.Objects.requireNonNull(window, "Window cannot be null");
         
         ThreadingUtil.runOnGUI(() -> {
-            window.dispose();
+            try {
+               window.dispose();
+            } catch ( NullPointerEception npe) {
+              // npe during window close.  it may have been disposed on while waiting.
+            }
         });
     }
     
