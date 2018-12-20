@@ -315,6 +315,7 @@
                     <!-- setting re-use forks to false causes a timeout on CI servers, please do not uncomment.
                     <reuseForks>false</reuseForks>
                     -->
+	            <workingDirectory>FORK_DIRECTORY_${surefire.forkNumber}</workingDirectory>
                     <dependencies>
                         <dependency>
                             <groupId>org.apache.maven.surefire</groupId>
