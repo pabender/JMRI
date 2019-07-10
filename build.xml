@@ -602,11 +602,11 @@
             javacchome="${libdir}"/>
         </quiet>
         <!-- Turn all Javadoc comments in generated code into plain comments -->
-        <replaceregexp match="\/\*\*" replace="\/\*" flags="g">
+        <!-- <replaceregexp match="\/\*\*" replace="\/\*" flags="g">
             <fileset dir="${genjavasrcdir}">
                 <include name="**/*.java"/>
             </fileset>
-        </replaceregexp>
+        </replaceregexp> -->
     </target>
 
 
