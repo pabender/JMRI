@@ -308,7 +308,7 @@
     <macrodef name="quiet">
         <element name="body" implicit="yes"/>
         <sequential>
-            <!-- <script language="javascript" manager="auto">
+            <script language="javascript" manager="auto">
                 // to see type of 1st logger, uncomment the following
                 //echo = JMRI.createTask("echo");
                 //echo.setMessage(Object.prototype.toString.call(project.getBuildListeners().firstElement()));
@@ -326,7 +326,7 @@
                 if (Object.prototype.toString.call(project.getBuildListeners().firstElement()) == "[object org.apache.tools.ant.DefaultLogger]") {
                     project.getBuildListeners().firstElement().setMessageOutputLevel(2);
                 }
-            </script> -->
+            </script>
         </sequential>
     </macrodef>
 
@@ -602,11 +602,11 @@
             javacchome="${libdir}"/>
         </quiet>
         <!-- Turn all Javadoc comments in generated code into plain comments -->
-        <!-- <replaceregexp match="\/\*\*" replace="\/\*" flags="g">
+        <replaceregexp match="\/\*\*" replace="\/\*" flags="g">
             <fileset dir="${genjavasrcdir}">
                 <include name="**/*.java"/>
             </fileset>
-        </replaceregexp> -->
+        </replaceregexp>
     </target>
 
 
