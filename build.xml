@@ -308,6 +308,7 @@
     <macrodef name="quiet">
         <element name="body" implicit="yes"/>
         <sequential>
+
             <!-- <script language="javascript" manager="auto">
                 // to see type of 1st logger, uncomment the following
                 //echo = JMRI.createTask("echo");
