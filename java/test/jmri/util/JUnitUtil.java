@@ -1186,7 +1186,7 @@ public class JUnitUtil {
                     }
                 }*/
                 JUnitUtil.dispose(window);
-            }
+           // }
         }
     }
 
