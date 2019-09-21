@@ -34,9 +34,12 @@ test_script:
 after_test:
 # upload results to Appveyor
 # This works, but the Appveyor display is unreliable.
-#- ps: |
-#    $wc = New-Object 'System.Net.WebClient'
-#    $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\junit-results.xml))
+- ps: $xml = [xml](Get-Content ".\junit-results.xml")
+- ps: $xml.ReplaceChild($xml.'test-run'.'test-run', $xml.'test-run')
+- ps: $xml.Save("$env:APPVEYOR_BUILD_FOLDER\junit-results2.xml")
+- ps: |
+    $wc = New-Object 'System.Net.WebClient'
+    $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\junit-results2.xml))
 
 deploy: off
 
