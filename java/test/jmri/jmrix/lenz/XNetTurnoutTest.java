@@ -71,7 +71,7 @@ public class XNetTurnoutTest extends jmri.implementation.AbstractTurnoutTestBase
             log.error("TO exception: " + e);
         }
 
-        Assert.assertTrue(t.getCommandedState() == Turnout.CLOSED);
+        Assert.assertEquals(t.getCommandedState(), Turnout.CLOSED);
 
         Assert.assertEquals("on message sent", "52 05 88 DF",
                 lnis.outbound.elementAt(lnis.outbound.size() - 1).toString());
@@ -119,7 +119,7 @@ public class XNetTurnoutTest extends jmri.implementation.AbstractTurnoutTestBase
 
         // no wait here.  The last reply should cause the turnout to
         // set it's state, but it will not cause another reply.
-        Assert.assertTrue(t.getKnownState() == Turnout.CLOSED);
+        Assert.assertEquals(t.getKnownState(), Turnout.CLOSED);
     }
 
     // Test that property change events are properly sent from the parent
@@ -133,7 +133,7 @@ public class XNetTurnoutTest extends jmri.implementation.AbstractTurnoutTestBase
         } catch (Exception e) {
             log.error("TO exception: " + e);
         }
-        Assert.assertTrue(t.getCommandedState() == Turnout.THROWN);
+        Assert.assertEquals(t.getCommandedState(), Turnout.THROWN);
 
         t.setFeedbackMode(Turnout.ONESENSOR);
         jmri.Sensor s = jmri.InstanceManager.sensorManagerInstance().provideSensor("IS1");

@@ -39,7 +39,7 @@ public class EliteXNetTurnoutTest extends jmri.jmrix.lenz.XNetTurnoutTest{
             log.error("TO exception: " + e);
         }
 
-        Assert.assertTrue(t.getCommandedState() == jmri.Turnout.CLOSED);
+        Assert.assertEquals(t.getCommandedState(), Turnout.CLOSED);
 
         Assert.assertEquals("on message sent", "52 05 8A DD",
                 lnis.outbound.elementAt(lnis.outbound.size() - 1).toString());
@@ -55,7 +55,7 @@ public class EliteXNetTurnoutTest extends jmri.jmrix.lenz.XNetTurnoutTest{
 
         // no wait here.  The last reply should cause the turnout to
         // set it's state, but it will not cause another reply.
-        Assert.assertTrue(t.getKnownState() == jmri.Turnout.CLOSED);
+        Assert.assertEquals(t.getKnownState(), Turnout.CLOSED);
     }
 
     @Test

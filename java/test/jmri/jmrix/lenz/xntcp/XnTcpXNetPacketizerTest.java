@@ -39,7 +39,7 @@ public class XnTcpXNetPacketizerTest extends jmri.jmrix.lenz.XNetPacketizerTest 
         p.tistream.flush();
         jmri.util.JUnitUtil.waitFor(()->{return l.getRcvdRply() != null;},"reply received");
         // check that the message was picked up by the read thread.
-        Assert.assertTrue("reply received ", l.getRcvdRply() != null);
+        Assert.assertNotNull("reply received ", l.getRcvdRply());
         Assert.assertEquals("first char of reply ", 0x52, l.getRcvdRply().getElement(0));
     }
 
@@ -81,7 +81,7 @@ public class XnTcpXNetPacketizerTest extends jmri.jmrix.lenz.XNetPacketizerTest 
             jmri.util.JUnitUtil.waitFor(()->{return l.getRcvdRply() != null;},"reply received");
 
             // check that the message was picked up by the read thread.
-            Assert.assertTrue("iteration " + i + " reply received ", l.getRcvdRply() != null);
+            Assert.assertNotNull("iteration " + i + " reply received ", l.getRcvdRply());
             Assert.assertEquals("iteration " + i + " first char of broadcast reply to l", 0x42, l.getRcvdRply().getElement(0));
             // now we need to send a message with both the second and third listeners
             // as reply receiver.
@@ -109,7 +109,7 @@ public class XnTcpXNetPacketizerTest extends jmri.jmrix.lenz.XNetPacketizerTest 
             jmri.util.JUnitUtil.waitFor(()->{return l1.getRcvdRply() != null;},"iteration " + i + " reply received ");
 
             // check that the message was picked up by the read thread.
-            Assert.assertTrue("iteration " + i + " reply received ", l1.getRcvdRply() != null);
+            Assert.assertNotNull("iteration " + i + " reply received ", l1.getRcvdRply());
             Assert.assertEquals("iteration " + i + " first char of reply to l1", 0x01, l1.getRcvdRply().getElement(0));
 
             Assert.assertNotNull("iteration " + i + " broadcast reply after l1 message",l.getRcvdRply());
@@ -131,7 +131,7 @@ public class XnTcpXNetPacketizerTest extends jmri.jmrix.lenz.XNetPacketizerTest 
             jmri.util.JUnitUtil.waitFor(()->{return l2.getRcvdRply() != null;},"iteration " + i + " reply received ");
 
             // check that the message was picked up by the read thread.
-            Assert.assertTrue("iteration " + i + " reply received ", l2.getRcvdRply() != null);
+            Assert.assertNotNull("iteration " + i + " reply received ", l2.getRcvdRply());
 
             Assert.assertEquals("iteration " + i + " first char of reply to l2", 0x01, l2.getRcvdRply().getElement(0));
             Assert.assertNotNull("iteration " + i + " broadcast reply after l2 message",l.getRcvdRply());

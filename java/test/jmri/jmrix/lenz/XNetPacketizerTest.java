@@ -83,7 +83,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
         }, "reply received");
 
         // check that the message was picked up by the read thread.
-        Assert.assertTrue("reply received ", l.rcvdRply != null);
+        Assert.assertNotNull("reply received ", l.rcvdRply);
         Assert.assertEquals("first char of reply ", 0x52, l.rcvdRply.getElement(0));
     }
 
@@ -124,7 +124,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
             }, "reply received");
 
             // check that the message was picked up by the read thread.
-            Assert.assertTrue("iteration " + i + " reply received ", l.rcvdRply != null);
+            Assert.assertNotNull("iteration " + i + " reply received ", l.rcvdRply);
             Assert.assertEquals("iteration " + i + " first char of broadcast reply to l", 0x42, l.rcvdRply.getElement(0));
 
             // now we need to send a message with both the second and third listeners
@@ -157,7 +157,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
             }, "iteration " + i + " reply received ");
 
             // check that the message was picked up by the read thread.
-            Assert.assertTrue("iteration " + i + " reply received ", l1.rcvdRply != null);
+            Assert.assertNotNull("iteration " + i + " reply received ", l1.rcvdRply);
             Assert.assertEquals("iteration " + i + " first char of reply to l1", 0x01, l1.rcvdRply.getElement(0));
 
             Assert.assertNotNull("iteration " + i + " broadcast reply after l1 message", l.rcvdRply);
@@ -183,7 +183,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
             }, "iteration " + i + " reply received ");
 
             // check that the message was picked up by the read thread.
-            Assert.assertTrue("iteration " + i + " reply received ", l2.rcvdRply != null);
+            Assert.assertNotNull("iteration " + i + " reply received ", l2.rcvdRply);
 
             Assert.assertEquals("iteration " + i + " first char of reply to l2", 0x01, l2.rcvdRply.getElement(0));
 

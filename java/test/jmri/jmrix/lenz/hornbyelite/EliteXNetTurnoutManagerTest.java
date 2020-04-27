@@ -31,8 +31,8 @@ public class EliteXNetTurnoutManagerTest extends jmri.managers.AbstractTurnoutMg
     @Override
     public void testMisses() {
         // try to get nonexistant turnouts
-        Assert.assertTrue(null == l.getByUserName("foo"));
-        Assert.assertTrue(null == l.getBySystemName("bar"));
+        Assert.assertNull(l.getByUserName("foo"));
+        Assert.assertNull(l.getBySystemName("bar"));
     }
 
     @Test
@@ -55,8 +55,8 @@ public class EliteXNetTurnoutManagerTest extends jmri.managers.AbstractTurnoutMg
         lnis.sendTestMessage(m2);
 
         // try to get turnouts to see if they exist
-        Assert.assertTrue(null != l.getBySystemName("XT20"));
-        Assert.assertTrue(null != l.getBySystemName("XT21"));
+        Assert.assertNotNull(l.getBySystemName("XT20"));
+        Assert.assertNotNull(l.getBySystemName("XT21"));
 
         // check the list
         List<String> testList = new ArrayList<String>(2);
@@ -73,7 +73,7 @@ public class EliteXNetTurnoutManagerTest extends jmri.managers.AbstractTurnoutMg
         if (log.isDebugEnabled()) {
             log.debug("received turnout value " + o);
         }
-        Assert.assertTrue(null != (EliteXNetTurnout) o);
+        Assert.assertNotNull((EliteXNetTurnout) o);
 
         // make sure loaded into tables
         if (log.isDebugEnabled()) {
@@ -83,8 +83,8 @@ public class EliteXNetTurnoutManagerTest extends jmri.managers.AbstractTurnoutMg
             log.debug("by user name:   " + l.getByUserName("my name"));
         }
 
-        Assert.assertTrue(null != l.getBySystemName("XT21"));
-        Assert.assertTrue(null != l.getByUserName("my name"));
+        Assert.assertNotNull(l.getBySystemName("XT21"));
+        Assert.assertNotNull(l.getByUserName("my name"));
 
     }
 
