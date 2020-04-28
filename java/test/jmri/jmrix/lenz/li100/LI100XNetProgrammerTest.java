@@ -10,10 +10,10 @@ import org.junit.*;
 
 /**
  * LI100XNetProgrammerTest.java
+ * <p>
+ * Test for the jmri.jmrix.lenz.li100.LI100XNetProgrammer class
  *
- * Description:	tests for the jmri.jmrix.lenz.li100.LI100XNetProgrammer class
- *
- * @author	Paul Bender
+ * @author Paul Bender
  */
 public class LI100XNetProgrammerTest extends jmri.jmrix.lenz.XNetProgrammerTest {
 
@@ -331,7 +331,7 @@ public class LI100XNetProgrammerTest extends jmri.jmrix.lenz.XNetProgrammerTest 
                 super.restartTimer(RESTART_TIME);
             }
         };
-	    programmer = p;
+        programmer = p;
     }
 
     @Override
@@ -340,7 +340,7 @@ public class LI100XNetProgrammerTest extends jmri.jmrix.lenz.XNetProgrammerTest 
         t = null;
         l = null;
         programmer = p = null;
-	    JUnitUtil.clearShutDownManager(); // put in place because AbstractMRTrafficController implementing subclass was not terminated properly
+        JUnitUtil.clearShutDownManager(); // put in place because AbstractMRTrafficController implementing subclass was not terminated properly
         JUnitUtil.tearDown();
     }
 

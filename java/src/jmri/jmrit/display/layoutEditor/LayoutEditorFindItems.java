@@ -60,7 +60,7 @@ public class LayoutEditorFindItems {
 
     public PositionablePoint findPositionableLinkPoint(LayoutBlock blk1) {
         for (PositionablePoint p : layoutEditor.getPositionablePoints()) {
-            if (p.getType() == PositionablePoint.EDGE_CONNECTOR) {
+            if (p.getType() == PositionablePoint.PointType.EDGE_CONNECTOR) {
                 if ((p.getConnect1() != null && p.getConnect1().getLayoutBlock() == blk1)
                         || (p.getConnect2() != null && p.getConnect2().getLayoutBlock() == blk1)) {
                     return p;
@@ -555,7 +555,7 @@ public class LayoutEditorFindItems {
                     return findLayoutTurntableByName(name);
                 }
         }
-        log.error("did not find Object '" + name + "' of type " + type);
+        log.error("did not find Object '{}' of type {}", name, type);
         return null;
     }
 

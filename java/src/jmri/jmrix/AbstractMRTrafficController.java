@@ -938,9 +938,9 @@ public abstract class AbstractMRTrafficController {
      * @throws java.io.IOException if unable to read
      */
     protected byte readByteProtected(DataInputStream istream) throws IOException {
-	if(istream == null) {
-                throw new IOException("Input Stream NULL when reading");
-	}
+        if (istream == null) {
+            throw new IOException("Input Stream NULL when reading");
+        }
         while (true) { // loop will repeat until character found
             int nchars;
             nchars = istream.read(rcvBuffer, 0, 1);
@@ -1021,9 +1021,9 @@ public abstract class AbstractMRTrafficController {
             }
         } catch (InterruptedException ie) {
             if(threadStopRequest) return;
-            log.error("Unexpected exception in invokeAndWait: {}" + ie.toString(), ie);
+            log.error("Unexpected exception in invokeAndWait: {}{}", ie, ie.toString());
         } catch (java.lang.reflect.InvocationTargetException| RuntimeException e) {
-            log.error("Unexpected exception in invokeAndWait: {}" + e.toString(), e);
+            log.error("Unexpected exception in invokeAndWait: {}{}", e, e.toString());
             return;
         }
         log.debug("dispatch thread invoked");

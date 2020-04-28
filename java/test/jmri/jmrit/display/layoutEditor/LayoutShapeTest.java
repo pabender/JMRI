@@ -4,9 +4,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
-import jmri.BlockManager;
-import jmri.InstanceManager;
-import jmri.ShutDownManager;
+
 import jmri.jmrit.display.layoutEditor.LayoutShape.LayoutShapeType;
 import jmri.util.JUnitUtil;
 import jmri.util.MathUtil;
@@ -15,7 +13,7 @@ import org.junit.*;
 /**
  * Test simple functioning of LayoutShape
  *
- * @author	George Warner Copyright (C) 2019
+ * @author George Warner Copyright (C) 2019
  */
 public class LayoutShapeTest {
 

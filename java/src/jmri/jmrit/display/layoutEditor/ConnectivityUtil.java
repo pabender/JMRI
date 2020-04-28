@@ -284,7 +284,7 @@ public class ConnectivityUtil {
                 cObject = trackSegment.getConnect1();
             } else {
                 if (!suppress) {
-                    log.error("Connectivity error when searching turnouts in Block " + currLayoutBlock.getDisplayName());
+                    log.error("Connectivity error when searching turnouts in Block {}", currLayoutBlock.getDisplayName());
                     log.warn("Track segment connected to {{}, {}} and {{}, {}} but previous object was {{}, {}}",
                             trackSegment.getConnect1(), trackSegment.getType1().name(),
                             trackSegment.getConnect2(), trackSegment.getType2().name(),
@@ -295,10 +295,10 @@ public class ConnectivityUtil {
             }
             if (cType == HitPointType.POS_POINT) {
                 // reached anchor point or end bumper
-                if (((PositionablePoint) cObject).getType() == PositionablePoint.END_BUMPER) {
+                if (((PositionablePoint) cObject).getType() == PositionablePoint.PointType.END_BUMPER) {
                     // end of line
                     trackSegment = null;
-                } else if (((PositionablePoint) cObject).getType() == PositionablePoint.ANCHOR || (((PositionablePoint) cObject).getType() == PositionablePoint.EDGE_CONNECTOR)) {
+                } else if (((PositionablePoint) cObject).getType() == PositionablePoint.PointType.ANCHOR || (((PositionablePoint) cObject).getType() == PositionablePoint.PointType.EDGE_CONNECTOR)) {
                     // proceed to next track segment if within the same Block
                     if (((PositionablePoint) cObject).getConnect1() == trackSegment) {
                         trackSegment = ((PositionablePoint) cObject).getConnect2();
@@ -381,7 +381,7 @@ public class ConnectivityUtil {
                             } else {
                                 // no legal outcome found, print error
                                 if (!suppress) {
-                                    log.warn("Connectivity mismatch at A in turnout " + lt.getTurnoutName());
+                                    log.warn("Connectivity mismatch at A in turnout {}", lt.getTurnoutName());
                                 }
                                 trackSegment = null;
                             }
@@ -416,7 +416,7 @@ public class ConnectivityUtil {
                             } else {
                                 // no legal outcome found, print error
                                 if (!suppress) {
-                                    log.warn("Connectivity mismatch at B in turnout " + lt.getTurnoutName());
+                                    log.warn("Connectivity mismatch at B in turnout {}", lt.getTurnoutName());
                                 }
                                 trackSegment = null;
                             }
@@ -451,7 +451,7 @@ public class ConnectivityUtil {
                             } else {
                                 // no legal outcome found, print error
                                 if (!suppress) {
-                                    log.warn("Connectivity mismatch at C in turnout " + lt.getTurnoutName());
+                                    log.warn("Connectivity mismatch at C in turnout {}", lt.getTurnoutName());
                                 }
                                 trackSegment = null;
                             }
@@ -486,7 +486,7 @@ public class ConnectivityUtil {
                             } else {
                                 // no legal outcome found, print error
                                 if (!suppress) {
-                                    log.warn("Connectivity mismatch at D in turnout " + lt.getTurnoutName());
+                                    log.warn("Connectivity mismatch at D in turnout {}", lt.getTurnoutName());
                                 }
                                 trackSegment = null;
                             }
@@ -627,7 +627,7 @@ public class ConnectivityUtil {
                         && (x.getLayoutBlockAC() != null) && (x.getLayoutBlockBD() != null)) {
                     result.add(x);
                 } else {
-                    log.error("Missing connection or block assignment at Level Crossing in Block " + block.getDisplayName());
+                    log.error("Missing connection or block assignment at Level Crossing in Block {}", block.getDisplayName());
                 }
             }
         }
@@ -1043,7 +1043,7 @@ public class ConnectivityUtil {
             if (x.getLayoutBlockBD() == lBlock) {
                 return true;
             } else {
-                log.error("Panel blocking error at BD of Level Crossing in Block " + block.getDisplayName());
+                log.error("Panel blocking error at BD of Level Crossing in Block {}", block.getDisplayName());
                 return false;
             }
         }
@@ -1113,8 +1113,7 @@ public class ConnectivityUtil {
             } else if (bbLogic.getSensor5() == null) {
                 bbLogic.setSensor5(name);
             } else {
-                log.error("could not add sensor to SSL for signal head " + sh.getDisplayName()
-                        + " because there is no room in the SSL.");
+                log.error("could not add sensor to SSL for signal head {} because there is no room in the SSL.", sh.getDisplayName());
                 bbLogic.retain();
                 bbLogic.start();
                 return false;
@@ -1133,8 +1132,7 @@ public class ConnectivityUtil {
                     } else if (bbLogic.getWatchedSensor2Alt() == null) {
                         bbLogic.setWatchedSensor2Alt(name);
                     } else {
-                        log.error("could not add watched sensor to SSL for signal head " + sh.getSystemName()
-                                + " because there is no room in the facing SSL diverging part.");
+                        log.error("could not add watched sensor to SSL for signal head {} because there is no room in the facing SSL diverging part.", sh.getSystemName());
                         bbLogic.retain();
                         bbLogic.start();
                         return false;
@@ -1152,23 +1150,20 @@ public class ConnectivityUtil {
                     } else if (bbLogic.getWatchedSensor1Alt() == null) {
                         bbLogic.setWatchedSensor1Alt(name);
                     } else {
-                        log.error("could not add watched sensor to SSL for signal head " + sh.getSystemName()
-                                + " because there is no room in the facing SSL continuing part.");
+                        log.error("could not add watched sensor to SSL for signal head {} because there is no room in the facing SSL continuing part.", sh.getSystemName());
                         bbLogic.retain();
                         bbLogic.start();
                         return false;
                     }
                     break;
                 default:
-                    log.error("could not add watched sensor to SSL for signal head " + sh.getSystemName()
-                            + "because 'where' to place the sensor was not correctly designated.");
+                    log.error("could not add watched sensor to SSL for signal head {}because 'where' to place the sensor was not correctly designated.", sh.getSystemName());
                     bbLogic.retain();
                     bbLogic.start();
                     return false;
             }
         } else {
-            log.error("SSL has not been set up for signal head " + sh.getDisplayName()
-                    + ". Could not add sensor - " + name + ".");
+            log.error("SSL has not been set up for signal head {}. Could not add sensor - {}.", sh.getDisplayName(), name);
             return false;
         }
         bbLogic.retain();
@@ -1312,7 +1307,7 @@ public class ConnectivityUtil {
             case POS_POINT:
                 if (currentNode instanceof PositionablePoint) {
                     PositionablePoint p = (PositionablePoint) currentNode;
-                    if (p.getType() == PositionablePoint.END_BUMPER) {
+                    if (p.getType() == PositionablePoint.PointType.END_BUMPER) {
                         log.warn("Attempt to search beyond end of track");
                         return null;
                     }
@@ -1695,7 +1690,7 @@ public class ConnectivityUtil {
 
             if (nextType == HitPointType.POS_POINT) {
                 PositionablePoint p = (PositionablePoint) nextLayoutTrack;
-                if (p.getType() == PositionablePoint.END_BUMPER) {
+                if (p.getType() == PositionablePoint.PointType.END_BUMPER) {
                     hitEnd = true;
                     hasNode = true;
                 } else {
@@ -2138,7 +2133,7 @@ public class ConnectivityUtil {
                 trackSegment = null;
             } else if (trackSegment == null) {
                 if (!suppress) {
-                    log.warn("Connectivity not complete at " + layoutSlip.getDisplayName());
+                    log.warn("Connectivity not complete at {}", layoutSlip.getDisplayName());
                 }
                 turnoutConnectivity = false;
             }
@@ -2352,7 +2347,7 @@ public class ConnectivityUtil {
                     }
                     break;
                 default: {
-                    log.warn("getTurnoutSetting() unknown cType: " + cType);
+                    log.warn("getTurnoutSetting() unknown cType: {}", cType);
                     break;
                 }
             }   // switch (cType)
@@ -2362,7 +2357,7 @@ public class ConnectivityUtil {
                 trackSegment = null;
             } else if (trackSegment == null) {
                 if (!suppress) {
-                    log.warn("Connectivity not complete at " + layoutTurnout.getTurnoutName());
+                    log.warn("Connectivity not complete at {}", layoutTurnout.getTurnoutName());
                 }
                 turnoutConnectivity = false;
             }
@@ -2446,14 +2441,14 @@ public class ConnectivityUtil {
                 // this is a positionable point
                 if (conType == HitPointType.POS_POINT) {
                     // reached anchor point or end bumper
-                    if (((PositionablePoint) conLayoutTrack).getType() == PositionablePoint.END_BUMPER) {
+                    if (((PositionablePoint) conLayoutTrack).getType() == PositionablePoint.PointType.END_BUMPER) {
                         // end of line without reaching 'nextLayoutBlock'
                         if (log.isDebugEnabled()) {
                             log.info("end of line without reaching {}", nextLayoutBlock.getId());
                         }
                         curTrackSegment = null;
-                    } else if (((PositionablePoint) conLayoutTrack).getType() == PositionablePoint.ANCHOR
-                            || ((PositionablePoint) conLayoutTrack).getType() == PositionablePoint.EDGE_CONNECTOR) {
+                    } else if (((PositionablePoint) conLayoutTrack).getType() == PositionablePoint.PointType.ANCHOR
+                            || ((PositionablePoint) conLayoutTrack).getType() == PositionablePoint.PointType.EDGE_CONNECTOR) {
                         // proceed to next track segment if within the same Block
                         if (((PositionablePoint) conLayoutTrack).getConnect1() == curTrackSegment) {
                             curTrackSegment = (((PositionablePoint) conLayoutTrack).getConnect2());
@@ -2588,7 +2583,7 @@ public class ConnectivityUtil {
                                 }
                                 break;
                             default: {
-                                log.warn("trackSegmentLeadsTo() unknown conType: " + conType);
+                                log.warn("trackSegmentLeadsTo() unknown conType: {}", conType);
                                 break;
                             }
                         }   // switch (conType)
@@ -2739,7 +2734,7 @@ public class ConnectivityUtil {
                                 }
                                 break;
                             default: {
-                                log.warn("trackSegmentLeadsTo() unknown conType: " + conType);
+                                log.warn("trackSegmentLeadsTo() unknown conType: {}", conType);
                                 break;
                             }
                         }   //switch (conType)
