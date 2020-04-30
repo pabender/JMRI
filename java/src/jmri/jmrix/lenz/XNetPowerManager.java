@@ -76,7 +76,7 @@ public class XNetPowerManager implements PowerManager, XNetListener {
     }
 
     // to hear of changes
-    java.beans.PropertyChangeSupport pcs = new java.beans.PropertyChangeSupport(this);
+    final java.beans.PropertyChangeSupport pcs = new java.beans.PropertyChangeSupport(this);
 
     @Override
     public synchronized void addPropertyChangeListener(java.beans.PropertyChangeListener l) {

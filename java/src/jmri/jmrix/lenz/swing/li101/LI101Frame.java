@@ -1,8 +1,6 @@
 package jmri.jmrix.lenz.swing.li101;
 
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -103,21 +101,21 @@ public class LI101Frame extends jmri.util.JmriJFrame implements XNetListener {
 
     boolean read = false;
 
-    JComboBox<String> addrBox = new javax.swing.JComboBox<>();
-    JComboBox<String> speedBox = new javax.swing.JComboBox<>();
+    final JComboBox<String> addrBox = new javax.swing.JComboBox<>();
+    final JComboBox<String> speedBox = new javax.swing.JComboBox<>();
 
-    JLabel status = new JLabel("");
+    final JLabel status = new JLabel("");
 
-    JToggleButton readSettingsButton = new JToggleButton(Bundle.getMessage("LI101ReadButton"));
-    JToggleButton writeSettingsButton = new JToggleButton(Bundle.getMessage("LI101WriteButton"));
-    JButton closeButton = new JButton(Bundle.getMessage("ButtonClose"));
-    JButton resetButton = new JButton(Bundle.getMessage("ButtonResetDefaults"));
+    final JToggleButton readSettingsButton = new JToggleButton(Bundle.getMessage("LI101ReadButton"));
+    final JToggleButton writeSettingsButton = new JToggleButton(Bundle.getMessage("LI101WriteButton"));
+    final JButton closeButton = new JButton(Bundle.getMessage("ButtonClose"));
+    final JButton resetButton = new JButton(Bundle.getMessage("ButtonResetDefaults"));
 
-    protected String[] validXNetAddresses = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+    protected final String[] validXNetAddresses = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
             "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27",
             "28", "29", "30", "31", ""};
 
-    protected String[] validSpeeds = new String[]{Bundle.getMessage("LIBaud19200"), Bundle.getMessage("Baud38400"),
+    protected final String[] validSpeeds = new String[]{Bundle.getMessage("LIBaud19200"), Bundle.getMessage("Baud38400"),
             Bundle.getMessage("Baud57600"), Bundle.getMessage("Baud115200"), ""};
     protected int[] validSpeedValues = new int[]{19200, 38400, 57600, 115200};
 

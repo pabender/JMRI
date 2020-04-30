@@ -18,8 +18,8 @@ public class XNetHeartBeat implements XNetListener {
     private static final int keepAliveTimeoutValue = 30000; // Interval
     // to send a message
     // Must be < 60s.
-    private XNetTrafficController tc;
-    private XNetSystemConnectionMemo memo;
+    private final XNetTrafficController tc;
+    private final XNetSystemConnectionMemo memo;
 
     public XNetHeartBeat(XNetSystemConnectionMemo memo) {
         this.memo = memo;

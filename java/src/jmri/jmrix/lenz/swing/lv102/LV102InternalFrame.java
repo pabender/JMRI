@@ -223,32 +223,32 @@ public class LV102InternalFrame extends javax.swing.JInternalFrame {
 
     boolean read = false;
 
-    JComboBox<String> voltBox = new javax.swing.JComboBox<>();
-    JComboBox<String> eLineBox = new javax.swing.JComboBox<>();
-    JComboBox<String> railComBox = new javax.swing.JComboBox<>();
-    JComboBox<String> railComModeBox = new javax.swing.JComboBox<>();
-    JComboBox<String> railComTimingBox = new javax.swing.JComboBox<>();
+    final JComboBox<String> voltBox = new javax.swing.JComboBox<>();
+    final JComboBox<String> eLineBox = new javax.swing.JComboBox<>();
+    final JComboBox<String> railComBox = new javax.swing.JComboBox<>();
+    final JComboBox<String> railComModeBox = new javax.swing.JComboBox<>();
+    final JComboBox<String> railComTimingBox = new javax.swing.JComboBox<>();
 
-    JLabel currentStatus = new JLabel(" ");
+    final JLabel currentStatus = new JLabel(" ");
 
-    JToggleButton writeSettingsButton = new JToggleButton(Bundle.getMessage("LV102WriteSettingsButtonLabel"));
-    JButton defaultButton = new JButton(Bundle.getMessage("ButtonResetDefaults"));
-    JButton resetButton = new JButton(Bundle.getMessage("LV102ResetButtonLabel"));
+    final JToggleButton writeSettingsButton = new JToggleButton(Bundle.getMessage("LV102WriteSettingsButtonLabel"));
+    final JButton defaultButton = new JButton(Bundle.getMessage("ButtonResetDefaults"));
+    final JButton resetButton = new JButton(Bundle.getMessage("LV102ResetButtonLabel"));
 
-    protected String[] validVoltage = new String[]{"11V", "11.5V", "12V", "12.5V", "13V", "13.5V", "14V", "14.5V", "15V", "15.5V", Bundle.getMessage("Voltage16VDefault"), "16.5V", "17V", "17.5V", "18V", "18.5V", "19V", "19.5V", "20V", "20.5V", "21V", "21.5V", "22V", ""};
-    protected int[] validVoltageValues = new int[]{22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 0};
+    protected final String[] validVoltage = new String[]{"11V", "11.5V", "12V", "12.5V", "13V", "13.5V", "14V", "14.5V", "15V", "15.5V", Bundle.getMessage("Voltage16VDefault"), "16.5V", "17V", "17.5V", "18V", "18.5V", "19V", "19.5V", "20V", "20.5V", "21V", "21.5V", "22V", ""};
+    protected final int[] validVoltageValues = new int[]{22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 0};
 
-    protected String[] validELineStatus = new String[]{Bundle.getMessage("LV102ELineActive"), Bundle.getMessage("LV102ELineInactive"), Bundle.getMessage("UseDefaultValue"), ""};
-    protected int[] validELineStatusValues = new int[]{90, 91, 99, 0};
+    protected final String[] validELineStatus = new String[]{Bundle.getMessage("LV102ELineActive"), Bundle.getMessage("LV102ELineInactive"), Bundle.getMessage("UseDefaultValue"), ""};
+    protected final int[] validELineStatusValues = new int[]{90, 91, 99, 0};
 
-    protected String[] validRailComStatus = new String[]{Bundle.getMessage("LV102RailComActive"), Bundle.getMessage("LV102RailComInactive"), ""};
-    protected int[] validRailComStatusValues = new int[]{93, 92, 0};
+    protected final String[] validRailComStatus = new String[]{Bundle.getMessage("LV102RailComActive"), Bundle.getMessage("LV102RailComInactive"), ""};
+    protected final int[] validRailComStatusValues = new int[]{93, 92, 0};
 
-    protected String[] validRailComMode = new String[]{Bundle.getMessage("LV102RailCom3BitMode"), Bundle.getMessage("LV102RailCom4BitMode"), ""};
-    protected int[] validRailComModeValues = new int[]{94, 95, 0};
+    protected final String[] validRailComMode = new String[]{Bundle.getMessage("LV102RailCom3BitMode"), Bundle.getMessage("LV102RailCom4BitMode"), ""};
+    protected final int[] validRailComModeValues = new int[]{94, 95, 0};
 
-    protected String[] validRailComTiming = new String[]{Bundle.getMessage("LV102RailComDefaultTiming"), Bundle.getMessage("LV102RailComNCETiming"), Bundle.getMessage("LV102RailComIncreaseTiming"), Bundle.getMessage("LV102RailComDecreaseTiming"), ""};
-    protected int[] validRailComTimingValues = new int[]{88, 89, 70, 71, 0};
+    protected final String[] validRailComTiming = new String[]{Bundle.getMessage("LV102RailComDefaultTiming"), Bundle.getMessage("LV102RailComNCETiming"), Bundle.getMessage("LV102RailComIncreaseTiming"), Bundle.getMessage("LV102RailComDecreaseTiming"), ""};
+    protected final int[] validRailComTimingValues = new int[]{88, 89, 70, 71, 0};
 
     //Send Power Station settings
     void writeLV102Settings() {

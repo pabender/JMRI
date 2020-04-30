@@ -760,7 +760,7 @@ public class XNetTurnout extends AbstractTurnout implements XNetListener {
 
     // data members
     protected int mNumber;   // XpressNet turnout number
-    XNetTurnoutStateListener _stateListener;  // Internal class object
+    final XNetTurnoutStateListener _stateListener;  // Internal class object
 
     // A queue to hold outstanding messages
     protected LinkedBlockingQueue<RequestMessage> requestList = null;
@@ -817,9 +817,9 @@ public class XNetTurnout extends AbstractTurnout implements XNetListener {
      */
     protected static class RequestMessage {
 
-        private int state;
-        private XNetMessage msg;
-        private XNetListener listener;
+        private final int state;
+        private final XNetMessage msg;
+        private final XNetListener listener;
 
         RequestMessage(XNetMessage m, int s, XNetListener listener) {
             state = s;

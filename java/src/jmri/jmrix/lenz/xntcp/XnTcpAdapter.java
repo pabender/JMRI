@@ -65,8 +65,8 @@ public class XnTcpAdapter extends XNetNetworkPortController {
     // of each interface found on the LAN
     private static class HostAddress {
 
-        private String ipNumber;
-        private int portNumber;
+        private final String ipNumber;
+        private final int portNumber;
 
         private HostAddress(String h, int p) {
             ipNumber = h;

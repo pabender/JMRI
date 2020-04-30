@@ -1,7 +1,5 @@
 package jmri.jmrix.lenz.swing.lz100;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -45,7 +43,7 @@ public class LZ100Frame extends jmri.util.JmriJFrame {
 
     }
 
-    JButton closeButton = new JButton(Bundle.getMessage("ButtonClose"));
+    final JButton closeButton = new JButton(Bundle.getMessage("ButtonClose"));
 
     @Override
     public void dispose() {

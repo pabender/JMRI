@@ -279,7 +279,7 @@ public class LIUSBServerAdapter extends XNetNetworkPortController {
      */
     private static class BroadCastPortAdapter extends jmri.jmrix.AbstractNetworkPortController {
 
-        private LIUSBServerAdapter parent;
+        private final LIUSBServerAdapter parent;
 
         public BroadCastPortAdapter(LIUSBServerAdapter p) {
             super(p.getSystemConnectionMemo());
@@ -322,7 +322,7 @@ public class LIUSBServerAdapter extends XNetNetworkPortController {
      */
     private static class CommunicationPortAdapter extends jmri.jmrix.AbstractNetworkPortController {
 
-        private LIUSBServerAdapter parent;
+        private final LIUSBServerAdapter parent;
 
         public CommunicationPortAdapter(LIUSBServerAdapter p) {
             super(p.getSystemConnectionMemo());

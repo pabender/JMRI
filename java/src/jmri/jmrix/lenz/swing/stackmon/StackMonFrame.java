@@ -3,8 +3,6 @@ package jmri.jmrix.lenz.swing.stackmon;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -31,13 +29,13 @@ import org.slf4j.LoggerFactory;
 public class StackMonFrame extends jmri.util.JmriJFrame implements XNetListener {
 
     // buttons currently (4.8) not displayed
-    JButton nextButton = new JButton(Bundle.getMessage("NextButtonLabel"));
-    JButton previousButton = new JButton(Bundle.getMessage("PreviousButtonLabel"));
-    JButton deleteButton = new JButton(Bundle.getMessage("ButtonDelete"));
-    JButton refreshButton = new JButton(Bundle.getMessage("RefreshButtonLabel"));
-    JLabel currentStatus = new JLabel(" ");
+    final JButton nextButton = new JButton(Bundle.getMessage("NextButtonLabel"));
+    final JButton previousButton = new JButton(Bundle.getMessage("PreviousButtonLabel"));
+    final JButton deleteButton = new JButton(Bundle.getMessage("ButtonDelete"));
+    final JButton refreshButton = new JButton(Bundle.getMessage("RefreshButtonLabel"));
+    final JLabel currentStatus = new JLabel(" ");
 
-    JTextField adrTextField = new javax.swing.JTextField(4);
+    final JTextField adrTextField = new javax.swing.JTextField(4);
 
     StackMonDataModel stackModel = null;
     javax.swing.JTable stackTable = null;

@@ -1,8 +1,6 @@
 package jmri.jmrix.lenz.swing.systeminfo;
 
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -99,15 +97,15 @@ public class SystemInfoFrame extends jmri.util.JmriJFrame implements XNetListene
 
     boolean read = false;
 
-    JLabel CSType = new JLabel("                ");
-    JLabel CSSoftwareVersion = new JLabel("");
-    JLabel CSStatus = new JLabel(Bundle.getMessage("BeanStateUnknown"));
-    JLabel LIType = new JLabel("       ");
-    JLabel LIHardwareVersion = new JLabel("");
-    JLabel LISoftwareVersion = new JLabel("");
+    final JLabel CSType = new JLabel("                ");
+    final JLabel CSSoftwareVersion = new JLabel("");
+    final JLabel CSStatus = new JLabel(Bundle.getMessage("BeanStateUnknown"));
+    final JLabel LIType = new JLabel("       ");
+    final JLabel LIHardwareVersion = new JLabel("");
+    final JLabel LISoftwareVersion = new JLabel("");
 
-    JToggleButton getSystemInfoButton = new JToggleButton(Bundle.getMessage("GetSystemInfoButtonLabel"));
-    JButton closeButton = new JButton(Bundle.getMessage("ButtonClose"));
+    final JToggleButton getSystemInfoButton = new JToggleButton(Bundle.getMessage("GetSystemInfoButtonLabel"));
+    final JButton closeButton = new JButton(Bundle.getMessage("ButtonClose"));
 
     /**
      * Send Information request to LI100/LI101.

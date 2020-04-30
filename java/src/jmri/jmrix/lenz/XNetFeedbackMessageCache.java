@@ -12,10 +12,10 @@ public class XNetFeedbackMessageCache implements XNetListener {
 
     protected XNetTrafficController tc = null;
 
-    private XNetReply[][] messageCache; // an to hold each of the 512 possible
+    private final XNetReply[][] messageCache; // an to hold each of the 512 possible
     // reply messages for the turnouts.
 
-    private boolean[][] messagePending; // hold pending status for each of
+    private final boolean[][] messagePending; // hold pending status for each of
     // the possible status request messages.
 
     // ctor has to register for XNet events

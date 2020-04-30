@@ -19,9 +19,9 @@ import jmri.ProgrammingMode;
  */
 public class XNetOpsModeProgrammer extends jmri.jmrix.AbstractProgrammer implements XNetListener, AddressedProgrammer {
 
-    protected int mAddressHigh;
-    protected int mAddressLow;
-    protected int mAddress;
+    protected final int mAddressHigh;
+    protected final int mAddressLow;
+    protected final int mAddress;
     protected int progState = NOTPROGRAMMING;
     protected int value;
     protected jmri.ProgListener progListener = null;

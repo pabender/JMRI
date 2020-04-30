@@ -1004,8 +1004,8 @@ public class XNetThrottle extends AbstractThrottle implements XNetListener {
      */
     protected static class RequestMessage {
 
-        private int state;
-        private XNetMessage msg;
+        private final int state;
+        private final XNetMessage msg;
 
         RequestMessage(XNetMessage m, int s) {
             state = s;

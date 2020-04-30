@@ -1,8 +1,6 @@
 package jmri.jmrix.lenz.swing.liusb;
 
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -86,16 +84,16 @@ public class LIUSBConfigFrame extends jmri.util.JmriJFrame implements XNetListen
 
     boolean read = false;
 
-    JComboBox<String> addrBox = new javax.swing.JComboBox<>();
+    final JComboBox<String> addrBox = new javax.swing.JComboBox<>();
 
-    JLabel status = new JLabel("    ");
+    final JLabel status = new JLabel("    ");
 
-    JToggleButton readSettingsButton = new JToggleButton(Bundle.getMessage("LIUSBReadButton"));
-    JToggleButton writeSettingsButton = new JToggleButton(Bundle.getMessage("LIUSBWriteButton"));
-    JButton closeButton = new JButton(Bundle.getMessage("ButtonClose"));
-    JButton resetButton = new JButton(Bundle.getMessage("ButtonResetDefaults"));
+    final JToggleButton readSettingsButton = new JToggleButton(Bundle.getMessage("LIUSBReadButton"));
+    final JToggleButton writeSettingsButton = new JToggleButton(Bundle.getMessage("LIUSBWriteButton"));
+    final JButton closeButton = new JButton(Bundle.getMessage("ButtonClose"));
+    final JButton resetButton = new JButton(Bundle.getMessage("ButtonResetDefaults"));
 
-    protected String[] validXNetAddresses = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8",
+    protected final String[] validXNetAddresses = new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8",
             "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23",
             "24", "25", "26", "27", "28", "29", "30", "31", ""};
 

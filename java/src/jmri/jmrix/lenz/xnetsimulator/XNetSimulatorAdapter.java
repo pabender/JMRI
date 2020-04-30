@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 public class XNetSimulatorAdapter extends XNetSimulatorPortController implements Runnable {
 
     private boolean outputBufferEmpty = true;
-    private boolean checkBuffer = true;
+    private final boolean checkBuffer = true;
 
     private int csStatus;
     // status flags from the XpressNet Documentation.

@@ -1,7 +1,5 @@
 package jmri.jmrix.lenz.swing.lz100;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -129,12 +127,12 @@ public class LZ100InternalFrame extends javax.swing.JInternalFrame implements XN
 
     boolean read = false;
 
-    JLabel status = new JLabel(" ");
-    JButton resetCSButton = new JButton(Bundle.getMessage("LZ100Reset"));
-    JRadioButton isAutoMode = new JRadioButton(Bundle.getMessage("Automatic"));
-    JRadioButton isManualMode = new JRadioButton(Bundle.getMessage("Manual"));
-    JToggleButton amModeGetButton = new JToggleButton(Bundle.getMessage("LZ100GetAMMode"));
-    JToggleButton amModeSetButton = new JToggleButton(Bundle.getMessage("LZ100SetAMMode"));
+    final JLabel status = new JLabel(" ");
+    final JButton resetCSButton = new JButton(Bundle.getMessage("LZ100Reset"));
+    final JRadioButton isAutoMode = new JRadioButton(Bundle.getMessage("Automatic"));
+    final JRadioButton isManualMode = new JRadioButton(Bundle.getMessage("Manual"));
+    final JToggleButton amModeGetButton = new JToggleButton(Bundle.getMessage("LZ100GetAMMode"));
+    final JToggleButton amModeSetButton = new JToggleButton(Bundle.getMessage("LZ100SetAMMode"));
 
     /**
      * Listen for responses from the LZ100.

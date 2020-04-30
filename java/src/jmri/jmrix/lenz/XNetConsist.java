@@ -57,7 +57,7 @@ public class XNetConsist extends jmri.implementation.DccConsist implements XNetL
                 this);
     }
 
-    XNetSystemConnectionMemo systemMemo;
+    final XNetSystemConnectionMemo systemMemo;
 
     /**
      * Clean Up local storage, and remove the XNetListener.
