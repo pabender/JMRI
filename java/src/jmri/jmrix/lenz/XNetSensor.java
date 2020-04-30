@@ -149,7 +149,6 @@ public class XNetSensor extends AbstractSensor implements XNetListener {
                 }
             }
         }
-        return;
     }
 
     /**

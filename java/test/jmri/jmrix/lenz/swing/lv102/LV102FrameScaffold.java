@@ -15,7 +15,7 @@ import org.netbeans.jemmy.operators.JToggleButtonOperator;
  */
 public class LV102FrameScaffold extends JFrameOperator{
 
-   private JInternalFrameOperator IFrameOperator = null;
+   private final JInternalFrameOperator IFrameOperator;
 
    public LV102FrameScaffold(){
         super(Bundle.getMessage("MenuItemLV102ConfigurationManager"));

@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
  */
 public class XNetThrottleManager extends AbstractThrottleManager implements XNetListener {
 
-    protected HashMap<LocoAddress, XNetThrottle> throttles = new HashMap<LocoAddress, XNetThrottle>(5);
+    protected HashMap<LocoAddress, XNetThrottle> throttles = new HashMap<>(5);
 
     protected XNetTrafficController tc = null;
 

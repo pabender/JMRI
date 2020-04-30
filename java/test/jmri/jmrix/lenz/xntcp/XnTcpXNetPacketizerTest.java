@@ -37,7 +37,7 @@ public class XnTcpXNetPacketizerTest extends jmri.jmrix.lenz.XNetPacketizerTest 
         p.tistream.write(0x52);
 
         p.tistream.flush();
-        jmri.util.JUnitUtil.waitFor(()->{return l.getRcvdRply() != null;},"reply received");
+        jmri.util.JUnitUtil.waitFor(()-> l.getRcvdRply() != null,"reply received");
         // check that the message was picked up by the read thread.
         Assert.assertNotNull("reply received ", l.getRcvdRply());
         Assert.assertEquals("first char of reply ", 0x52, l.getRcvdRply().getElement(0));
@@ -78,7 +78,7 @@ public class XnTcpXNetPacketizerTest extends jmri.jmrix.lenz.XNetPacketizerTest 
             p.tistream.write(0x42);
 
             p.flush();
-            jmri.util.JUnitUtil.waitFor(()->{return l.getRcvdRply() != null;},"reply received");
+            jmri.util.JUnitUtil.waitFor(()-> l.getRcvdRply() != null,"reply received");
 
             // check that the message was picked up by the read thread.
             Assert.assertNotNull("iteration " + i + " reply received ", l.getRcvdRply());
@@ -94,7 +94,7 @@ public class XnTcpXNetPacketizerTest extends jmri.jmrix.lenz.XNetPacketizerTest 
             p.flush();
 
             // and now we verify l1 is the last sender.
-            jmri.util.JUnitUtil.waitFor(()->{return l1 == c.getLastSender();},"iteration " + i + " Last Sender l1, before l1 reply");
+            jmri.util.JUnitUtil.waitFor(()-> l1 == c.getLastSender(),"iteration " + i + " Last Sender l1, before l1 reply");
 
             l.setRcvdRply(null);
             l1.setRcvdRply(null);
@@ -106,7 +106,7 @@ public class XnTcpXNetPacketizerTest extends jmri.jmrix.lenz.XNetPacketizerTest 
             p.tistream.write(0x05);
 
             p.flush();
-            jmri.util.JUnitUtil.waitFor(()->{return l1.getRcvdRply() != null;},"iteration " + i + " reply received ");
+            jmri.util.JUnitUtil.waitFor(()-> l1.getRcvdRply() != null,"iteration " + i + " reply received ");
 
             // check that the message was picked up by the read thread.
             Assert.assertNotNull("iteration " + i + " reply received ", l1.getRcvdRply());
@@ -117,7 +117,7 @@ public class XnTcpXNetPacketizerTest extends jmri.jmrix.lenz.XNetPacketizerTest 
             Assert.assertNull("iteration " + i + " l2 reply after l1 message",l2.getRcvdRply());
 
             // and now we verify l2 is the last sender.
-            jmri.util.JUnitUtil.waitFor(()->{return l2 == c.getLastSender();},"Last Sender l2");
+            jmri.util.JUnitUtil.waitFor(()-> l2 == c.getLastSender(),"Last Sender l2");
 
             l.setRcvdRply(null);
             l1.setRcvdRply(null);
@@ -128,7 +128,7 @@ public class XnTcpXNetPacketizerTest extends jmri.jmrix.lenz.XNetPacketizerTest 
             p.tistream.write(0x05);
 
             p.flush();
-            jmri.util.JUnitUtil.waitFor(()->{return l2.getRcvdRply() != null;},"iteration " + i + " reply received ");
+            jmri.util.JUnitUtil.waitFor(()-> l2.getRcvdRply() != null,"iteration " + i + " reply received ");
 
             // check that the message was picked up by the read thread.
             Assert.assertNotNull("iteration " + i + " reply received ", l2.getRcvdRply());

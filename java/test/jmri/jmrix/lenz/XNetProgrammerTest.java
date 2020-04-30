@@ -1,10 +1,4 @@
-/**
- * XNetProgrammerTest.java
- *
- * JUnit tests for the XNetProgrammer class
- *
- * @author Bob Jacobsen
- */
+
 package jmri.jmrix.lenz;
 
 import jmri.JmriException;
@@ -12,6 +6,13 @@ import jmri.util.JUnitUtil;
 import jmri.ProgrammingMode;
 import org.junit.*;
 
+/**
+ * XNetProgrammerTest.java
+ *
+ * JUnit tests for the XNetProgrammer class
+ *
+ * @author Bob Jacobsen
+ */
 public class XNetProgrammerTest extends jmri.jmrix.AbstractProgrammerTest {
 
     static final int RESTART_TIME = 20;
@@ -75,7 +76,7 @@ public class XNetProgrammerTest extends jmri.jmrix.AbstractProgrammerTest {
         // registered earlier received the values we expected.
 
         // failure in this test occurs with the next line.
-        JUnitUtil.waitFor(()->{return l.getRcvdInvoked() != 0;}, "Receive Called by Programmer");
+        JUnitUtil.waitFor(()-> l.getRcvdInvoked() != 0, "Receive Called by Programmer");
         Assert.assertEquals("Direct mode received value", 34, l.getRcvdValue());
     }
 
@@ -117,7 +118,7 @@ public class XNetProgrammerTest extends jmri.jmrix.AbstractProgrammerTest {
         // registered earlier received the values we expected.
 
         // failure in this test occurs with the next line.
-        JUnitUtil.waitFor(()->{return l.getRcvdInvoked() != 0;}, "Receive Called by Programmer");
+        JUnitUtil.waitFor(()-> l.getRcvdInvoked() != 0, "Receive Called by Programmer");
         Assert.assertEquals("Register mode received value", 12, l.getRcvdValue());
     }
 
@@ -156,7 +157,7 @@ public class XNetProgrammerTest extends jmri.jmrix.AbstractProgrammerTest {
         // registered earlier received the values we expected.
 
         // failure in this test occurs with the next line.
-        JUnitUtil.waitFor(()->{return l.getRcvdInvoked() != 0;}, "Receive Called by Programmer");
+        JUnitUtil.waitFor(()-> l.getRcvdInvoked() != 0, "Receive Called by Programmer");
         Assert.assertEquals("Register mode received value", 34, l.getRcvdValue());
     }
 
@@ -197,7 +198,7 @@ public class XNetProgrammerTest extends jmri.jmrix.AbstractProgrammerTest {
         // registered earlier received the values we expected.
 
         // failure in this test occurs with the next line.
-        JUnitUtil.waitFor(()->{return l.getRcvdInvoked() != 0;}, "Receive Called by Programmer");
+        JUnitUtil.waitFor(()-> l.getRcvdInvoked() != 0, "Receive Called by Programmer");
         Assert.assertEquals("Register mode received value", 34, l.getRcvdValue());
     }
 
@@ -238,7 +239,7 @@ public class XNetProgrammerTest extends jmri.jmrix.AbstractProgrammerTest {
         // registered earlier received the values we expected.
 
         //failure in this test occurs with the next line.
-        JUnitUtil.waitFor(()->{return l.getRcvdInvoked() != 0;}, "Receive Called by Programmer");
+        JUnitUtil.waitFor(()-> l.getRcvdInvoked() != 0, "Receive Called by Programmer");
         Assert.assertEquals("Direct mode received value", 34, l.getRcvdValue());
     }
 
@@ -280,7 +281,7 @@ public class XNetProgrammerTest extends jmri.jmrix.AbstractProgrammerTest {
         // registered earlier received the values we expected.
 
         //failure in this test occurs with the next line.
-        JUnitUtil.waitFor(()->{return l.getRcvdInvoked() != 0;}, "Receive Called by Programmer");
+        JUnitUtil.waitFor(()-> l.getRcvdInvoked() != 0, "Receive Called by Programmer");
         Assert.assertEquals("Direct mode received value", 34, l.getRcvdValue());
     }
 

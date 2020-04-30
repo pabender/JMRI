@@ -81,23 +81,13 @@ public class SystemInfoFrame extends jmri.util.JmriJFrame implements XNetListene
         setCSVersionDisplay();
 
         // Add Get SystemInfo button handler
-        getSystemInfoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                getSystemInfo();
-            }
-        }
-        );
+        getSystemInfoButton.addActionListener(a -> getSystemInfo());
 
         // install close button handler
-        closeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                setVisible(false);
-                dispose();
-            }
-        }
-        );
+        closeButton.addActionListener(a -> {
+            setVisible(false);
+            dispose();
+        });
 
         if (tc != null) {
             tc.addXNetListener(~0, this);

@@ -50,9 +50,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // this test requires a new throttle.
         XNetThrottle t = new XNetThrottle(memo, new jmri.DccLocoAddress(3, false), tc);
         Assert.assertNotNull(t);
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
-        // outbound size to change.
+        waitForChangeInOutbound(n);
         //The first thing on the outbound queue should be a request for status.
         Assert.assertEquals("Throttle Information Request Message", "E3 00 00 03 E0", tc.outbound.elementAt(n).toString());
 
@@ -70,8 +68,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // which we're going to get a request for function momentary status in response to.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
         //The first thing on the outbound queue should be a request for status.
         Assert.assertEquals("Throttle Information Request Message", "E3 07 00 03 E7", tc.outbound.elementAt(n).toString());
@@ -123,14 +120,17 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         t.throttleDispose();
     }
 
+    private void waitForChangeInOutbound(int n) {
+        JUnitUtil.waitFor(() -> n!=tc.outbound.size());
+    }
+
     @Test
     public void initSequenceNormalUnitSpeedStep14() throws Exception {
         tc.getCommandStation().setCommandStationSoftwareVersion(new XNetReply("63 21 36 00 74"));
         int n = tc.outbound.size();
         // this test requires a new throttle.
         XNetThrottle t = new XNetThrottle(memo, new jmri.DccLocoAddress(3, false), tc);
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
         //The first thing on the outbound queue should be a request for status.
 
@@ -148,8 +148,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // which we're going to get a request for function momentary status in response to.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         // And the response to this message with the status.
@@ -167,8 +166,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // Sending the not supported message should make the throttle send a
         // request for the high function status information.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         m = new XNetReply();
@@ -176,7 +174,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x82);
         m.setElement(2, 0xE3);
 
-        n = tc.outbound.size();
         t.message(m);
 
         // consume the error messge.
@@ -218,8 +215,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         int n = tc.outbound.size();
         // this test requires a new throttle.
         XNetThrottle t = new XNetThrottle(memo, new jmri.DccLocoAddress(3, false), tc);
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
         //The first thing on the outbound queue should be a request for status.
 
@@ -235,8 +231,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // which we're going to get a request for function momentary status in response to.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         // And the response to this message with the status.
@@ -254,8 +249,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // Sending the not supported message should make the throttle send a
         // request for the high function status information.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         m = new XNetReply();
@@ -263,7 +257,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x82);
         m.setElement(2, 0xE3);
 
-        n = tc.outbound.size();
         t.message(m);
 
         // consume the error messge.
@@ -291,8 +284,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         int n = tc.outbound.size();
         // this test requires a new throttle.
         XNetThrottle t = new XNetThrottle(memo, new jmri.DccLocoAddress(3, false), tc);
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
         //The first thing on the outbound queue should be a request for status.
 
@@ -311,8 +303,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // which we're going to get a request for function momentary status in response to.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         // And the response to this message with the status.
@@ -330,8 +321,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // Sending the not supported message should make the throttle send a
         // request for the high function status information.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         m = new XNetReply();
@@ -339,7 +329,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x82);
         m.setElement(2, 0xE3);
 
-        n = tc.outbound.size();
         t.message(m);
 
         // consume the error messge.
@@ -381,8 +370,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         int n = tc.outbound.size();
         // this test requires a new throttle.
         XNetThrottle t = new XNetThrottle(memo, new jmri.DccLocoAddress(3, false), tc);
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
         //The first thing on the outbound queue should be a request for status.
 
@@ -402,8 +390,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // which we're going to get a request for function momentary status in response to.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         // And the response to this message with the status.
@@ -421,8 +408,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // Sending the not supported message should make the throttle send a
         // request for the high function status information.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         m = new XNetReply();
@@ -430,7 +416,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x82);
         m.setElement(2, 0xE3);
 
-        n = tc.outbound.size();
         t.message(m);
 
         // consume the error messge.
@@ -475,8 +460,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // in this case, we are sending a status information request.
 
         t.sendStatusInformationRequest();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
         //The first thing on the outbound queue should be a request for status.
         Assert.assertEquals("Throttle Information Request Message", "E3 00 00 03 E0", tc.outbound.elementAt(n).toString());
@@ -490,7 +474,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(4, 0x00);
         m.setElement(5, 0xE0);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -506,8 +489,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending a status information request.
         t.sendFunctionStatusInformationRequest();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a request for status.
@@ -521,7 +503,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(3, 0x00);
         m.setElement(4, 0xB3);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
 
@@ -536,8 +517,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending a status information request.
         t.sendFunctionHighInformationRequest();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a request for status.
@@ -551,7 +531,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(3, 0x00);
         m.setElement(4, 0xB3);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -567,8 +546,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending a status information request.
         t.sendFunctionHighMomentaryStatusRequest();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a request for status.
@@ -582,7 +560,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(3, 0x00);
         m.setElement(4, 0xB3);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -598,8 +575,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending function group 1.
         t.sendFunctionGroup1();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a group 1 request.
@@ -611,7 +587,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -628,8 +603,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending function group 2.
         t.sendFunctionGroup2();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a group 2 request.
@@ -641,7 +615,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -658,8 +631,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending function group 3.
         t.sendFunctionGroup3();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a group 3 request.
@@ -671,7 +643,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -688,8 +659,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending function group 4.
         t.sendFunctionGroup4();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a group 4 request.
@@ -701,7 +671,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -738,8 +707,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending function group 5.
         t.sendFunctionGroup5();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a group 5 request.
@@ -751,7 +719,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -789,8 +756,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending momentary function group 1.
         t.sendMomentaryFunctionGroup1();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a momentary group 1 request.
@@ -802,7 +768,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -819,8 +784,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending momentary function group 2.
         t.sendMomentaryFunctionGroup2();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a momentary group 2 request.
@@ -832,7 +796,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -849,8 +812,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending momentary function group 3.
         t.sendMomentaryFunctionGroup3();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a monentary group 3 request.
@@ -862,7 +824,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -879,8 +840,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending function momentary group 4.
         t.sendMomentaryFunctionGroup4();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a momentary group 4 request.
@@ -892,7 +852,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -909,8 +868,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // in this case, we are sending momentary function group 5.
         t.sendMomentaryFunctionGroup5();
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a momentary group 5 request.
@@ -922,7 +880,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
@@ -955,7 +912,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
     }
 
     @Test
-    public void setReverse() throws Exception {
+    public void setReverse() {
         int n = tc.outbound.size();
         XNetThrottle t = (XNetThrottle) instance;
         initThrottle(t, n);
@@ -964,8 +921,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // in this case, we are sending a request to change the direction.
         t.setIsForward(false);
 
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a throttle set speed message.
@@ -977,7 +933,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
 
@@ -987,7 +942,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
     }
 
     @Test
-    public void setForward() throws Exception {
+    public void setForward() {
         int n = tc.outbound.size();
         XNetThrottle t = (XNetThrottle) instance;
         initThrottle(t, n);
@@ -996,8 +951,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // in this case, we are sending a request to change the direction.
         t.setIsForward(true);
 
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a throttle set speed message.
@@ -1009,7 +963,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
 
@@ -1028,8 +981,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // in this case, we are sending an emergency stop message.
         t.sendEmergencyStop();
 
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a throttle set speed message.
@@ -1041,14 +993,13 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
         t.throttleDispose();
     }
 
     @Test
-    public void setSpeedStep128() throws Exception {
+    public void setSpeedStep128() {
         int n = tc.outbound.size();
         XNetThrottle t = (XNetThrottle) instance;
         initThrottle(t, n);
@@ -1057,8 +1008,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // in this case, we are sending a request to change the speed step mode.
         t.setSpeedStepMode(jmri.SpeedStepMode.NMRA_DCC_128);
 
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a throttle set speed message.
@@ -1070,7 +1020,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
 
@@ -1082,7 +1031,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
     }
 
     @Test
-    public void setSpeedStep28() throws Exception {
+    public void setSpeedStep28() {
         int n = tc.outbound.size();
         XNetThrottle t = (XNetThrottle) instance;
         initThrottle(t, n);
@@ -1091,8 +1040,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // in this case, we are sending a request to change the speed step mode.
         t.setSpeedStepMode(jmri.SpeedStepMode.NMRA_DCC_28);
 
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a throttle set speed message.
@@ -1104,7 +1052,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
 
@@ -1116,7 +1063,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
     }
 
     @Test
-    public void setSpeedStep27() throws Exception {
+    public void setSpeedStep27() {
         int n = tc.outbound.size();
         XNetThrottle t = (XNetThrottle) instance;
         initThrottle(t, n);
@@ -1125,8 +1072,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // in this case, we are sending a request to change the speed step mode.
         t.setSpeedStepMode(jmri.SpeedStepMode.NMRA_DCC_27);
 
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a throttle set speed message.
@@ -1138,7 +1084,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
 
@@ -1150,7 +1095,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
     }
 
     @Test
-    public void setSpeedStep14() throws Exception {
+    public void setSpeedStep14() {
         int n = tc.outbound.size();
         XNetThrottle t = (XNetThrottle) instance;
         initThrottle(t, n);
@@ -1159,8 +1104,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // in this case, we are sending a request to change the speed step mode.
         t.setSpeedStepMode(jmri.SpeedStepMode.NMRA_DCC_14);
 
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         //The first thing on the outbound queue should be a throttle set speed message.
@@ -1172,7 +1116,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x04);
         m.setElement(2, 0x05);
 
-        n = tc.outbound.size();
         t.message(m);
         // which sets the status back state back to idle..
 
@@ -1503,8 +1446,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // set to version 3.6.
         tc.getCommandStation().setCommandStationSoftwareVersion(new XNetReply("63 21 36 00 74"));
         if (n == 0) {
-            while (n == tc.outbound.size()) {
-            } // busy loop.  Wait for
+            waitForChangeInOutbound(n);
             // outbound size to change.
         }
         //The first thing on the outbound queue should be a request for status.
@@ -1522,8 +1464,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // which we're going to get a request for function momentary status in response to.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         // And the response to this message with the status.
@@ -1541,8 +1482,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         // Sending the not supported message should make the throttle send a
         // request for the high function status information.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         m = new XNetReply();
@@ -1550,7 +1490,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x82);
         m.setElement(2, 0xE3);
 
-        n = tc.outbound.size();
         t.message(m);
 
         // consume the error messge.
@@ -1565,8 +1504,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
     // performed.  This version sets the command station to version 3.5
     protected void initThrottlev35(XNetThrottle t, int n) {
         if (n == 0) {
-            while (n == tc.outbound.size()) {
-            } // busy loop.  Wait for
+            waitForChangeInOutbound(n);
             // outbound size to change.
         }
         //The first thing on the outbound queue should be a request for status.
@@ -1585,8 +1523,7 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
 
         // which we're going to get a request for function momentary status in response to.
         // We're just going to make sure this is there and respond with not supported.
-        while (n == tc.outbound.size()) {
-        } // busy loop.  Wait for
+        waitForChangeInOutbound(n);
         // outbound size to change.
 
         // And the response to this message with the status.
@@ -1595,7 +1532,6 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         m.setElement(1, 0x82);
         m.setElement(2, 0xE3);
 
-        n = tc.outbound.size();
         t.message(m);
 
         // consume the error messge.
@@ -1615,11 +1551,10 @@ public class XNetThrottleTest extends jmri.jmrix.AbstractThrottleTest {
         tc = new XNetInterfaceScaffold(new LenzCommandStation());
         memo = new XNetSystemConnectionMemo(tc);
         jmri.InstanceManager.setDefault(jmri.ThrottleManager.class, memo.getThrottleManager());
-        XNetThrottle t = new XNetThrottle(memo, new jmri.DccLocoAddress(3, false), tc);
         // uncommenting the next two lines causes the base throttle tests to hang.
         //int n = tc.outbound.size();
         //initThrottlev35(t,n);
-        instance = t;
+        instance = new XNetThrottle(memo, new jmri.DccLocoAddress(3, false), tc);
     }
 
     @After

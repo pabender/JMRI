@@ -62,9 +62,7 @@ public class EliteXNetTurnoutTest extends jmri.jmrix.lenz.XNetTurnoutTest {
     @Override
     public void checkIncoming() {
         t.setFeedbackMode(Turnout.MONITORING);
-        jmri.util.JUnitUtil.waitFor(() -> {
-            return t.getFeedbackMode() == Turnout.MONITORING;
-        }, "Feedback mode set");
+        jmri.util.JUnitUtil.waitFor(() -> t.getFeedbackMode() == Turnout.MONITORING, "Feedback mode set");
 
         listenStatus = Turnout.UNKNOWN;
         t.addPropertyChangeListener(new Listen());
@@ -72,18 +70,14 @@ public class EliteXNetTurnoutTest extends jmri.jmrix.lenz.XNetTurnoutTest {
         // notify the object that somebody else changed it...
         XNetReply m = new XNetReply("42 05 04 43"); // set CLOSED
         ((EliteXNetTurnout) t).message(m);
-        jmri.util.JUnitUtil.waitFor(() -> {
-            return listenStatus != Turnout.UNKNOWN;
-        }, "Turnout state changed");
+        jmri.util.JUnitUtil.waitFor(() -> listenStatus != Turnout.UNKNOWN, "Turnout state changed");
         Assert.assertEquals("state after CLOSED message", Turnout.CLOSED, t.getKnownState());
 
         listenStatus = Turnout.UNKNOWN;
 
         m = new XNetReply("42 05 08 4F"); // set THROWN
         ((EliteXNetTurnout) t).message(m);
-        jmri.util.JUnitUtil.waitFor(() -> {
-            return listenStatus != Turnout.UNKNOWN;
-        }, "Turnout state changed");
+        jmri.util.JUnitUtil.waitFor(() -> listenStatus != Turnout.UNKNOWN, "Turnout state changed");
         Assert.assertEquals("state after THROWN message", Turnout.THROWN, t.getKnownState());
     }
 

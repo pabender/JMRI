@@ -46,7 +46,7 @@ public class XNetPortControllerScaffold extends XNetSimulatorPortController {
         return new int[] {};
     }
 
-    PipedInputStream otempIPipe;
+    final PipedInputStream otempIPipe;
     PipedOutputStream otempOPipe;
     
     PipedInputStream itempIPipe;
@@ -119,7 +119,7 @@ public class XNetPortControllerScaffold extends XNetSimulatorPortController {
     /**
      * Can read test data from this.
      */
-    public DataInputStream tostream;
+    public final DataInputStream tostream;
 
     /**
      * Tests write to this.

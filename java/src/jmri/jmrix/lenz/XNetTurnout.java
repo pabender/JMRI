@@ -729,8 +729,8 @@ public class XNetTurnout extends AbstractTurnout implements XNetListener {
                     // Check to see if this is a change in the status
                     // triggered by a device on the layout, or a change in
                     // status we triggered.
-                    int oldKnownState = ((Integer) event.getOldValue()).intValue();
-                    int curKnownState = ((Integer) event.getNewValue()).intValue();
+                    int oldKnownState = (Integer) event.getOldValue();
+                    int curKnownState = (Integer) event.getNewValue();
                     log.debug("propertyChange KnownState - old value {} new value {}", oldKnownState, curKnownState);
                     if (curKnownState != INCONSISTENT
                             && _turnout.getCommandedState() == oldKnownState) {

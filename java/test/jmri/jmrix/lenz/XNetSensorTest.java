@@ -51,9 +51,7 @@ public class XNetSensorTest extends jmri.implementation.AbstractSensorTestBase {
         // are on in the message.
         m.setElement(3, 0x05);     // The XOR of everything above
         ((XNetSensor) t).message(m);
-        jmri.util.JUnitUtil.waitFor(() -> {
-            return t.getState() == t.getRawState();
-        }, "raw state = state");
+        jmri.util.JUnitUtil.waitFor(() -> t.getState() == t.getRawState(), "raw state = state");
         Assert.assertEquals("Known state after activate ", jmri.Sensor.ACTIVE, t.getKnownState());
 
         m = new XNetReply();

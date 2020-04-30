@@ -38,14 +38,10 @@ public class LZ100Frame extends jmri.util.JmriJFrame {
         pack();
 
         // install close button handler
-        closeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                setVisible(false);
-                dispose();
-            }
-        }
-        );
+        closeButton.addActionListener(a -> {
+            setVisible(false);
+            dispose();
+        });
 
     }
 

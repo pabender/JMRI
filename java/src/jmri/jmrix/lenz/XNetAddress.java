@@ -27,7 +27,7 @@ import javax.annotation.Nonnull;
  */
 public class XNetAddress {
 
-    public XNetAddress() {
+    private XNetAddress() {
     }
 
     static final int MINSENSORADDRESS = 1;

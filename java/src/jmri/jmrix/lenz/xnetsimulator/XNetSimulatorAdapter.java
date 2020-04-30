@@ -441,8 +441,8 @@ public class XNetSimulatorAdapter extends XNetSimulatorPortController implements
         reply.setOpCode(XNetConstants.CS_SERVICE_MODE_RESPONSE);
         reply.setElement(1, XNetConstants.CS_SOFTWARE_VERSION);
         reply.setElement(2, 0x36 & 0xff); // indicate we are version 3.6
-        reply.setElement(3, 0x00 & 0xff); // indicate we are an LZ100
-        reply.setElement(4, 0x00); // set the parity byte to 0
+        reply.setElement(3, 0); // indicate we are an LZ100
+        reply.setElement(4, 0); // set the parity byte to 0
         reply.setParity();
         return reply;
     }

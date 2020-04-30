@@ -154,12 +154,10 @@ public class XNetLight extends AbstractLight implements XNetListener {
                     /* this is a communications error */
                     log.error("Communications error occurred - message received was: {}", l);
                     setState(mState);
-                    return;
                 } else if (l.isCSBusyMessage()) {
                     /* this is a communications error */
                     log.error("Command station busy - message received was: {}", l);
                     setState(mState);
-                    return;
                 } else if (l.isOkMessage()) {
                     /* the command was successfully received */
                     sendOffMessage();

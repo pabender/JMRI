@@ -58,7 +58,7 @@ public class XNetTurnoutManagerTest extends jmri.managers.AbstractTurnoutMgrTest
         Assert.assertNotNull(l.getBySystemName("XT22"));
 
         // check the list
-        List<String> testList = new ArrayList<String>(2);
+        List<String> testList = new ArrayList<>(2);
         testList.add("XT21");
         testList.add("XT22");
         Assert.assertEquals("system name list", testList, l.getSystemNameList());

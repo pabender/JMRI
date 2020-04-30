@@ -59,7 +59,7 @@ public class EliteXNetTurnoutManagerTest extends jmri.managers.AbstractTurnoutMg
         Assert.assertNotNull(l.getBySystemName("XT21"));
 
         // check the list
-        List<String> testList = new ArrayList<String>(2);
+        List<String> testList = new ArrayList<>(2);
         testList.add("XT20");
         testList.add("XT21");
         Assert.assertEquals("system name list", testList, l.getSystemNameList());
@@ -73,7 +73,7 @@ public class EliteXNetTurnoutManagerTest extends jmri.managers.AbstractTurnoutMg
         if (log.isDebugEnabled()) {
             log.debug("received turnout value {}", o);
         }
-        Assert.assertNotNull((EliteXNetTurnout) o);
+        Assert.assertNotNull(o);
 
         // make sure loaded into tables
         if (log.isDebugEnabled()) {

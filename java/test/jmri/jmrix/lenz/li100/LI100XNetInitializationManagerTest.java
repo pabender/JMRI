@@ -43,12 +43,12 @@ public class LI100XNetInitializationManagerTest {
     }
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         jmri.util.JUnitUtil.setUp();
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         jmri.util.JUnitUtil.clearShutDownManager(); // put in place because AbstractMRTrafficController implementing subclass was not terminated properly
         jmri.util.JUnitUtil.tearDown();
     }

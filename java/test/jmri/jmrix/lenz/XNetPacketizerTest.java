@@ -19,7 +19,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
     /**
      * Local test class to make XNetPacketizer more felicitous to test
      */
-    class StoppingXNetPacketizer extends XNetPacketizer {
+    static class StoppingXNetPacketizer extends XNetPacketizer {
 
         public StoppingXNetPacketizer(jmri.jmrix.lenz.LenzCommandStation p) {
             super(p);
@@ -49,9 +49,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
         c.sendXNetMessage(m, null);
 
         port.flush();
-        jmri.util.JUnitUtil.waitFor(() -> {
-            return port.tostream.available() == 4;
-        }, "total length 4");
+        jmri.util.JUnitUtil.waitFor(() -> port.tostream.available() == 4, "total length 4");
 
         Assert.assertEquals("total length ", 4, port.tostream.available());
         Assert.assertEquals("Char 0", 0x52, port.tostream.readByte() & 0xff);
@@ -78,9 +76,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
         port.tistream.write(0x52);
 
         port.flush();
-        jmri.util.JUnitUtil.waitFor(() -> {
-            return l.rcvdRply != null;
-        }, "reply received");
+        jmri.util.JUnitUtil.waitFor(() -> l.rcvdRply != null, "reply received");
 
         // check that the message was picked up by the read thread.
         Assert.assertNotNull("reply received ", l.rcvdRply);
@@ -119,9 +115,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
             port.tistream.write(0x42);
 
             port.flush();
-            jmri.util.JUnitUtil.waitFor(() -> {
-                return l.rcvdRply != null;
-            }, "reply received");
+            jmri.util.JUnitUtil.waitFor(() -> l.rcvdRply != null, "reply received");
 
             // check that the message was picked up by the read thread.
             Assert.assertNotNull("iteration " + i + " reply received ", l.rcvdRply);
@@ -138,9 +132,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
             port.flush();
 
             // and now we verify l1 is the last sender.
-            jmri.util.JUnitUtil.waitFor(() -> {
-                return l1 == c.getLastSender();
-            }, "iteration " + i + " Last Sender l1, before l1 reply");
+            jmri.util.JUnitUtil.waitFor(() -> l1 == c.getLastSender(), "iteration " + i + " Last Sender l1, before l1 reply");
 
             l.rcvdRply = null;
             l1.rcvdRply = null;
@@ -152,9 +144,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
             port.tistream.write(0x05);
 
             port.flush();
-            jmri.util.JUnitUtil.waitFor(() -> {
-                return l1.rcvdRply != null;
-            }, "iteration " + i + " reply received ");
+            jmri.util.JUnitUtil.waitFor(() -> l1.rcvdRply != null, "iteration " + i + " reply received ");
 
             // check that the message was picked up by the read thread.
             Assert.assertNotNull("iteration " + i + " reply received ", l1.rcvdRply);
@@ -165,9 +155,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
             Assert.assertNull("iteration " + i + " l2 reply after l1 message", l2.rcvdRply);
 
             // and now we verify l2 is the last sender.
-            jmri.util.JUnitUtil.waitFor(() -> {
-                return l2 == c.getLastSender();
-            }, "Last Sender l2");
+            jmri.util.JUnitUtil.waitFor(() -> l2 == c.getLastSender(), "Last Sender l2");
 
             l.rcvdRply = null;
             l1.rcvdRply = null;
@@ -178,9 +166,7 @@ public class XNetPacketizerTest extends XNetTrafficControllerTest {
             port.tistream.write(0x05);
 
             port.flush();
-            jmri.util.JUnitUtil.waitFor(() -> {
-                return l2.rcvdRply != null;
-            }, "iteration " + i + " reply received ");
+            jmri.util.JUnitUtil.waitFor(() -> l2.rcvdRply != null, "iteration " + i + " reply received ");
 
             // check that the message was picked up by the read thread.
             Assert.assertNotNull("iteration " + i + " reply received ", l2.rcvdRply);

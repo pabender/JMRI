@@ -54,22 +54,12 @@ public class StackMonFrame extends jmri.util.JmriJFrame implements XNetListener 
         stackTable = new javax.swing.JTable(stackModel);
 
         // Add listener object to retrieve the next entry
-        nextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                getNextEntry();
-            }
-        });
+        nextButton.addActionListener(e -> getNextEntry());
 
         // Set the Next button to visible
         nextButton.setVisible(true);
         // add listener object to retrieve the previous entry
-        previousButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                getPreviousEntry();
-            }
-        });
+        previousButton.addActionListener(e -> getPreviousEntry());
 
         // Set the Previous button to visible.
         previousButton.setVisible(true);
@@ -80,22 +70,12 @@ public class StackMonFrame extends jmri.util.JmriJFrame implements XNetListener 
         // Set the Delete button to visible
         deleteButton.setVisible(true);
         // add listener object to remove the current entry
-        deleteButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                deleteEntry();
-            }
-        });
+        deleteButton.addActionListener(e -> deleteEntry());
 
         // Set the nextButton to visible
         refreshButton.setVisible(true);
         // add listener object to retrieve the next entry
-        refreshButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                getAllEntries();
-            }
-        });
+        refreshButton.addActionListener(e -> getAllEntries());
 
         // Set the adrTextField to visible
         adrTextField.setVisible(true);
@@ -249,7 +229,7 @@ public class StackMonFrame extends jmri.util.JmriJFrame implements XNetListener 
     public void message(XNetReply r) {
         if (r.getElement(0) == XNetConstants.LOCO_INFO_RESPONSE) {
             int address = r.getThrottleMsgAddr();
-            Integer intAddress = Integer.valueOf(address);
+            Integer intAddress = address;
             switch (r.getElement(1)) {
                 case XNetConstants.LOCO_SEARCH_RESPONSE_N:
                     currentStatus.setText(Bundle.getMessage("SearchNormal"));

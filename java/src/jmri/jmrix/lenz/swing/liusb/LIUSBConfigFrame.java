@@ -52,8 +52,8 @@ public class LIUSBConfigFrame extends jmri.util.JmriJFrame implements XNetListen
         // Initilize the Combo Boxes
         addrBox.setVisible(true);
         addrBox.setToolTipText(Bundle.getMessage("XNetAddressToolTip"));
-        for (int i = 0; i < validXNetAddresses.length; i++) {
-            addrBox.addItem(validXNetAddresses[i]);
+        for (String validXNetAddress : validXNetAddresses) {
+            addrBox.addItem(validXNetAddress);
         }
         addrBox.setSelectedIndex(32);
 
@@ -64,40 +64,18 @@ public class LIUSBConfigFrame extends jmri.util.JmriJFrame implements XNetListen
         pack();
 
         // install read settings, write settings button handlers
-        readSettingsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                readLIUSBSettings();
-            }
-        }
-        );
+        readSettingsButton.addActionListener(a -> readLIUSBSettings());
 
-        writeSettingsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                writeLIUSBSettings();
-            }
-        }
-        );
+        writeSettingsButton.addActionListener(a -> writeLIUSBSettings());
 
         // install close button handler
-        closeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                setVisible(false);
-                dispose();
-            }
-        }
-        );
+        closeButton.addActionListener(a -> {
+            setVisible(false);
+            dispose();
+        });
 
         // install reset button handler
-        resetButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                resetLIUSBSettings();
-            }
-        }
-        );
+        resetButton.addActionListener(a -> resetLIUSBSettings());
 
         if (tc != null) {
             tc.addXNetListener(~0, this);
@@ -108,7 +86,7 @@ public class LIUSBConfigFrame extends jmri.util.JmriJFrame implements XNetListen
 
     boolean read = false;
 
-    JComboBox<String> addrBox = new javax.swing.JComboBox<String>();
+    JComboBox<String> addrBox = new javax.swing.JComboBox<>();
 
     JLabel status = new JLabel("    ");
 
@@ -125,8 +103,8 @@ public class LIUSBConfigFrame extends jmri.util.JmriJFrame implements XNetListen
      * Send new address to LIUSB.
      */
     void writeLIUSBSettings() {
-        if (!(((String) addrBox.getSelectedItem()).equals(""))
-                && (String) addrBox.getSelectedItem() != null) {
+        if (!(addrBox.getSelectedItem().equals(""))
+                && addrBox.getSelectedItem() != null) {
             /* we take care of generating an address request */
             XNetMessage msg = XNetMessage.getLIAddressRequestMsg(
                     addrBox.getSelectedIndex());

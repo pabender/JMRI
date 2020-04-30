@@ -124,7 +124,7 @@ public class XNetReplyTest extends jmri.jmrix.AbstractMessageTestBase {
     @Test
     public void testGetElementBCD(){
        msg=new XNetReply("63 14 01 04 72");
-       Assert.assertEquals("getElementBCD Return Value",(long)14,(long)msg.getElementBCD(1));
+       Assert.assertEquals("getElementBCD Return Value", 14,(long)msg.getElementBCD(1));
     }
 
     // check skipPrefix

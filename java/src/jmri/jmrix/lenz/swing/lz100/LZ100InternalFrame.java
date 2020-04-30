@@ -85,59 +85,29 @@ public class LZ100InternalFrame extends javax.swing.JInternalFrame implements XN
         pack();
 
         // install reset Command Station button handler
-        resetCSButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                // ask user confirmation
-                if (javax.swing.JOptionPane.OK_OPTION == javax.swing.JOptionPane.showConfirmDialog(
-                        null, Bundle.getMessage("LZ100ConfirmResetDialog"),
-                                Bundle.getMessage("QuestionTitle"),
-                        javax.swing.JOptionPane.OK_CANCEL_OPTION,
-                        javax.swing.JOptionPane.WARNING_MESSAGE)) {
-                    // indeed send reset commands
-                    resetLZ100CS();
-                }
+        resetCSButton.addActionListener(a -> {
+            // ask user confirmation
+            if (javax.swing.JOptionPane.OK_OPTION == javax.swing.JOptionPane.showConfirmDialog(
+                    null, Bundle.getMessage("LZ100ConfirmResetDialog"),
+                            Bundle.getMessage("QuestionTitle"),
+                    javax.swing.JOptionPane.OK_CANCEL_OPTION,
+                    javax.swing.JOptionPane.WARNING_MESSAGE)) {
+                // indeed send reset commands
+                resetLZ100CS();
             }
-        }
-        );
+        });
 
         // install Auto/Manual mode retreive button handler.
-        amModeGetButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                amModeGet();
-
-            }
-        }
-        );
+        amModeGetButton.addActionListener(a -> amModeGet());
 
         // install Auto/Manual mode Save button handler.
-        amModeSetButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                amModeSave();
-
-            }
-        }
-        );
+        amModeSetButton.addActionListener(a -> amModeSave());
 
         // install Auto mode button handler.
-        isAutoMode.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                autoModeAction();
-            }
-        }
-        );
+        isAutoMode.addActionListener(a -> autoModeAction());
 
         // install Manual  mode button handler.
-        isManualMode.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent a) {
-                manualModeAction();
-            }
-        }
-        );
+        isManualMode.addActionListener(a -> manualModeAction());
 
         // configure internal frame options
         setClosable(false);     // don't let the user close this frame

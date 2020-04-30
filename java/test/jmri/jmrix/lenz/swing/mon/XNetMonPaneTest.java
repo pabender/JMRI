@@ -15,7 +15,7 @@ import org.junit.Test;
  */
 public class XNetMonPaneTest extends jmri.jmrix.AbstractMonPaneTestBase {
 
-    private jmri.jmrix.lenz.XNetSystemConnectionMemo memo = null;
+    private final jmri.jmrix.lenz.XNetSystemConnectionMemo memo = null;
 
     @Test
     public void testDefault() {

@@ -12,7 +12,7 @@ import org.junit.Test;
  */
 public class XNetMonActionTest {
 
-    private jmri.jmrix.lenz.XNetSystemConnectionMemo memo = null;
+    private final jmri.jmrix.lenz.XNetSystemConnectionMemo memo = null;
 
     @Test
     public void testCTor() {

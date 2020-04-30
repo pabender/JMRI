@@ -101,40 +101,40 @@ public class LV102InternalFrame extends javax.swing.JInternalFrame {
         /* configure the voltage selection box */
         voltBox.setVisible(true);
         voltBox.setToolTipText(Bundle.getMessage("LV102TrackTip"));
-        for (int i = 0; i < validVoltage.length; i++) {
-            voltBox.addItem(validVoltage[i]);
+        for (String item : validVoltage) {
+            voltBox.addItem(item);
         }
         voltBox.setSelectedIndex(23);
 
         /* Configure the E-Line Active/Inactive box */
         eLineBox.setVisible(true);
         eLineBox.setToolTipText(Bundle.getMessage("LV102ELineTip"));
-        for (int i = 0; i < validELineStatus.length; i++) {
-            eLineBox.addItem(validELineStatus[i]);
+        for (String eLineStatus : validELineStatus) {
+            eLineBox.addItem(eLineStatus);
         }
         eLineBox.setSelectedIndex(3);
 
         /* Configure the RailCom Active/Inactive box */
         railComBox.setVisible(true);
         railComBox.setToolTipText(Bundle.getMessage("LV102RailComTip"));
-        for (int i = 0; i < validRailComStatus.length; i++) {
-            railComBox.addItem(validRailComStatus[i]);
+        for (String railComStatus : validRailComStatus) {
+            railComBox.addItem(railComStatus);
         }
         railComBox.setSelectedIndex(2);
 
         /* Configure the RailCom Mode selection box */
         railComModeBox.setVisible(true);
         railComModeBox.setToolTipText(Bundle.getMessage("LV102RailComModeTip"));
-        for (int i = 0; i < validRailComMode.length; i++) {
-            railComModeBox.addItem(validRailComMode[i]);
+        for (String value : validRailComMode) {
+            railComModeBox.addItem(value);
         }
         railComModeBox.setSelectedIndex(2);
 
         /* Configure the RailCom Timing selection box */
         railComTimingBox.setVisible(true);
         railComTimingBox.setToolTipText(Bundle.getMessage("LV102RailComTimingTip"));
-        for (int i = 0; i < validRailComTiming.length; i++) {
-            railComTimingBox.addItem(validRailComTiming[i]);
+        for (String s : validRailComTiming) {
+            railComTimingBox.addItem(s);
         }
         railComTimingBox.setSelectedIndex(4);
 
@@ -263,7 +263,7 @@ public class LV102InternalFrame extends javax.swing.JInternalFrame {
         }
 
         // Obtain an ops mode programmer instance
-        AddressedProgrammer opsProg = pm.getAddressedProgrammer(false, 00);
+        AddressedProgrammer opsProg = pm.getAddressedProgrammer(false, 0);
 
         if(opsProg == null) {
            // no ops mode programmer programmer, cannot proceed.
@@ -285,8 +285,8 @@ public class LV102InternalFrame extends javax.swing.JInternalFrame {
 
     // Write the voltage setting
     void writeVoltSetting(Programmer opsProg) {
-        if (!(((String) voltBox.getSelectedItem()).equals(""))
-                && (String) voltBox.getSelectedItem() != null) {
+        if (!(voltBox.getSelectedItem().equals(""))
+                && voltBox.getSelectedItem() != null) {
 
             log.debug("Selected Voltage: {}", voltBox.getSelectedItem());
             synchronized (currentStatus) {
@@ -333,8 +333,8 @@ public class LV102InternalFrame extends javax.swing.JInternalFrame {
 
     // Write the E-Line setting
     void writeELineSetting(Programmer opsProg) {
-        if (!(((String) eLineBox.getSelectedItem()).equals(""))
-                && (String) eLineBox.getSelectedItem() != null) {
+        if (!(eLineBox.getSelectedItem().equals(""))
+                && eLineBox.getSelectedItem() != null) {
 
             log.debug("E-Line Setting: {}", eLineBox.getSelectedItem());
             synchronized (currentStatus) {
@@ -383,8 +383,8 @@ public class LV102InternalFrame extends javax.swing.JInternalFrame {
 
     // Write the RailCom setting
     void writeRailComSetting(Programmer opsProg) {
-        if (!(((String) railComBox.getSelectedItem()).equals(""))
-                && (String) railComBox.getSelectedItem() != null) {
+        if (!(railComBox.getSelectedItem().equals(""))
+                && railComBox.getSelectedItem() != null) {
 
             log.debug("RailCom Setting: {}", railComBox.getSelectedItem());
             synchronized (currentStatus) {
@@ -432,8 +432,8 @@ public class LV102InternalFrame extends javax.swing.JInternalFrame {
 
     // Write the RailCom Mode setting
     void writeRailComModeSetting(Programmer opsProg) {
-        if (!(((String) railComModeBox.getSelectedItem()).equals(""))
-                && (String) railComModeBox.getSelectedItem() != null) {
+        if (!(railComModeBox.getSelectedItem().equals(""))
+                && railComModeBox.getSelectedItem() != null) {
 
             log.debug("RailCom Setting: {}", railComModeBox.getSelectedItem());
             synchronized (currentStatus) {
@@ -481,8 +481,8 @@ public class LV102InternalFrame extends javax.swing.JInternalFrame {
 
     // Write the RailCom Mode setting
     void writeRailComTimingSetting(Programmer opsProg) {
-        if (!(((String) railComTimingBox.getSelectedItem()).equals(""))
-                && (String) railComTimingBox.getSelectedItem() != null) {
+        if (!(railComTimingBox.getSelectedItem().equals(""))
+                && railComTimingBox.getSelectedItem() != null) {
 
             log.debug("RailCom Timing Setting: {}", railComTimingBox.getSelectedItem());
             synchronized (currentStatus) {

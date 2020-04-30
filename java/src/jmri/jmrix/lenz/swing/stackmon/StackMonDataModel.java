@@ -125,7 +125,7 @@ public class StackMonDataModel extends javax.swing.table.AbstractTableModel {
                 log.debug("Delete Called for row {}", row);
                 fireTableRowsDeleted(row, row);
                 // delete address from table
-                XNetMessage msg = XNetMessage.getDeleteAddressOnStackMsg((_addressList.get(row)).intValue());
+                XNetMessage msg = XNetMessage.getDeleteAddressOnStackMsg(_addressList.get(row));
                 tc.sendXNetMessage(msg, _stackFrame);
                 _typeList.remove(_addressList.get(row));
                 _addressList.remove(row);
@@ -142,8 +142,8 @@ public class StackMonDataModel extends javax.swing.table.AbstractTableModel {
     public void updateData(Integer address, String type) {
         if (_addressList == null) {
             // initilize the address list
-            _addressList = new java.util.ArrayList<Integer>();
-            _typeList = new java.util.Hashtable<Integer, String>();
+            _addressList = new java.util.ArrayList<>();
+            _typeList = new java.util.Hashtable<>();
         }
         if (!_addressList.contains(address)) {
             _addressList.add(address);
@@ -158,8 +158,8 @@ public class StackMonDataModel extends javax.swing.table.AbstractTableModel {
      * Update the internal data structures for a specified address.
      */
     public void clearData() {
-        _addressList = new java.util.ArrayList<Integer>();
-        _typeList = new java.util.Hashtable<Integer, String>();
+        _addressList = new java.util.ArrayList<>();
+        _typeList = new java.util.Hashtable<>();
         fireTableDataChanged();
     }
 
