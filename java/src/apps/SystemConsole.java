@@ -229,9 +229,7 @@ public final class SystemConsole extends JTextArea {
         
         // Add button to clear display
         JButton clear = new JButton(Bundle.getMessage("ButtonClear"));
-        clear.addActionListener((ActionEvent event) -> {
-            console.setText("");
-        });
+        clear.addActionListener((ActionEvent event) -> console.setText(""));
         clear.setToolTipText(Bundle.getMessage("ButtonClearTip"));
         p.add(clear);        
         
@@ -253,9 +251,7 @@ public final class SystemConsole extends JTextArea {
         p.add(close);
 
         JButton stackTrace = new JButton(Bundle.getMessage("ButtonStackTrace"));
-        stackTrace.addActionListener((ActionEvent event) -> {
-            performStackTrace();
-        });
+        stackTrace.addActionListener((ActionEvent event) -> performStackTrace());
         p.add(stackTrace);
 
         // Add checkbox to enable/disable auto-scrolling
@@ -304,9 +300,7 @@ public final class SystemConsole extends JTextArea {
         schemeGroup = new ButtonGroup();
         for (final Scheme s : schemes) {
             rbMenuItem = new JRadioButtonMenuItem(s.description);
-            rbMenuItem.addActionListener((ActionEvent event) -> {
-                setScheme(schemes.indexOf(s));
-            });
+            rbMenuItem.addActionListener((ActionEvent event) -> setScheme(schemes.indexOf(s)));
             rbMenuItem.setSelected(getScheme() == schemes.indexOf(s));
             schemeMenu.add(rbMenuItem);
             schemeGroup.add(rbMenuItem);
@@ -317,25 +311,19 @@ public final class SystemConsole extends JTextArea {
         wrapMenu = new JMenu(rbc.getString("ConsoleWrapStyleMenu"));
         wrapGroup = new ButtonGroup();
         rbMenuItem = new JRadioButtonMenuItem(rbc.getString("ConsoleWrapStyleNone"));
-        rbMenuItem.addActionListener((ActionEvent event) -> {
-            setWrapStyle(WRAP_STYLE_NONE);
-        });
+        rbMenuItem.addActionListener((ActionEvent event) -> setWrapStyle(WRAP_STYLE_NONE));
         rbMenuItem.setSelected(getWrapStyle() == WRAP_STYLE_NONE);
         wrapMenu.add(rbMenuItem);
         wrapGroup.add(rbMenuItem);
 
         rbMenuItem = new JRadioButtonMenuItem(rbc.getString("ConsoleWrapStyleLine"));
-        rbMenuItem.addActionListener((ActionEvent event) -> {
-            setWrapStyle(WRAP_STYLE_LINE);
-        });
+        rbMenuItem.addActionListener((ActionEvent event) -> setWrapStyle(WRAP_STYLE_LINE));
         rbMenuItem.setSelected(getWrapStyle() == WRAP_STYLE_LINE);
         wrapMenu.add(rbMenuItem);
         wrapGroup.add(rbMenuItem);
 
         rbMenuItem = new JRadioButtonMenuItem(rbc.getString("ConsoleWrapStyleWord"));
-        rbMenuItem.addActionListener((ActionEvent event) -> {
-            setWrapStyle(WRAP_STYLE_WORD);
-        });
+        rbMenuItem.addActionListener((ActionEvent event) -> setWrapStyle(WRAP_STYLE_WORD));
         rbMenuItem.setSelected(getWrapStyle() == WRAP_STYLE_WORD);
         wrapMenu.add(rbMenuItem);
         wrapGroup.add(rbMenuItem);
@@ -449,7 +437,8 @@ public final class SystemConsole extends JTextArea {
      * @param size point size of font between 6 and 24 point
      */
     public void setFontSize(int size) {
-        updateFont(fontFamily, fontStyle, (fontSize = size < 6 ? 6 : size > 24 ? 24 : size));
+        fontSize = Math.min(Math.max(size,6),24);
+        updateFont(fontFamily, fontStyle, fontSize);
     }
 
     /**
@@ -537,12 +526,10 @@ public final class SystemConsole extends JTextArea {
         schemes.add(new Scheme(rbc.getString("ConsoleSchemeOrangeOnDarkGray"), Color.ORANGE, Color.DARK_GRAY));
     }
 
-    private Map<Thread, StackTraceElement[]> traces;
-
     private void performStackTrace() {
         System.out.println("----------- Begin Stack Trace -----------"); //NO18N
         System.out.println("-----------------------------------------"); //NO18N
-        traces = new HashMap<>(Thread.getAllStackTraces());
+        Map<Thread, StackTraceElement[]> traces = new HashMap<>(Thread.getAllStackTraces());
         for (Thread thread : traces.keySet()) {
             System.out.println("[" + thread.getId() + "] " + thread.getName());
             for (StackTraceElement el : thread.getStackTrace()) {
@@ -614,7 +601,7 @@ public final class SystemConsole extends JTextArea {
     }
 
     public Scheme[] getSchemes() {
-        return this.schemes.toArray(new Scheme[this.schemes.size()]);
+        return this.schemes.toArray(new Scheme[0]);
     }
 
     /**
@@ -622,9 +609,9 @@ public final class SystemConsole extends JTextArea {
      */
     public static final class Scheme {
 
-        public Color foreground;
-        public Color background;
-        public String description;
+        public final Color foreground;
+        public final Color background;
+        public final String description;
 
         Scheme(String description, Color foreground, Color background) {
             this.foreground = foreground;

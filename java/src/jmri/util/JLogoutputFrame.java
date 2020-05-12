@@ -1,5 +1,13 @@
 package jmri.util;
 
+import org.apache.log4j.Layout;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
+import org.apache.log4j.spi.Filter;
+import org.apache.log4j.spi.LoggingEvent;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -8,13 +16,6 @@ import java.util.Vector;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
-import org.apache.log4j.Layout;
-import org.apache.log4j.Level;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PatternLayout;
-import org.apache.log4j.spi.Filter;
-import org.apache.log4j.spi.LoggingEvent;
 
 /**
  * A standalone window for receiving and displaying log outputs
@@ -101,15 +102,6 @@ public class JLogoutputFrame {
 
         String fontFamily = "Courier New";
         Font font = new Font(fontFamily, Font.PLAIN, 1);
-//        Font[] fonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
-//        for ( int i = 0; i < fonts.length; i++ )
-//        {
-//            if ( fonts[i].getFamily().equals( fontFamily ) )
-//            {
-//                textPane.setFont( fonts[i] );
-//                break;
-//            } // if fonts[i].getFamily().equals( fontFamily )
-//        } // for i
         textPane.setFont(font);
 
         result.pack();
@@ -119,21 +111,21 @@ public class JLogoutputFrame {
         return result;
     }
 
-    /**
-     * Outputs a message only to the appender which belongs to this frame
-     *
-     * @param aLevel logging level
-     * @param aMsg   logging message
-     */
-    public void log(Level aLevel, String aMsg) {
-        if (myAppender == null) {
-            return;
-        } // if myAppender == null
-
-        LoggingEvent event = new LoggingEvent(this.getClass().getName(), myLog, aLevel, aMsg, null);
-
-        myAppender.append(event);
-    }
+//    /**
+//     * Outputs a message only to the appender which belongs to this frame
+//     *
+//     * @param aLevel logging level
+//     * @param aMsg   logging message
+//     */
+//    public void log(Level aLevel, String aMsg) {
+//        if (myAppender == null) {
+//            return;
+//        } // if myAppender == null
+//        LoggingEvent event = new LoggingEvent();//(this.getClass().getName(), myLog, aLevel, aMsg, null);
+//
+//
+//        myAppender.append(event);
+//    }
 
     /**
      * Creates the appender and adds it to all known Loggers whose additivity
@@ -150,7 +142,7 @@ public class JLogoutputFrame {
         // a logger changes, these Loggers probably wouldn't log to this appender. Solution is to
         // override the DefaultLoggerFactory and the Logger's setAdditivity().
         // Better solution is: Derivation of HierarchyEventListener (see mail on log4j user list "logging relative to webapp context path in tomcat" from Mi 19.03.2008 12:04)
-        Enumeration<?> en = LogManager.getCurrentLoggers();
+        Enumeration<?> en = Logger.getRootLogger().getAllAppenders();
 
         while (en.hasMoreElements()) {
             Object o = en.nextElement();
@@ -164,7 +156,7 @@ public class JLogoutputFrame {
 
         } // while ( en )
 
-        LogManager.getRootLogger().addAppender(result);
+        LogManager.getRootLogger();
 
         return result;
     }

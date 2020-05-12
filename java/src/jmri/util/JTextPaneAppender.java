@@ -1,22 +1,17 @@
 package jmri.util;
 
-import java.awt.Color;
+import org.apache.log4j.AppenderSkeleton;
+import org.apache.log4j.Layout;
+import org.apache.log4j.spi.Filter;
+import org.apache.log4j.spi.LoggingEvent;
+import org.apache.logging.log4j.Level;
+
+import javax.swing.*;
+import javax.swing.text.*;
+import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Enumeration;
 import java.util.Hashtable;
-import javax.swing.JTextPane;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.MutableAttributeSet;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyledDocument;
-import org.apache.log4j.AppenderSkeleton;
-import org.apache.log4j.Layout;
-import org.apache.log4j.Level;
-import org.apache.log4j.helpers.LogLog;
-import org.apache.log4j.spi.Filter;
-import org.apache.log4j.spi.LoggingEvent;
 
 /**
  * Implements a log4j appender which writes to a swing JTextPane
@@ -106,7 +101,7 @@ public class JTextPaneAppender extends AppenderSkeleton {
     @Override
     public void append(final LoggingEvent event) {
         if (myTextPane == null) {
-            LogLog.warn("TextPane is not initialized");
+            //LogLog.warn("TextPane is not initialized");
             return;
         } // if myTextPane == null
 
@@ -131,7 +126,7 @@ public class JTextPaneAppender extends AppenderSkeleton {
             } else {
                 javax.swing.SwingUtilities.invokeAndWait(() -> {
                     logIt(text, event);
-                }); 
+                });
             }
         } catch (InterruptedException e) {
             System.err.println("JTextPaneAppender interrupted while doing logging on GUI thread"); // can't log this, as it would be recursive error

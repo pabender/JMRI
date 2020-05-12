@@ -16,10 +16,10 @@ import jmri.util.exceptionhandler.UncaughtExceptionHandler;
 
 import org.apache.log4j.Appender;
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.FileAppender;
 import org.apache.log4j.Level;
 import org.apache.log4j.PropertyConfigurator;
-import org.apache.log4j.RollingFileAppender;
+import org.apache.logging.log4j.core.appender.FileAppender;
+import org.apache.logging.log4j.core.appender.RollingFileAppender;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -229,11 +229,11 @@ public class Log4JUtil {
         Enumeration<org.apache.log4j.Logger> e = org.apache.log4j.Logger.getRootLogger().getAllAppenders();
         while (e.hasMoreElements()) {
             Appender a = (Appender) e.nextElement();
-            if (a instanceof RollingFileAppender) {
-                log.info("This log is appended to file: {}", ((RollingFileAppender) a).getFile());
-            } else if (a instanceof FileAppender) {
-                log.info("This log is stored in file: {}", ((FileAppender) a).getFile());
-            }
+//            if (a instanceof RollingFileAppender) {
+//                log.info("This log is appended to file: {}", ((RollingFileAppender) a).getFile());
+//            } else if (a instanceof FileAppender) {
+//                log.info("This log is stored in file: {}", ((FileAppender) a).getFile());
+//            }
         }
         return (program + " version " + jmri.Version.name()
                 + " starts under Java " + System.getProperty("java.version", "<unknown>")

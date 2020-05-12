@@ -7,7 +7,6 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerRepository;
 
 /**
  * Show the current Log4J Logger tree; not dynamic.
@@ -25,10 +24,6 @@ public class Log4JTreePane extends jmri.util.swing.JmriPanel {
         return Bundle.getMessage("MenuItemLogTreeAction");
     }
 
-    /**
-     * Provide menu items
-     */
-    //public List<JMenu> getMenus() { return null; }
     public Log4JTreePane() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
     }
@@ -39,10 +34,8 @@ public class Log4JTreePane extends jmri.util.swing.JmriPanel {
     @SuppressWarnings("unchecked")
     @Override
     public void initComponents() {
-        LoggerRepository repo = Logger.getRootLogger().getLoggerRepository();
-
         List<String> list = new ArrayList<String>();
-        for (java.util.Enumeration<Logger> e = repo.getCurrentLoggers(); e.hasMoreElements();) {
+        for (java.util.Enumeration<Logger> e = Logger.getRootLogger().getAllAppenders(); e.hasMoreElements();) {
             Logger l = e.nextElement();
             list.add(l.getName() + " - "
                     + (l.getLevel() != null
