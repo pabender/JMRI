@@ -37,7 +37,7 @@ class XnTcpPortControllerScaffold extends XnTcpAdapter {
         return new int[] {};
     }
 
-    PipedInputStream otempIPipe;
+    final PipedInputStream otempIPipe;
     PipedOutputStream otempOPipe;
     
     PipedInputStream itempIPipe;
@@ -110,7 +110,7 @@ class XnTcpPortControllerScaffold extends XnTcpAdapter {
     /**
      * Can read test data from this.
      */
-    DataInputStream tostream;
+    final DataInputStream tostream;
 
     /**
      * Tests write to this.

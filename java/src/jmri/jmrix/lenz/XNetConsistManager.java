@@ -28,7 +28,7 @@ public class XNetConsistManager extends AbstractConsistManager {
         tc = systemMemo.getXNetTrafficController();
         this.systemMemo = systemMemo;
     }
-    XNetSystemConnectionMemo systemMemo;
+    final XNetSystemConnectionMemo systemMemo;
 
     /**
      * This implementation does command station consists, so return true.

@@ -2,7 +2,6 @@ package jmri.jmrix.lenz.configurexml;
 
 import jmri.util.JUnitUtil;
 import org.junit.*;
-import jmri.jmrix.lenz.XNetSystemConnectionMemo;
 import jmri.jmrix.lenz.XNetStreamConnectionConfig;
 
 /**
@@ -26,7 +25,7 @@ public class XNetStreamConnectionConfigXmlTest extends jmri.jmrix.configurexml.A
         // if we've started a traffic controller, dispose of it
         if (cc.getAdapter() != null) {
             if (cc.getAdapter().getSystemConnectionMemo() != null) {
-                ((XNetSystemConnectionMemo)cc.getAdapter().getSystemConnectionMemo()).dispose();
+                cc.getAdapter().getSystemConnectionMemo().dispose();
             }
         }
 

@@ -44,7 +44,11 @@ public class XNetProgrammerManagerTest {
 
     @After
     public void tearDown() {
-        JUnitUtil.clearShutDownManager(); // put in place because AbstractMRTrafficController implementing subclass was not terminated properly
+        prog = null;
+        memo.dispose();
+        memo = null;
+        tc.terminateThreads();
+        tc = null;
         JUnitUtil.tearDown();
     }
 

@@ -472,6 +472,7 @@ public class XNetThrottle extends AbstractThrottle implements XNetListener {
                 int b5 = l.getElement(5);
                 int b6 = l.getElement(6);
 
+                //noinspection LoggingConditionDisagreesWithLogStatement
                 if (log.isDebugEnabled()) {
                     int address2 = (b5 == 0x00) ? b6 : ((b5 * 256) & 0xFF00) + (b6 & 0xFF) - 0xC000;
                     log.trace("Locomotive {} in Double Header with {}",
@@ -926,8 +927,8 @@ public class XNetThrottle extends AbstractThrottle implements XNetListener {
      */
     protected static class RequestMessage {
 
-        private int state;
-        private XNetMessage msg;
+        private final int state;
+        private final XNetMessage msg;
 
         RequestMessage(XNetMessage m, int s) {
             state = s;

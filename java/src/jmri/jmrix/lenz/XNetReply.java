@@ -1,10 +1,5 @@
 package jmri.jmrix.lenz;
 
-import java.util.Optional;
-import java.util.function.Function;
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
-
 /**
  * Represents a single response from the XpressNet.
  *
@@ -45,7 +40,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * Create a reply from an XNetMessage.
-     * @param message existing message.
      */
     public XNetReply(XNetMessage message) {
         super();
@@ -57,7 +51,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * Create a reply from a string of hex characters.
-     * @param message hex string of message.
      */
     public XNetReply(String message) {
         super();
@@ -79,7 +72,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * Get the opcode as a string in hex format.
-     * @return 0x hex string of OpCode.
      */
     public String getOpCodeHex() {
         return "0x" + Integer.toHexString(this.getOpCode());
@@ -87,7 +79,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * Check whether the message has a valid parity.
-     * @return true if parity valid, else false.
      */
     public boolean checkParity() {
         int len = getNumDataElements();
@@ -148,22 +139,41 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
      */
     public int getTurnoutMsgAddr() {
         if (this.isFeedbackMessage()) {
-            return getTurnoutAddrFromData(
-                    getElement(1),
-                    getElement(2));
-        }
-        return -1;
-    }
-    
-    private int getTurnoutAddrFromData(int a1, int a2) {
-        if (getFeedbackMessageType() > 1) {
+            int a1 = this.getElement(1);
+            int a2 = this.getElement(2);
+            int messagetype = this.getFeedbackMessageType();
+            if (messagetype == 0 || messagetype == 1) {
+                // This is a turnout message
+                int address = (a1 & 0xff) * 4;
+                if (((a2 & 0x13) == 0x01) || ((a2 & 0x13) == 0x02)) {
+                    // This is the first address in the group*/
+                    return (address + 1);
+                } else if (((a2 & 0x1c) == 0x04) || ((a2 & 0x1c) == 0x08)) {
+                    // This is the second address in the group
+                    // return the odd address associated with this turnout
+                    return (address + 1);
+                } else if (((a2 & 0x13) == 0x11) || ((a2 & 0x13) == 0x12)) {
+                    // This is the third address in the group
+                    return (address + 3);
+                } else if (((a2 & 0x1c) == 0x14) || ((a2 & 0x1c) == 0x18)) {
+                    // This is the fourth address in the group
+                    // return the odd address associated with this turnout
+                    return (address + 3);
+                } else if ((a2 & 0x1f) == 0x10) {
+                    // This is an address in the upper nibble, but neither 
+                    // address has been operated.
+                    return (address + 3);
+                } else {
+                    // This is an address in the lower nibble, but neither 
+                    // address has been operated
+                    return (address + 1);
+                }
+            } else {
+                return -1;
+            }
+        } else {
             return -1;
         }
-        int address = (a1 & 0xff) * 4 + 1;
-        if ((a2 & 0x10) != 0) {
-            address += 2;
-        }
-        return address;
     }
 
     /**
@@ -178,7 +188,36 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
         if (this.isFeedbackBroadcastMessage()) {
             int a1 = this.getElement(startByte);
             int a2 = this.getElement(startByte + 1);
-            return getTurnoutAddrFromData(a1, a2);
+            int messagetype = this.getFeedbackMessageType();
+            if (messagetype == 0 || messagetype == 1) {
+                // This is a turnout message
+                int address = (a1 & 0xff) * 4;
+                if (((a2 & 0x13) == 0x01) || ((a2 & 0x13) == 0x02)) {
+                    // This is the first address in the group*/
+                    return (address + 1);
+                } else if (((a2 & 0x1c) == 0x04) || ((a2 & 0x1c) == 0x08)) {
+                    // This is the second address in the group
+                    // return the odd address associated with this turnout
+                    return (address + 1);
+                } else if (((a2 & 0x13) == 0x11) || ((a2 & 0x13) == 0x12)) {
+                    // This is the third address in the group
+                    return (address + 3);
+                } else if (((a2 & 0x1c) == 0x14) || ((a2 & 0x1c) == 0x18)) {
+                    // This is the fourth address in the group
+                    // return the odd address associated with this turnout
+                    return (address + 3);
+                } else if ((a2 & 0x1f) == 0x10) {
+                    // This is an address in the upper nibble, but neither 
+                    // address has been operated.
+                    return (address + 3);
+                } else {
+                    // This is an address in the lower nibble, but neither 
+                    // address has been operated
+                    return (address + 1);
+                }
+            } else {
+                return -1;
+            }
         } else {
             return -1;
         }
@@ -197,10 +236,40 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
      * @return THROWN/CLOSED as defined in {@link jmri.Turnout}
      */
     public int getTurnoutStatus(int turnout) {
-        if (this.isFeedbackMessage() && (turnout == 0 || turnout == 1)) {
+        if (this.isFeedbackMessage()) {
             int a2 = this.getElement(2);
-            // fake turnout id, used just internally. Just odd/even matters.
-            return createFeedbackItem(turnout, a2).getTurnoutStatus();
+            int messagetype = this.getFeedbackMessageType();
+            if (messagetype == 0 || messagetype == 1) {
+                if (turnout == 1) {
+                    // we want the lower half of the nibble
+                    if ((a2 & 0x03) != 0) {
+                        /* this is for the First turnout in the nibble */
+                        int state = this.getElement(2) & 0x03;
+                        if (state == 0x01) {
+                            return (jmri.Turnout.CLOSED);
+                        } else if (state == 0x02) {
+                            return (jmri.Turnout.THROWN);
+                        } else {
+                            return -1; /* the state is invalid */
+
+                        }
+                    }
+                } else if (turnout == 0) {
+                    /* we want the upper half of the nibble */
+                    if ((a2 & 0x0C) != 0) {
+                        /* this is for the upper half of the nibble */
+                        int state = this.getElement(2) & 0x0C;
+                        if (state == 0x04) {
+                            return (jmri.Turnout.CLOSED);
+                        } else if (state == 0x08) {
+                            return (jmri.Turnout.THROWN);
+                        } else {
+                            return -1; /* the state is invalid */
+
+                        }
+                    }
+                }
+            }
         }
         return (-1);
     }
@@ -220,10 +289,40 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
      * @return THROWN/CLOSED as defined in {@link jmri.Turnout}
      */
     public int getTurnoutStatus(int startByte, int turnout) {
-        if (this.isFeedbackBroadcastMessage() && (turnout == 0 || turnout == 1)) {
+        if (this.isFeedbackBroadcastMessage()) {
             int a2 = this.getElement(startByte + 1);
-            // fake turnout id, used just internally. Just odd/even matters.
-            return createFeedbackItem(turnout, a2).getTurnoutStatus();
+            int messagetype = this.getFeedbackMessageType();
+            if (messagetype == 0 || messagetype == 1) {
+                if (turnout == 1) {
+                    // we want the lower half of the nibble
+                    if ((a2 & 0x03) != 0) {
+                        /* this is for the First turnout in the nibble */
+                        int state = this.getElement(2) & 0x03;
+                        if (state == 0x01) {
+                            return (jmri.Turnout.CLOSED);
+                        } else if (state == 0x02) {
+                            return (jmri.Turnout.THROWN);
+                        } else {
+                            return -1; /* the state is invalid */
+
+                        }
+                    }
+                } else if (turnout == 0) {
+                    /* we want the upper half of the nibble */
+                    if ((a2 & 0x0C) != 0) {
+                        /* this is for the upper half of the nibble */
+                        int state = this.getElement(2) & 0x0C;
+                        if (state == 0x04) {
+                            return (jmri.Turnout.CLOSED);
+                        } else if (state == 0x08) {
+                            return (jmri.Turnout.THROWN);
+                        } else {
+                            return -1; /* the state is invalid */
+
+                        }
+                    }
+                }
+            }
         }
         return (-1);
     }
@@ -248,22 +347,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
         } else {
             return -1;
         }
-    }
-
-    /**
-     * Returns the number of feedback items in the messages.
-     * For accessory info replies, always returns 1. For broadcast, it returns the
-     * number of feedback pairs. Returns 0 for non-feedback messages.
-     * 
-     * @return number of feedback pair items.
-     */
-    public final int getFeedbackMessageItems() {
-        if (isFeedbackMessage()) {
-            return 1;
-        } else if (isFeedbackBroadcastMessage()) {
-            return (this.getElement(0) & 0x0F) / 2;
-        }
-        return 0;
     }
 
     /**
@@ -292,7 +375,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * Is this a feedback response message?
-     * @return true if a feedback response, else false.
      */
     public boolean isFeedbackMessage() {
         return (this.getElement(0) == XNetConstants.ACC_INFO_RESPONSE);
@@ -300,7 +382,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * Is this a feedback broadcast message?
-     * @return true if a feedback broadcast message, else false.
      */
     public boolean isFeedbackBroadcastMessage() {
         return ((this.getElement(0) & 0xF0) == XNetConstants.BC_FEEDBACK);
@@ -366,12 +447,9 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
      */
 
     /**
-     * If this is a throttle-type message, return address.
-     * Otherwise return -1. 
-     * <p>
-     * Note we only identify the command now;
-     * the response to a request for status is not yet seen here.
-     * @return address if throttle-type message, else -1.
+     * If this is a throttle-type message, return address. Otherwise return -1.
+     * Note we only identify the command now; the reponse to a request for
+     * status is not yet seen here.
      */
     public int getThrottleMsgAddr() {
         if (this.isThrottleMessage()) {
@@ -389,7 +467,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * Is this a throttle message?
-     * @return true if throttle message. else false.
      */
     public boolean isThrottleMessage() {
         int message = this.getElement(0);
@@ -407,7 +484,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
     /**
      * Does this message indicate the locomotive has been taken over by another
      * device?
-     * @return true if take over message, else false.
      */
     public boolean isThrottleTakenOverMessage() {
         return (this.getElement(0) == XNetConstants.LOCO_INFO_RESPONSE
@@ -416,7 +492,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * Is this a consist message?
-     * @return true if consist message, else false.
      */
     public boolean isConsistMessage() {
         int message = this.getElement(0);
@@ -433,7 +508,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
     /**
      * In the interest of code reuse, the following function checks to see
      * if an XpressNet Message is the OK message (01 04 05).
-     * @return true if an OK message, else false.
      */
     public boolean isOkMessage() {
         return (this.getElement(0) == XNetConstants.LI_MESSAGE_RESPONSE_HEADER
@@ -443,7 +517,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
     /**
      * In the interest of code reuse, the following function checks to see
      * if an XpressNet Message is the timeslot restored message (01 07 06).
-     * @return true if a time-slot restored message.
      */
     public boolean isTimeSlotRestored() {
         return (this.getElement(0) == XNetConstants.LI_MESSAGE_RESPONSE_HEADER
@@ -452,9 +525,8 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * In the interest of code reuse, the following function checks to see
-     * if an XpressNet Message is the Command Station no longer providing a
+     * if an XpressNet Message is the Command Station no longer provideing a
      * timeslot message (01 05 04).
-     * @return true if a time-slot revoked message, else false.
      */
     public boolean isTimeSlotRevoked() {
         return (this.getElement(0) == XNetConstants.LI_MESSAGE_RESPONSE_HEADER
@@ -464,7 +536,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
     /**
      * In the interest of code reuse, the following function checks to see
      * if an XpressNet Message is the Command Station Busy message (61 81 e3).
-     * @return true if is a CS Busy message, else false.
      */
     public boolean isCSBusyMessage() {
         return (this.getElement(0) == XNetConstants.CS_INFO
@@ -476,7 +547,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
      * In the interest of code reuse, the following function checks to see
      * if an XpressNet Message is the Command Station Transfer Error
      * message (61 80 e1).
-     * @return if CS Transfer error, else false.
      */
     public boolean isCSTransferError() {
         return (this.getElement(0) == XNetConstants.CS_INFO
@@ -487,7 +557,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
      * In the interest of code reuse, the following function checks to see
      * if an XpressNet Message is the not supported Error
      * message (61 82 e3).
-     * @return true if unsupported error, else false.
      */
     public boolean isUnsupportedError() {
         return (this.getElement(0) == XNetConstants.CS_INFO
@@ -497,14 +566,12 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
     /**
      * In the interest of code reuse, the following function checks to see
      * if an XpressNet Message is a communications error message.
-     * <p>
      * The errors handled are:
      *  01 01 00  -- Error between interface and the PC
      *  01 02 03  -- Error between interface and the Command Station
      *  01 03 02  -- Unknown Communications Error
-     *  01 06 07  -- LI10x Buffer Overflow
-     *  01 0A 0B  -- LIUSB only. Request resend of data.
-     * @return true if comm error message, else false.
+     *      01 06 07  -- LI10x Buffer Overflow
+     *      01 0A 0B  -- LIUSB only. Request resend of data.
      */
     public boolean isCommErrorMessage() {
         return (this.getElement(0) == XNetConstants.LI_MESSAGE_RESPONSE_HEADER
@@ -519,12 +586,10 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
     /**
      * In the interest of code reuse, the following function checks to see
      * if an XpressNet Message is a communications error message.
-     * <p>
      * The errors handled are:
      *  01 05 04  -- Timeslot Error
      *  01 07 06  -- Timeslot Restored
      *  01 08 09  -- Data sent while there is no Timeslot
-     * @return true if time slot error, else false.
      */
     public boolean isTimeSlotErrorMessage() {
         return (this.getElement(0) == XNetConstants.LI_MESSAGE_RESPONSE_HEADER
@@ -536,7 +601,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * Is this message a service mode response?
-     * @return true if a service mode response, else false.
      */
     public boolean isServiceModeResponse() {
         return (getElement(0) == XNetConstants.CS_SERVICE_MODE_RESPONSE
@@ -549,7 +613,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * Is this message a register or paged mode programming response?
-     * @return true if register or paged mode programming response, else false.
      */
     public boolean isPagedModeResponse() {
         return (getElement(0) == XNetConstants.CS_SERVICE_MODE_RESPONSE
@@ -558,7 +621,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
 
     /**
      * Is this message a direct CV mode programming response?
-     * @return true if direct CV mode programming response, else false.
      */
     public boolean isDirectModeResponse() {
         return (getElement(0) == XNetConstants.CS_SERVICE_MODE_RESPONSE
@@ -609,7 +671,7 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
     }
 
     /**
-     * @return true if the message is an unsolicited message
+     * @return true if the message is an unsollicited message
      */
     @Override
     public boolean isUnsolicited() {
@@ -624,127 +686,8 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
                 || (this.isFeedbackMessage() && reallyUnsolicited));
     }
 
-    /**
-     * Resets the unsolicited feedback flag. If the reply was not a feedback,
-     * or was received as a broadcast - unsolicited from the command station, 
-     * this method  <b>will not cause</b> the {@link #isUnsolicited()} to 
-     * return {@code false}.  
-     * <p>
-     * Messages sent as unsolicited by the command station can not be turned 
-     * to solicited.
-     */
     public final void resetUnsolicited() {
         reallyUnsolicited = false;
-    }
-    
-    /**
-     * Mask to identify a turnout feedback + correct nibble. Turnout types differ in
-     * 6th bit, so it's left out (is variable).
-     */
-    private static final int FEEDBACK_TURNOUT_MASK = 0b0101_0000;
-    
-    /**
-     * Mask to identify a feedback module + correct nibble. Turnout modules have
-     * type exactly 2.
-     */
-    private static final int FEEDBACK_MODULE_MASK  = 0b0111_0000;
-    
-    /**
-     * The value of "feedback module" type. 
-     */
-    private static final int FEEDBACK_TYPE_FBMODULE = 0b0100_0000;
-    
-    /**
-     * Bit that indicates the higher nibble in module or turnout feedback
-     */
-    private static final int FEEDBACK_HIGH_NIBBLE = 0b0001_0000;
-    
-    private int findFeedbackData(int baseAddress, int selector, int mask) {
-        if (isFeedbackMessage()) {
-            // shorctcut for single-item msg
-            int data = getElement(2);
-            if (getElement(1) == baseAddress &&
-                (data & mask) == selector) {
-                return data;
-            }
-        } else {
-            int start = 1;
-            for (int cnt = getFeedbackMessageItems(); cnt > 0; cnt--, start += 2) {
-                int data = getElement(start + 1);
-                if (getElement(start) == baseAddress &&
-                    (data & mask) == selector) {
-                    return data;
-                }
-            }
-        }
-        return -1;
-    }
-
-    /**
-     * Returns value of the given feedback module bit. Returns {@link Optional}
-     * that is non-empty, if the feedback was present. The Optional's value indicates the
-     * feedback state.
-     * 
-     * @param sensorNumber the sensor bit ID
-     * @return optional sensor state.
-     */
-    @CheckForNull
-    public Boolean selectModuleFeedback(int sensorNumber) {
-        if (!isFeedbackBroadcastMessage() || sensorNumber == 0 || sensorNumber >= 1024) {
-            return null;
-        }
-        // feedback address directly addresses 8-bit module, XpressNet spec 3.0:2.1.11.
-        int s = sensorNumber - 1;
-        int baseAddress = (s / 8);
-        int selector2 = (s & 0x04) != 0 ? 
-                FEEDBACK_TYPE_FBMODULE | FEEDBACK_HIGH_NIBBLE : 
-                FEEDBACK_TYPE_FBMODULE;
-        int res = findFeedbackData(baseAddress, selector2, FEEDBACK_MODULE_MASK);
-        return res == -1 ? null : 
-                (res & (1 << (s % 4))) > 0;
-    }
-    
-    /**
-     * Calls processor for turnout's feedback, returns the processor's outcome.
-     * Searches for the turnout feedback for the given accessory. If found,
-     * runs a processor on the feedback item, and returns its Boolean result.
-     * <p>
-     * Returns {@code false}, if matching feedback is not found.
-     * @param accessoryNumber the turnout number
-     * @param proc the processor
-     * @return {@code false} if feedback was not found, or a result of {@code proc()}.
-     */
-    public boolean onTurnoutFeedback(int accessoryNumber, Function<FeedbackItem, Boolean> proc) {
-        return selectTurnoutFeedback(accessoryNumber).map(proc).orElse(false);
-    }
-
-    /**
-     * Selects a matching turnout feedback. Finds turnout feedback for the given {@code accessoryNumber}.
-     * Returns an encapsulated feedback, that can be inspected. If no matching feedback is
-     * present, returns empty {@link Optional}.
-     * @param accessoryNumber the turnout number
-     * @return optional feedback item.
-     */
-    @Nonnull
-    public Optional<FeedbackItem> selectTurnoutFeedback(int accessoryNumber) {
-        // shortcut for single-item messages.
-        if (!isFeedbackBroadcastMessage() || accessoryNumber <= 0 || accessoryNumber >= 1024) {
-            return Optional.empty();
-        }
-        int a = accessoryNumber - 1;
-        int base = (a / 4);
-        // the mask makes the turnout feedback type bit irrelevant
-        int selector2 = (a & 0x02) != 0 ? FEEDBACK_HIGH_NIBBLE : 0;
-        int r = findFeedbackData(base, selector2, FEEDBACK_TURNOUT_MASK);
-        if (r == -1) {
-            return Optional.empty();
-        }
-        FeedbackItem item = new FeedbackItem(this, accessoryNumber, r);
-        return Optional.of(item);
-    }
-    
-    protected final FeedbackItem createFeedbackItem(int n, int d) {
-        return new FeedbackItem(this, n, d);
     }
 
     /**
@@ -1083,35 +1026,69 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
             }
             // Feedback Response Messages
         } else if (isFeedbackBroadcastMessage()) {
-            text = new StringBuilder().append(Bundle.getMessage("XNetReplyFeedbackLabel")).append(" ");
+            text = new StringBuilder(Bundle.getMessage("XNetReplyFeedbackLabel") + " ");
             int numDataBytes = getElement(0) & 0x0f;
             for (int i = 1; i < numDataBytes; i += 2) {
                 switch (getFeedbackMessageType(i)) {
                     case 0:
-                        text.append(getTurnoutReplyMonitorString(i, "TurnoutWoFeedback"));
+                        text.append(Bundle.getMessage("TurnoutWoFeedback")).append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(BEAN_NAME_TURNOUT))).append(" ").append(getTurnoutMsgAddr(i)).append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" "); // "State: "
+                        if ((getElement(i + 1) & 0x03) == 0x00) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_NOT_OPERATED)); // last items on line, no trailing space
+                        } else if ((getElement(i + 1) & 0x03) == 0x01) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_THROWN_LEFT));
+                        } else if ((getElement(i + 1) & 0x03) == 0x02) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_THROWN_RIGHT));
+                        } else {
+                            text.append(Bundle.getMessage(X_NET_REPLY_INVALID));
+                        }
+                        text.append("; ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(BEAN_NAME_TURNOUT))).append(" ").append(getTurnoutMsgAddr(i) + 1).append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" "); // "State: "
+                        if ((getElement(i + 1) & 0x0C) == 0x00) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_NOT_OPERATED)); // last items on line, no trailing space
+                        } else if ((getElement(i + 1) & 0x0C) == 0x04) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_THROWN_LEFT));
+                        } else if ((getElement(i + 1) & 0x0C) == 0x08) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_THROWN_RIGHT));
+                        } else {
+                            text.append(Bundle.getMessage(X_NET_REPLY_INVALID));
+                        }
                         break;
                     case 1:
-                        text.append(getTurnoutReplyMonitorString(i, "TurnoutWFeedback"));
+                        text.append(Bundle.getMessage("TurnoutWFeedback")).append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(BEAN_NAME_TURNOUT))).append(" ").append(getTurnoutMsgAddr(i)).append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" ");
+                        if ((getElement(i + 1) & 0x03) == 0x00) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_NOT_OPERATED)); // last items on line, no trailing space
+                        } else if ((getElement(i + 1) & 0x03) == 0x01) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_THROWN_LEFT));
+                        } else if ((getElement(i + 1) & 0x03) == 0x02) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_THROWN_RIGHT));
+                        } else {
+                            text.append(Bundle.getMessage(X_NET_REPLY_INVALID));
+                        }
+                        text.append("; ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(BEAN_NAME_TURNOUT))).append(" ").append(getTurnoutMsgAddr() + 1).append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" ");
+                        if ((getElement(i + 1) & 0x0C) == 0x00) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_NOT_OPERATED)); // last items on line, no trailing space
+                        } else if ((getElement(i + 1) & 0x0C) == 0x04) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_THROWN_LEFT));
+                        } else if ((getElement(i + 1) & 0x0C) == 0x08) {
+                            text.append(Bundle.getMessage(X_NET_REPLY_THROWN_RIGHT));
+                        } else {
+                            text.append(Bundle.getMessage(X_NET_REPLY_INVALID));
+                        }
                         break;
                     case 2:
                         text.append(Bundle.getMessage("XNetReplyFeedbackEncoder")).append(" ").append(getFeedbackEncoderMsgAddr(i) + 1);
                         boolean highnibble = ((getElement(i + 1) & 0x10) == 0x10);
                         text.append(" ").append(Bundle.getMessage(X_NET_REPLY_CONTACT_LABEL)).append(" ").append(highnibble ? 5 : 1);
 
-                        text.append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" ")
-                                .append(((getElement(i + 1) & 0x01) == 0x01) ? Bundle.getMessage(POWER_STATE_ON) : Bundle.getMessage(POWER_STATE_OFF));
+                        text.append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" ").append(((getElement(i + 1) & 0x01) == 0x01) ? Bundle.getMessage(POWER_STATE_ON) : Bundle.getMessage(POWER_STATE_OFF));
                         text.append("; ").append(Bundle.getMessage(X_NET_REPLY_CONTACT_LABEL)).append(" ").append(highnibble ? 6 : 2);
 
-                        text.append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" ")
-                                .append(((getElement(i + 1) & 0x02) == 0x02) ? Bundle.getMessage(POWER_STATE_ON) : Bundle.getMessage(POWER_STATE_OFF));
+                        text.append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" ").append(((getElement(i + 1) & 0x02) == 0x02) ? Bundle.getMessage(POWER_STATE_ON) : Bundle.getMessage(POWER_STATE_OFF));
                         text.append("; ").append(Bundle.getMessage(X_NET_REPLY_CONTACT_LABEL)).append(" ").append(highnibble ? 7 : 3);
 
-                        text.append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" ")
-                                .append(((getElement(i + 1) & 0x04) == 0x04) ? Bundle.getMessage(POWER_STATE_ON) : Bundle.getMessage(POWER_STATE_OFF));
+                        text.append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" ").append(((getElement(i + 1) & 0x04) == 0x04) ? Bundle.getMessage(POWER_STATE_ON) : Bundle.getMessage(POWER_STATE_OFF));
                         text.append("; ").append(Bundle.getMessage(X_NET_REPLY_CONTACT_LABEL)).append(" ").append(highnibble ? 8 : 4);
 
-                        text.append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" ")
-                                .append(((getElement(i + 1) & 0x08) == 0x08) ? Bundle.getMessage(POWER_STATE_ON) : Bundle.getMessage(POWER_STATE_OFF));
+                        text.append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" ").append(((getElement(i + 1) & 0x08) == 0x08) ? Bundle.getMessage(POWER_STATE_ON) : Bundle.getMessage(POWER_STATE_OFF));
                         text.append("; ");
                         break;
                     default:
@@ -1124,58 +1101,13 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
         return text.toString();
     }
 
-    private String getTurnoutReplyMonitorString(int startByte, String typeBundleKey) {
-        StringBuilder text = new StringBuilder();
-        int turnoutMsgAddr = getTurnoutMsgAddr(startByte);
-        Optional<FeedbackItem> feedBackOdd = selectTurnoutFeedback(turnoutMsgAddr);
-        if(feedBackOdd.isPresent()){
-            FeedbackItem feedbackItem = feedBackOdd.get();
-            text.append(singleTurnoutMonitorMessage(Bundle.getMessage(typeBundleKey), turnoutMsgAddr, feedbackItem));
-            text.append(";");
-            FeedbackItem pairedItem = feedbackItem.pairedAccessoryItem();
-            text.append(singleTurnoutMonitorMessage("", turnoutMsgAddr + 1, pairedItem));
-
-        }
-        return text.toString();
-    }
-
-    private String singleTurnoutMonitorMessage(String prefix, int turnoutMsgAddr, FeedbackItem feedbackItem) {
-        StringBuilder outputBuilder = new StringBuilder();
-        outputBuilder.append(prefix).append(" ")
-                .append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(BEAN_NAME_TURNOUT))).append(" ")
-                .append(turnoutMsgAddr).append(" ").append(Bundle.getMessage(MAKE_LABEL, Bundle.getMessage(COLUMN_STATE))).append(" ");
-        switch (feedbackItem.getAccessoryStatus()){
-            case 0:
-                outputBuilder.append(Bundle.getMessage(X_NET_REPLY_NOT_OPERATED)); // last items on line, no trailing space
-               break;
-            case 1:
-                outputBuilder.append(Bundle.getMessage(X_NET_REPLY_THROWN_LEFT));
-               break;
-            case 2:
-                outputBuilder.append(Bundle.getMessage(X_NET_REPLY_THROWN_RIGHT));
-                break;
-            default:
-                outputBuilder.append(Bundle.getMessage(X_NET_REPLY_INVALID));
-        }
-        if(feedbackItem.getType()==1){
-            outputBuilder.append(" ");
-            if(feedbackItem.isMotionComplete()){
-                outputBuilder.append(Bundle.getMessage("XNetReplyMotionComplete"));
-            } else {
-                outputBuilder.append(Bundle.getMessage("XNetReplyMotionIncomplete"));
-            }
-        }
-        return outputBuilder.toString();
-    }
-
     /**
      * Parse the speed step and the direction information for a locomotive.
      *
      * @param element1 contains the speed step mode designation and
      * availability information
      * @param element2 contains the data byte including the step mode and
-     * availability information
-     * @return readable version of message
+     * availability information 
      */
     protected String parseSpeedAndDirection(int element1, int element2) {
         String text = "";
@@ -1249,7 +1181,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
      *
      * @param element3 contains the data byte including F0,F1,F2,F3,F4
      * @param element4 contains F12,F11,F10,F9,F8,F7,F6,F5
-     * @return readable version of message
      */
     protected String parseFunctionStatus(int element3, int element4) {
         String text = "";
@@ -1326,7 +1257,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
      *
      * @param element3 contains F20,F19,F18,F17,F16,F15,F14,F13
      * @param element4 contains F28,F27,F26,F25,F24,F23,F22,F21
-     * @return readable version of message
      */
     protected String parseFunctionHighStatus(int element3, int element4) {
         String text = "";
@@ -1417,7 +1347,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
      *
      * @param element3 contains the data byte including F0,F1,F2,F3,F4
      * @param element4 contains F12,F11,F10,F9,F8,F7,F6,F5
-     * @return readable version of message
      */
     protected String parseFunctionMomentaryStatus(int element3, int element4) {
         String text = "";
@@ -1494,7 +1423,6 @@ public class XNetReply extends jmri.jmrix.AbstractMRReply {
      *
      * @param element3 contains F20,F19,F18,F17,F16,F15,F14,F13
      * @param element4 contains F28,F27,F26,F25,F24,F23,F22,F21
-     * @return readable version of message
      */
     protected String parseFunctionHighMomentaryStatus(int element3, int element4) {
         String text = "";

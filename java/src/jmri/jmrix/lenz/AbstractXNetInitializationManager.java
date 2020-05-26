@@ -52,7 +52,7 @@ public abstract class AbstractXNetInitializationManager {
     /* Interal class to configure the XNet implementation */
     protected class XNetInitializer implements XNetListener {
 
-        private javax.swing.Timer initTimer; // Timer used to let he 
+        private final javax.swing.Timer initTimer; // Timer used to let he
         // command station response time 
         // out, and configure the defaults.
 

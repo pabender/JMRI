@@ -1,3 +1,6 @@
+
+package jmri.jmrix.lenz;
+
 /**
  * XNetListenerScaffold.java
  *
@@ -5,8 +8,6 @@
  *
  * @author Bob Jacobsen
  */
-package jmri.jmrix.lenz;
-
 public class XNetListenerScaffold implements jmri.jmrix.lenz.XNetListener {
 
     public XNetListenerScaffold() {

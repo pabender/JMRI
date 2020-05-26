@@ -1,6 +1,6 @@
 package jmri.jmrix.lenz.swing;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import javax.annotation.CheckForNull;
@@ -71,7 +71,7 @@ public abstract class AbstractXPressNetAction extends AbstractAction implements 
     @Nonnull
     @Override
     public Set<Class<? extends SystemConnectionMemo>> getSystemConnectionMemoClasses(){
-        return new HashSet<>(Arrays.asList(XNetSystemConnectionMemo.class));
+        return new HashSet<>(Collections.singletonList(XNetSystemConnectionMemo.class));
     }
 
 }

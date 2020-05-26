@@ -20,7 +20,6 @@ public class XNetPowerManagerTest extends jmri.jmrix.AbstractPowerManagerTestBas
     private XNetPowerManager pm = null;
     private XNetInterfaceScaffold tc = null;
     private int propertyChangeCount;
-    private java.beans.PropertyChangeListener listener = null;
 
     // service routines to simulate receiving on, off from interface
     @Override
@@ -257,8 +256,8 @@ public class XNetPowerManagerTest extends jmri.jmrix.AbstractPowerManagerTestBas
 
     @Test
     public void testAddAndRemoveListener() {
-        listener = e -> propertyChangeCount++;
-        pm.addPropertyChangeListener(PowerManager.POWER, listener);
+        java.beans.PropertyChangeListener listener = event -> propertyChangeCount = propertyChangeCount + 1;
+        pm.addPropertyChangeListener(listener);
         Assert.assertEquals("PropertyChangeCount", 0, propertyChangeCount);
         // trigger a property change, and make sure the count changes too.
         sendOnReply();
