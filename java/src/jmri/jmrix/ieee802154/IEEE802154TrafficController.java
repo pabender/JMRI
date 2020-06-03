@@ -218,7 +218,7 @@ abstract public class IEEE802154TrafficController extends AbstractMRNodeTrafficC
      */
     synchronized public AbstractNode getNodeFromAddress(String addr) {
         log.debug("String getNodeFromAddress called with {}", addr);
-        byte ba[] = jmri.util.StringUtil.bytesFromHexString(addr);
+        byte[] ba = jmri.util.StringUtil.bytesFromHexString(addr);
         return getNodeFromAddress(ba);
     }
 
@@ -230,15 +230,15 @@ abstract public class IEEE802154TrafficController extends AbstractMRNodeTrafficC
      * @return serial address, or 'null' if a SerialNode with the specified
      * address was not found
      */
-    synchronized public AbstractNode getNodeFromAddress(int ia[]) {
+    synchronized public AbstractNode getNodeFromAddress(int[] ia) {
         if(logDebug) {
            String s="";
-           for( int i=0;i<ia.length;i++) {
-               s=jmri.util.StringUtil.appendTwoHexFromInt(ia[i],s);
-           }
+            for (int value : ia) {
+                s = jmri.util.StringUtil.appendTwoHexFromInt(value, s);
+            }
            log.debug("int array getNodeFromAddress called with {}", s);
         }
-        byte ba[] = new byte[ia.length];
+        byte[] ba = new byte[ia.length];
         for (int i = 0; i < ia.length; i++) {
             ba[i] = (byte) (ia[i] & 0xff);
         }
@@ -252,12 +252,12 @@ abstract public class IEEE802154TrafficController extends AbstractMRNodeTrafficC
      * @return serial node id, or 'null' if a SerialNode with the specified
      * address was not found
      */
-    synchronized public AbstractNode getNodeFromAddress(byte ba[]) {
+    synchronized public AbstractNode getNodeFromAddress(byte[] ba) {
         log.debug("byte array getNodeFromAddress called with {}",
                 jmri.util.StringUtil.hexStringFromBytes(ba));
         for (int i = 0; i < numNodes; i++) {
-            byte bsa[] = ((IEEE802154Node) getNode(i)).getUserAddress();
-            byte bga[] = ((IEEE802154Node) getNode(i)).getGlobalAddress();
+            byte[] bsa = ((IEEE802154Node) getNode(i)).getUserAddress();
+            byte[] bga = ((IEEE802154Node) getNode(i)).getGlobalAddress();
             if (bsa.length == ba.length) {
                 int j = 0;
                 for (; j < bsa.length; j++) {

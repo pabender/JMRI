@@ -189,8 +189,8 @@ public class SerialDriverAdapter extends IEEE802154PortController {
         return "Adapter"; // NOI18N
     }
 
-    private String[] validSpeeds = new String[]{Bundle.getMessage("BaudAutomatic")};
-    private int[] validSpeedValues = new int[]{9600};
+    private final String[] validSpeeds = new String[]{Bundle.getMessage("BaudAutomatic")};
+    private final int[] validSpeedValues = new int[]{9600};
 
     @Override
     public int defaultBaudIndex() {

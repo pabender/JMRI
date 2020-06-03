@@ -83,12 +83,11 @@ public class ConnectionConfigXml extends AbstractSerialConnectionConfigXml {
     @Override
     protected void unpackElement(Element shared, Element perNode) {
         List<Element> l = shared.getChildren("node");
-        for (int i = 0; i < l.size(); i++) {
-            Element n = l.get(i);
+        for (Element n : l) {
             //int addr = Integer.parseInt(n.getAttributeValue("name"));
-            byte PAN[] = jmri.util.StringUtil.bytesFromHexString(findParmValue(n, "PAN"));
-            byte address[] = jmri.util.StringUtil.bytesFromHexString(findParmValue(n, "address"));
-            byte GUID[] = jmri.util.StringUtil.bytesFromHexString(findParmValue(n, "GUID"));
+            byte[] PAN = jmri.util.StringUtil.bytesFromHexString(findParmValue(n, "PAN"));
+            byte[] address = jmri.util.StringUtil.bytesFromHexString(findParmValue(n, "address"));
+            byte[] GUID = jmri.util.StringUtil.bytesFromHexString(findParmValue(n, "GUID"));
 
             // create node (they register themselves)
             SerialNode node = new SerialNode(PAN, address, GUID);

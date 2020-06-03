@@ -7,12 +7,12 @@ package jmri.jmrix.ieee802154.xbee;
  */
 public interface XBeeInterface {
 
-    public void addXBeeListener(XBeeListener l);
+    void addXBeeListener(XBeeListener l);
 
-    public void removeXBeeListener(XBeeListener l);
+    void removeXBeeListener(XBeeListener l);
 
     //boolean status();   // true if the implementation is operational
-    public void sendXBeeMessage(XBeeMessage m, XBeeListener l);  // 2nd arg gets the reply
+    void sendXBeeMessage(XBeeMessage m, XBeeListener l);  // 2nd arg gets the reply
 }
 
 

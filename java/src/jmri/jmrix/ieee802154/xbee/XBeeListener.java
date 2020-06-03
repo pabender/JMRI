@@ -7,9 +7,9 @@ package jmri.jmrix.ieee802154.xbee;
  */
 public interface XBeeListener extends jmri.jmrix.AbstractMRListener {
 
-    public void message(XBeeMessage m);
+    void message(XBeeMessage m);
 
-    public void reply(XBeeReply m);
+    void reply(XBeeReply m);
 }
 
 

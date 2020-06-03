@@ -146,9 +146,7 @@ public class StreamConfigPane extends JmrixConfigPane {
                 manuBox.addItem(manuName);
             }
         }
-        manuBox.addActionListener((ActionEvent evt) -> {
-            updateComboConnection();
-        });
+        manuBox.addActionListener((ActionEvent evt) -> updateComboConnection());
 
         // get the list of ConnectionConfig items into a selection box
         classConnectionNameList = manager.getConnectionTypes((String) manuBox.getSelectedItem());

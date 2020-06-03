@@ -80,18 +80,14 @@ public class AddNodeFrame extends jmri.util.JmriJFrame {
         addButton.setText(Bundle.getMessage("ButtonAdd"));
         addButton.setVisible(true);
         addButton.setToolTipText(Bundle.getMessage("TipAddButton"));
-        addButton.addActionListener((java.awt.event.ActionEvent e) -> {
-            addButtonActionPerformed();
-        });
+        addButton.addActionListener((java.awt.event.ActionEvent e) -> addButtonActionPerformed());
         panel4.add(addButton);
         panel4.add(cancelButton);
         cancelButton.setText(Bundle.getMessage("ButtonCancel"));
         cancelButton.setVisible(true);
         cancelButton.setToolTipText(Bundle.getMessage("TipCancelButton"));
         panel4.add(cancelButton);
-        cancelButton.addActionListener((java.awt.event.ActionEvent e) -> {
-            cancelButtonActionPerformed();
-        });
+        cancelButton.addActionListener((java.awt.event.ActionEvent e) -> cancelButtonActionPerformed());
         contentPane.add(panel4);
 
         // pack for display

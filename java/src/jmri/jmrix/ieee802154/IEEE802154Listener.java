@@ -5,10 +5,10 @@ package jmri.jmrix.ieee802154;
  *
  * @author Bob Jacobsen Copyright (C) 2001, 2006, 2007, 2008
  */
-abstract public interface IEEE802154Listener extends jmri.jmrix.AbstractMRListener {
+public interface IEEE802154Listener extends jmri.jmrix.AbstractMRListener {
 
-    public void message(IEEE802154Message m);
+    void message(IEEE802154Message m);
 
-    public void reply(IEEE802154Reply m);
+    void reply(IEEE802154Reply m);
 
 }

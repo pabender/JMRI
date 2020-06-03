@@ -22,8 +22,8 @@ import org.slf4j.LoggerFactory;
  */
 public class NodeConfigFrame extends jmri.util.JmriJFrame {
 
-    protected javax.swing.JComboBox<String> nodeAddrField = new javax.swing.JComboBox<String>();
-    protected javax.swing.JComboBox<String> nodeAddr64Field = new javax.swing.JComboBox<String>();
+    protected javax.swing.JComboBox<String> nodeAddrField = new javax.swing.JComboBox<>();
+    protected javax.swing.JComboBox<String> nodeAddr64Field = new javax.swing.JComboBox<>();
     protected javax.swing.JButton addButton = new javax.swing.JButton(Bundle.getMessage("ButtonAdd"));
     protected javax.swing.JButton editButton = new javax.swing.JButton(Bundle.getMessage("ButtonEdit"));
     protected javax.swing.JButton deleteButton = new javax.swing.JButton(Bundle.getMessage("ButtonDelete"));
@@ -94,24 +94,12 @@ public class NodeConfigFrame extends jmri.util.JmriJFrame {
         panel11.setLayout(new FlowLayout());
         panel11.add(new JLabel(Bundle.getMessage("LabelNodeAddress") + " "));
         panel11.add(nodeAddrField);
-        nodeAddrField.addActionListener(new java.awt.event.ActionListener() {
-
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                nodeSelected();
-            }
-        });
+        nodeAddrField.addActionListener(e -> nodeSelected());
         nodeAddrField.setToolTipText(Bundle.getMessage("TipNodeAddress"));
         panel11.add(new JLabel(Bundle.getMessage("LabelNodeAddress64") + " "));
         panel11.add(nodeAddr64Field);
         nodeAddr64Field.setToolTipText(Bundle.getMessage("TipNodeAddress64"));
-        nodeAddr64Field.addActionListener(new java.awt.event.ActionListener() {
-
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                nodeAddrField.setSelectedIndex(nodeAddr64Field.getSelectedIndex());
-            }
-        });
+        nodeAddr64Field.addActionListener(e -> nodeAddrField.setSelectedIndex(nodeAddr64Field.getSelectedIndex()));
 
         initAddressBoxes();
         panel1.add(panel11);
@@ -161,68 +149,38 @@ public class NodeConfigFrame extends jmri.util.JmriJFrame {
         addButton.setText(Bundle.getMessage("ButtonAdd"));
         addButton.setVisible(true);
         addButton.setToolTipText(Bundle.getMessage("TipAddButton"));
-        addButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                addButtonActionPerformed();
-            }
-        });
+        addButton.addActionListener(e -> addButtonActionPerformed());
         panel4.add(addButton);
         editButton.setText(Bundle.getMessage("ButtonEdit"));
         editButton.setVisible(true);
         editButton.setToolTipText(Bundle.getMessage("TipEditButton"));
         panel4.add(editButton);
-        editButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                editButtonActionPerformed();
-            }
-        });
+        editButton.addActionListener(e -> editButtonActionPerformed());
         panel4.add(deleteButton);
         deleteButton.setText(Bundle.getMessage("ButtonDelete"));
         deleteButton.setVisible(true);
         deleteButton.setToolTipText(Bundle.getMessage("TipDeleteButton"));
         panel4.add(deleteButton);
-        deleteButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                deleteButtonActionPerformed();
-            }
-        });
+        deleteButton.addActionListener(e -> deleteButtonActionPerformed());
         panel4.add(doneButton);
         doneButton.setText(Bundle.getMessage("ButtonDone"));
         doneButton.setVisible(true);
         doneButton.setToolTipText(Bundle.getMessage("TipDoneButton"));
         panel4.add(doneButton);
-        doneButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                doneButtonActionPerformed();
-            }
-        });
+        doneButton.addActionListener(e -> doneButtonActionPerformed());
         panel4.add(updateButton);
         updateButton.setText(Bundle.getMessage("ButtonUpdate"));
         updateButton.setVisible(true);
         updateButton.setToolTipText(Bundle.getMessage("TipUpdateButton"));
         panel4.add(updateButton);
-        updateButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                updateButtonActionPerformed();
-            }
-        });
+        updateButton.addActionListener(e -> updateButtonActionPerformed());
         updateButton.setVisible(false);
         panel4.add(cancelButton);
         cancelButton.setText(Bundle.getMessage("ButtonCancel"));
         cancelButton.setVisible(true);
         cancelButton.setToolTipText(Bundle.getMessage("TipCancelButton"));
         panel4.add(cancelButton);
-        cancelButton.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                cancelButtonActionPerformed();
-            }
-        });
+        cancelButton.addActionListener(e -> cancelButtonActionPerformed());
         cancelButton.setVisible(false);
         return panel4;
     }
