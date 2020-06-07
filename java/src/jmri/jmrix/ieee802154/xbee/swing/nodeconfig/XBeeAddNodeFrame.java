@@ -27,9 +27,9 @@ import org.slf4j.LoggerFactory;
  */
 public class XBeeAddNodeFrame extends jmri.jmrix.ieee802154.swing.nodeconfig.AddNodeFrame {
 
-    private XBeeTrafficController xtc = null;
+    private XBeeTrafficController xtc;
     private final javax.swing.JTextField nodeIdentifierField = new javax.swing.JTextField();
-    private XBeeNodeConfigFrame parent = null;
+    private XBeeNodeConfigFrame parent;
 
 
     /**

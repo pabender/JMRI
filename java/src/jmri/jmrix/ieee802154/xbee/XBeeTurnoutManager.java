@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
  */
 public class XBeeTurnoutManager extends AbstractTurnoutManager {
 
-    protected XBeeTrafficController tc = null;
+    protected XBeeTrafficController tc;
 
     public XBeeTurnoutManager(XBeeConnectionMemo memo) {
         super(memo);
@@ -41,7 +41,7 @@ public class XBeeTurnoutManager extends AbstractTurnoutManager {
 
     @Override
     public Turnout createNewTurnout(@Nonnull String systemName, String userName) {
-        XBeeNode curNode = null;
+        XBeeNode curNode;
         String name = addressFromSystemName(systemName);
         if ((curNode = (XBeeNode) tc.getNodeFromName(name)) == null) {
             if ((curNode = (XBeeNode) tc.getNodeFromAddress(name)) == null) {
@@ -50,7 +50,6 @@ public class XBeeTurnoutManager extends AbstractTurnoutManager {
                 } catch (java.lang.NumberFormatException nfe) {
                     // if there was a number format exception, we couldn't
                     // find the node.
-                    curNode = null;
                     log.debug("failed to create turnout {}", systemName);
                     return null;
                 }
@@ -73,7 +72,7 @@ public class XBeeTurnoutManager extends AbstractTurnoutManager {
     }
 
     @Override
-    public String createSystemName(@Nonnull String curAddress, @Nonnull String prefix) throws JmriException {
+    public String createSystemName(@Nonnull String curAddress, @Nonnull String prefix) {
         return prefix + typeLetter() + curAddress;
     }
 
@@ -147,8 +146,8 @@ public class XBeeTurnoutManager extends AbstractTurnoutManager {
     }
 
     private int pinFromSystemName(@Nonnull String systemName) {
-        int input = 0;
-        int iName = 0;
+        int input;
+        int iName;
 
         if (systemName.contains(":")) {
             //Address format passed is in the form of encoderAddress:input or T:turnout address
@@ -179,7 +178,7 @@ public class XBeeTurnoutManager extends AbstractTurnoutManager {
     }
 
     private int pin2FromSystemName(@Nonnull String systemName) {
-        int input = 0;
+        int input;
 
         if (systemName.contains(":")) {
             //Address format passed is in the form of encoderAddress:input or T:turnout address

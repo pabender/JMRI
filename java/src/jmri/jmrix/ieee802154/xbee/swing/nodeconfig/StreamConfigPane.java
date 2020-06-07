@@ -118,7 +118,7 @@ public class StreamConfigPane extends JmrixConfigPane {
 
     jmri.UserPreferencesManager p = jmri.InstanceManager.getDefault(jmri.UserPreferencesManager.class);
 
-    StreamConnectionConfig ccCurrent = null;
+    StreamConnectionConfig ccCurrent;
 
     /**
      * Use "instance" to get one of these. That allows it to reconnect to

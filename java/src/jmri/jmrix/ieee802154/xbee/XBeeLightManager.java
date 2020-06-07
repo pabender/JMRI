@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
  */
 public class XBeeLightManager extends AbstractLightManager {
 
-    protected XBeeTrafficController tc = null;
+    protected XBeeTrafficController tc;
 
     public XBeeLightManager(XBeeConnectionMemo memo) {
         super(memo);
@@ -41,7 +41,7 @@ public class XBeeLightManager extends AbstractLightManager {
 
     @Override
     public Light createNewLight(@Nonnull String systemName, @Nonnull String userName) {
-        XBeeNode curNode = null;
+        XBeeNode curNode;
         String name = addressFromSystemName(systemName);
         if ((curNode = (XBeeNode) tc.getNodeFromName(name)) == null) {
             if ((curNode = (XBeeNode) tc.getNodeFromAddress(name)) == null) {
@@ -50,7 +50,6 @@ public class XBeeLightManager extends AbstractLightManager {
                 } catch (java.lang.NumberFormatException nfe) {
                     // if there was a number format exception, we couldn't
                     // find the node.
-                    curNode = null;
                     log.debug("failed to create light {}", systemName);
                     return null;
                 }
@@ -128,8 +127,8 @@ public class XBeeLightManager extends AbstractLightManager {
     }
 
     private int pinFromSystemName(@Nonnull String systemName) {
-        int input = 0;
-        int iName = 0;
+        int input;
+        int iName;
 
         if (systemName.contains(":")) {
             //Address format passed is in the form of encoderAddress:input or L:light address

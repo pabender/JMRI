@@ -35,7 +35,7 @@ public class XBeeTurnout extends AbstractTurnout {
 
     private String systemName;
 
-    protected XBeeTrafficController tc = null;
+    protected XBeeTrafficController tc;
 
     /**
      * Create a Turnout object, with system and user names and a reference to

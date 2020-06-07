@@ -47,7 +47,7 @@ public class XBeeSensorManager extends jmri.managers.AbstractSensorManager imple
         return (XBeeConnectionMemo) memo;
     }
 
-    protected XBeeTrafficController tc = null;
+    protected XBeeTrafficController tc;
 
     // to free resources when no longer used
     @Override
@@ -67,7 +67,7 @@ public class XBeeSensorManager extends jmri.managers.AbstractSensorManager imple
     @Override
     @Nonnull
     public Sensor createNewSensor(@Nonnull String systemName, String userName) throws IllegalArgumentException {
-        XBeeNode curNode = null;
+        XBeeNode curNode;
         String name = addressFromSystemName(systemName);
         if ((curNode = (XBeeNode) tc.getNodeFromName(name)) == null) {
             if ((curNode = (XBeeNode) tc.getNodeFromAddress(name)) == null) {
@@ -229,8 +229,8 @@ public class XBeeSensorManager extends jmri.managers.AbstractSensorManager imple
     }
 
     private int pinFromSystemName(String systemName) {
-        int input = 0;
-        int iName = 0;
+        int input;
+        int iName;
 
         if (systemName.contains(":")) {
             //Address format passed is in the form of encoderAddress:input or L:light address

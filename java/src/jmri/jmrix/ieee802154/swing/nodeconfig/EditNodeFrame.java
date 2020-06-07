@@ -27,10 +27,10 @@ public class EditNodeFrame extends jmri.util.JmriJFrame {
 
     protected javax.swing.JPanel panel = new JPanel();
 
-    protected IEEE802154Node curNode = null;    // IEEE802154 Node being editted
+    protected IEEE802154Node curNode;    // IEEE802154 Node being editted
 
     @SuppressWarnings("unused")
-    private IEEE802154TrafficController itc = null;
+    private IEEE802154TrafficController itc;
 
     /**
      * Constructor method

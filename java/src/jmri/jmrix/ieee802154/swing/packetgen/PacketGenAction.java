@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PacketGenAction extends AbstractAction {
 
-    jmri.jmrix.ieee802154.IEEE802154SystemConnectionMemo _memo = null;
+    jmri.jmrix.ieee802154.IEEE802154SystemConnectionMemo _memo;
 
     public PacketGenAction(String s, jmri.jmrix.ieee802154.IEEE802154SystemConnectionMemo memo) {
         super(s);

@@ -28,7 +28,7 @@ public class AddNodeFrame extends jmri.util.JmriJFrame {
 
     protected IEEE802154Node curNode = null;    // IEEE802154 Node being editted
 
-    private IEEE802154TrafficController itc = null;
+    private IEEE802154TrafficController itc;
 
     /**
      * Constructor method

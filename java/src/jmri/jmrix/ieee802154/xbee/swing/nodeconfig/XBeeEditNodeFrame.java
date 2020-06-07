@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
  */
 public class XBeeEditNodeFrame extends jmri.jmrix.ieee802154.swing.nodeconfig.EditNodeFrame {
 
-    private XBeeTrafficController xtc = null;
+    private XBeeTrafficController xtc;
     private final javax.swing.JTextField nodeIdentifierField = new javax.swing.JTextField();
     private XBeeNodeConfigFrame parent = null;
 

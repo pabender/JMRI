@@ -59,7 +59,7 @@ abstract public class IEEE802154TrafficController extends AbstractMRNodeTrafficC
 
     // have several debug statements in tight loops, e.g. every character;
     // only want to check once
-    protected boolean logDebug = false;
+    protected boolean logDebug;
 
     // The methods to implement the IEEE802154Interface
 
@@ -183,24 +183,6 @@ abstract public class IEEE802154TrafficController extends AbstractMRNodeTrafficC
         }
         ((IEEE802154Message) m).setParity();
     }
-
-    /**
-     * Add header to the outgoing byte stream.
-     *
-     * @param msg The output byte stream
-     * @return next location in the stream to fill
-     */
-    //protected int addHeaderToOutput(byte[] msg, AbstractMRMessage m) {
-    //    m.setElement(0)=0x7E;
-    //    return 1;
-    //}
-
-    /**
-     * <p>
-     * This is a default, null implementation, which must be overridden in an
-     * adapter-specific subclass.
-     */
-    //protected AbstractMRReply newReply() {return new IEEE802154Reply();}
 
     /**
      * Build a new IEEE802154 Node.

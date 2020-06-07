@@ -81,7 +81,6 @@ public class SerialNode extends IEEE802154Node {
      */
     @Override
     public void resetTimeout(AbstractMRMessage m) {
-        return;
     }
 
     private final static Logger log = LoggerFactory.getLogger(SerialNode.class);

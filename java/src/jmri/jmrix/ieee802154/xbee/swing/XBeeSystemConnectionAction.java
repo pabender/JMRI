@@ -1,6 +1,7 @@
 package jmri.jmrix.ieee802154.xbee.swing;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import jmri.jmrix.SystemConnectionMemo;
@@ -19,7 +20,7 @@ public abstract class XBeeSystemConnectionAction extends AbstractSystemConnectio
 
     @Override
     public Set<Class<? extends SystemConnectionMemo>> getSystemConnectionMemoClasses() {
-        return new HashSet<>(Arrays.asList(XBeeConnectionMemo.class));
+        return new HashSet<>(Collections.singletonList(XBeeConnectionMemo.class));
     }
     
 }

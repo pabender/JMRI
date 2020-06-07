@@ -27,7 +27,7 @@ public class XBeeLight extends AbstractLight {
 
     private int pin;         /* Which DIO pin does this light represent. */
 
-    protected XBeeTrafficController tc = null;
+    protected XBeeTrafficController tc;
 
     /**
      * Create a Light object, with system and user names and a reference to the

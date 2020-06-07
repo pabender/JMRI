@@ -1,8 +1,3 @@
-/**
- * Swing action to create and register a IEEE802154 PacketGenFrame object
- *
- * @author Bob Jacobsen Copyright (C) 2001, 2002
- */
 package jmri.jmrix.ieee802154.xbee.swing.packetgen;
 
 import java.awt.event.ActionEvent;
@@ -14,6 +9,11 @@ import jmri.jmrix.ieee802154.xbee.swing.XBeeSystemConnectionAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Swing action to create and register a IEEE802154 PacketGenFrame object
+ *
+ * @author Bob Jacobsen Copyright (C) 2001, 2002
+ */
 public class PacketGenAction extends XBeeSystemConnectionAction {
 
     public PacketGenAction(String s, XBeeConnectionMemo memo) {

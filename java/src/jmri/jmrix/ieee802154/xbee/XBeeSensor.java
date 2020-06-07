@@ -30,7 +30,7 @@ public class XBeeSensor extends AbstractSensor implements IIOSampleReceiveListen
 
     private XBeeNode node = null; // Which node does this belong too.
 
-    protected XBeeTrafficController tc = null;
+    protected XBeeTrafficController tc;
 
     public XBeeSensor(String systemName, String userName, XBeeTrafficController controller) {
         super(systemName, userName);
@@ -81,7 +81,7 @@ public class XBeeSensor extends AbstractSensor implements IIOSampleReceiveListen
            } else {
                try {
                    nodeIdentifier = id.substring(prefix.length() + 1, id.length() - 1);
-                   int address = Integer.parseInt(id.substring(prefix.length() + 1, id.length()));
+                   int address = Integer.parseInt(id.substring(prefix.length() + 1));
                    node = (XBeeNode) tc.getNodeFromAddress(address / 10);
                    // calculate the pin to examine
                    pin = ((address) % 10);
@@ -146,7 +146,6 @@ public class XBeeSensor extends AbstractSensor implements IIOSampleReceiveListen
              }
           }
         }
-        return;
     }
 
     /**

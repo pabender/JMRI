@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 public class XBeeNode extends IEEE802154Node {
 
     private String identifier;
-    private HashMap<Integer, NamedBean> pinObjects = null;
+    private HashMap<Integer, NamedBean> pinObjects;
     private boolean isPolled;
     private XBeeTrafficController tc = null;
     private RemoteXBeeDevice device = null;
@@ -164,7 +164,6 @@ public class XBeeNode extends IEEE802154Node {
      */
     @Override
     public void resetTimeout(AbstractMRMessage m) {
-        return;
     }
 
     /**
@@ -411,10 +410,6 @@ public class XBeeNode extends IEEE802154Node {
     /**
      * Provide a string representation of this XBee Node.
      */
-
-    /**
-     * Provide a string representation of this XBee Node.
-     */
     @Override
     public String toString(){
        return "(" + jmri.util.StringUtil.hexStringFromBytes(getUserAddress()) +
@@ -541,7 +536,7 @@ public class XBeeNode extends IEEE802154Node {
        } finally {
           readLock.unlock();
        }
-       jmri.Sensor.PullResistance retval = jmri.Sensor.PullResistance.PULL_OFF;
+       jmri.Sensor.PullResistance retval;
        switch(pin){
        case 0:
            if((prbyte & 0x01)==0x01){

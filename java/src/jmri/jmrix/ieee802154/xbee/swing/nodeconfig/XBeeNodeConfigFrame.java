@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
  */
 public class XBeeNodeConfigFrame extends jmri.jmrix.ieee802154.swing.nodeconfig.NodeConfigFrame implements IDiscoveryListener {
 
-    private XBeeTrafficController xtc = null;
+    private XBeeTrafficController xtc;
     protected javax.swing.JButton discoverButton = new javax.swing.JButton(Bundle.getMessage("ButtonDiscover"));
     private final JComboBox<XBeeNode> nodeField = new javax.swing.JComboBox<>();
     protected JTable assignmentTable = null;

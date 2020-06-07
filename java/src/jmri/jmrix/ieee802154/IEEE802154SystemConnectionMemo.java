@@ -66,7 +66,7 @@ public class IEEE802154SystemConnectionMemo extends jmri.jmrix.SystemConnectionM
         if (getDisabled()) {
             return false;
         }
-        return false; // nothing, by default
+        return super.provides(type);
     }
 
     /**
@@ -77,7 +77,7 @@ public class IEEE802154SystemConnectionMemo extends jmri.jmrix.SystemConnectionM
         if (getDisabled()) {
             return null;
         }
-        return null; // nothing, by default
+        return super.get(T);
     }
 
     /**

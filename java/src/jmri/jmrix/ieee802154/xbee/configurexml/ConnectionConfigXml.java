@@ -74,13 +74,13 @@ public class ConnectionConfigXml extends AbstractSerialConnectionConfigXml {
                 n.addContent(makeParameter("name", node.getIdentifier()));
                 n.addContent(makeParameter("polled", node.getPoll() ? "yes" : "no"));
 
-                jmri.jmrix.AbstractStreamPortController pc = null;
+                jmri.jmrix.AbstractStreamPortController pc;
                 if ((pc = node.getPortController()) != null) {
                     n.addContent(makeParameter("StreamController",
                             pc.getClass().getName()));
                 }
 
-                jmri.jmrix.AbstractStreamConnectionConfig cf = null;
+                jmri.jmrix.AbstractStreamConnectionConfig cf;
                 if ((cf = node.getConnectionConfig()) != null) {
                     n.addContent(makeParameter("StreamConfig",
                             cf.getClass().getName()));
@@ -101,7 +101,6 @@ public class ConnectionConfigXml extends AbstractSerialConnectionConfigXml {
             }
         } catch (java.lang.NullPointerException npe2) {
             // no nodes defined.
-            return;
         }
     }
 

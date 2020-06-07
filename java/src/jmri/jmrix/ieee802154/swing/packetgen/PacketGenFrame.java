@@ -4,7 +4,7 @@ import jmri.jmrix.ieee802154.IEEE802154Message;
 import jmri.jmrix.ieee802154.IEEE802154TrafficController;
 
 /**
- * Frame for user input of XpressNet messages
+ * Frame for user input of IEEE 802.15.4 messages
  *
  * @author Bob Jacobsen Copyright (C) 2001,2002
  */
@@ -18,7 +18,7 @@ public class PacketGenFrame extends jmri.jmrix.swing.AbstractPacketGenFrame {
         super.initComponents();
 
         // all we need to do is set the title 
-        Bundle.getMessage("jmri.jmrix.ieee802154.swing.packetgen.PacketGenAction");
+        setTitle(Bundle.getMessage("jmri.jmrix.ieee802154.swing.packetgen.PacketGenAction"));
 
         // pack to cause display
         pack();
