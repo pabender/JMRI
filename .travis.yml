@@ -75,7 +75,11 @@ jobs:
     os: linux
     env: HEADLESS=false SKIPINTERMITTENT=false STATIC=true
 
+after_failure:
+  - python < $(curl -s https://report.ci/report.py)
+
 after_success:
   - if [[ "$TRAVIS_OS_NAME" == "linux" && "$HEADLESS" == "false" ]] ; then mvn jacoco:report coveralls:report -U -P travis-coverage ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" && "$HEADLESS" == "false" ]] ; then JACOCO_SOURCE_PATH=java/src ./cc-test-reporter format-coverage target/site/jacoco/jacoco.xml --input-type jacoco ; ./cc-test-reporter upload-coverage ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" && "$HEADLESS" == "false" ]] ; then bash <(curl -s https://codecov.io/bash) ; fi
+  - python < $(curl -s https://report.ci/report.py)
