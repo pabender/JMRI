@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.configurexml;
 
 import javax.swing.JMenu;

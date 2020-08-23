@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.roster;
 
 import com.fasterxml.jackson.databind.util.StdDateFormat;

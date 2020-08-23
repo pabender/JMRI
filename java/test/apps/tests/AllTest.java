@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package apps.tests;
 
 import org.junit.platform.launcher.Launcher;

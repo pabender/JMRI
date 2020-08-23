@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * This is not itself a test class, e.g. should not be added to a suite.
  * Instead, this forms the base for test classes, including providing some

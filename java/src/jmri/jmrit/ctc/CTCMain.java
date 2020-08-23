@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  *  @author Gregory J. Bedlek Copyright (C) 2018, 2019, 2020
  */

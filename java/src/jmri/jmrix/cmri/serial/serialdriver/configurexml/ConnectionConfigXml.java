@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.cmri.serial.serialdriver.configurexml;
 
 import java.util.List;

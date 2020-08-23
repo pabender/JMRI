@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Contains various utilities classes that are 
  * useful across the entire

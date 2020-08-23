@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.lenz.swing.lzv100;
 
 import java.awt.GraphicsEnvironment;

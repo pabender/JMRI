@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.web.servlet.operations;
 
 import static jmri.web.servlet.ServletUtil.APPLICATION_JSON;

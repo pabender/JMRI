@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.entryexit.configurexml;
 
 import java.awt.Color;

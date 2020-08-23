@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.roco.z21.swing;
 
 import jmri.jmrix.roco.z21.Z21InterfaceScaffold;

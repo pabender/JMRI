@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
  
 /**
  * Provides a tool for creating Turnouts, Sensors and Lights from CBUS CAN 

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * JMRI support for the TrainCrew application.
  * <p>

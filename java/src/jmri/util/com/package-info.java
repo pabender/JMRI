@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Holds utility classes imported to JMRI from other locations.
  * <p>

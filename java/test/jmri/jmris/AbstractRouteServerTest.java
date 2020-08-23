@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmris;
 
 import org.junit.jupiter.api.AfterEach;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.ieee802154.swing.mon;
 
 import jmri.jmrix.ieee802154.IEEE802154Listener;

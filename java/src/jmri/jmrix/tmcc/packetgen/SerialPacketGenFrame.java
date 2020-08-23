@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.tmcc.packetgen;
 
 import java.awt.Dimension;

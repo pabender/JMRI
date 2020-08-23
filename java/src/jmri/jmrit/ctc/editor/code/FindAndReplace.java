@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.ctc.editor.code;
 
 // https://stackoverflow.com/questions/5091057/how-to-find-a-whole-word-in-a-string-in-java

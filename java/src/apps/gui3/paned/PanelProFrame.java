@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package apps.gui3.paned;
 
 import javax.swing.tree.DefaultMutableTreeNode;

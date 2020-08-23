@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.can.cbus.eventtable;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

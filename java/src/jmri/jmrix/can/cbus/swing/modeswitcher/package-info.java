@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Defines classes for ModeSwitcher for switching between programmer and command
  * station modes.

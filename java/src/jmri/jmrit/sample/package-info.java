@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Provides a sample of a minimal user-added package.
  * <p>

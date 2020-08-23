@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.web;
 
 import cucumber.api.java8.En;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Issue Reporter for JMRI and related applications. To add a repository that
  * can have issues reported against it, implement

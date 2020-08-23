@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.util.com.rbnb;
 
 // This class comes from the Java2s code examples at

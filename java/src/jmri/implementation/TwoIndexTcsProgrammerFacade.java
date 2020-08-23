@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.implementation;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

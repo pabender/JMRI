@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.can;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;

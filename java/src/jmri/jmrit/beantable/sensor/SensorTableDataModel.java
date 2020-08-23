@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.beantable.sensor;
 
 import jmri.util.gui.GuiLafPreferencesManager;

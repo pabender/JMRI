@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * JMRI profile management. JMRI uses {@link jmri.profile.Profile}s to provide a
  * mechanism for storing multiple JMRI configurations that can be loaded at

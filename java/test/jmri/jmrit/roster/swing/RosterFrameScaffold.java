@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.roster.swing;
 
 import org.netbeans.jemmy.operators.JButtonOperator;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.vsdecoder.listener;
 
 import javax.vecmath.Vector3f;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /*
     The sole purpose of this class is to create the text file that can be
     copied into a JMRI .xml file to ease the creation of a CTC panel from

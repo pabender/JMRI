@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package apps.gui3.tabbedpreferences;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.ztc.ztc611.configurexml;
 
 import org.jdom2.Element;

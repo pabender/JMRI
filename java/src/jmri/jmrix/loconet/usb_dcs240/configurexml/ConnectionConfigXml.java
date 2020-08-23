@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.loconet.usb_dcs240.configurexml;
 
 import jmri.jmrix.configurexml.AbstractSerialConnectionConfigXml;

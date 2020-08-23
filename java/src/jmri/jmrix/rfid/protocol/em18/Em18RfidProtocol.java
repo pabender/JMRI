@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.rfid.protocol.em18;
 
 import jmri.jmrix.AbstractMRReply;

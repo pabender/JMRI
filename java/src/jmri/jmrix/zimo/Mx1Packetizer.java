@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.zimo;
 
 import static jmri.jmrix.zimo.Mx1Message.PROGCMD;

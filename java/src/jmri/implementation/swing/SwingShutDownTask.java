@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.implementation.swing;
 
 import java.awt.Component;

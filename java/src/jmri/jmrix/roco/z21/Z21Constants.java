@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.roco.z21;
 /**
  * Constants to represent values seen in z21 traffic

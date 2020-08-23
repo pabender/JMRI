@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.server.json.route;
 
 import com.fasterxml.jackson.databind.JsonNode;

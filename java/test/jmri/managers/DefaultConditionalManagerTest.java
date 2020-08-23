@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.managers;
 
 import static org.junit.Assert.assertNotNull;

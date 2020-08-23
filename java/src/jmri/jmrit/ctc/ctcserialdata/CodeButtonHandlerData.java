@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 // Warnings objectInputStream here about changes to this structure and how it will affect old/new programs:
 //https://howtodoinjava.com/java/serialization/a-mini-guide-for-implementing-serializable-interface-objectInputStream-java/
 

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.rfid.merg.concentrator;
 
 import jmri.jmrix.rfid.RfidProtocol;

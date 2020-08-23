@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.ctc;
 
 import jmri.util.JUnitAppender;

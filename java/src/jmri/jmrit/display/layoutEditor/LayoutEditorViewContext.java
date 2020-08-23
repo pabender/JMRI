@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.display.layoutEditor;
 
 // This class may not important any others.

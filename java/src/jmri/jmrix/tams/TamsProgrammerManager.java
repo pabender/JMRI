@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /* TamsProgrammerManager.java */
 package jmri.jmrix.tams;
 

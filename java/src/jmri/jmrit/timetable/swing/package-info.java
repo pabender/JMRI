@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Implements Timetable creation, maintenance and displaying a timetable graph.
  *

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.powerline.swing.packetgen;
 
 import jmri.util.JUnitUtil;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.sendpacket;
 
 import java.awt.GridLayout;

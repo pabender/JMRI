@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.cmri.serial.assignment;
 
 import java.awt.BorderLayout;

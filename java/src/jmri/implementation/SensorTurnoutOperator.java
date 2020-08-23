@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Concrete subclass of TurnoutOperator for a turnout that has sensor feedback.
  *

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Defines classes for bootloader client for updating CBUS module firmware.
  *

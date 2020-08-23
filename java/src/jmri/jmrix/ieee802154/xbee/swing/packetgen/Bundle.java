@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.ieee802154.xbee.swing.packetgen;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;

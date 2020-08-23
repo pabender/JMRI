@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.sample.swing;
 
 import org.junit.jupiter.api.*;

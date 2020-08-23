@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.display.layoutEditor;
 
 import static java.awt.event.KeyEvent.KEY_PRESSED;

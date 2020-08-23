@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.oaktree.swing;
 
 import jmri.jmrix.oaktree.OakTreeSystemConnectionMemo;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Contains JMRI classes related to supporting JavaBeans and
  * {@link java.beans.PropertyChangeListener}s. The classes in this package can

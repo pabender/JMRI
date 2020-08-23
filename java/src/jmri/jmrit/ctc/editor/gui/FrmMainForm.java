@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /*
 For this warning:
 Note: C:\Users\NetBeansJMRI\Documents\NetBeansProjects\CTCTest\src\packageTest\FrmMainForm.java uses unchecked or unsafe operations.

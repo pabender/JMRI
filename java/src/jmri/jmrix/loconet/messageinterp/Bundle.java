@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.loconet.messageinterp;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;

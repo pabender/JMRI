@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Implements the CTC Editor for the creation and maintenance of the CTC data.
  *

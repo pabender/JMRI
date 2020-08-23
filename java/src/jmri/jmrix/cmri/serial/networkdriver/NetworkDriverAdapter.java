@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.cmri.serial.networkdriver;
 
 import jmri.jmrix.cmri.CMRISystemConnectionMemo;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.loconet.sdfeditor;
 
 import java.awt.event.ActionListener;

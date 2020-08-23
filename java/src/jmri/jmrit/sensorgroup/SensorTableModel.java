@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.sensorgroup;
 
 import java.beans.PropertyChangeListener;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.marklin.swing.monitor;
 
 import jmri.jmrix.marklin.MarklinConstants;

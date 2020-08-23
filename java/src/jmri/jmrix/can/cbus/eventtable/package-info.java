@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
  
 /**
  * Provides an Event Table for CBUS Events..

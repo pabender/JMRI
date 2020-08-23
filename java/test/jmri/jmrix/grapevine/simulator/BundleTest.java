@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.grapevine.simulator;
 
 import java.util.Locale;

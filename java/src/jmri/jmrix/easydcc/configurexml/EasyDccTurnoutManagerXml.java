@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.easydcc.configurexml;
 
 import org.jdom2.Element;

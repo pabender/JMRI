@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.grapevine.nodetable;
 
 import java.awt.Container;

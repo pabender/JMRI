@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.operations.automation.actions;
 
 import jmri.jmrit.operations.routes.RouteLocation;

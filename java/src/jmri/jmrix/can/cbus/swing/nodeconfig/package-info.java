@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
  
 /**
  * Provides CBUS Node Configuration Tools.

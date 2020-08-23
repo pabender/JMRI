@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.bachrus.serialdriver.configurexml;
 
 import jmri.jmrix.bachrus.serialdriver.ConnectionConfig;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Consist Manager for use with the NceConsist class for the
  * consists it builds.

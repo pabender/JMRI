@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.roster.configurexml;
 
 import jmri.util.JUnitUtil;

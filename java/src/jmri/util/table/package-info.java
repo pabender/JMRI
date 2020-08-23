@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
  
 /**
  * Various classes and methods for working with JTables.

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package apps.startup.configurexml;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;

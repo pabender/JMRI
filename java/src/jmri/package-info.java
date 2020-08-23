@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Provides basic interfaces and certain core implementations for the JMRI
  * layout management concepts.

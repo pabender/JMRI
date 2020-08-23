@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Provides the tabbed preferences window and its contents.
  * <p>

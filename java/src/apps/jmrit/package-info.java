@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * This package is the analog to {@link jmri.jmrit}, but for tools that are
  * useful in the JMRI published applications, but are either not related to the

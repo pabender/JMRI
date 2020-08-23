@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.web.servlet.panel;
 
 import static org.junit.Assert.assertEquals;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.lenz.ztc640.configurexml;
 
 import jmri.util.JUnitUtil;

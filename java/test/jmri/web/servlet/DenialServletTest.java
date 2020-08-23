@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.web.servlet;
 
 import static jmri.web.servlet.ServletUtil.UTF8_TEXT_HTML;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.util;
 
 import static java.lang.Float.NEGATIVE_INFINITY;

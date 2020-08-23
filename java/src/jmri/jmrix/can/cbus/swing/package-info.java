@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
  
 /**
  * Provides common utilities for CBUS swing classes.

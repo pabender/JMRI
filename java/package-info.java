@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 // This is the template file for package-info.java files.
 // Update the following, including the package statement, 
 // and remove these three lines.

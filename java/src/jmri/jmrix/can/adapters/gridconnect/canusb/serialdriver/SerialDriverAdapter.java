@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.can.adapters.gridconnect.canusb.serialdriver;
 
 import jmri.jmrix.can.adapters.gridconnect.GcSerialDriverAdapter;

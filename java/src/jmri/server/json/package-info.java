@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * The JMRI JSON Services provide access to JMRI via JSON data objects via a
  * RESTful interface over HTTP or via JSON messages via a socket interface over

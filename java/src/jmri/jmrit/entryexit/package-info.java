@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Implements Entry/Exit ( NX ) dispatching using Layout Editor panels.
  *

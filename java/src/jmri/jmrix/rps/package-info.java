@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  *        This package contains software specific to the RPS system from 
  *        <A HREF="http://www.nacservicesinc.com/">NAC Services, Inc</A>.

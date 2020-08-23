@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package apps;
 
 import apps.gui3.tabbedpreferences.TabbedPreferences;

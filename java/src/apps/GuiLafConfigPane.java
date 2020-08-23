@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package apps;
 
 import static jmri.util.gui.GuiLafPreferencesManager.MIN_FONT_SIZE;

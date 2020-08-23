@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.util.table;
 
 // This was adapted from Core Swing Advanced Programming, Prentice Hall

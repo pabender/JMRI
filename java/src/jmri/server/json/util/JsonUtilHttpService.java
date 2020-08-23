@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.server.json.util;
 
 import static jmri.server.json.JSON.CONTROL_PANEL;

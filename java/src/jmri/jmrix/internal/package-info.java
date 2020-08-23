@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * The jmrix.internal package contains a JMRI connection implementation
  * for use without a layout.  There's no physical equipment connected to these

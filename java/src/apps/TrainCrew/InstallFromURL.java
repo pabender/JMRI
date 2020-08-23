@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package apps.TrainCrew;
 
 import java.awt.event.ActionEvent;

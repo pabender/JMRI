@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.rps.swing.debugger;
 
 import jmri.util.JUnitUtil;

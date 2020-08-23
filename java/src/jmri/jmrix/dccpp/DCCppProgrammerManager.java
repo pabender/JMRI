@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /* DCCppProgrammerManager.java */
 package jmri.jmrix.dccpp;
 

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * JMRI implementation of the LocoNet over TCP protocol.
  *

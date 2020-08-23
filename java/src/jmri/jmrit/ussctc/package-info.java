@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
  /**
  * Support for implementing USS CTC systems in JMRI.
  * 

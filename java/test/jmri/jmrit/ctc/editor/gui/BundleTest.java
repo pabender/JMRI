@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.ctc.editor.gui;
 
 import java.util.Locale;

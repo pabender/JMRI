@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Implementation and specialization for connecting to to an Uhlenbrock
  * Intellibox-II via its in-built USB connection.

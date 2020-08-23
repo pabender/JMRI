@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.display.layoutEditor.blockRoutingTable;
 
 import java.beans.PropertyChangeListener;

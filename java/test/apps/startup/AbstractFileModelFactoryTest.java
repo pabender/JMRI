@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package apps.startup;
 
 import javax.swing.JFileChooser;

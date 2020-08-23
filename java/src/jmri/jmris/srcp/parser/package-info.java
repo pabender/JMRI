@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * The contents of this package are automatically generated (except for the
  * SRCPVistor class).

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /* Mx1ProgrammerManager.java */
 package jmri.jmrix.zimo;
 

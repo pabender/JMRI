@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Head package for Swing-based packages for JMRI's OpenLCB implementation.
  *      

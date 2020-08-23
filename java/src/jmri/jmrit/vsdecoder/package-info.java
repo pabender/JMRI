@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Provides throttle-controlled locomotive sound simulation without the need of an on-board sound decoder.
  *

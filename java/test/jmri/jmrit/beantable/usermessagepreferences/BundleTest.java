@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.beantable.usermessagepreferences;
 
 import java.util.Locale;

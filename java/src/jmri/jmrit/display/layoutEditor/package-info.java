@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Layout Editor currently represents both structure and graphical display through a single set of objects.
  * Work is proceeding to separate those out and provide clean interfaces for other packages to access the structural information.

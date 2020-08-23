@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.dcc4pc.swing.boardlists;
 
 import jmri.jmrix.dcc4pc.Dcc4PcSystemConnectionMemo;

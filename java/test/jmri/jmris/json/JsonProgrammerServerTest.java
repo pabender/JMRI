@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmris.json;
 
 import jmri.server.json.JsonMockConnection;

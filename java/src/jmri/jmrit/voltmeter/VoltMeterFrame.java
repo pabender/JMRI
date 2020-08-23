@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.voltmeter;
 
 import java.awt.event.ComponentAdapter;

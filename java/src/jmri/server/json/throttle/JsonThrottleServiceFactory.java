@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.server.json.throttle;
 
 import com.fasterxml.jackson.databind.ObjectMapper;

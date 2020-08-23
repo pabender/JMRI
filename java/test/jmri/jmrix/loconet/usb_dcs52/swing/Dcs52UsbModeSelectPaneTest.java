@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrix.loconet.usb_dcs52.swing;
 
 import jmri.util.JUnitUtil;

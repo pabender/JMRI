@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Provides JMRI layout objects that use MQTT connections.
  * <p>

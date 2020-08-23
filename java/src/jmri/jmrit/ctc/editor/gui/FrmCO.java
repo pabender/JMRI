@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /*_mResultSoFar getCaretPosition
 http://www.coderslexicon.com/tracking-the-caret-in-a-jtextarea-with-java/
 */

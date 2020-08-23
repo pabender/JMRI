@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.util;
 
 import com.sun.jna.platform.win32.Advapi32Util;

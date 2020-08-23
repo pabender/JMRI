@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 package jmri.jmrit.catalog;
 
 import java.awt.datatransfer.DataFlavor;

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0+
 /**
  * Defines classes for communicating with SPROG Generation 5 hardware via a
  * serial com port (or USB virtual COM port) with CBUS opcodes.
