@@ -1,0 +1,7 @@
+<component name="DependencyValidationManager">
+  <state>
+    <unnamed_scope value="src[jmri]:jmri.jmrit..*" />
+    <unnamed_scope value="src[jmri]:jmri.jmrix..*" />
+    <deny_rule from_scope="src[jmri]:jmri.jmrix..*" to_scope="src[jmri]:jmri.jmrit..*" is_deny="true" />
+  </state>
+</component>

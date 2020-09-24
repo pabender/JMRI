@@ -12,6 +12,7 @@ import jmri.jmrix.loconet.LnPacketizer;
 import jmri.managers.DefaultProgrammerManager;
 import jmri.util.JmriJFrame;
 
+import jmri.util.xml.XmlFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,7 +47,7 @@ public class HexFileFrame extends JmriJFrame {
     @InvokeOnGuiThread
     public HexFileFrame() {
         super();
-        inputFileChooser = jmri.jmrit.XmlFile.userFileChooser("Hex files", "hex"); // NOI18N
+        inputFileChooser = XmlFile.userFileChooser("Hex files", "hex"); // NOI18N
     }
 
     /**

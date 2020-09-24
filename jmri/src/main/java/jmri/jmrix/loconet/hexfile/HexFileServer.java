@@ -25,7 +25,7 @@ public class HexFileServer {
     // member declarations
     // to find and remember the log file
     // final javax.swing.JFileChooser inputFileChooser =
-    // jmri.jmrit.XmlFile.userFileChooser("Hex files", "hex");
+    // jmri.util.xml.XmlFile.userFileChooser("Hex files", "hex");
     public HexFileServer() {
     }
 

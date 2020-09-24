@@ -6,16 +6,12 @@
     <content url="file://$MODULE_DIR$/../java/acceptancetest/step_definitions/jmri">
       <sourceFolder url="file://$MODULE_DIR$/../java/acceptancetest/step_definitions/jmri" isTestSource="true" />
     </content>
-    <content url="file://$MODULE_DIR$/../java/maven-template">
-      <sourceFolder url="file://$MODULE_DIR$/../java/maven-template" type="java-resource" />
-    </content>
-    <content url="file://$MODULE_DIR$/../java/src/jmri">
-      <sourceFolder url="file://$MODULE_DIR$/../java/src/jmri" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../java/test/jmri">
-      <sourceFolder url="file://$MODULE_DIR$/../java/test/jmri" isTestSource="true" />
+    <content url="file://$MODULE_DIR$/../java/template">
+      <sourceFolder url="file://$MODULE_DIR$/../java/template" type="java-resource" />
     </content>
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/javacc" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/jjtree" isTestSource="false" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
@@ -170,7 +166,7 @@
     <orderEntry type="library" name="Maven: net.jcip:jcip-annotations:1.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.github.spotbugs:spotbugs-annotations:3.1.7" level="project" />
-    <orderEntry type="library" name="Maven: com.digi.xbee:xbee-java-library:1.2.1" level="project" />
+    <orderEntry type="library" name="Maven: com.digi.xbee:xbee-java-library:1.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.github.purejavacomm:purejavacomm:1.0.1.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-core:3.3.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy-agent:1.10.5" level="project" />
@@ -192,5 +188,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-beans:5.1.14.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: net.coobird:thumbnailator:0.4.8" level="project" />
     <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: commons-net:commons-net:3.6" level="project" />
   </component>
 </module>

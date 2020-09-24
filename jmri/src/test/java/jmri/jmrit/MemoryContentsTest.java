@@ -1,11 +1,8 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit;
+package jmri.util;
 
 import java.io.File;
 import java.io.IOException;
-
-import jmri.util.FileUtil;
-import jmri.util.JUnitAppender;
 
 import org.junit.jupiter.api.*;
 import org.junit.Assert;
@@ -27,13 +24,13 @@ public class MemoryContentsTest {
 
         try {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile.hex"));
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected record length exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected Checksum Exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected Record Contents Exception"); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -57,13 +54,13 @@ public class MemoryContentsTest {
 
         try {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_extSegRecords.hex"));
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected record length exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected Checksum Exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected Record Contents Exception"); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -118,13 +115,13 @@ public class MemoryContentsTest {
         String filename = "src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_24bit.hex";
         try {
             m.readHex(new java.io.File(filename));
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected record length exception reading " + filename); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected Checksum Exception reading " + filename); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception reading" + filename); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected Record Contents Exception reading" + filename); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception reading" + filename);
@@ -178,23 +175,23 @@ public class MemoryContentsTest {
             writer.close(); // make sure to close the stream associated with the file
         } catch (java.io.IOException e) {
             Assert.fail("I/O exception attempting to write a .hex file " + e);
-        } catch (jmri.jmrit.MemoryContents.MemoryFileAddressingFormatException e) {
+        } catch (MemoryContents.MemoryFileAddressingFormatException e) {
             Assert.fail("Memory Addressing format exception attempting to write .hex file");
         }
 
         // make sure the new file is in 24-bit address format
-        m.setAddressFormat(jmri.jmrit.MemoryContents.LoadOffsetFieldType.ADDRESSFIELDSIZE24BITS);
+        m.setAddressFormat(MemoryContents.LoadOffsetFieldType.ADDRESSFIELDSIZE24BITS);
         MemoryContents n = new MemoryContents();
 
         try {
             n.readHex(new java.io.File(filename));
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected record length exception reading " + filename); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected Checksum Exception reading " + filename); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception reading " + filename); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected Record Contents Exception reading " + filename); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception reading " + filename);
@@ -274,13 +271,13 @@ public class MemoryContentsTest {
         boolean expectedExceptionHappened = false;
         try {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_cksumErr.hex"));
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected record length exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             expectedExceptionHappened = true;
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected Record Contents Exception"); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -307,13 +304,13 @@ public class MemoryContentsTest {
         boolean expectedExceptionHappened = false;
         try {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_recordTypeError.hex"));
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected record length exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected Checksum Exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             expectedExceptionHappened = true;
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected Record Contents Exception"); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -341,13 +338,13 @@ public class MemoryContentsTest {
         boolean expectedExceptionHappened = false;
         try {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_recordLenError.hex"));
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             expectedExceptionHappened = true;
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected Checksum Exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail(); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -387,13 +384,13 @@ public class MemoryContentsTest {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_file_doesnt_exist.hex"));
         } catch (java.io.FileNotFoundException e) {
             expectedExceptionHappened = true;
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected record length exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected checksum exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected record contents exception"); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -424,13 +421,13 @@ public class MemoryContentsTest {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_malformed_line.hex"));
         } catch (java.io.FileNotFoundException e) {
             Assert.fail("Unexpected file-not-found exception e");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             expectedExceptionHappened = true;
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected checksum exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected record contents exception"); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -460,13 +457,13 @@ public class MemoryContentsTest {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_noEOFRecord.hex"));
         } catch (java.io.FileNotFoundException e) {
             Assert.fail("Unexpected file-not-found exception e");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected record length exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected checksum exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected record contents exception"); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -496,13 +493,13 @@ public class MemoryContentsTest {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_no_data_records.dmf"));
         } catch (java.io.FileNotFoundException e) {
             Assert.fail("Unexpected file-not-found exception e");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected file record length exception");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected checksum exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected record contents exception"); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             expectedExceptionHappened = true;
@@ -531,13 +528,13 @@ public class MemoryContentsTest {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_16bit.hex"));
         } catch (java.io.FileNotFoundException e) {
             Assert.fail("Unexpected file-not-found exception e");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected file record length exception");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected checksum exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected record contents exception"); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -562,13 +559,13 @@ public class MemoryContentsTest {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_RecType02bad.hex"));
         } catch (java.io.FileNotFoundException e) {
             Assert.fail("Unexpected file-not-found exception e");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected file record length exception");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected checksum exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected record contents exception"); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -598,13 +595,13 @@ public class MemoryContentsTest {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_RecType02bad_2.hex"));
         } catch (java.io.FileNotFoundException e) {
             Assert.fail("Unexpected file-not-found exception e");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected file record length exception");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected checksum exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected record contents exception:" + e); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -633,13 +630,13 @@ public class MemoryContentsTest {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_24bitHighSegs.hex"));
         } catch (java.io.FileNotFoundException e) {
             Assert.fail("Unexpected file-not-found exception e");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected file record length exception");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected checksum exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected record contents exception:" + e); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -683,13 +680,13 @@ public class MemoryContentsTest {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_16bit_pagecross.hex"));
         } catch (java.io.FileNotFoundException e) {
             Assert.fail("Unexpected file-not-found exception e");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected file record length exception");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected checksum exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected record contents exception:" + e); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");
@@ -760,13 +757,13 @@ public class MemoryContentsTest {
             m.readHex(new java.io.File("src/test/java/jmri/jmrit/MemoryContentsTestFiles/TestFiles/MemoryContentsTestFile_24bit_pagecross.hex"));
         } catch (java.io.FileNotFoundException e) {
             Assert.fail("Unexpected file-not-found exception e");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordLengthException e) {
+        } catch (MemoryContents.MemoryFileRecordLengthException e) {
             Assert.fail("Unexpected file record length exception");
-        } catch (jmri.jmrit.MemoryContents.MemoryFileChecksumException e) {
+        } catch (MemoryContents.MemoryFileChecksumException e) {
             Assert.fail("Unexpected checksum exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileUnknownRecordType e) {
+        } catch (MemoryContents.MemoryFileUnknownRecordType e) {
             Assert.fail("Unexpected unknown record type exception"); // got an unexpected exception so fail.
-        } catch (jmri.jmrit.MemoryContents.MemoryFileRecordContentException e) {
+        } catch (MemoryContents.MemoryFileRecordContentException e) {
             Assert.fail("Unexpected record contents exception:" + e); // got an unexpected exception so fail.
         } catch (MemoryContents.MemoryFileNoDataRecordsException e) {
             Assert.fail("Unexpected 'no records found' exception");

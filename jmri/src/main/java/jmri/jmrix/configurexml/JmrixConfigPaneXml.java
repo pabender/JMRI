@@ -114,7 +114,7 @@ public class JmrixConfigPaneXml extends AbstractXmlAdapter {
      */
     @Override
     public void load(Element element, Object o) {
-        jmri.jmrit.symbolicprog.ProgDefault.setDefaultProgFile(element.getAttribute("defaultFile").getValue());
+        jmri.symbolicprog.ProgDefault.setDefaultProgFile(element.getAttribute("defaultFile").getValue());
     }
 
     // initialize logging

@@ -16,6 +16,8 @@ import javax.swing.table.TableCellEditor;
 import jmri.jmrix.loconet.spjfile.SpjFile;
 import jmri.util.FileUtil;
 import jmri.util.davidflanagan.HardcopyWriter;
+import jmri.util.sound.SoundUtil;
+import jmri.util.sound.WavBuffer;
 import jmri.util.table.ButtonEditor;
 import jmri.util.table.ButtonRenderer;
 import org.slf4j.Logger;
@@ -133,7 +135,7 @@ public class EditorTableDataModel extends javax.swing.table.AbstractTableModel {
                 if (!file.getHeader(row + 1).isWAV()) {
                     return null;
                 }
-                float rate = (new jmri.jmrit.sound.WavBuffer(file.getHeader(row + 1).getByteArray())).getSampleRate();
+                float rate = (new WavBuffer(file.getHeader(row + 1).getByteArray())).getSampleRate();
                 if (rate == 0.f) {
                     log.error("Rate should not be zero");
                     return null;
@@ -236,9 +238,9 @@ public class EditorTableDataModel extends javax.swing.table.AbstractTableModel {
             return;  // give up if no file selected
         }
         // load file
-        jmri.jmrit.sound.WavBuffer buff;
+        WavBuffer buff;
         try {
-            buff = new jmri.jmrit.sound.WavBuffer(chooser.getSelectedFile());
+            buff = new WavBuffer(chooser.getSelectedFile());
         } catch (Exception e) {
             log.error("Exception loading file: {}", e);
             return;
@@ -254,8 +256,8 @@ public class EditorTableDataModel extends javax.swing.table.AbstractTableModel {
 
     // should probably be abstract and put in invoking GUI
     void playButtonPressed(Object value, int row, int col) {
-        // new jmri.jmrit.sound.WavBuffer(file.getHeader(row+1).getByteArray());
-        jmri.jmrit.sound.SoundUtil.playSoundBuffer(file.getHeader(row + 1).getByteArray());
+        // new jmri.util.sound.WavBuffer(file.getHeader(row+1).getByteArray());
+        SoundUtil.playSoundBuffer(file.getHeader(row + 1).getByteArray());
     }
 
     // should probably be abstract and put in invoking GUI
