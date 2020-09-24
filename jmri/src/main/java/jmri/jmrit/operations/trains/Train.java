@@ -3798,7 +3798,7 @@ public class Train extends PropertyChangeSupport implements Identifiable, Proper
                                               // wasn't saved
         }
         if ((a = e.getAttribute(Xml.COMMENT)) != null) {
-            _comment = OperationsXml.convertFromXmlComment(a.getValue());
+            _comment = a.getValue();
         }
         if (getRoute() != null) {
             if ((a = e.getAttribute(Xml.CURRENT)) != null) {

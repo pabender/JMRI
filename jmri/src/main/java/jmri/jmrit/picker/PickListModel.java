@@ -80,15 +80,6 @@ public abstract class PickListModel<E extends NamedBean> extends BeanTableDataMo
     }
 
     /**
-     * No longer needed. Now done in BeanTableDataModel.
-     *
-     * @deprecated since Jan 1, 2014, marked as such May 1, 2017
-     */
-    @Deprecated
-    public void init() {
-    }
-
-    /**
      * If table has been sorted table row no longer is the same as array index.
      *
      * @param index row of table

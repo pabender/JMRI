@@ -4,6 +4,7 @@ package jmri.jmrit.operations;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
@@ -88,8 +89,11 @@ public class OperationsTestCase {
 
         JUnitUtil.deregisterBlockManagerShutdownTask();
         if (InstanceManager.containsDefault(ShutDownManager.class)) {
-            ShutDownManager sm = InstanceManager.getDefault(jmri.ShutDownManager.class);
-            List<ShutDownTask> list = sm.tasks();
+            ShutDownManager sm = InstanceManager.getDefault(ShutDownManager.class);
+            List<ShutDownTask> list = sm.getRunnables().stream()
+                    .filter(r -> r instanceof ShutDownTask)
+                    .map(r -> (ShutDownTask) r)
+                    .collect(Collectors.toList());
             while (list.size() > 0) {
                 ShutDownTask task = list.get(0);
                 sm.deregister(task);

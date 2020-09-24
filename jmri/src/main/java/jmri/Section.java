@@ -2359,34 +2359,6 @@ public class Section extends AbstractNamedBean {
         return null;
     }
 
-    /**
-     * Check that there are Signal Heads at all Entry Points to this Section.
-     * This method will warn if it finds unsignaled internal turnouts, but will
-     * continue checking. Unsignaled entry points except for those at unsignaled
-     * internal turnouts will be considered errors, and will be reported to the
-     * user. This method stops searching when it find the first missing Signal
-     * Head.
-     *
-     * @param frame ignored
-     * @param panel the panel containing signals to check
-     * @return true if successful; false otherwise
-     * @deprecated 4.19.7  No usages, so no replacement
-     */
-    @Deprecated // 4.19.7 for removal;  No usages, so no replacement
-    public boolean checkSignals(JmriJFrame frame, LayoutEditor panel) {
-        jmri.util.LoggingUtil.deprecationWarning(log, "checkSignals");
-        if (panel == null) {
-            log.error("Null Layout Editor panel on call to 'checkSignals'");
-            return false;
-        }
-        if (initializationNeeded) {
-            initializeBlocks();
-        }
-
-        // need code to fully implement checkSignals if (getListOfForwardBlockEntryPoints(getEntryBlock()).size() > 0)
-        return true;
-    }
-
     @SuppressWarnings("unused") // not used now, preserved for later use
     @SuppressFBWarnings(value = "UPM_UNCALLED_PRIVATE_METHOD", justification = "was previously marked with @SuppressWarnings, reason unknown")
     private List<EntryPoint> getListOfForwardBlockEntryPoints(Block b) {

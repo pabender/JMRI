@@ -30,20 +30,6 @@ public class ZeroConfPreferences extends PreferencesBean {
     private boolean useLinkLocal = true;
     // API constants
     /**
-     * Deprecated name in profile.properties.
-     *
-     * @deprecated since 4.15.1; use {@link #USE_IP_V4} instead
-     */
-    @Deprecated
-    private static final String IPv4 = "IPv4";
-    /**
-     * Deprecated name in profile.properties.
-     *
-     * @deprecated since 4.15.1; use {@link #USE_IP_V6} instead
-     */
-    @Deprecated
-    private static final String IPv6 = "IPv6";
-    /**
      * Preferences name in profile.properties and property to subscribe to
      * notification changes for.
      * <p>
@@ -76,12 +62,10 @@ public class ZeroConfPreferences extends PreferencesBean {
     public ZeroConfPreferences(Profile profile) {
         super(profile);
         Preferences localPreferences = ProfileUtils.getPreferences(null, this.getClass(), false);
-        Preferences privatePreferences = ProfileUtils.getPreferences(profile, this.getClass(), false);
-        Preferences sharedPreferences = ProfileUtils.getPreferences(profile, this.getClass(), true);
         // read IPv4/IPv6 preferences from all-profile local, then per-profile local, then per-profile shared
         // using first preference setting encountered, defaulting to true
-        this.useIPv4 = localPreferences.getBoolean(USE_IP_V4, privatePreferences.getBoolean(IPv4, sharedPreferences.getBoolean(IPv4, this.useIPv4)));
-        this.useIPv6 = localPreferences.getBoolean(USE_IP_V6, privatePreferences.getBoolean(IPv6, sharedPreferences.getBoolean(IPv6, this.useIPv6)));
+        this.useIPv4 = localPreferences.getBoolean(USE_IP_V4, this.useIPv4);
+        this.useIPv6 = localPreferences.getBoolean(USE_IP_V6, this.useIPv6);
         this.useLinkLocal = localPreferences.getBoolean(USE_LINK_LOCAL, this.useLinkLocal);
         this.useLoopback = localPreferences.getBoolean(USE_LOOPBACK, this.useLoopback);
     }
@@ -140,19 +124,6 @@ public class ZeroConfPreferences extends PreferencesBean {
             localPreferences.sync();
         } catch (BackingStoreException ex) {
             log.error("Unable to save preferences", ex);
-        }
-        // remove errant preferences elsewhere
-        try {
-            localPreferences.remove(IPv4);
-            localPreferences.remove(IPv6);
-            Preferences sharedPreferences = ProfileUtils.getPreferences(profile, this.getClass(), true);
-            sharedPreferences.remove(IPv4);
-            sharedPreferences.remove(IPv6);
-            Preferences privatePreferences = ProfileUtils.getPreferences(profile, this.getClass(), false);
-            privatePreferences.remove(IPv4);
-            privatePreferences.remove(IPv6);
-        } catch (IllegalStateException ex) {
-            log.error("Unable to remove no-longer-use preferences", ex);
         }
     }
 

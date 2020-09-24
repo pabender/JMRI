@@ -320,15 +320,6 @@ abstract public class AbstractThrottle extends PropertyChangeSupport implements 
     }
 
     /**
-     * {@inheritDoc}
-     */
-    @Override
-    @Deprecated
-    public List<PropertyChangeListener> getListeners() {
-        return Arrays.asList(getPropertyChangeListeners());
-    }
-
-    /**
      * Call from a ThrottleListener to dispose of the throttle instance
      *
      * @param l the listener requesting the dispose

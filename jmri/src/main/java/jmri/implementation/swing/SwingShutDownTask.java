@@ -146,18 +146,6 @@ public class SwingShutDownTask extends AbstractShutDownTask {
         return true;
     }
 
-    /**
-     * Provide a subclass-specific method to handle the case where the user has
-     * chosen the close window option.
-     *
-     * @return true if ready to shutdown, false to end shutdown
-     * @deprecated since 4.21.1 without replacement
-     */
-    @Deprecated
-    protected boolean doClose() {
-        return true;
-    }
-
     private final static Logger log = LoggerFactory.getLogger(SwingShutDownTask.class);
 
 }

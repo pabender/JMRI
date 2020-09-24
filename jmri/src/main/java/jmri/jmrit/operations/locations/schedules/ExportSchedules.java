@@ -26,17 +26,6 @@ import org.slf4j.LoggerFactory;
  */
 public class ExportSchedules extends XmlFile {
 
-    /**
-     * Does nothing.
-     * 
-     * @param delimiter the new delimiter for the CSV file
-     * @deprecated since 4.19.4 without direct replacement
-     */
-    @Deprecated
-    public void setDeliminter(String delimiter) {
-        // does nothing; maintained to prevent API breakage
-    }
-
     public void writeOperationsScheduleFile() {
         makeBackupFile(defaultOperationsFilename());
         try {

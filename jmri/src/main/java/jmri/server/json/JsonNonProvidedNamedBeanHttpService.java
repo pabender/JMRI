@@ -105,35 +105,6 @@ public abstract class JsonNonProvidedNamedBeanHttpService<T extends NamedBean> e
             throws JsonException;
 
     /**
-     * Respond to an HTTP GET request for the requested name.
-     * <p>
-     * If name is null, return a list of all objects for the given type, if
-     * appropriate.
-     * <p>
-     * This method should throw a 500 Internal Server Error if type is not
-     * recognized.
-     *
-     * @param bean   the requested object
-     * @param name   the name of the requested object
-     * @param type   the type of the requested object
-     * @param locale the requesting client's Locale
-     * @param id     the message id set by the client
-     * @return a JSON description of the requested object
-     * @throws JsonException if the named object does not exist or other error
-     *                       occurs
-     * @deprecated since 4.19.2; use
-     *             {@link #doGet(NamedBean, String, String, JsonRequest)}
-     *             instead
-     */
-    @Deprecated
-    @Nonnull
-    protected ObjectNode doGet(T bean, @Nonnull String name, @Nonnull String type, @Nonnull Locale locale,
-            int id)
-            throws JsonException {
-        return doGet(bean, name, type, new JsonRequest(locale, JSON.V5, JSON.GET, id));
-    }
-
-    /**
      * Get the NamedBean matching name and type. If the request has a method
      * other than GET, this may modify or create the NamedBean requested. Note
      * that name or data may be null, but it is an error to have both be null.
@@ -185,28 +156,6 @@ public abstract class JsonNonProvidedNamedBeanHttpService<T extends NamedBean> e
     }
 
     /**
-     * Create the JsonNode for a {@link jmri.NamedBean} object.
-     *
-     * @param bean   the bean to create the node for
-     * @param name   the name of the bean; used only if the bean is null
-     * @param type   the JSON type of the bean
-     * @param locale the locale used for any error messages
-     * @param id     the message id set by the client
-     * @return a JSON node
-     * @throws JsonException if the bean is null
-     * @deprecated since 4.19.2; use
-     *             {@link #getNamedBean(NamedBean, String, String, JsonRequest)}
-     *             instead
-     */
-    @Deprecated
-    @Nonnull
-    protected ObjectNode getNamedBean(T bean, @Nonnull String name, @Nonnull String type, @Nonnull Locale locale,
-            int id)
-            throws JsonException {
-        return getNamedBean(bean, name, type, new JsonRequest(locale, JSON.V5, JSON.GET, id));
-    }
-
-    /**
      * Handle the common elements of a NamedBean that can be changed in an POST
      * message.
      * <p>
@@ -238,29 +187,4 @@ public abstract class JsonNonProvidedNamedBeanHttpService<T extends NamedBean> e
         return bean;
     }
 
-    /**
-     * Handle the common elements of a NamedBean that can be changed in an POST
-     * message.
-     * <p>
-     * <strong>Note:</strong> the system name of a NamedBean cannot be changed
-     * using this method.
-     *
-     * @param bean   the bean to modify
-     * @param data   the JsonNode containing the JSON representation of bean
-     * @param name   the system name of the bean
-     * @param type   the JSON type of the bean
-     * @param locale the locale used for any error messages
-     * @param id     the message id set by the client
-     * @return the bean so that this can be used in a method chain
-     * @throws JsonException if the bean is null
-     * @deprecated since 4.19.2; use
-     *             {@link #postNamedBean(NamedBean, JsonNode, String, String, JsonRequest)}
-     *             instead
-     */
-    @Deprecated
-    @Nonnull
-    protected T postNamedBean(T bean, @Nonnull JsonNode data, @Nonnull String name, @Nonnull String type,
-            @Nonnull Locale locale, int id) throws JsonException {
-        return postNamedBean(bean, data, name, type, new JsonRequest(locale, JSON.V5, JSON.POST, id));
-    }
 }

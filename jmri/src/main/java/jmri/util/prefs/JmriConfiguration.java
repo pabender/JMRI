@@ -10,7 +10,7 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import jmri.profile.AuxiliaryConfiguration;
 import jmri.util.FileUtil;
-import jmri.util.xml.XMLUtil;
+import org.openide.xml.XMLUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.DOMException;

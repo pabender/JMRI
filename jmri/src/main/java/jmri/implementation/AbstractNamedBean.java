@@ -106,24 +106,6 @@ public abstract class AbstractNamedBean implements NamedBean {
         return NamedBean.super.getDisplayName(displayOptions);
     }
 
-    /** {@inheritDoc} */
-    @Override
-    @Deprecated  // will be removed when superclass method is removed due to @Override
-    @CheckReturnValue
-    @Nonnull
-    final public String getFullyFormattedDisplayName() {
-        return getDisplayName(DisplayOptions.USERNAME_SYSTEMNAME);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    @Deprecated  // will be removed when superclass method is removed due to @Override
-    @CheckReturnValue
-    @Nonnull
-    final public String getFullyFormattedDisplayName(boolean userNameFirst) {
-        return getDisplayName(DisplayOptions.USERNAME_SYSTEMNAME);
-    }
-
     // implementing classes will typically have a function/listener to get
     // updates from the layout, which will then call
     //  public void firePropertyChange(String propertyName,

@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
 package jmri.web.servlet.directory;
 
+import javax.annotation.Nonnull;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 
 /**
@@ -14,27 +15,15 @@ public class DirectoryHandler extends ResourceHandler {
      * the contents of index.html within the directory instead of listing the
      * contents of the directory if index.html exists.
      *
-     * @param resourceBase the directory to serve, should be non-null, but
-     *                     allowing null until deprecated constructor is removed
+     * @param resourceBase the directory to serve
      */
-    public DirectoryHandler(String resourceBase) {
+    public DirectoryHandler(@Nonnull String resourceBase) {
         super(new DirectoryService());
         super.setDirectoriesListed(true);
         super.setWelcomeFiles(new String[]{"index.html"}); // NOI18N
         if (resourceBase != null) {
             super.setResourceBase(resourceBase);
         }
-    }
-
-    /**
-     * Default handler constructor.
-     * 
-     * @deprecated since 4.19.7 without replacement; use
-     *             {@link #DirectoryHandler(String)} instead
-     */
-    @Deprecated
-    public DirectoryHandler() {
-        this(null);
     }
 
 }

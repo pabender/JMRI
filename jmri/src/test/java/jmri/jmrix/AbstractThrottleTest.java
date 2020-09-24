@@ -723,14 +723,6 @@ public class AbstractThrottleTest {
     }
 
     /**
-     * Test of getListeners method, of class AbstractThrottle.
-     */
-    @Test
-    public void testGetListeners() {
-        assertThat(instance.getListeners()).isEmpty();
-    }
-
-    /**
      * Test of dispose method, of class AbstractThrottle.
      */
     @Test

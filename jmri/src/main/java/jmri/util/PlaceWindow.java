@@ -279,24 +279,6 @@ public class PlaceWindow implements InstanceManagerAutoDefault {
         
         return loc;
     }
-
-    /**
-     * Find the best place to position the target window inside the parent window.
-     * Choose the first position (Left, Right, Below, Above) where there is no overlap.
-     * If all overlap, choose first position (Left, Right, Below, Above) where there
-     * is no overlap of the component in the parent. Finally bail out using the 
-     * upper left corner.
-     * Deprecated. use method nextTo(Window parent, Component comp, Window target)
-     * @param parent Window containing the Component
-     * @param comp Component contained in the parent Window 
-     * @param target a popup or some kind of window with tools to
-     *  edit the component that should not be covered by the target.
-     * @return the location Point to open the target window.
-     */
-    @Deprecated
-    public Point inside(Window parent, Component comp, Window target) {
-        return nextTo( parent, comp,  target);
-    }
     
     private final static Logger log = LoggerFactory.getLogger(PlaceWindow.class);
 }

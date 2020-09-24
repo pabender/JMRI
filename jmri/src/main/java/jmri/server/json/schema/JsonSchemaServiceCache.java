@@ -68,21 +68,6 @@ public class JsonSchemaServiceCache implements InstanceManagerAutoDefault {
     }
 
     /**
-     * Get the services known to this cache that support a specific JSON type
-     * for version 5 of the JSON protocol.
-     * 
-     * @param type the JSON type requested
-     * @return the supporting services or an empty set if none
-     * @deprecated since 4.19.2; use {@link #getServices(String, String)}
-     *             instead
-     */
-    @Deprecated
-    @Nonnull
-    public synchronized Set<JsonHttpService> getServices(@Nonnull String type) {
-        return getServices(type, JSON.V5);
-    }
-
-    /**
      * Get all types of JSON messages.
      *
      * @param version the JSON protocol version
@@ -121,43 +106,6 @@ public class JsonSchemaServiceCache implements InstanceManagerAutoDefault {
     }
 
     /**
-     * Get all types of JSON messages.
-     *
-     * @return the union of the results from {@link #getClientTypes()} and
-     *         {@link #getServerTypes()}
-     * @deprecated since 4.19.2; use {@link #getTypes(String)} instead
-     */
-    @Deprecated
-    @Nonnull
-    public synchronized Set<String> getTypes() {
-        return getTypes(JSON.V5);
-    }
-
-    /**
-     * Get the types of JSON messages expected from clients.
-     *
-     * @return the message types
-     * @deprecated since 4.19.2; use {@link #getClientTypes(String)} instead
-     */
-    @Deprecated
-    @Nonnull
-    public synchronized Set<String> getClientTypes() {
-        return getClientTypes(JSON.V5);
-    }
-
-    /**
-     * Get the types of JSON messages this application sends.
-     *
-     * @return the message types
-     * @deprecated since 4.19.2; use {@link #getServerTypes(String)} instead
-     */
-    @Deprecated
-    @Nonnull
-    public synchronized Set<String> getServerTypes() {
-        return getServerTypes(JSON.V5);
-    }
-
-    /**
      * Get the client schema for JSON messages or for specific JSON data schema.
      *
      * @param type    the type; use {@link JSON#JSON} to get the schema for
@@ -175,27 +123,6 @@ public class JsonSchemaServiceCache implements InstanceManagerAutoDefault {
     }
 
     /**
-     * Get the client schema for JSON messages or for specific JSON data schema.
-     *
-     * @param type   the type; use {@link JSON#JSON} to get the schema for
-     *               messages, or any other value for a data schema
-     * @param locale the locale for error messages, if any
-     * @param id     message id set by client
-     * @return the requested schema
-     * @throws JsonException            if unable to get schema due to errors
-     *                                  processing schema
-     * @throws IllegalArgumentException if no JSON service provides schemas for
-     *                                  type
-     * @deprecated since 4.19.2; use
-     *             {@link #getClientSchema(String, JsonRequest)} instead
-     */
-    @Deprecated
-    @Nonnull
-    public JsonSchema getClientSchema(@Nonnull String type, @Nonnull Locale locale, int id) throws JsonException {
-        return getClientSchema(type, new JsonRequest(locale, JSON.V5, JSON.GET, id));
-    }
-
-    /**
      * Get the server schema for JSON messages or for specific JSON data schema.
      *
      * @param type    the type; use {@link JSON#JSON} to get the schema for
@@ -210,27 +137,6 @@ public class JsonSchemaServiceCache implements InstanceManagerAutoDefault {
     @Nonnull
     public JsonSchema getServerSchema(@Nonnull String type, @Nonnull JsonRequest request) throws JsonException {
         return getSchema(type, true, serverSchemas, request);
-    }
-
-    /**
-     * Get the server schema for JSON messages or for specific JSON data schema.
-     *
-     * @param type   the type; use {@link JSON#JSON} to get the schema for
-     *               messages, or any other value for a data schema
-     * @param locale the locale for error messages, if any
-     * @param id     message id set by client
-     * @return the requested schema
-     * @throws JsonException            if unable to get schema due to errors
-     *                                  processing schema
-     * @throws IllegalArgumentException if no JSON service provides schemas for
-     *                                  type
-     * @deprecated since 4.19.2; use
-     *             {@link #getServerSchema(String, JsonRequest)} instead
-     */
-    @Deprecated
-    @Nonnull
-    public JsonSchema getServerSchema(@Nonnull String type, @Nonnull Locale locale, int id) throws JsonException {
-        return getServerSchema(type, new JsonRequest(locale, JSON.V5, JSON.GET, id));
     }
 
     private synchronized JsonSchema getSchema(@Nonnull String type, boolean server,
@@ -286,26 +192,6 @@ public class JsonSchemaServiceCache implements InstanceManagerAutoDefault {
     }
 
     /**
-     * Validate a JSON message against the schema for JSON messages and data.
-     *
-     * @param message the message to validate
-     * @param server  true if message is from the JSON server; false otherwise
-     * @param locale  the locale for any exceptions that need to be reported to
-     *                clients
-     * @param id      the id to be included with any exceptions reported to
-     *                clients
-     * @throws JsonException if the message does not validate
-     * @deprecated since 4.19.2; use
-     *             {@link #validateMessage(JsonNode, boolean, JsonRequest)}
-     *             instead
-     */
-    @Deprecated
-    public void validateMessage(@Nonnull JsonNode message, boolean server, @Nonnull Locale locale, int id)
-            throws JsonException {
-        validateMessage(message, server, new JsonRequest(locale, JSON.V5, JSON.GET, id));
-    }
-
-    /**
      * Validate a JSON data object against the schema for JSON messages and
      * data.
      *
@@ -326,28 +212,6 @@ public class JsonSchemaServiceCache implements InstanceManagerAutoDefault {
         } else {
             validateJsonNode(data, type, server, map, request);
         }
-    }
-
-    /**
-     * Validate a JSON data object against the schema for JSON messages and
-     * data.
-     *
-     * @param type   the type of data object
-     * @param data   the data object to validate
-     * @param server true if message is from the JSON server; false otherwise
-     * @param locale the locale for any exceptions that need to be reported to
-     *               clients
-     * @param id     the id to be included with any exceptions reported to
-     *               clients
-     * @throws JsonException if the message does not validate
-     * @deprecated since 4.19.2; use
-     *             {@link #validateData(String, JsonNode, boolean, JsonRequest)}
-     *             instead
-     */
-    @Deprecated
-    public void validateData(@Nonnull String type, @Nonnull JsonNode data, boolean server, @Nonnull Locale locale,
-            int id) throws JsonException {
-        validateData(type, data, server, new JsonRequest(locale, JSON.V5, JSON.GET, id));
     }
 
     private void validateJsonNode(@Nonnull JsonNode node, @Nonnull String type, boolean server,

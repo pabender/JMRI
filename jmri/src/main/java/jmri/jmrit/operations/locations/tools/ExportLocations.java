@@ -38,17 +38,6 @@ public class ExportLocations extends XmlFile {
     RouteManager routeManager = InstanceManager.getDefault(RouteManager.class);
     LocationManager locationManager = InstanceManager.getDefault(LocationManager.class);
 
-    /**
-     * Does nothing.
-     *
-     * @param delimiter the new delimiter for the CSV file
-     * @deprecated since 4.19.4 without direct replacement
-     */
-    @Deprecated
-    public void setDeliminter(String delimiter) {
-        // does nothing; maintained to prevent API breakage
-    }
-
     public void writeOperationsLocationFile() {
         makeBackupFile(defaultOperationsFilename());
         try {

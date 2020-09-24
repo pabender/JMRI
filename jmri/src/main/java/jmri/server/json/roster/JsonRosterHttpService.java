@@ -234,20 +234,6 @@ public class JsonRosterHttpService extends JsonHttpService {
         return message(array, request.id);
     }
 
-    /**
-     * Get a list of roster groups.
-     * 
-     * @param locale the client locale
-     * @param id the request id set by the client
-     * @return a message containing the roster groups
-     * @throws JsonException if a requested roster group does not exist
-     * @deprecated since 4.19.2; use {@link #getRosterGroups(JsonRequest)} instead
-     */
-    @Deprecated
-    public JsonNode getRosterGroups(Locale locale, int id) throws JsonException {
-        return getRosterGroups(new JsonRequest(locale, V5, GET, id));
-    }
-
     public JsonNode getRosterGroup(Locale locale, String name, int id) throws JsonException {
         if (name.equals(Roster.ALLENTRIES) || Roster.getDefault().getRosterGroupList().contains(name)) {
             int size = Roster.getDefault().getEntriesInGroup(name).size();

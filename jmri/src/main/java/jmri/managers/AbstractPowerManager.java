@@ -90,14 +90,12 @@ abstract public class AbstractPowerManager<M extends SystemConnectionMemo> exten
     
     /**
      * Fires a {@link java.beans.PropertyChangeEvent} for the power state using
-     * both property names "power" and "Power".
+     * the property name "power".
      * 
      * @param old the old power state
      * @param current the new power state
      */
-    @SuppressWarnings("deprecation")
     protected final void firePowerPropertyChange(int old, int current) {
         firePropertyChange(POWER, old, current);
-        firePropertyChange(POWER_OPN, old, current);
     }
 }

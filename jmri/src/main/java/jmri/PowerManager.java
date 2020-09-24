@@ -45,16 +45,6 @@ public interface PowerManager extends PropertyChangeProvider {
     static final int IDLE = 0x08; // not supported by some connection types
 
     /**
-     * {@link java.beans.PropertyChangeEvent}s are fired with this property name
-     * to ensure backwards compatibility for scripts.
-     * <p>
-     * {@value #POWER_OPN}
-     * 
-     * @deprecated since 4.19.7; use {@link #POWER} instead
-     */
-    @Deprecated
-    static final String POWER_OPN = "Power"; // OPN == "Old Property Name" // NOI18N
-    /**
      * {@link java.beans.PropertyChangeEvent}s are fired with this property name.
      * <p>
      * {@value #POWER}

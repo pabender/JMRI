@@ -5,6 +5,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.ResourceBundle; // for access operations keys directly.
+import java.util.stream.Collectors;
 
 import org.junit.Assert;
 
@@ -670,8 +671,11 @@ public class JUnitOperationsUtil {
     public static void checkOperationsShutDownTask() {
         // remove the operations shut down tasks
         Assert.assertTrue(InstanceManager.containsDefault(ShutDownManager.class));
-        ShutDownManager sm = InstanceManager.getDefault(jmri.ShutDownManager.class);
-        List<ShutDownTask> list = sm.tasks();
+        ShutDownManager sm = InstanceManager.getDefault(ShutDownManager.class);
+        List<ShutDownTask> list = sm.getRunnables().stream()
+                .filter(r -> r instanceof ShutDownTask)
+                .map(r -> (ShutDownTask) r)
+                .collect(Collectors.toList());
         // only one operations shut down task, the other can be NCE shutdown
         Assert.assertTrue("Two shut down tasks max", list.size() < 3);
         ShutDownTask operationShutdownTask = null;

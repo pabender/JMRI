@@ -154,18 +154,6 @@ public class Car extends RollingStock {
         return _loadName;
     }
 
-    @Deprecated
-    // saved for scripts
-    public void setLoad(String load) {
-        setLoadName(load);
-    }
-
-    @Deprecated
-    // saved for scripts
-    public String getLoad() {
-        return getLoadName();
-    }
-
     public void setReturnWhenEmptyLoadName(String load) {
         String old = _rweLoadName;
         _rweLoadName = load;
@@ -364,12 +352,6 @@ public class Car extends RollingStock {
         }
     }
 
-    @Deprecated
-    // available for old scripts
-    public void setNextDestination(Location destination) {
-        setFinalDestination(destination);
-    }
-
     public Location getFinalDestination() {
         return _finalDestination;
     }
@@ -398,12 +380,6 @@ public class Car extends RollingStock {
             }
             setDirtyAndFirePropertyChange(FINAL_DESTINATION_TRACK_CHANGED_PROPERTY, old, track);
         }
-    }
-
-    @Deprecated
-    // available for old scripts
-    public void setNextDestinationTrack(Track track) {
-        setFinalDestinationTrack(track);
     }
 
     public Track getFinalDestinationTrack() {

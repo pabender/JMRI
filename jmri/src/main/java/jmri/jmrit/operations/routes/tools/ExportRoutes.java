@@ -28,18 +28,6 @@ public class ExportRoutes extends XmlFile {
         // nothing to do
     }
 
-    /**
-     * Sets the delimiter for the CSV export. Does nothing, left in place to
-     * avoid API breakage during deprecation period.
-     *
-     * @param delimiter ignored
-     * @deprecated since 4.19.4 without replacement
-     */
-    @Deprecated
-    public void setDeliminter(String delimiter) {
-        // nothing to do
-    }
-
     public void writeOperationsRoutesFile() {
         makeBackupFile(defaultOperationsFilename());
         try {

@@ -22,30 +22,6 @@ public abstract class AbstractProxyManagerTestBase<T extends Manager<E>, E exten
     // ProxyManager<E> under test - setUp() loads this
     protected T l = null;
 
-    // check that you can add and remove listeners
-    @Test
-    public void checkSimpleAddAndRemove() {
-        
-        Manager.ManagerDataListener<E> listener = new Manager.ManagerDataListener<E>(){
-            @Override public void contentsChanged(Manager.ManagerDataEvent<E> e){}
-            @Override public void intervalAdded(Manager.ManagerDataEvent<E> e) {}
-            @Override public void intervalRemoved(Manager.ManagerDataEvent<E> e) {}
-        };
-        
-        l.addDataListener(listener);
-        l.removeDataListener(listener);
-        
-        l.addDataListener(null);
-        l.removeDataListener(null);
-        
-        l.addDataListener(null);
-        l.removeDataListener(listener);
-        
-        l.addDataListener(listener);
-        l.removeDataListener(null);
-        
-    }
-
     @Test
     public final void testMakeSystemName() {
         String s = l.makeSystemName("1");

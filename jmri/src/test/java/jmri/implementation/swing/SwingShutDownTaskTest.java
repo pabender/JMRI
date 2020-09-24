@@ -49,7 +49,7 @@ public class SwingShutDownTaskTest {
                 };
 
         // and display
-        t.execute();
+        t.call();
     }
 
     @Test
@@ -73,7 +73,7 @@ public class SwingShutDownTaskTest {
                 };
 
         // and display
-        t.execute();
+        t.call();
     }
 
     @BeforeEach

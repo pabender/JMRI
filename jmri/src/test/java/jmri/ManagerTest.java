@@ -74,14 +74,6 @@ public class ManagerTest {
         Assert.fail("should have thrown");
     }
     
-    // test proper coding of constants
-    @Test
-    public void checkAgainstSwingConstants() {
-        Assert.assertEquals(javax.swing.event.ListDataEvent.CONTENTS_CHANGED, Manager.ManagerDataEvent.CONTENTS_CHANGED);
-        Assert.assertEquals(javax.swing.event.ListDataEvent.INTERVAL_ADDED, Manager.ManagerDataEvent.INTERVAL_ADDED);
-        Assert.assertEquals(javax.swing.event.ListDataEvent.INTERVAL_REMOVED, Manager.ManagerDataEvent.INTERVAL_REMOVED);
-    }
-    
     // test semantics of various collections
     @Test
     public void checkTreeMap() {

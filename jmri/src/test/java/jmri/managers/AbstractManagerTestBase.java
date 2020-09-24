@@ -31,43 +31,6 @@ public abstract class AbstractManagerTestBase<T extends Manager<E>, E extends Na
     // Manager<E> under test - setUp() loads this
     protected T l = null;
 
-    // check that you can add and remove listeners
-    @Test
-    public final void testManagerDataListenerAddAndRemove() {
-
-        Manager.ManagerDataListener<E> listener = new Manager.ManagerDataListener<E>() {
-            @Override
-            public void contentsChanged(Manager.ManagerDataEvent<E> e) {
-                // do nothing
-            }
-
-            @Override
-            public void intervalAdded(Manager.ManagerDataEvent<E> e) {
-                // do nothing
-            }
-
-            @Override
-            public void intervalRemoved(Manager.ManagerDataEvent<E> e) {
-                // do nothing
-            }
-        };
-
-        l.addDataListener(listener);
-        l.removeDataListener(listener);
-
-        l.removeDataListener(listener);
-
-        l.addDataListener(null);
-        l.removeDataListener(null);
-
-        l.addDataListener(null);
-        l.removeDataListener(listener);
-
-        l.addDataListener(listener);
-        l.removeDataListener(null);
-
-    }
-
     @Test
     public final void testPropertyChangeListenerAddAndRemove() {
 

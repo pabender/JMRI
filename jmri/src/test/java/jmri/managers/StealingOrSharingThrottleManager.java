@@ -38,20 +38,6 @@ public class StealingOrSharingThrottleManager extends DebugThrottleManager {
         // Immediately trigger the steal or share callback.
         notifyDecisionRequest(a,ThrottleListener.DecisionType.STEAL_OR_SHARE);
     }
-    
-    /**
-     * @deprecated since 4.15.7; use #responseThrottleDecision
-     */
-    @Deprecated
-    @Override
-    public void stealThrottleRequest(LocoAddress a, ThrottleListener l,boolean steal){
-        if(steal) {
-            responseThrottleDecision(a, l, ThrottleListener.DecisionType.STEAL_OR_SHARE);
-        } else {
-            cancelThrottleRequest(a,l);
-            failedThrottleRequest(a,"user declined to steal");
-        }
-    }
 
     /**
      * {@inheritDoc}

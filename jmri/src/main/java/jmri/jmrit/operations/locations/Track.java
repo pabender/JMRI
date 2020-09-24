@@ -361,12 +361,6 @@ public class Track extends PropertyChangeSupport {
         return ("unknown"); // NOI18N
     }
 
-    @Deprecated
-    // as of 10/27/2013 version 3.5.5
-    public void setLocType(String type) {
-        setTrackType(type);
-    }
-
     public void setLength(int length) {
         int old = _length;
         _length = length;
@@ -2515,7 +2509,7 @@ public class Track extends PropertyChangeSupport {
         }
         // old way of reading track comment, see comments below for new format
         if ((a = e.getAttribute(Xml.COMMENT)) != null) {
-            _comment = OperationsXml.convertFromXmlComment(a.getValue());
+            _comment = a.getValue();
         }
         // new way of reading car types using elements added in 3.3.1
         if (e.getChild(Xml.TYPES) != null) {

@@ -594,7 +594,7 @@ public class RouteLocation extends PropertyChangeSupport implements java.beans.P
         }
         
         if ((a = e.getAttribute(Xml.COMMENT)) != null) {
-            _comment = OperationsXml.convertFromXmlComment(a.getValue());
+            _comment = a.getValue();
         }
     }
 

@@ -1022,9 +1022,6 @@ public class Apps extends JPanel implements PropertyChangeListener, WindowListen
         // connect Help target now that globalHelpBroker has been instantiated
         containedPane.attachHelp();
 
-        // invoke plugin, if any
-        JmriPlugin.start(frame, containedPane.menuBar);
-
         frame.setJMenuBar(containedPane.menuBar);
         frame.getContentPane().add(containedPane);
 

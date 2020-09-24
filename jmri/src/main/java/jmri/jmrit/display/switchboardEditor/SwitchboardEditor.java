@@ -724,15 +724,6 @@ public class SwitchboardEditor extends Editor {
         defaultTextColor = color;
     }
 
-    /**
-     * @param color the string containing a color settable using {@link jmri.util.ColorUtil#stringToColor(String)}
-     * @deprecated since 4.15.7; use {@link #setDefaultTextColor(Color)} instead
-     */
-    @Deprecated
-    public void setDefaultTextColor(String color) {
-        setDefaultTextColor(ColorUtil.stringToColor(color));
-    }
-
     public String getDefaultTextColor() {
         return ColorUtil.colorToColorName(defaultTextColor);
     }

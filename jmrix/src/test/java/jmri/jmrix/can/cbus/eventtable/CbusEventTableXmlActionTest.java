@@ -199,7 +199,7 @@ public class CbusEventTableXmlActionTest {
         model.skipSaveOnDispose();
         
         CbusEventTableShutdownTask task = new CbusEventTableShutdownTask("Test Dispose",model);
-        assertThat(task.execute()).isTrue();
+        assertThat(task.call()).isTrue();
         memo.dispose();
         memo = null;
         tcis.terminateThreads();

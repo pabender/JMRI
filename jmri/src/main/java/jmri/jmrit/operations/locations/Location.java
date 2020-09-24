@@ -1400,7 +1400,7 @@ public class Location extends PropertyChangeSupport implements Identifiable, Pro
         }
         
         if ((a = e.getAttribute(Xml.COMMENT)) != null) {
-            _comment = OperationsXml.convertFromXmlComment(a.getValue());
+            _comment = a.getValue();
         }
 
         if ((a = e.getAttribute(Xml.SWITCH_LIST_COMMENT)) != null) {

@@ -31,47 +31,17 @@ public class WebServerTest {
 
     @Test
     public void testProfileToURI() {
-        Assert.assertEquals("URI for Program directory", "/project/", WebServer.portablePathToURI("profile:"));
+        Assert.assertEquals("URI for Profile directory", "/project/", WebServer.portablePathToURI("profile:"));
     }
 
     @Test
     public void testSettingsToURI() {
-        Assert.assertEquals("URI for Program directory", "/settings/", WebServer.portablePathToURI("settings:"));
+        Assert.assertEquals("URI for Settings directory", "/settings/", WebServer.portablePathToURI("settings:"));
     }
 
     @Test
     public void testOtherToURI() {
-        Assert.assertNull("URI for Other directory", WebServer.portablePathToURI("roster:"));
-    }
-
-    @SuppressWarnings("deprecation")
-    @Test
-    public void testURIForPreferences() {
-        Assert.assertEquals("URI for Preferences directory", "/prefs/", WebServer.URIforPortablePath("preference:"));
-    }
-
-    @SuppressWarnings("deprecation")
-    @Test
-    public void testURIForProgram() {
-        Assert.assertEquals("URI for Program directory", "/dist/", WebServer.URIforPortablePath("program:"));
-    }
-
-    @SuppressWarnings("deprecation")
-    @Test
-    public void testURIForProfile() {
-        Assert.assertEquals("URI for Program directory", "/project/", WebServer.URIforPortablePath("profile:"));
-    }
-
-    @SuppressWarnings("deprecation")
-    @Test
-    public void testURIForSettings() {
-        Assert.assertEquals("URI for Program directory", "/settings/", WebServer.URIforPortablePath("settings:"));
-    }
-
-    @SuppressWarnings("deprecation")
-    @Test
-    public void testURIForOther() {
-        Assert.assertNull("URI for Other directory", WebServer.URIforPortablePath("roster:"));
+        Assert.assertNull("URI for Roster directory", WebServer.portablePathToURI("roster:"));
     }
 
     @Test

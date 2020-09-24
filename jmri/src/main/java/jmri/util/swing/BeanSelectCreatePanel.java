@@ -127,16 +127,6 @@ public class BeanSelectCreatePanel<E extends NamedBean> extends JPanel {
     }
 
     /**
-     * Does nothing.
-     * 
-     * @deprecated since 4.17.2 without direct replacement
-     */
-    @Deprecated
-    public void refresh() {
-        // do nothing
-    }
-
-    /**
      * Get the display name of the bean that has either been selected in the
      * drop down list or was asked to be created.
      *

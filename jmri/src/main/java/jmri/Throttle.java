@@ -1202,16 +1202,6 @@ public interface Throttle extends PropertyChangeProvider {
     public LocoAddress getLocoAddress();
 
     /**
-     * Get a list of property change listeners.
-     * 
-     * @return a list of listeners
-     * @deprecated since 4.19.5; use {@link #getPropertyChangeListeners()} or
-     * {@link #getPropertyChangeListeners(java.lang.String)} instead
-     */
-    @Deprecated
-    public List<PropertyChangeListener> getListeners();
-
-    /**
      * Not for general use, see {@link #release(ThrottleListener l)} and
      * {@link #dispatch(ThrottleListener l)}.
      * <p>

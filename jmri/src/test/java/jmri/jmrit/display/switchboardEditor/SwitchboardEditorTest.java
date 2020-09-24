@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
 package jmri.jmrit.display.switchboardEditor;
 
+import java.awt.Color;
 import java.awt.GraphicsEnvironment;
 
 import jmri.jmrit.display.AbstractEditorTestBase;
@@ -74,7 +75,7 @@ public class SwitchboardEditorTest extends AbstractEditorTestBase<SwitchboardEdi
     @Test
     public void testSetDefaultTextColor() {
         Assume.assumeFalse(GraphicsEnvironment.isHeadless());
-        e.setDefaultTextColor(ColorUtil.ColorPink);
+        e.setDefaultTextColor(Color.PINK);
         Assert.assertEquals("Default Text Color after Set", ColorUtil.ColorPink, e.getDefaultTextColor());
     }
 

@@ -15,14 +15,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SimpleServerManagerTest {
 
     @Test
-    public void testGetInstance() {
-        SimpleServerManager a = SimpleServerManager.getInstance();
-        assertThat(a).isNotNull();
-    }
-
-    @Test
     public void testGetPreferences(){
-        SimpleServerManager a = SimpleServerManager.getInstance();
+        SimpleServerManager a = new SimpleServerManager();
         assertThat(a.getPreferences()).withFailMessage("preferences not created").isNotNull();
     }
 

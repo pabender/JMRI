@@ -193,21 +193,6 @@ public class JsonUtilHttpService extends JsonHttpService {
     }
 
     /**
-     * Send a JSON {@link jmri.server.json.JSON#HELLO} message.
-     *
-     * @param locale    the client's Locale
-     * @param id        message id set by client
-     * @param heartbeat seconds in which a client must send a message before its
-     *                  connection is broken
-     * @return the JSON hello message
-     * @deprecated since 4.19.2; use {@link #getHello(int, JsonRequest)} instead
-     */
-    @Deprecated
-    public JsonNode getHello(Locale locale, int heartbeat, int id) {
-        return getHello(heartbeat, new JsonRequest(locale, JSON.V5, JSON.GET, id));
-    }
-
-    /**
      * Get a JSON message with a metadata element from {@link jmri.Metadata}.
      *
      * @param name    The metadata element to get
@@ -260,22 +245,6 @@ public class JsonUtilHttpService extends JsonHttpService {
     }
 
     /**
-     * Get a JSON array of metadata elements as listed by
-     * {@link jmri.Metadata#getSystemNameList()}.
-     *
-     * @param locale The client's Locale
-     * @param id     message id set by client
-     * @return Array of JSON metadata elements
-     * @throws JsonException if thrown by
-     *                       {@link #getMetadata(java.util.Locale, java.lang.String, int)}
-     * @deprecated since 4.19.2; use {@link #getMetadata(JsonRequest)} instead
-     */
-    @Deprecated
-    public ArrayNode getMetadata(Locale locale, int id) throws JsonException {
-        return getMetadata(new JsonRequest(locale, JSON.V5, JSON.GET, id));
-    }
-
-    /**
      * Get a running {@link jmri.util.zeroconf.ZeroConfService} using the
      * protocol as the name of the service.
      *
@@ -294,24 +263,6 @@ public class JsonUtilHttpService extends JsonHttpService {
         throw new JsonException(404,
                 Bundle.getMessage(request.locale, JsonException.ERROR_OBJECT, JSON.NETWORK_SERVICE, name),
                 request.id);
-    }
-
-    /**
-     * Get a running {@link jmri.util.zeroconf.ZeroConfService} using the
-     * protocol as the name of the service.
-     *
-     * @param locale the client's Locale
-     * @param name   the service protocol
-     * @param id     message id set by client
-     * @return the JSON networkService message
-     * @throws JsonException if type is not a running zeroconf networking
-     *                       protocol
-     * @deprecated since 4.19.2; use
-     *             {@link #getNetworkService(String, JsonRequest)} instead
-     */
-    @Deprecated
-    public JsonNode getNetworkService(Locale locale, String name, int id) throws JsonException {
-        return getNetworkService(name, new JsonRequest(locale, JSON.V5, JSON.GET, id));
     }
 
     private JsonNode getNetworkService(ZeroConfService service, int id) {
@@ -363,21 +314,6 @@ public class JsonUtilHttpService extends JsonHttpService {
         NodeIdentity.formerIdentities().stream().forEach(nodes::add);
         data.set(JSON.FORMER_NODES, nodes);
         return message(JSON.NODE, data, request.id);
-    }
-
-    /**
-     * Send a JSON {@link jmri.server.json.JSON#NODE} message containing the
-     * JMRI node identity and former identities.
-     *
-     * @param locale the client's Locale
-     * @param id     message id set by client
-     * @return the JSON node message
-     * @see jmri.util.node.NodeIdentity
-     * @deprecated since 4.19.2; use {@link #getNode(JsonRequest)} instead
-     */
-    @Deprecated
-    public JsonNode getNode(Locale locale, int id) {
-        return getNode(new JsonRequest(locale, JSON.V5, JSON.GET, id));
     }
 
     /**
@@ -461,20 +397,6 @@ public class JsonUtilHttpService extends JsonHttpService {
 
     /**
      * return a JSON {@link jmri.server.json.JSON#NODE} message containing the
-     * Railroad from the Railroad Name preferences.
-     *
-     * @param locale the client's Locale
-     * @param id     message id set by client
-     * @return the JSON railroad name message
-     * @deprecated since 4.19.2; use {@link #getRailroad(JsonRequest)} instead
-     */
-    @Deprecated
-    public JsonNode getRailroad(Locale locale, int id) {
-        return getRailroad(new JsonRequest(locale, JSON.V5, JSON.GET, id));
-    }
-
-    /**
-     * return a JSON {@link jmri.server.json.JSON#NODE} message containing the
      * requested systemConnection details
      * 
      * @param name    system connection name to return
@@ -492,23 +414,6 @@ public class JsonUtilHttpService extends JsonHttpService {
         throw new JsonException(HttpServletResponse.SC_NOT_FOUND,
                 Bundle.getMessage(request.locale, JsonException.ERROR_NOT_FOUND, JSON.SYSTEM_CONNECTION, name),
                 request.id);
-    }
-
-    /**
-     * return a JSON {@link jmri.server.json.JSON#NODE} message containing the
-     * requested systemConnection details
-     * 
-     * @param locale the client's Locale.
-     * @param name   system connection name to return
-     * @param id     message id set by client
-     * @return the JSON systemConnections message.
-     * @throws JsonException if systemConnection not found
-     * @deprecated since 4.19.2; use
-     *             {@link #getSystemConnection(String, JsonRequest)} instead
-     */
-    @Deprecated
-    public JsonNode getSystemConnection(Locale locale, String name, int id) throws JsonException {
-        return getSystemConnection(name, new JsonRequest(locale, JSON.V5, JSON.GET, id));
     }
 
     /**
@@ -561,20 +466,6 @@ public class JsonUtilHttpService extends JsonHttpService {
     }
 
     /**
-     * return a JSON array containing the defined system connections
-     * 
-     * @param locale the client's Locale.
-     * @param id     message id set by client
-     * @return the JSON systemConnections message.
-     * @deprecated since 4.19.2; use {@link #getSystemConnections(JsonRequest)}
-     *             instead
-     */
-    @Deprecated
-    public ArrayNode getSystemConnections(Locale locale, int id) {
-        return getSystemConnections(new JsonRequest(locale, JSON.V5, JSON.GET, id));
-    }
-
-    /**
      * Get a JSON message containing the requested configuration profile.
      * 
      * @param profile the requested profile
@@ -621,21 +512,6 @@ public class JsonUtilHttpService extends JsonHttpService {
     }
 
     /**
-     * find and return the data for a single config profile
-     * 
-     * @param locale the client's Locale.
-     * @param name   requested configProfile name
-     * @param id     message id set by client
-     * @return the JSON configProfiles message.
-     * @throws JsonException if the requested configProfile is not found
-     * @deprecated since 4.19.2; use {@link #getConfigProfile(String, JsonRequest)} instead
-     */
-    @Deprecated
-    public JsonNode getConfigProfile(Locale locale, String name, int id) throws JsonException {
-        return getConfigProfile(name, new JsonRequest(locale, JSON.V5, JSON.GET, id));
-    }
-
-    /**
      * Get a JSON array of all configuration profiles.
      * 
      * @param request the JSON request
@@ -650,20 +526,6 @@ public class JsonUtilHttpService extends JsonHttpService {
             }
         }
         return root;
-    }
-
-    /**
-     * Get a JSON array of all configuration profiles.
-     * 
-     * @param locale the client's Locale.
-     * @param id     message id set by client
-     * @return the JSON configProfiles message.
-     * @deprecated since 4.19.2; use
-     *             {@link #getConfigProfiles(JsonRequest)} instead
-     */
-    @Deprecated
-    public ArrayNode getConfigProfiles(Locale locale, int id) {
-        return getConfigProfiles(new JsonRequest(locale, JSON.V5, JSON.GET, id));
     }
 
     /**

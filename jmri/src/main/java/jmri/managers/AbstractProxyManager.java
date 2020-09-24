@@ -36,7 +36,7 @@ import jmri.util.NamedBeanComparator;
  * @author Bob Jacobsen Copyright (C) 2003, 2010, 2018
  */
 @SuppressWarnings("deprecation")
-abstract public class AbstractProxyManager<E extends NamedBean> extends VetoableChangeSupport implements ProxyManager<E>, PropertyChangeListener, Manager.ManagerDataListener<E> {
+abstract public class AbstractProxyManager<E extends NamedBean> extends VetoableChangeSupport implements ProxyManager<E>, PropertyChangeListener {
 
     /**
      * List of names of bound properties requested to be listened to by
@@ -124,7 +124,6 @@ abstract public class AbstractProxyManager<E extends NamedBean> extends Vetoable
                 .forEach(n -> Arrays.stream(getVetoableChangeListeners(n))
                 .forEach(l -> m.addVetoableChangeListener(n, l)));
         m.addPropertyChangeListener("beans", this);
-        m.addDataListener(this);
         recomputeNamedBeanSet();
         log.debug("added manager {}", m.getClass());
     }
@@ -499,22 +498,10 @@ abstract public class AbstractProxyManager<E extends NamedBean> extends Vetoable
     @Deprecated  // will be removed when superclass method is removed due to @Override
     public List<String> getSystemNameList() {
         // jmri.util.LoggingUtil.deprecationWarning(log, "getSystemNameList"); // used by configureXML
-        List<E> list = getNamedBeanList();
+        Set<E> list = getNamedBeanSet();
         ArrayList<String> retval = new ArrayList<>(list.size());
         list.forEach(e -> retval.add(e.getSystemName()));
         return Collections.unmodifiableList(retval);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    @Deprecated  // will be removed when superclass method is removed due to @Override
-    @Nonnull
-    public List<E> getNamedBeanList() {
-        // jmri.util.LoggingUtil.deprecationWarning(log, "getNamedBeanList"); // used by getSystemNameList
-        // by doing this in order by manager and from each managers ordered sets, its finally in order
-        ArrayList<E> tl = new ArrayList<>();
-        mgrs.forEach(m -> tl.addAll(m.getNamedBeanSet()));
-        return Collections.unmodifiableList(tl);
     }
 
     private TreeSet<E> namedBeanSet = null;
@@ -551,100 +538,6 @@ abstract public class AbstractProxyManager<E extends NamedBean> extends Vetoable
         if (propertyName.equals("beans") && !silenced) {
             fireIndexedPropertyChange("beans", getNamedBeanSet().size(), null, null);
         }
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    @Deprecated
-    public void addDataListener(ManagerDataListener<E> e) {
-        if (e != null) listeners.add(e);
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    @Deprecated
-    public void removeDataListener(ManagerDataListener<E> e) {
-        if (e != null) listeners.remove(e);
-    }
-
-    @SuppressWarnings("deprecation")
-    final List<ManagerDataListener<E>> listeners = new ArrayList<>();
-
-    /**
-     * {@inheritDoc}
-     * From Manager.ManagerDataListener, receives notifications from underlying
-     * managers.
-     */
-    @Override
-    @Deprecated
-    public void contentsChanged(Manager.ManagerDataEvent<E> e) {
-    }
-
-    /**
-     * {@inheritDoc}
-     * From Manager.ManagerDataListener, receives notifications from underlying
-     * managers.
-     */
-    @Override
-    @Deprecated
-    @SuppressWarnings("deprecation")
-    public void intervalAdded(AbstractProxyManager.ManagerDataEvent<E> e) {
-        if (namedBeanSet != null && e.getIndex0() == e.getIndex1()) {
-            // just one element added, and we have the object reference
-            namedBeanSet.add(e.getChangedBean());
-        } else {
-            recomputeNamedBeanSet();
-        }
-
-        if (muted) return;
-
-        int offset = 0;
-        for (Manager<E> m : mgrs) {
-            if (m == e.getSource()) break;
-            offset += m.getObjectCount();
-        }
-
-        ManagerDataEvent<E> eOut = new ManagerDataEvent<>(this, Manager.ManagerDataEvent.INTERVAL_ADDED, e.getIndex0()+offset, e.getIndex1()+offset, e.getChangedBean());
-
-        listeners.forEach(m -> m.intervalAdded(eOut));
-    }
-
-    /**
-     * {@inheritDoc}
-     * From Manager.ManagerDataListener, receives notifications from underlying
-     * managers.
-     */
-    @Override
-    @Deprecated
-    @SuppressWarnings("deprecation")
-    public void intervalRemoved(AbstractProxyManager.ManagerDataEvent<E> e) {
-        recomputeNamedBeanSet();
-
-        if (muted) return;
-
-        int offset = 0;
-        for (Manager<E> m : mgrs) {
-            if (m == e.getSource()) break;
-            offset += m.getObjectCount();
-        }
-
-        ManagerDataEvent<E> eOut = new ManagerDataEvent<>(this, Manager.ManagerDataEvent.INTERVAL_REMOVED, e.getIndex0()+offset, e.getIndex1()+offset, e.getChangedBean());
-
-        listeners.forEach(m -> m.intervalRemoved(eOut));
-    }
-
-    private boolean muted = false;
-    /** {@inheritDoc} */
-    @Override
-    @Deprecated
-    @SuppressWarnings("deprecation")
-    public void setDataListenerMute(boolean m) {
-        if (muted && !m) {
-            // send a total update, as we haven't kept track of specifics
-            ManagerDataEvent<E> e = new ManagerDataEvent<>(this, ManagerDataEvent.CONTENTS_CHANGED, 0, getObjectCount()-1, null);
-            listeners.forEach((listener) -> listener.contentsChanged(e));
-        }
-        this.muted = m;
     }
 
     // initialize logging

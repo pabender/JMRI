@@ -34,16 +34,6 @@ public abstract class AbstractShutDownTask implements ShutDownTask {
 
     /**
      * {@inheritDoc}
-     */
-    @Override
-    @SuppressWarnings("deprecation")
-    public boolean isShutdownAllowed() {
-        LoggingUtil.deprecationWarning(log, "isShutdownAllowed");
-        return call();
-    }
-
-    /**
-     * {@inheritDoc}
      * 
      * This implementation merely sets the "doRun" property to true, and should
      * be overridden for any real checking. Note that overriding implementations
@@ -55,34 +45,9 @@ public abstract class AbstractShutDownTask implements ShutDownTask {
         return doRun;
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    @SuppressWarnings("deprecation")
-    public final boolean execute() {
-        LoggingUtil.deprecationWarning(log, "execute");
-        run();
-        return true;
-    }
-
     @Override
     public String getName() {
         return mName;
-    }
-
-    @Override
-    @SuppressWarnings("deprecation")
-    public boolean isParallel() {
-        LoggingUtil.deprecationWarning(log, "isParallel");
-        return false;
-    }
-
-    @Override
-    @SuppressWarnings("deprecation")
-    public boolean isComplete() {
-        LoggingUtil.deprecationWarning(log, "isComplete");
-        return !this.isParallel();
     }
 
     /**
