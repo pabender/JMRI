@@ -17,13 +17,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import jmri.InstanceManager;
 import jmri.util.xml.XmlFile;
-import jmri.jmrit.decoderdefn.DecoderFile;
-import jmri.jmrit.decoderdefn.DecoderIndexFile;
-import jmri.jmrit.symbolicprog.CvTableModel;
-import jmri.jmrit.symbolicprog.ResetTableModel;
-import jmri.jmrit.symbolicprog.VariableTableModel;
-import jmri.jmrit.symbolicprog.tabbedframe.PaneContainer;
-import jmri.jmrit.symbolicprog.tabbedframe.PaneProgPane;
+import jmri.decoderdefn.DecoderFile;
+import jmri.decoderdefn.DecoderIndexFile;
+import jmri.symbolicprog.CvTableModel;
+import jmri.symbolicprog.ResetTableModel;
+import jmri.symbolicprog.VariableTableModel;
+import jmri.symbolicprog.tabbedframe.PaneContainer;
+import jmri.symbolicprog.tabbedframe.PaneProgPane;
 import jmri.util.BusyGlassPane;
 import jmri.util.FileUtil;
 import jmri.util.JmriJFrame;
@@ -37,7 +37,7 @@ public class PrintRosterEntry implements PaneContainer {
     RosterEntry _rosterEntry;
 
     /**
-     * List of {@link jmri.jmrit.symbolicprog.tabbedframe.PaneProgPane} JPanels.
+     * List of {@link jmri.symbolicprog.tabbedframe.PaneProgPane} JPanels.
      * Built up at line 158 or passed as argument paneList in line 196 via
      * {link #PrintRosterEntry(RosterEntry, List, FunctionLabelPane, RosterMediaPane, JmriJFrame)}
      */

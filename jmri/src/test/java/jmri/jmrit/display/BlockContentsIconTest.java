@@ -6,7 +6,7 @@ import java.awt.GraphicsEnvironment;
 import javax.swing.JFrame;
 
 import jmri.BlockManager;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.util.JUnitAppender;
 import jmri.util.JUnitUtil;
 import jmri.util.JmriJFrame;
@@ -45,7 +45,7 @@ public class BlockContentsIconTest extends PositionableLabelTest {
 
         jf.getContentPane().add(new javax.swing.JLabel("| Expect roster entry: "));
 
-        jmri.jmrit.roster.RosterEntry re = jmri.jmrit.roster.RosterEntry.fromFile(new java.io.File("src/test/java/jmri/jmrit/roster/ACL1012-Schema.xml"));
+        jmri.roster.RosterEntry re = jmri.roster.RosterEntry.fromFile(new java.io.File("src/test/java/jmri/jmrit/roster/ACL1012-Schema.xml"));
 
         jmri.InstanceManager.getDefault(BlockManager.class).getBlock("IB1").setValue(re);
         new QueueTool().waitEmpty(100);

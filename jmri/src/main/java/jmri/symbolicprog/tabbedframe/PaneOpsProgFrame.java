@@ -57,7 +57,7 @@ public class PaneOpsProgFrame extends PaneProgFrame {
 
     @Override
     void addHelp() {
-        addHelpMenu("package.jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgFrame", true);
+        addHelpMenu("package.jmri.symbolicprog.tabbedframe.PaneOpsProgFrame", true);
     }
 
     @Override

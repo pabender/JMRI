@@ -14,8 +14,8 @@ import org.slf4j.LoggerFactory;
  * <p>
  *
  * @author Bob Jacobsen Copyright (C) 2001, 2015
- * @see jmri.jmrit.symbolicprog.CombinedLocoSelPane
- * @see jmri.jmrit.symbolicprog.NewLocoSelPane
+ * @see jmri.symbolicprog.CombinedLocoSelPane
+ * @see jmri.symbolicprog.NewLocoSelPane
  */
 abstract public class IdentifyLoco extends jmri.jmrit.AbstractIdentify {
 
@@ -34,7 +34,7 @@ abstract public class IdentifyLoco extends jmri.jmrit.AbstractIdentify {
     @Override
     public boolean test1() {
         // request contents of CV 29
-        statusUpdate(java.util.ResourceBundle.getBundle("jmri/jmrit/roster/JmritRosterBundle").getString("READ CV 29"));
+        statusUpdate(java.util.ResourceBundle.getBundle("jmri/roster/JmritRosterBundle").getString("READ CV 29"));
         readCV("29");
         return false;
     }
@@ -45,12 +45,12 @@ abstract public class IdentifyLoco extends jmri.jmrit.AbstractIdentify {
         if ((value & 0x20) != 0) {
             // long address needed
             shortAddr = false;
-            statusUpdate(java.util.ResourceBundle.getBundle("jmri/jmrit/roster/JmritRosterBundle").getString("LONG ADDRESS - READ CV 17"));
+            statusUpdate(java.util.ResourceBundle.getBundle("jmri/roster/JmritRosterBundle").getString("LONG ADDRESS - READ CV 17"));
             readCV("17");
         } else {
             // short - read address
             shortAddr = true;
-            statusUpdate(java.util.ResourceBundle.getBundle("jmri/jmrit/roster/JmritRosterBundle").getString("SHORT ADDRESS - READ CV 1"));
+            statusUpdate(java.util.ResourceBundle.getBundle("jmri/roster/JmritRosterBundle").getString("SHORT ADDRESS - READ CV 1"));
             readCV("1");
         }
         return false;
@@ -62,13 +62,13 @@ abstract public class IdentifyLoco extends jmri.jmrit.AbstractIdentify {
         if (shortAddr) {
             // short - this is the address
             address = value;
-            statusUpdate(java.util.ResourceBundle.getBundle("jmri/jmrit/roster/JmritRosterBundle").getString("READMFG"));
+            statusUpdate(java.util.ResourceBundle.getBundle("jmri/roster/JmritRosterBundle").getString("READMFG"));
             readCV("7");
             return false;
         } else {
             // long - need CV18 also
             cv17val = value;
-            statusUpdate(java.util.ResourceBundle.getBundle("jmri/jmrit/roster/JmritRosterBundle").getString("LONG ADDRESS - READ CV 18"));
+            statusUpdate(java.util.ResourceBundle.getBundle("jmri/roster/JmritRosterBundle").getString("LONG ADDRESS - READ CV 18"));
             readCV("18");
             return false;
         }
@@ -79,7 +79,7 @@ abstract public class IdentifyLoco extends jmri.jmrit.AbstractIdentify {
         // only for long address
         if (shortAddr) {
             cv7val = value;
-            statusUpdate(java.util.ResourceBundle.getBundle("jmri/jmrit/roster/JmritRosterBundle").getString("READMFGVER"));
+            statusUpdate(java.util.ResourceBundle.getBundle("jmri/roster/JmritRosterBundle").getString("READMFGVER"));
             readCV("8");
             return false;
 
@@ -88,7 +88,7 @@ abstract public class IdentifyLoco extends jmri.jmrit.AbstractIdentify {
         // value is CV18, calculate address
         cv18val = value;
         address = (cv17val & 0x3f) * 256 + cv18val;
-        statusUpdate(java.util.ResourceBundle.getBundle("jmri/jmrit/roster/JmritRosterBundle").getString("READMFG"));
+        statusUpdate(java.util.ResourceBundle.getBundle("jmri/roster/JmritRosterBundle").getString("READMFG"));
         readCV("7");
         return false;
     }
@@ -100,7 +100,7 @@ abstract public class IdentifyLoco extends jmri.jmrit.AbstractIdentify {
             //We have read manufacturer and decoder version details
             return true;
         }
-        statusUpdate(java.util.ResourceBundle.getBundle("jmri/jmrit/roster/JmritRosterBundle").getString("READMFGVER"));
+        statusUpdate(java.util.ResourceBundle.getBundle("jmri/roster/JmritRosterBundle").getString("READMFGVER"));
         readCV("8");
         cv7val = value;
         return false;

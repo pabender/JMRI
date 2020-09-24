@@ -30,6 +30,6 @@ public class LightTableTabAction extends AbstractTableTabAction<Light> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.LightTable";
+        return "package.jmri.beantable.LightTable";
     }
 }

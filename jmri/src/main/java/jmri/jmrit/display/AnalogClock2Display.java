@@ -23,7 +23,7 @@ import javax.swing.JRadioButtonMenuItem;
 import jmri.InstanceManager;
 import jmri.Timebase;
 import jmri.TimebaseRateException;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.util.swing.JmriColorChooser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

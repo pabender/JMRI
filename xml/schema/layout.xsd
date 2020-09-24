@@ -134,7 +134,7 @@ signals - obsolete, EMPTY, never used
                   Defines DecoderPro configuration options
                 </xs:documentation>
                 <xs:appinfo>
-                    <jmri:usingclass configurexml="yes">jmri.jmrit.symbolicprog.configurexml.ProgrammerConfigPaneXml</jmri:usingclass>
+                    <jmri:usingclass configurexml="yes">jmri.symbolicprog.configurexml.ProgrammerConfigPaneXml</jmri:usingclass>
                 </xs:appinfo>
             </xs:annotation>
             <xs:complexType>
@@ -152,7 +152,7 @@ signals - obsolete, EMPTY, never used
                   Defines DecoderPro roster applications re location, default owner
                 </xs:documentation>
                 <xs:appinfo>
-                    <jmri:usingclass configurexml="yes">jmri.jmrit.roster.configurexml.RosterConfigPaneXml</jmri:usingclass>
+                    <jmri:usingclass configurexml="yes">jmri.roster.configurexml.RosterConfigPaneXml</jmri:usingclass>
                 </xs:appinfo>
             </xs:annotation>
             <xs:complexType>

@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 import jmri.InstanceManager;
 import jmri.NamedBean;
 import jmri.ShutDownTask;
-import jmri.jmrit.roster.RosterSpeedProfile;
+import jmri.roster.RosterSpeedProfile;
 import jmri.jmrix.internal.InternalSystemConnectionMemo;
 import jmri.managers.AbstractManager;
 import jmri.util.ThreadingUtil;

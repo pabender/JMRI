@@ -6,6 +6,8 @@ import java.io.File;
 import java.util.ResourceBundle;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+
+import jmri.util.xml.XmlFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,7 +21,7 @@ import org.slf4j.LoggerFactory;
  * information stored in configuration files.
  *
  * @author Bob Jacobsen Copyright (C) 2002
- * @see jmri.jmrit.XmlFile
+ * @see XmlFile
  */
 public class LoadXmlUserAction extends LoadXmlConfigAction {
 

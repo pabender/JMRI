@@ -386,7 +386,7 @@ public class SimpleLightCtrlFrame extends jmri.util.JmriJFrame {
 
             StringBuilder name = new StringBuilder("<html>");
             light.getLightControlList().forEach((otherLc) -> {
-                name.append(jmri.jmrit.beantable.LightTableAction.getDescriptionText(otherLc, otherLc.getControlType()));
+                name.append(jmri.beantable.LightTableAction.getDescriptionText(otherLc, otherLc.getControlType()));
                 name.append("<br>");
             });
 

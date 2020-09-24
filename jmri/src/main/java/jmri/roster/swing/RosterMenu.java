@@ -62,10 +62,10 @@ public class RosterMenu extends JMenu {
         AbstractAction dp3Action = new jmri.roster.swing.RosterFrameAction(Bundle.getMessage("MenuItemRoster"), false);
         dp3Action.setEnabled(true);
 
-        AbstractAction createAction = new jmri.jmrit.symbolicprog.tabbedframe.PaneNewProgAction(Bundle.getMessage("MenuItemCreate"));
+        AbstractAction createAction = new jmri.symbolicprog.tabbedframe.PaneNewProgAction(Bundle.getMessage("MenuItemCreate"));
         createAction.setEnabled(false);
 
-        AbstractAction editAction = new jmri.jmrit.symbolicprog.tabbedframe.PaneEditAction(Bundle.getMessage("MenuItemEdit"));
+        AbstractAction editAction = new jmri.symbolicprog.tabbedframe.PaneEditAction(Bundle.getMessage("MenuItemEdit"));
         editAction.setEnabled(false);
 
         AbstractAction exportAction = new ExportRosterItemAction(Bundle.getMessage("MenuItemExport"), pWho);

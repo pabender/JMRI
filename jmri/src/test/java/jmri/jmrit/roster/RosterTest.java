@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.roster;
+package jmri.roster;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,7 +12,7 @@ import java.util.Set;
 
 import javax.swing.JComboBox;
 
-import jmri.jmrit.roster.swing.RosterEntryComboBox;
+import jmri.roster.swing.RosterEntryComboBox;
 import jmri.util.FileUtil;
 import jmri.util.JUnitUtil;
 

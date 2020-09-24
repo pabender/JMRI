@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.util.JUnitUtil;
 
 import org.jdom2.JDOMException;

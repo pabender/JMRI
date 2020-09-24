@@ -23,7 +23,7 @@ import javax.swing.SwingUtilities;
 
 import jmri.ConfigureManager;
 import jmri.InstanceManager;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.util.JUnitSwingUtil;
 import jmri.util.JUnitSwingUtil.Pixel;
 import jmri.util.JUnitUtil;

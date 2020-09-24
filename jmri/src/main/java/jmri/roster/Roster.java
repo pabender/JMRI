@@ -24,7 +24,7 @@ import jmri.beans.PropertyChangeProvider;
 import jmri.util.xml.XmlFile;
 import jmri.roster.rostergroup.RosterGroup;
 import jmri.roster.rostergroup.RosterGroupSelector;
-import jmri.jmrit.symbolicprog.SymbolicProgBundle;
+import jmri.symbolicprog.SymbolicProgBundle;
 import jmri.profile.Profile;
 import jmri.profile.ProfileManager;
 import jmri.util.FileUtil;

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import java.awt.GraphicsEnvironment;
 import javax.swing.JFrame;
@@ -17,7 +17,7 @@ import org.junit.jupiter.api.*;
 import org.netbeans.jemmy.operators.*;
 
 /**
- * Tests for the jmri.jmrit.beantable.SignalHeadTableAction class
+ * Tests for the jmri.beantable.SignalHeadTableAction class
  *
  * @author Bob Jacobsen Copyright 2004, 2007, 2008, 2009
  */
@@ -165,7 +165,7 @@ public class SignalHeadTableActionTest extends AbstractTableActionBase<SignalHea
         JUnitUtil.initDefaultUserMessagePreferences();
         JUnitUtil.initInternalTurnoutManager();
         JUnitUtil.initInternalSignalHeadManager();
-        helpTarget = "package.jmri.jmrit.beantable.SignalHeadTable"; 
+        helpTarget = "package.jmri.beantable.SignalHeadTable";
         a = new SignalHeadTableAction();
     }
 

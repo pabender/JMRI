@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import jmri.DccThrottle;
 import jmri.Throttle;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 import jmri.jmrit.throttle.FunctionButton;
 import jmri.jmrit.throttle.FunctionListener;
 import jmri.jmrit.throttle.KeyListenerInstaller;

@@ -27,6 +27,7 @@ import jmri.jmrit.timetable.*;
 import jmri.jmrit.timetable.configurexml.TimeTableXml;
 import jmri.util.JmriJFrame;
 import jmri.util.swing.SplitButtonColorChooserPanel;
+import jmri.util.xml.XmlFile;
 
 /**
  * Create and maintain timetables.
@@ -2232,7 +2233,7 @@ public class TimeTableFrame extends jmri.util.JmriJFrame {
 
     JFileChooser fileChooser;
     void importPressed() {
-        fileChooser = jmri.jmrit.XmlFile.userFileChooser("SchedGen File", "sgn");  // NOI18N
+        fileChooser = XmlFile.userFileChooser("SchedGen File", "sgn");  // NOI18N
         int retVal = fileChooser.showOpenDialog(null);
         if (retVal == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();

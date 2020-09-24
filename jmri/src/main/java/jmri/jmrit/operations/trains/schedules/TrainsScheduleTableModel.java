@@ -6,7 +6,7 @@ import java.beans.PropertyChangeListener;
 import java.util.List;
 import javax.swing.JTable;
 import jmri.InstanceManager;
-import jmri.jmrit.beantable.EnablingCheckboxRenderer;
+import jmri.beantable.EnablingCheckboxRenderer;
 import jmri.jmrit.operations.setup.Control;
 import jmri.jmrit.operations.trains.Train;
 import jmri.jmrit.operations.trains.TrainManager;

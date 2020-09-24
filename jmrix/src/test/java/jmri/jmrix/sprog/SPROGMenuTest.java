@@ -21,7 +21,7 @@ public class SPROGMenuTest {
         Assume.assumeFalse(GraphicsEnvironment.isHeadless()); 
         // the constructor looks for the default ListedTableFrame class, 
         // which is set by the ListedTableFrame constructor.
-        new jmri.jmrit.beantable.ListedTableFrame();
+        new jmri.beantable.ListedTableFrame();
         SPROGMenu action = new SPROGMenu(new jmri.jmrix.sprog.SprogSystemConnectionMemo());
         Assert.assertNotNull("exists", action);
     }

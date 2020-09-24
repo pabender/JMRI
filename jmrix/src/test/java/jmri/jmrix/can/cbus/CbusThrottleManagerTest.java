@@ -1,19 +1,13 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
 package jmri.jmrix.can.cbus;
 
-import jmri.DccLocoAddress;
-import jmri.DccThrottle;
-import jmri.InstanceManager;
-import jmri.LocoAddress;
-import jmri.SpeedStepMode;
+import jmri.*;
 import jmri.jmrix.can.CanMessage;
 import jmri.jmrix.can.CanReply;
 import jmri.jmrix.can.CanSystemConnectionMemo;
 import jmri.jmrix.can.TrafficControllerScaffold;
 import jmri.jmrix.can.cbus.node.CbusNode;
 import jmri.jmrix.can.cbus.node.CbusNodeTableDataModel;
-import jmri.Throttle;
-import jmri.ThrottleListener;
 import jmri.util.JUnitAppender;
 import jmri.util.JUnitUtil;
 import org.junit.Assert;
@@ -706,9 +700,9 @@ public class CbusThrottleManagerTest extends jmri.managers.AbstractThrottleManag
         
         // set ThrottlesPreferences to steal enabled
         
-        jmri.jmrit.throttle.ThrottlesPreferences pref = new jmri.jmrit.throttle.ThrottlesPreferences();
+        ThrottlesPreferences pref = new ThrottlesPreferences();
         pref.setSilentSteal(true);
-        jmri.InstanceManager.store(pref, jmri.jmrit.throttle.ThrottlesPreferences.class);
+        jmri.InstanceManager.store(pref, ThrottlesPreferences.class);
         
         
         tm.requestThrottle(141, throtListen, false);

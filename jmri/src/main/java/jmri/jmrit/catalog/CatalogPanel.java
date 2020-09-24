@@ -42,6 +42,7 @@ import jmri.jmrit.display.palette.IconItemPanel;
 import jmri.util.FileUtil;
 import jmri.util.swing.DrawSquares;
 import jmri.util.swing.ImagePanel;
+import jmri.util.swing.NamedIcon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

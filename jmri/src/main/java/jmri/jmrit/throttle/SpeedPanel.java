@@ -11,7 +11,7 @@ import javax.swing.WindowConstants;
 import jmri.DccThrottle;
 import jmri.LocoAddress;
 import jmri.Throttle;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 import org.jdom2.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

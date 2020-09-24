@@ -4,7 +4,7 @@ package jmri;
 import java.io.File;
 import java.net.URL;
 import java.util.List;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 
 /**
  * Provide load/store capabilities for general configuration.

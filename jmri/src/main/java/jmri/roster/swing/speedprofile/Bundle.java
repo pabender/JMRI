@@ -25,7 +25,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class Bundle extends jmri.roster.swing.Bundle {
 
     @CheckForNull
-    private static final String name = "jmri.jmrit.roster.swing.speedprofile.SpeedProfileBundle"; // NOI18N
+    private static final String name = "jmri.roster.swing.speedprofile.SpeedProfileBundle"; // NOI18N
 
     //
     // below here is boilerplate to be copied exactly

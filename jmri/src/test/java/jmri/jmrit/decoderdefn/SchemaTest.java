@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.decoderdefn;
+package jmri.decoderdefn;
 
 import java.io.File;
 import java.util.ArrayList;

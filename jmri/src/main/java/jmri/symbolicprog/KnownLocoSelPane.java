@@ -51,10 +51,10 @@ abstract public class KnownLocoSelPane extends LocoSelPane {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         JPanel pane2a = new JPanel();
         pane2a.setLayout(new BoxLayout(pane2a, BoxLayout.X_AXIS));
-        pane2a.add(new JLabel(java.util.ResourceBundle.getBundle("jmri/jmrit/symbolicprog/SymbolicProgBundle").getString("UseExisting")));
+        pane2a.add(new JLabel(java.util.ResourceBundle.getBundle("jmri/symbolicprog/SymbolicProgBundle").getString("UseExisting")));
 
         if (mCanIdent) {
-            JButton idloco = new JButton(java.util.ResourceBundle.getBundle("jmri/jmrit/symbolicprog/SymbolicProgBundle").getString("ReadAndSelect"));
+            JButton idloco = new JButton(java.util.ResourceBundle.getBundle("jmri/symbolicprog/SymbolicProgBundle").getString("ReadAndSelect"));
             idloco.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(java.awt.event.ActionEvent e) {

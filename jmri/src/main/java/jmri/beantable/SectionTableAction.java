@@ -90,7 +90,7 @@ public class SectionTableAction extends AbstractTableAction<Section> {
         this(Bundle.getMessage("TitleSectionTable"));
     }
 
-    static final ResourceBundle rbx = ResourceBundle.getBundle("jmri.jmrit.beantable.SectionTransitTableBundle");
+    static final ResourceBundle rbx = ResourceBundle.getBundle("jmri.beantable.SectionTransitTableBundle");
 
     /**
      * Create the JTable DataModel, along with the changes for the specific case
@@ -308,7 +308,7 @@ public class SectionTableAction extends AbstractTableAction<Section> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.SectionTable";
+        return "package.jmri.beantable.SectionTable";
     }
 
     // instance variables
@@ -386,7 +386,7 @@ public class SectionTableAction extends AbstractTableAction<Section> {
         pref = jmri.InstanceManager.getDefault(jmri.UserPreferencesManager.class);
         if (addFrame == null) {
             addFrame = new JmriJFrame(Bundle.getMessage("TitleAddSection"));
-            addFrame.addHelpMenu("package.jmri.jmrit.beantable.SectionAddEdit", true);
+            addFrame.addHelpMenu("package.jmri.beantable.SectionAddEdit", true);
             addFrame.getContentPane().setLayout(new BoxLayout(addFrame.getContentPane(), BoxLayout.Y_AXIS));
             // add system name
             JPanel p = new JPanel();

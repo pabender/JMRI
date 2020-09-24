@@ -11,11 +11,11 @@ import jmri.ConsistManager;
 import jmri.DccLocoAddress;
 import jmri.InstanceManager;
 import jmri.jmrit.throttle.ThrottleOperator;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
-import jmri.jmrit.symbolicprog.CvTableModel;
-import jmri.jmrit.symbolicprog.CvValue;
-import jmri.jmrit.symbolicprog.VariableTableModel;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
+import jmri.symbolicprog.CvTableModel;
+import jmri.symbolicprog.CvValue;
+import jmri.symbolicprog.VariableTableModel;
 import jmri.util.JUnitUtil;
 import jmri.util.swing.JemmyUtil;
 

@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.roster.swing.speedprofile;
+package jmri.roster.swing.speedprofile;
 
 import java.awt.GraphicsEnvironment;
 
-import jmri.jmrit.roster.RosterEntry;
-import jmri.jmrit.roster.RosterSpeedProfile;
+import jmri.roster.RosterEntry;
+import jmri.roster.RosterSpeedProfile;
 import jmri.util.JUnitUtil;
 
 import org.junit.Assert;

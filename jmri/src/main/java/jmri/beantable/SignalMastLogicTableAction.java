@@ -520,7 +520,7 @@ public class SignalMastLogicTableAction extends AbstractTableAction<SignalMastLo
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.SignalMastLogicTable";// NOI18N
+        return "package.jmri.beantable.SignalMastLogicTable";// NOI18N
     }
 
     @Override

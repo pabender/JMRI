@@ -144,7 +144,7 @@ public class AudioTableAction extends AbstractTableAction<Audio> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.AudioTable";
+        return "package.jmri.beantable.AudioTable";
     }
 
     @Override

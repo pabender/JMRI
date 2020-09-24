@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable.beanedit;
+package jmri.beantable.beanedit;
 
 import jmri.util.JUnitUtil;
 

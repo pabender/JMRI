@@ -14,8 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import jmri.jmrit.Bundle;
-import jmri.jmrit.roster.Roster;
+import jmri.roster.Roster;
 import jmri.util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

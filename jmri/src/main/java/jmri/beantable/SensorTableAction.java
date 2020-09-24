@@ -96,7 +96,7 @@ public class SensorTableAction extends AbstractTableAction<Sensor> {
      */
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.SensorTable";
+        return "package.jmri.beantable.SensorTable";
     }
 
     JmriJFrame addFrame = null;
@@ -126,7 +126,7 @@ public class SensorTableAction extends AbstractTableAction<Sensor> {
 
         if (addFrame == null) {
             addFrame = new JmriJFrame(Bundle.getMessage("TitleAddSensor"));
-            addFrame.addHelpMenu("package.jmri.jmrit.beantable.SensorAddEdit", true);
+            addFrame.addHelpMenu("package.jmri.beantable.SensorAddEdit", true);
             addFrame.getContentPane().setLayout(new BoxLayout(addFrame.getContentPane(), BoxLayout.Y_AXIS));
 
             ActionListener createListener = this::createPressed;

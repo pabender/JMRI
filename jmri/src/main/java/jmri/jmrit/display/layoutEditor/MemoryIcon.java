@@ -5,11 +5,9 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
-import jmri.jmrit.catalog.NamedIcon;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.util.swing.NamedIcon;
+import jmri.roster.RosterEntry;
 import jmri.Reportable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * An icon to display a status of a Memory.
@@ -67,8 +65,8 @@ public class MemoryIcon extends jmri.jmrit.display.MemoryIcon {
             if (map == null) {
                 // no map, attempt to show object directly
                 Object val = key;
-                if (val instanceof jmri.jmrit.roster.RosterEntry) {
-                    jmri.jmrit.roster.RosterEntry roster = (jmri.jmrit.roster.RosterEntry) val;
+                if (val instanceof jmri.roster.RosterEntry) {
+                    jmri.roster.RosterEntry roster = (jmri.roster.RosterEntry) val;
                     val = updateIconFromRosterVal(roster);
                     flipRosterIcon = false;
                     if (val == null) {

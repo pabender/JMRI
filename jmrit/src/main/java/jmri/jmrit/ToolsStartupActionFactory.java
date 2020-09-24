@@ -4,6 +4,7 @@ package jmri.jmrit;
 import java.util.Locale;
 import jmri.util.startup.AbstractStartupActionFactory;
 import jmri.util.startup.StartupActionFactory;
+import jmri.util.xml.XmlFileValidateAction;
 import org.openide.util.lookup.ServiceProvider;
 
 /**

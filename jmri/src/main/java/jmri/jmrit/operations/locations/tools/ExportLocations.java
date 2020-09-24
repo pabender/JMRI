@@ -11,7 +11,7 @@ import java.text.MessageFormat;
 import java.util.List;
 import javax.swing.JOptionPane;
 import jmri.InstanceManager;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.jmrit.operations.locations.Location;
 import jmri.jmrit.operations.locations.LocationManager;
 import jmri.jmrit.operations.locations.Track;

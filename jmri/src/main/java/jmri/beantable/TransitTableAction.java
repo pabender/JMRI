@@ -85,7 +85,7 @@ public class TransitTableAction extends AbstractTableAction<Transit> {
         this(Bundle.getMessage("TitleTransitTable"));
     }
 
-    static final ResourceBundle rbx = ResourceBundle.getBundle("jmri.jmrit.beantable.SectionTransitTableBundle");
+    static final ResourceBundle rbx = ResourceBundle.getBundle("jmri.beantable.SectionTransitTableBundle");
 
     /**
      * Create the JTable DataModel, along with the changes for the specific case
@@ -326,7 +326,7 @@ public class TransitTableAction extends AbstractTableAction<Transit> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.TransitTable";
+        return "package.jmri.beantable.TransitTable";
     }
 
     // instance variables
@@ -431,7 +431,7 @@ public class TransitTableAction extends AbstractTableAction<Transit> {
         pref = jmri.InstanceManager.getDefault(jmri.UserPreferencesManager.class);
         if (addFrame == null) {
             addFrame = new JmriJFrame(Bundle.getMessage("TitleAddTransit"));
-            addFrame.addHelpMenu("package.jmri.jmrit.beantable.TransitAddEdit", true);
+            addFrame.addHelpMenu("package.jmri.beantable.TransitAddEdit", true);
             addFrame.getContentPane().setLayout(new BoxLayout(addFrame.getContentPane(), BoxLayout.Y_AXIS));
             JPanel p;
             // system name
@@ -473,8 +473,8 @@ public class TransitTableAction extends AbstractTableAction<Transit> {
             // initialize table of sections
             sectionTableModel = new SectionTableModel();
             JTable sectionTable = new JTable(sectionTableModel);
-            sectionTable.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-            sectionTable.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+            sectionTable.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+            sectionTable.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
             sectionTable.setDefaultRenderer(Boolean.class, new EnablingCheckboxRenderer());
             sectionTable.setRowSelectionAllowed(false);
             TableColumnModel sectionColumnModel = sectionTable.getColumnModel();
@@ -1528,7 +1528,7 @@ public class TransitTableAction extends AbstractTableAction<Transit> {
         if (actionTableFrame == null) {
             actionTableFrame = new JmriJFrame(rbx.getString("TitleViewActions"));
             actionTableFrame.addHelpMenu(
-                    "package.jmri.jmrit.beantable.ViewSpecialActions", true);
+                    "package.jmri.beantable.ViewSpecialActions", true);
             actionTableFrame.setLocation(50, 60);
             Container contentPane = actionTableFrame.getContentPane();
             contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
@@ -1677,7 +1677,7 @@ public class TransitTableAction extends AbstractTableAction<Transit> {
             // set up add/edit action window
             addEditActionFrame = new JmriJFrame(rbx.getString("TitleAddAction"));
             addEditActionFrame.addHelpMenu(
-                    "package.jmri.jmrit.beantable.TransitSectionAddEditAction", true);
+                    "package.jmri.beantable.TransitSectionAddEditAction", true);
             addEditActionFrame.setLocation(120, 80);
             Container contentPane = addEditActionFrame.getContentPane();
             contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));

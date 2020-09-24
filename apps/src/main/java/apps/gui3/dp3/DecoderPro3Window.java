@@ -3,7 +3,7 @@ package apps.gui3.dp3;
 
 import apps.gui3.Apps3;
 import jmri.Application;
-import jmri.jmrit.roster.swing.RosterFrame;
+import jmri.roster.swing.RosterFrame;
 
 /**
  * Standalone DecoderPro3 Window.

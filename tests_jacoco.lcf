@@ -95,10 +95,10 @@ log4j.category.jmri.util.Log4JUtilTest = WARN
 #
 # log4j.category.jmri=DEBUG
 # log4j.category.jmri.implementation=DEBUG
-# log4j.category.jmri.jmrit.symbolicprog.tabbedframe=DEBUG
-# log4j.category.jmri.jmrit.symbolicprog.tabbedframe.PaneProgPaneTest=DEBUG
-# log4j.category.jmri.jmrit.symbolicprog.DecVariableValue=DEBUG
-# log4j.category.jmri.jmrit.symbolicprog.LongAddrVariableValueTest=DEBUG
+# log4j.category.jmri.symbolicprog.tabbedframe=DEBUG
+# log4j.category.jmri.symbolicprog.tabbedframe.PaneProgPaneTest=DEBUG
+# log4j.category.jmri.symbolicprog.DecVariableValue=DEBUG
+# log4j.category.jmri.symbolicprog.LongAddrVariableValueTest=DEBUG
 # log4j.category.jmri.jmrix.nce=DEBUG
 # log4j.category.jmri.jmrix.nce.NceTrafficController=WARN
 

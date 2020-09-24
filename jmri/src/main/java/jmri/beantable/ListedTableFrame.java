@@ -77,24 +77,24 @@ public class ListedTableFrame<E extends NamedBean> extends BeanTableFrame<E> {
         if (!init) {
             // Add the default tables to the static list array,
             // this should only be done once when first loaded
-            addTable("jmri.jmrit.beantable.TurnoutTableTabAction", Bundle.getMessage("MenuItemTurnoutTable"), false);
-            addTable("jmri.jmrit.beantable.SensorTableTabAction", Bundle.getMessage("MenuItemSensorTable"), false);
-            addTable("jmri.jmrit.beantable.LightTableTabAction", Bundle.getMessage("MenuItemLightTable"), false);
-            addTable("jmri.jmrit.beantable.SignalHeadTableAction", Bundle.getMessage("MenuItemSignalTable"), true);
-            addTable("jmri.jmrit.beantable.SignalMastTableAction", Bundle.getMessage("MenuItemSignalMastTable"), true);
-            addTable("jmri.jmrit.beantable.SignalGroupTableAction", Bundle.getMessage("MenuItemSignalGroupTable"), true);
-            addTable("jmri.jmrit.beantable.SignalMastLogicTableAction", Bundle.getMessage("MenuItemSignalMastLogicTable"), true);
-            addTable("jmri.jmrit.beantable.ReporterTableTabAction", Bundle.getMessage("MenuItemReporterTable"), false);
-            addTable("jmri.jmrit.beantable.MemoryTableAction", Bundle.getMessage("MenuItemMemoryTable"), true);
-            addTable("jmri.jmrit.beantable.RouteTableAction", Bundle.getMessage("MenuItemRouteTable"), true);
-            addTable("jmri.jmrit.beantable.LRouteTableAction", Bundle.getMessage("MenuItemLRouteTable"), true);
-            addTable("jmri.jmrit.beantable.LogixTableAction", Bundle.getMessage("MenuItemLogixTable"), true);
-            addTable("jmri.jmrit.beantable.BlockTableAction", Bundle.getMessage("MenuItemBlockTable"), true);
-            addTable("jmri.jmrit.beantable.SectionTableAction", Bundle.getMessage("MenuItemSectionTable"), true);
-            addTable("jmri.jmrit.beantable.TransitTableAction", Bundle.getMessage("MenuItemTransitTable"), true);
-            addTable("jmri.jmrit.beantable.AudioTableAction", Bundle.getMessage("MenuItemAudioTable"), false);
-            addTable("jmri.jmrit.beantable.IdTagTableTabAction", Bundle.getMessage("MenuItemIdTagTable"), false);
-            addTable("jmri.jmrit.beantable.RailComTableAction", Bundle.getMessage("MenuItemRailComTable"), true);
+            addTable("jmri.beantable.TurnoutTableTabAction", Bundle.getMessage("MenuItemTurnoutTable"), false);
+            addTable("jmri.beantable.SensorTableTabAction", Bundle.getMessage("MenuItemSensorTable"), false);
+            addTable("jmri.beantable.LightTableTabAction", Bundle.getMessage("MenuItemLightTable"), false);
+            addTable("jmri.beantable.SignalHeadTableAction", Bundle.getMessage("MenuItemSignalTable"), true);
+            addTable("jmri.beantable.SignalMastTableAction", Bundle.getMessage("MenuItemSignalMastTable"), true);
+            addTable("jmri.beantable.SignalGroupTableAction", Bundle.getMessage("MenuItemSignalGroupTable"), true);
+            addTable("jmri.beantable.SignalMastLogicTableAction", Bundle.getMessage("MenuItemSignalMastLogicTable"), true);
+            addTable("jmri.beantable.ReporterTableTabAction", Bundle.getMessage("MenuItemReporterTable"), false);
+            addTable("jmri.beantable.MemoryTableAction", Bundle.getMessage("MenuItemMemoryTable"), true);
+            addTable("jmri.beantable.RouteTableAction", Bundle.getMessage("MenuItemRouteTable"), true);
+            addTable("jmri.beantable.LRouteTableAction", Bundle.getMessage("MenuItemLRouteTable"), true);
+            addTable("jmri.beantable.LogixTableAction", Bundle.getMessage("MenuItemLogixTable"), true);
+            addTable("jmri.beantable.BlockTableAction", Bundle.getMessage("MenuItemBlockTable"), true);
+            addTable("jmri.beantable.SectionTableAction", Bundle.getMessage("MenuItemSectionTable"), true);
+            addTable("jmri.beantable.TransitTableAction", Bundle.getMessage("MenuItemTransitTable"), true);
+            addTable("jmri.beantable.AudioTableAction", Bundle.getMessage("MenuItemAudioTable"), false);
+            addTable("jmri.beantable.IdTagTableTabAction", Bundle.getMessage("MenuItemIdTagTable"), false);
+            addTable("jmri.beantable.RailComTableAction", Bundle.getMessage("MenuItemRailComTable"), true);
             ListedTableFrame.setInit(true);
         }
     }

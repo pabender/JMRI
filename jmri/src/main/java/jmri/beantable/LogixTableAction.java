@@ -278,8 +278,8 @@ public class LogixTableAction extends AbstractTableAction<Logix> {
             @Override
             public void configureTable(JTable table) {
                 table.setDefaultRenderer(Boolean.class, new EnablingCheckboxRenderer());
-                table.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-                table.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+                table.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+                table.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
                 super.configureTable(table);
             }
 
@@ -659,7 +659,7 @@ public class LogixTableAction extends AbstractTableAction<Logix> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.LogixTable";  // NOI18N
+        return "package.jmri.beantable.LogixTable";  // NOI18N
     }
 
     // ------------ variable definitions ------------
@@ -784,7 +784,7 @@ public class LogixTableAction extends AbstractTableAction<Logix> {
     JPanel makeAddLogixFrame(String titleId, String messageId) {
         addLogixFrame = new JmriJFrame(Bundle.getMessage(titleId));
         addLogixFrame.addHelpMenu(
-                "package.jmri.jmrit.beantable.LogixAddEdit", true);     // NOI18N
+                "package.jmri.beantable.LogixAddEdit", true);     // NOI18N
         addLogixFrame.setLocation(50, 30);
         Container contentPane = addLogixFrame.getContentPane();
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
@@ -1684,7 +1684,7 @@ public class LogixTableAction extends AbstractTableAction<Logix> {
      */
     void makeBrowserWindow() {
         JmriJFrame condBrowserFrame = new JmriJFrame(Bundle.getMessage("BrowserTitle"), false, true);   // NOI18N
-        condBrowserFrame.addHelpMenu("package.jmri.jmrit.beantable.LogixAddEdit", true);            // NOI18N
+        condBrowserFrame.addHelpMenu("package.jmri.beantable.LogixAddEdit", true);            // NOI18N
 
         Container contentPane = condBrowserFrame.getContentPane();
         contentPane.setLayout(new BorderLayout());

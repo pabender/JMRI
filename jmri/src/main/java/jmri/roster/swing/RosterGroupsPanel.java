@@ -196,14 +196,14 @@ public class RosterGroupsPanel extends JPanel implements RosterGroupSelector {
         if (action != null) {
             if (newWindowMenuItemAction == null) {
                 MenuActionListener ml = new MenuActionListener();
-                JMenuItem mi = new JMenuItem(ResourceBundle.getBundle("jmri.jmrit.roster.JmritRosterBundle").getString("MenuOpenInNewWindow"));
+                JMenuItem mi = new JMenuItem(ResourceBundle.getBundle("jmri.roster.JmritRosterBundle").getString("MenuOpenInNewWindow"));
                 mi.addActionListener(ml);
                 mi.setActionCommand("newWindow");
                 groupsMenu.insert(mi, 0);
                 groupsMenu.insert(new JSeparator(), 1);
                 // create the menu item twice because a menu item can only
                 // be attached to a single menu
-                mi = new JMenuItem(ResourceBundle.getBundle("jmri.jmrit.roster.JmritRosterBundle").getString("MenuOpenInNewWindow"));
+                mi = new JMenuItem(ResourceBundle.getBundle("jmri.roster.JmritRosterBundle").getString("MenuOpenInNewWindow"));
                 mi.addActionListener(ml);
                 mi.setActionCommand("newWindow");
                 allEntriesMenu.insert(mi, 0);
@@ -416,9 +416,9 @@ public class RosterGroupsPanel extends JPanel implements RosterGroupSelector {
             WindowInterface wi = (WindowInterface) scrollPane.getTopLevelAncestor();
             if (g.isDescendant(_tree.getSelectionPath())) {
                 if (e.getActionCommand().equals("export")) {
-                    new FullBackupExportAction(ResourceBundle.getBundle("jmri.jmrit.roster.JmritRosterBundle").getString("Exportddd"), wi).actionPerformed(e);
+                    new FullBackupExportAction(ResourceBundle.getBundle("jmri.roster.JmritRosterBundle").getString("Exportddd"), wi).actionPerformed(e);
                 } else if (e.getActionCommand().equals("import")) {
-                    new FullBackupImportAction(ResourceBundle.getBundle("jmri.jmrit.roster.JmritRosterBundle").getString("Importddd"), wi).actionPerformed(e);
+                    new FullBackupImportAction(ResourceBundle.getBundle("jmri.roster.JmritRosterBundle").getString("Importddd"), wi).actionPerformed(e);
                 } else if (e.getActionCommand().equals("rename")) {
                     new RenameRosterGroupAction("Rename", wi).actionPerformed(e);
                 } else if (e.getActionCommand().equals("duplicate")) {
@@ -429,8 +429,8 @@ public class RosterGroupsPanel extends JPanel implements RosterGroupSelector {
                     newWindowMenuItemAction.actionPerformed(e);
                 } else {
                     JOptionPane.showMessageDialog((JComponent) e.getSource(),
-                            ResourceBundle.getBundle("jmri.jmrit.roster.JmritRosterBundle").getString("NotImplemented"),
-                            ResourceBundle.getBundle("jmri.jmrit.roster.JmritRosterBundle").getString("NotImplemented"),
+                            ResourceBundle.getBundle("jmri.roster.JmritRosterBundle").getString("NotImplemented"),
+                            ResourceBundle.getBundle("jmri.roster.JmritRosterBundle").getString("NotImplemented"),
                             JOptionPane.ERROR_MESSAGE);
                 }
             }

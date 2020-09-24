@@ -50,7 +50,7 @@ public class DccAddressPanel extends JPanel {
      *            information needed.
      */
     public DccAddressPanel(VariableTableModel mod) {
-        this(mod, ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("TextDccAddress"));
+        this(mod, ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("TextDccAddress"));
     }
 
     public DccAddressPanel(VariableTableModel mod, String label) {
@@ -95,7 +95,7 @@ public class DccAddressPanel extends JPanel {
 
         // show address field
         add(new JLabel(label));
-        val.setToolTipText(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("ToolTipDccAddress"));
+        val.setToolTipText(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("ToolTipDccAddress"));
         add(val);
 
         new DccAddressVarHandler(primaryAddr, extendAddr, addMode) {

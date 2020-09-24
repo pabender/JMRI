@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import java.awt.GraphicsEnvironment;
 
@@ -14,7 +14,7 @@ import org.junit.jupiter.api.*;
 import org.netbeans.jemmy.operators.*;
 
 /**
- * Tests for the jmri.jmrit.beantable.RouteTableAction class
+ * Tests for the jmri.beantable.RouteTableAction class
  *
  * @author Bob Jacobsen Copyright 2004, 2007
  */
@@ -161,7 +161,7 @@ public class RouteTableActionTest extends AbstractTableActionBase<Route> {
         JUnitUtil.setUp();
         jmri.util.JUnitUtil.resetProfileManager();
         jmri.util.JUnitUtil.initDefaultUserMessagePreferences();
-        helpTarget = "package.jmri.jmrit.beantable.RouteTable"; 
+        helpTarget = "package.jmri.beantable.RouteTable";
         a = new RouteTableAction();
     }
 

@@ -38,28 +38,28 @@ import jmri.JmriException;
 import jmri.ProgListener;
 import jmri.Programmer;
 import jmri.ProgrammerException;
-import jmri.jmrit.XmlFile;
-import jmri.jmrit.decoderdefn.DecoderFile;
-import jmri.jmrit.decoderdefn.DecoderIndexFile;
-import jmri.jmrit.decoderdefn.PrintDecoderListAction;
+import jmri.util.xml.XmlFile;
+import jmri.decoderdefn.DecoderFile;
+import jmri.decoderdefn.DecoderIndexFile;
+import jmri.decoderdefn.PrintDecoderListAction;
 import jmri.jmrit.progsupport.ProgModeSelector;
 import jmri.jmrit.progsupport.ProgServiceModeComboBox;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
-import jmri.jmrit.roster.swing.RosterMenu;
-import jmri.jmrit.symbolicprog.AbstractValue;
-import jmri.jmrit.symbolicprog.CombinedLocoSelTreePane;
-import jmri.jmrit.symbolicprog.CvTableModel;
-import jmri.jmrit.symbolicprog.DccAddressPanel;
-import jmri.jmrit.symbolicprog.DccAddressVarHandler;
-import jmri.jmrit.symbolicprog.EnumVariableValue;
-import jmri.jmrit.symbolicprog.SymbolicProgBundle;
-import jmri.jmrit.symbolicprog.VariableTableModel;
-import jmri.jmrit.symbolicprog.VariableValue;
-import jmri.jmrit.symbolicprog.tabbedframe.PaneContainer;
-import jmri.jmrit.symbolicprog.tabbedframe.PaneProgFrame;
-import jmri.jmrit.symbolicprog.tabbedframe.PaneProgPane;
-import jmri.jmrit.symbolicprog.tabbedframe.PaneServiceProgFrame;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
+import jmri.roster.swing.RosterMenu;
+import jmri.symbolicprog.AbstractValue;
+import jmri.symbolicprog.CombinedLocoSelTreePane;
+import jmri.symbolicprog.CvTableModel;
+import jmri.symbolicprog.DccAddressPanel;
+import jmri.symbolicprog.DccAddressVarHandler;
+import jmri.symbolicprog.EnumVariableValue;
+import jmri.symbolicprog.SymbolicProgBundle;
+import jmri.symbolicprog.VariableTableModel;
+import jmri.symbolicprog.VariableValue;
+import jmri.symbolicprog.tabbedframe.PaneContainer;
+import jmri.symbolicprog.tabbedframe.PaneProgFrame;
+import jmri.symbolicprog.tabbedframe.PaneProgPane;
+import jmri.symbolicprog.tabbedframe.PaneServiceProgFrame;
 import jmri.util.BusyGlassPane;
 import jmri.util.FileUtil;
 import jmri.util.JmriJFrame;
@@ -79,7 +79,7 @@ import org.slf4j.LoggerFactory;
  * The class name is a historical accident, and probably should have included
  * "ServiceMode" or something.
  *
- * @see jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgAction
+ * @see jmri.symbolicprog.tabbedframe.PaneOpsProgAction
  *
  * @author Bob Jacobsen Copyright (C) 2001
  */

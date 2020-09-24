@@ -644,8 +644,8 @@ public class TurnoutTableAction extends AbstractTableAction<Turnout> {
                 table = tbl;
 
                 table.setDefaultRenderer(Boolean.class, new EnablingCheckboxRenderer());
-                table.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-                table.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+                table.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+                table.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
                 setColumnToHoldButton(table, OPSEDITCOL, editButton());
                 setColumnToHoldButton(table, EDITCOL, editButton());
                 //Hide the following columns by default
@@ -1015,7 +1015,7 @@ public class TurnoutTableAction extends AbstractTableAction<Turnout> {
      */
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.TurnoutTable";
+        return "package.jmri.beantable.TurnoutTable";
     }
 
     JmriJFrame addFrame = null;
@@ -1042,7 +1042,7 @@ public class TurnoutTableAction extends AbstractTableAction<Turnout> {
 
         if (addFrame == null) {
             addFrame = new JmriJFrame(Bundle.getMessage("TitleAddTurnout"), false, true);
-            addFrame.addHelpMenu("package.jmri.jmrit.beantable.TurnoutAddEdit", true);
+            addFrame.addHelpMenu("package.jmri.beantable.TurnoutAddEdit", true);
             addFrame.getContentPane().setLayout(new BoxLayout(addFrame.getContentPane(), BoxLayout.Y_AXIS));
             ActionListener createListener = new ActionListener() {
                 @Override

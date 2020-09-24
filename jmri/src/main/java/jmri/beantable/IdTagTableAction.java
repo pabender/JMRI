@@ -255,7 +255,7 @@ public class IdTagTableAction extends AbstractTableAction<IdTag> implements Prop
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.IdTagTable";
+        return "package.jmri.beantable.IdTagTable";
     }
 
     JmriJFrame addFrame = null;
@@ -268,7 +268,7 @@ public class IdTagTableAction extends AbstractTableAction<IdTag> implements Prop
     protected void addPressed(ActionEvent e) {
         if (addFrame == null) {
             addFrame = new JmriJFrame(Bundle.getMessage("TitleAddIdTag"), false, true);
-            addFrame.addHelpMenu("package.jmri.jmrit.beantable.IdTagAddEdit", true);
+            addFrame.addHelpMenu("package.jmri.beantable.IdTagAddEdit", true);
             addFrame.getContentPane().setLayout(new BoxLayout(addFrame.getContentPane(), BoxLayout.Y_AXIS));
 
             ActionListener okListener = (ActionEvent ev) -> {

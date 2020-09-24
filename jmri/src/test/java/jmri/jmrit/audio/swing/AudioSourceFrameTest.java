@@ -20,7 +20,7 @@ public class AudioSourceFrameTest extends jmri.util.JmriJFrameTestBase {
         JUnitUtil.resetProfileManager();
         if(!GraphicsEnvironment.isHeadless()){
            // the second parameter should be an
-           // jmri.jmrit.beantable.AudioTableAction.AudioSourceTableDataModel
+           // jmri.beantable.AudioTableAction.AudioSourceTableDataModel
            // object
            frame = new AudioSourceFrame("Source Frame Test", null);
         }

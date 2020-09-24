@@ -96,8 +96,8 @@ public class AutomationsTableModel extends javax.swing.table.AbstractTableModel 
         tcm.getColumn(EDIT_COLUMN).setCellEditor(buttonEditor);
         tcm.getColumn(DELETE_COLUMN).setCellRenderer(buttonRenderer);
         tcm.getColumn(DELETE_COLUMN).setCellEditor(buttonEditor);
-        table.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-        table.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+        table.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+        table.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
 
         // set column preferred widths
         table.getColumnModel().getColumn(ID_COLUMN).setPreferredWidth(40);

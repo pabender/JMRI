@@ -3,7 +3,7 @@ package jmri.jmrit.display.controlPanelEditor;
 
 import java.awt.GraphicsEnvironment;
 
-//import jmri.jmrit.catalog.NamedIcon;
+//import jmri.util.swing.NamedIcon;
 
 import jmri.jmrit.logix.OBlock;
 import jmri.jmrit.logix.OBlockManager;

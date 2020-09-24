@@ -575,7 +575,7 @@ public class TableFrames extends jmri.util.JmriJFrame implements InternalFrameLi
         _oBlockTable.createDefaultColumnsFromModel();
         _oBlockModel.addHeaderListener(_oBlockTable);
 
-        _oBlockTable.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+        _oBlockTable.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
         _oBlockTable.getColumnModel().getColumn(OBlockTableModel.EDIT_COL).setCellEditor(new ButtonEditor(new JButton()));
         _oBlockTable.getColumnModel().getColumn(OBlockTableModel.EDIT_COL).setCellRenderer(new ButtonRenderer());
         _oBlockTable.getColumnModel().getColumn(OBlockTableModel.DELETE_COL).setCellEditor(new ButtonEditor(new JButton()));
@@ -691,8 +691,8 @@ public class TableFrames extends jmri.util.JmriJFrame implements InternalFrameLi
         _blockPortalTable.setTransferHandler(new jmri.util.DnDTableExportHandler());
         _blockPortalTable.setDragEnabled(true);
 
-        _blockPortalTable.setDefaultRenderer(String.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-        _blockPortalTable.setDefaultEditor(String.class, new jmri.jmrit.symbolicprog.ValueEditor());
+        _blockPortalTable.setDefaultRenderer(String.class, new jmri.symbolicprog.ValueRenderer());
+        _blockPortalTable.setDefaultEditor(String.class, new jmri.symbolicprog.ValueEditor());
         for (int i = 0; i < _blockPortalXRefModel.getColumnCount(); i++) {
             int width = _blockPortalXRefModel.getPreferredWidth(i);
             _blockPortalTable.getColumnModel().getColumn(i).setPreferredWidth(width);

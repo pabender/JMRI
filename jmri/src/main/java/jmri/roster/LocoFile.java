@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import jmri.util.xml.XmlFile;
-import jmri.jmrit.symbolicprog.CvTableModel;
-import jmri.jmrit.symbolicprog.CvValue;
-import jmri.jmrit.symbolicprog.VariableTableModel;
-import jmri.jmrit.symbolicprog.VariableValue;
+import jmri.symbolicprog.CvTableModel;
+import jmri.symbolicprog.CvValue;
+import jmri.symbolicprog.VariableTableModel;
+import jmri.symbolicprog.VariableValue;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.ProcessingInstruction;
@@ -187,7 +187,7 @@ public class LocoFile extends XmlFile {
      * @return Decision on how to handle
      */
     protected static MessageResponse selectMissingVarResponse(String var) {
-        if (var.startsWith("ESU Function Row")) return MessageResponse.IGNORE; // from jmri.jmrit.symbolicprog.FnMapPanelESU
+        if (var.startsWith("ESU Function Row")) return MessageResponse.IGNORE; // from jmri.symbolicprog.FnMapPanelESU
         return MessageResponse.REPORT;
     }
 

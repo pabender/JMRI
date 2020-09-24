@@ -2,7 +2,7 @@
 package jmri.jmrit.display.palette;
 
 import java.util.HashMap;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -504,8 +504,8 @@ public class BlockTableAction extends AbstractTableAction<Block> {
 
             @Override
             public void configureTable(JTable table) {
-                table.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-                table.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+                table.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+                table.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
                 table.setDefaultRenderer(Boolean.class, new EnablingCheckboxRenderer());
                 jmri.InstanceManager.sensorManagerInstance().addPropertyChangeListener(this);
                 jmri.InstanceManager.getDefault(jmri.ReporterManager.class).addPropertyChangeListener(this);
@@ -879,7 +879,7 @@ public class BlockTableAction extends AbstractTableAction<Block> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.BlockTable";
+        return "package.jmri.beantable.BlockTable";
     }
 
     JmriJFrame addFrame = null;
@@ -905,7 +905,7 @@ public class BlockTableAction extends AbstractTableAction<Block> {
         pref = jmri.InstanceManager.getDefault(jmri.UserPreferencesManager.class);
         if (addFrame == null) {
             addFrame = new JmriJFrame(Bundle.getMessage("TitleAddBlock"), false, true);
-            addFrame.addHelpMenu("package.jmri.jmrit.beantable.BlockAddEdit", true); // NOI18N
+            addFrame.addHelpMenu("package.jmri.beantable.BlockAddEdit", true); // NOI18N
             addFrame.getContentPane().setLayout(new BoxLayout(addFrame.getContentPane(), BoxLayout.Y_AXIS));
             ActionListener oklistener = new ActionListener() {
                 @Override

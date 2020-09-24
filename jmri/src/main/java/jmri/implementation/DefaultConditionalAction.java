@@ -17,7 +17,7 @@ import jmri.Sensor;
 import jmri.SignalHead;
 import jmri.Turnout;
 import jmri.jmrit.Sound;
-import jmri.jmrit.beantable.LogixTableAction;
+import jmri.beantable.LogixTableAction;
 import jmri.jmrit.logix.OBlockManager;
 import jmri.jmrit.logix.Warrant;
 import jmri.jmrit.logix.WarrantManager;

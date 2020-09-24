@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import jmri.util.gui.GuiLafPreferencesManager;
 import java.awt.GraphicsEnvironment;
@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
 import org.netbeans.jemmy.util.NameComponentChooser;
 
 /**
- * Tests for the jmri.jmrit.beantable.TurnoutTableAction class.
+ * Tests for the jmri.beantable.TurnoutTableAction class.
  *
  * @author Paul Bender Copyright (C) 2017
  */
@@ -221,7 +221,7 @@ public class TurnoutTableActionTest extends AbstractTableActionBase<Turnout> {
         jmri.util.JUnitUtil.resetProfileManager();
         jmri.util.JUnitUtil.initInternalTurnoutManager();
         jmri.util.JUnitUtil.initDefaultUserMessagePreferences();
-        helpTarget = "package.jmri.jmrit.beantable.TurnoutTable";
+        helpTarget = "package.jmri.beantable.TurnoutTable";
         a = new TurnoutTableAction();
     }
 

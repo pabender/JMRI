@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import java.awt.GraphicsEnvironment;
 import javax.swing.JFrame;
@@ -110,7 +110,7 @@ public class TransitTableActionTest extends AbstractTableActionBase<Transit> {
     public void setUp() {
         JUnitUtil.setUp();
         JUnitUtil.resetProfileManager();
-        helpTarget = "package.jmri.jmrit.beantable.TransitTable";
+        helpTarget = "package.jmri.beantable.TransitTable";
         InstanceManager.setDefault(jmri.BlockManager.class, new jmri.BlockManager());
         JUnitUtil.initSectionManager();
         a = new TransitTableAction();

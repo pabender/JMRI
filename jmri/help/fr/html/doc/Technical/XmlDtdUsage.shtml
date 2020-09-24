@@ -40,7 +40,7 @@
       r&eacute;pertoire &agrave; c&ocirc;t&eacute; des fichiers
       XML. Il y a tout simplement de trop nombreux emplacements
       pour garder un tel ensemble de dossiers DTD &agrave; jour.
-      JMRI lui-m&ecirc;me, via la classe jmri.jmrit.XmlFile,
+      JMRI lui-m&ecirc;me, via la classe jmri.util.xml.XmlFile,
       fournit un support pour localiser ces fichiers lorsque
       l'analyseur XML a besoin d'eux.</p>Chaque fichier contient
       une ligne DOCTYPE qui sp&eacute;cifie un nom de DTD. Il

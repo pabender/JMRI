@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?transform-xslt href="http://jmri.org/src/test/java/jmri/jmrit/XmlFileTest_PI.xsl"?>
+<?transform-xslt href="http://jmri.org/src/test/java/jmri/util/xml/XmlFileTest_PI.xsl"?>
 <!-- test file for XmlFileTest.testProcessPI -->
 <top>
     <contains>

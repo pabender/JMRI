@@ -6,11 +6,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import jmri.Consist;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
-import jmri.jmrit.symbolicprog.CvTableModel;
-import jmri.jmrit.symbolicprog.CvValue;
-import jmri.jmrit.symbolicprog.VariableTableModel;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
+import jmri.symbolicprog.CvTableModel;
+import jmri.symbolicprog.CvValue;
+import jmri.symbolicprog.VariableTableModel;
 
 import org.junit.jupiter.api.*;
 import org.junit.Assert;

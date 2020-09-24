@@ -9,7 +9,7 @@ import javax.swing.UIManager;
 import apps.*;
 import apps.plaf.macosx.Application;
 
-import jmri.jmrit.XmlFileLocationAction;
+import jmri.util.xml.XmlFileLocationAction;
 import jmri.util.*;
 
 import org.openide.util.lookup.ServiceProvider;

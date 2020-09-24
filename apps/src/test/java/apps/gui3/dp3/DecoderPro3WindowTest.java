@@ -31,7 +31,7 @@ public class DecoderPro3WindowTest {
         JUnitUtil.initRosterConfigManager();
         JUnitUtil.initConnectionConfigManager();
         JUnitUtil.initDebugProgrammerManager();
-        jmri.InstanceManager.setDefault(jmri.jmrit.symbolicprog.ProgrammerConfigManager.class,new jmri.jmrit.symbolicprog.ProgrammerConfigManager());
+        jmri.InstanceManager.setDefault(jmri.symbolicprog.ProgrammerConfigManager.class,new jmri.symbolicprog.ProgrammerConfigManager());
     }
 
     @AfterEach

@@ -7,6 +7,7 @@ import java.util.*;
 import jmri.SignalHead;
 import jmri.SignalSystem;
 import jmri.util.FileUtil;
+import jmri.util.xml.XmlFile;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.slf4j.Logger;
@@ -66,7 +67,7 @@ public class DefaultSignalAppearanceMap extends AbstractNamedBean implements jmr
             log.error("appearance file (xml/{}) doesn't exist", path);
             throw new IllegalArgumentException("appearance file (xml/" + path + ") doesn't exist");
         }
-        jmri.jmrit.XmlFile xf = new jmri.jmrit.XmlFile() {
+        XmlFile xf = new XmlFile() {
         };
         Element root;
         try {

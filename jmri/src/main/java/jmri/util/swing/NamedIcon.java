@@ -29,7 +29,6 @@ import javax.imageio.spi.ImageReaderSpi;
 import javax.imageio.stream.ImageInputStream;
 import javax.imageio.stream.ImageOutputStream;
 import javax.swing.ImageIcon;
-import jmri.jmrit.display.PositionableLabel;
 import jmri.util.FileUtil;
 import jmri.util.MathUtil;
 import org.slf4j.Logger;
@@ -424,10 +423,6 @@ public class NamedIcon extends ImageIcon {
 
     public void transformImage(int w, int h, AffineTransform t, Component comp) {
         if (w <= 0 || h <= 0) {
-            if (comp instanceof jmri.jmrit.display.Positionable) {
-                log.debug("transformImage bad coords {}",
-                        ((jmri.jmrit.display.Positionable) comp).getNameString());
-            }
             return;
         }
         if (mGifInfo == null) {
@@ -527,16 +522,6 @@ public class NamedIcon extends ImageIcon {
         return null;
     }
 
-    /*
-     void debugDraw(String op, Component c) {
-     jmri.jmrit.display.Positionable pos = (jmri.jmrit.display.Positionable)c;
-     java.awt.Rectangle r = c.getBounds();
-     log.debug(pos.getNameString()+" "+op);
-     System.out.println("\tBounds at ("+r.x+", "+r.y+") width= "+r.width+", height= "+r.height);
-     System.out.println("\tLocation at ("+c.getX()+", "+c.getY()+") width= "+
-     c.getWidth()+", height= "+c.getHeight());
-     }
-     */
     /**
      * Scale as a percentage.
      *
@@ -603,9 +588,6 @@ public class NamedIcon extends ImageIcon {
         AffineTransform r = AffineTransform.getRotateInstance(rad);
         t.concatenate(r);
         transformImage(width, heigth, t, comp);
-        if (comp instanceof PositionableLabel) {
-            ((PositionableLabel) comp).setDegrees(_degrees);
-        }
     }
 
     /**

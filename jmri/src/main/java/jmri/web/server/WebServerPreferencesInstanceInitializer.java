@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 import jmri.implementation.AbstractInstanceInitializer;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.util.FileUtil;
 import org.jdom2.Attribute;
 import org.jdom2.Document;

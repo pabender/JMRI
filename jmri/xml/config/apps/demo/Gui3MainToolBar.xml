@@ -14,7 +14,7 @@
   </node>
   <node><name>New Loco</name>
         <name xml:lang="cs">Nová lokomotiva</name>
-    <panel>jmri.jmrit.symbolicprog.LocoSelTreePane</panel>
+    <panel>jmri.symbolicprog.LocoSelTreePane</panel>
   </node>
 
 </nodes>

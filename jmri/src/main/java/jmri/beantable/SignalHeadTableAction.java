@@ -467,7 +467,7 @@ public class SignalHeadTableAction extends AbstractTableAction<SignalHead> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.SignalHeadTable";
+        return "package.jmri.beantable.SignalHeadTable";
     }
 
     private final int[] signalStatesValues = new int[]{
@@ -750,7 +750,7 @@ public class SignalHeadTableAction extends AbstractTableAction<SignalHead> {
             to6 = new BeanSelectCreatePanel<Turnout>(InstanceManager.turnoutManagerInstance(), null);
             to7 = new BeanSelectCreatePanel<Turnout>(InstanceManager.turnoutManagerInstance(), null);
             addFrame = new JmriJFrame(Bundle.getMessage("TitleAddSignalHead"), false, true);
-            addFrame.addHelpMenu("package.jmri.jmrit.beantable.SignalAddEdit", true);
+            addFrame.addHelpMenu("package.jmri.beantable.SignalAddEdit", true);
             addFrame.getContentPane().setLayout(new BorderLayout());
 
             JPanel panelHeader = new JPanel();
@@ -1864,7 +1864,7 @@ public class SignalHeadTableAction extends AbstractTableAction<SignalHead> {
             eto7 = new BeanSelectCreatePanel<>(InstanceManager.turnoutManagerInstance(), null);
             // set up a new edit window
             editFrame = new JmriJFrame(Bundle.getMessage("TitleEditSignalHead"), false, true);
-            editFrame.addHelpMenu("package.jmri.jmrit.beantable.SignalAddEdit", true);
+            editFrame.addHelpMenu("package.jmri.beantable.SignalAddEdit", true);
 
             editFrame.getContentPane().setLayout(new BorderLayout());
 

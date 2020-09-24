@@ -61,8 +61,8 @@ import jmri.InstanceManager;
 import jmri.Programmer;
 import jmri.ShutDownManager;
 import jmri.UserPreferencesManager;
-import jmri.jmrit.decoderdefn.DecoderFile;
-import jmri.jmrit.decoderdefn.DecoderIndexFile;
+import jmri.decoderdefn.DecoderFile;
+import jmri.decoderdefn.DecoderIndexFile;
 import jmri.jmrit.progsupport.ProgModeSelector;
 import jmri.jmrit.progsupport.ProgServiceModeComboBox;
 import jmri.roster.CopyRosterItemAction;
@@ -74,10 +74,10 @@ import jmri.roster.Roster;
 import jmri.roster.RosterEntry;
 import jmri.roster.RosterEntrySelector;
 import jmri.roster.rostergroup.RosterGroupSelector;
-import jmri.jmrit.symbolicprog.ProgrammerConfigManager;
-import jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgFrame;
-import jmri.jmrit.symbolicprog.tabbedframe.PaneProgFrame;
-import jmri.jmrit.symbolicprog.tabbedframe.PaneServiceProgFrame;
+import jmri.symbolicprog.ProgrammerConfigManager;
+import jmri.symbolicprog.tabbedframe.PaneOpsProgFrame;
+import jmri.symbolicprog.tabbedframe.PaneProgFrame;
+import jmri.symbolicprog.tabbedframe.PaneServiceProgFrame;
 import jmri.util.LargePowerManagerButton;
 import jmri.jmrit.throttle.ThrottleFrame;
 import jmri.jmrit.throttle.ThrottleFrameManager;
@@ -110,7 +110,7 @@ import org.slf4j.LoggerFactory;
  * not included. How do you pick a programmer file? (hardcoded) Initialization
  * needs partial deferal, too for 1st pane to appear.
  *
- * @see jmri.jmrit.symbolicprog.tabbedframe.PaneSet
+ * @see jmri.symbolicprog.tabbedframe.PaneSet
  *
  * @author Bob Jacobsen Copyright (C) 2010, 2016
  * @author Kevin Dickerson Copyright (C) 2011
@@ -877,7 +877,7 @@ public class RosterFrame extends TwoPaneTBWindow implements RosterEntrySelector,
         log.debug("Selected entry: {}", re.getDisplayName());
         PrintRosterEntry pre = new PrintRosterEntry(re, this, "programmers" + File.separator + programmer2 + ".xml");
         // uses Basic programmer (programmer2) when printing a selected entry from (this) top Roster frame
-        // compare with: jmri.jmrit.symbolicprog.tabbedframe.PaneProgFrame#printPanes(boolean)
+        // compare with: jmri.symbolicprog.tabbedframe.PaneProgFrame#printPanes(boolean)
         pre.printPanes(preview);
     }
 

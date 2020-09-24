@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.decoderdefn;
+package jmri.decoderdefn;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Interact with a programmer to identify the
- * {@link jmri.jmrit.decoderdefn.DecoderIndexFile} entry for a decoder on the
+ * {@link jmri.decoderdefn.DecoderIndexFile} entry for a decoder on the
  * programming track. Create a subclass of this which implements {@link #done}
  * to handle the results of the identification.
  * <p>
- * This is a class (instead of a {@link jmri.jmrit.decoderdefn.DecoderIndexFile}
+ * This is a class (instead of a {@link jmri.decoderdefn.DecoderIndexFile}
  * member function) to simplify use of {@link jmri.Programmer} callbacks.
  * <p>
  * Contains manufacturer-specific code to generate a 3rd "productID" identifier,
@@ -66,8 +66,8 @@ import org.slf4j.LoggerFactory;
  *
  * @author Bob Jacobsen Copyright (C) 2001, 2010
  * @author Howard G. Penny Copyright (C) 2005
- * @see jmri.jmrit.symbolicprog.CombinedLocoSelPane
- * @see jmri.jmrit.symbolicprog.NewLocoSelPane
+ * @see jmri.symbolicprog.CombinedLocoSelPane
+ * @see jmri.symbolicprog.NewLocoSelPane
  */
 public abstract class IdentifyDecoder extends jmri.jmrit.AbstractIdentify {
 

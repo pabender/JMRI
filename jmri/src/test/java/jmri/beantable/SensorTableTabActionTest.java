@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import jmri.util.JUnitUtil;
 
@@ -40,7 +40,7 @@ public class SensorTableTabActionTest extends AbstractTableTabActionBase {
         jmri.util.JUnitUtil.resetProfileManager();
         jmri.util.JUnitUtil.initInternalSensorManager();
         jmri.util.JUnitUtil.initDefaultUserMessagePreferences();
-        helpTarget = "package.jmri.jmrit.beantable.SensorTable"; 
+        helpTarget = "package.jmri.beantable.SensorTable";
         a = new SensorTableTabAction();
     }
 

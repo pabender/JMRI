@@ -55,9 +55,9 @@ public class NewLocoSelPane extends jmri.util.swing.JmriPanel {
     public void init() {
         JLabel last;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        add(last = new JLabel(java.util.ResourceBundle.getBundle("jmri/jmrit/symbolicprog/SymbolicProgBundle").getString("NewLocoProgTrack")));
+        add(last = new JLabel(java.util.ResourceBundle.getBundle("jmri/symbolicprog/SymbolicProgBundle").getString("NewLocoProgTrack")));
         last.setBorder(new EmptyBorder(6, 0, 6, 0));
-        add(new JLabel(java.util.ResourceBundle.getBundle("jmri/jmrit/symbolicprog/SymbolicProgBundle").getString("CopySettings")));
+        add(new JLabel(java.util.ResourceBundle.getBundle("jmri/symbolicprog/SymbolicProgBundle").getString("CopySettings")));
 
         locoBox = new GlobalRosterEntryComboBox();
         locoBox.addActionListener(new ActionListener() {
@@ -73,8 +73,8 @@ public class NewLocoSelPane extends jmri.util.swing.JmriPanel {
 
         JPanel pane1a = new JPanel();
         pane1a.setLayout(new BoxLayout(pane1a, BoxLayout.X_AXIS));
-        pane1a.add(new JLabel(java.util.ResourceBundle.getBundle("jmri/jmrit/symbolicprog/SymbolicProgBundle").getString("LabelDecoderInstalled")));
-        JButton iddecoder = new JButton(java.util.ResourceBundle.getBundle("jmri/jmrit/symbolicprog/SymbolicProgBundle").getString("IdentifyDecoder"));
+        pane1a.add(new JLabel(java.util.ResourceBundle.getBundle("jmri/symbolicprog/SymbolicProgBundle").getString("LabelDecoderInstalled")));
+        JButton iddecoder = new JButton(java.util.ResourceBundle.getBundle("jmri/symbolicprog/SymbolicProgBundle").getString("IdentifyDecoder"));
         iddecoder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -92,7 +92,7 @@ public class NewLocoSelPane extends jmri.util.swing.JmriPanel {
         add(decoderBox);
 
         // Open programmer button
-        JButton go1 = new JButton(java.util.ResourceBundle.getBundle("jmri/jmrit/symbolicprog/SymbolicProgBundle").getString("IdentifyDecoder"));
+        JButton go1 = new JButton(java.util.ResourceBundle.getBundle("jmri/symbolicprog/SymbolicProgBundle").getString("IdentifyDecoder"));
         go1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {

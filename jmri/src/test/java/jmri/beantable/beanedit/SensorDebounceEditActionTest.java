@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable.beanedit;
+package jmri.beantable.beanedit;
 
 import jmri.*;
 import jmri.util.JUnitUtil;
@@ -51,7 +51,7 @@ public class SensorDebounceEditActionTest {
     public void testServiceCalls() {
         SensorDebounceEditAction t = new SensorDebounceEditAction();
 
-        Assert.assertEquals("package.jmri.jmrit.beantable.SensorAddEdit", t.helpTarget());
+        Assert.assertEquals("package.jmri.beantable.SensorAddEdit", t.helpTarget());
         Assert.assertEquals("Sensor", t.getBeanType());
         
         t.initPanels();

@@ -7,17 +7,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Abstract base for common code of {@link jmri.jmrit.roster.IdentifyLoco} and
- * {@link jmri.jmrit.decoderdefn.IdentifyDecoder}, the two classes that use a
+ * Abstract base for common code of {@link jmri.roster.IdentifyLoco} and
+ * {@link jmri.decoderdefn.IdentifyDecoder}, the two classes that use a
  * programmer to match Roster entries to what's on the programming track.
  * <p>
- * This is a class (instead of a {@link jmri.jmrit.roster.Roster} member
+ * This is a class (instead of a {@link jmri.roster.Roster} member
  * function) to simplify use of {@link jmri.Programmer} callbacks.
  * <p>
  *
  * @author Bob Jacobsen Copyright (C) 2001, 2015
- * @see jmri.jmrit.symbolicprog.CombinedLocoSelPane
- * @see jmri.jmrit.symbolicprog.NewLocoSelPane
+ * @see jmri.symbolicprog.CombinedLocoSelPane
+ * @see jmri.symbolicprog.NewLocoSelPane
  */
 public abstract class AbstractIdentify implements jmri.ProgListener {
 

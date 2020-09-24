@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 import jmri.InstanceManager;
 import jmri.NamedBeanHandleManager;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.DisplayFrame;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.IndicatorTrackIcon;

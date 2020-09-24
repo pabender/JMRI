@@ -19,9 +19,9 @@ import jmri.Memory;
 import jmri.NamedBeanHandle;
 import jmri.Reportable;
 import jmri.NamedBean.DisplayOptions;
-import jmri.jmrit.catalog.NamedIcon;
-import jmri.jmrit.roster.RosterEntry;
-import jmri.jmrit.roster.RosterIconFactory;
+import jmri.util.swing.NamedIcon;
+import jmri.roster.RosterEntry;
+import jmri.roster.RosterIconFactory;
 import jmri.jmrit.throttle.ThrottleFrame;
 import jmri.jmrit.throttle.ThrottleFrameManager;
 import jmri.util.datatransfer.RosterEntrySelection;
@@ -350,8 +350,8 @@ public class MemoryIcon extends PositionableLabel implements java.beans.Property
             if (map == null) {
                 Object val = key;
                 // no map, attempt to show object directly
-                if (val instanceof jmri.jmrit.roster.RosterEntry) {
-                    jmri.jmrit.roster.RosterEntry roster = (jmri.jmrit.roster.RosterEntry) val;
+                if (val instanceof jmri.roster.RosterEntry) {
+                    jmri.roster.RosterEntry roster = (jmri.roster.RosterEntry) val;
                     val = updateIconFromRosterVal(roster);
                     flipRosterIcon = false;
                     if (val == null) {
@@ -452,7 +452,7 @@ public class MemoryIcon extends PositionableLabel implements java.beans.Property
         }
     }
 
-    protected jmri.jmrit.roster.RosterEntry re = null;
+    protected jmri.roster.RosterEntry re = null;
 
     /*As the size of a memory label can change we want to adjust the position of the x,y
      if the width is fixed*/

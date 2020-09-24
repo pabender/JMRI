@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit;
+package jmri.util.xml;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;

@@ -48,8 +48,8 @@
       Defines the JMRI programmer definition files.
     </xs:documentation>
     <xs:appinfo>
-        <jmri:usingclass configurexml="false">jmri.jmrit.decoderdefn.DecoderFile</jmri:usingclass>
-        <jmri:usingclass configurexml="false">jmri.jmrit.symbolicprog.VariableTableModel</jmri:usingclass>
+        <jmri:usingclass configurexml="false">jmri.decoderdefn.DecoderFile</jmri:usingclass>
+        <jmri:usingclass configurexml="false">jmri.symbolicprog.VariableTableModel</jmri:usingclass>
     </xs:appinfo>
 </xs:annotation>
 

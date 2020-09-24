@@ -47,7 +47,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import jmri.jmrit.roster.Roster;
+import jmri.roster.Roster;
 import jmri.swing.PreferencesPanel;
 import jmri.util.FileUtil;
 import jmri.util.prefs.InitializationException;

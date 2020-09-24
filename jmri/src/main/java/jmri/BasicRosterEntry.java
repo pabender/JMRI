@@ -20,13 +20,13 @@ import org.jdom2.Element;
  * with users scripts etc.
  * <p>
  * For Full read/write and creation of RosterEntries use the @link
- * jmri.jmrit.roster.RosterEntry
+ * jmri.roster.RosterEntry
  * <p>
  * All properties, including the "Attributes", are bound.
  *
  * @author Bob Jacobsen Copyright (C) 2001, 2002, 2004, 2005, 2009
  * @author Kevin Dickerson Copyright 2012
- * @see jmri.jmrit.roster.RosterEntry
+ * @see jmri.roster.RosterEntry
  *
  */
 public interface BasicRosterEntry {

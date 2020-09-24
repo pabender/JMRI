@@ -22,17 +22,17 @@ import javax.swing.SwingConstants;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import jmri.NamedBean;
-import jmri.jmrit.beantable.AbstractTableAction;
-import jmri.jmrit.beantable.BeanTableFrame;
-import jmri.jmrit.beantable.TurnoutTableAction;
-import jmri.jmrit.beantable.SensorTableAction;
-import jmri.jmrit.beantable.LightTableAction;
-import jmri.jmrit.beantable.ReporterTableAction;
-import jmri.jmrit.beantable.SignalHeadTableAction;
-import jmri.jmrit.beantable.SignalMastTableAction;
-import jmri.jmrit.beantable.MemoryTableAction;
+import jmri.beantable.AbstractTableAction;
+import jmri.beantable.BeanTableFrame;
+import jmri.beantable.TurnoutTableAction;
+import jmri.beantable.SensorTableAction;
+import jmri.beantable.LightTableAction;
+import jmri.beantable.ReporterTableAction;
+import jmri.beantable.SignalHeadTableAction;
+import jmri.beantable.SignalMastTableAction;
+import jmri.beantable.MemoryTableAction;
 import jmri.jmrit.catalog.DragJLabel;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.DisplayFrame;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.LightIcon;
@@ -166,7 +166,7 @@ public class TableItemPanel<E extends NamedBean> extends FamilyItemPanel impleme
                 addToTable();
             }
         };
-        jmri.util.swing.JmriPanel addPanel = new jmri.jmrit.beantable.AddNewDevicePanel(
+        jmri.util.swing.JmriPanel addPanel = new jmri.beantable.AddNewDevicePanel(
                 _sysNametext, _userNametext, "addToTable", okListener, cancelListener);
         _addTableDialog.getContentPane().add(addPanel);
         _addTableDialog.pack();

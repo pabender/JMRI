@@ -4,9 +4,7 @@ package jmri.jmrit.display.layoutEditor;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javax.swing.JOptionPane;
 import jmri.Block;
-import jmri.jmrit.roster.RosterEntry;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import jmri.roster.RosterEntry;
 
 /**
  * An icon to display a status of a Block Object.

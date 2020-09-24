@@ -25,7 +25,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class Bundle extends jmri.roster.Bundle {
 
     @CheckForNull
-    private static final String name = "jmri.jmrit.roster.swing.Bundle"; // no local resources
+    private static final String name = "jmri.roster.swing.Bundle"; // no local resources
 
     //
     // below here is boilerplate to be copied exactly

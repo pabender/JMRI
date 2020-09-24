@@ -17,7 +17,7 @@ import jmri.AudioException;
 import jmri.InstanceManager;
 import jmri.implementation.AbstractAudio;
 import jmri.jmrit.audio.AudioListener;
-import jmri.jmrit.beantable.AudioTableAction.AudioTableDataModel;
+import jmri.beantable.AudioTableAction.AudioTableDataModel;
 
 /**
  * Define a GUI to edit AudioListener objects

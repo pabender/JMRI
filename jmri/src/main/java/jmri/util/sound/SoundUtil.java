@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.sound;
+package jmri.util.sound;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -34,7 +34,7 @@ public class SoundUtil {
     public static void playSoundBuffer(byte[] wavData) {
 
         // get characteristics from buffer
-        jmri.jmrit.sound.WavBuffer wb = new jmri.jmrit.sound.WavBuffer(wavData);
+        WavBuffer wb = new WavBuffer(wavData);
         float sampleRate = wb.getSampleRate();
         int sampleSizeInBits = wb.getSampleSizeInBits();
         int channels = wb.getChannels();

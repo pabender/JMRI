@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import jmri.util.JUnitUtil;
 
@@ -19,7 +19,7 @@ public class BeanTablePaneTest extends jmri.util.swing.JmriPanelTest {
         jmri.util.JUnitUtil.resetProfileManager();
 
         panel = new BeanTablePane();
-        helpTarget="package.jmri.jmrit.beantable.BeanTablePane";
+        helpTarget="package.jmri.beantable.BeanTablePane";
     }
 
     @AfterEach

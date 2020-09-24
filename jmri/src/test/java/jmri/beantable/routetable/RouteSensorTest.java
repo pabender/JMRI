@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable.routetable;
+package jmri.beantable.routetable;
 
 import jmri.Sensor;
 import jmri.util.JUnitUtil;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for jmri.jmrit.beantable.routtable.RouteSensor
+ * Tests for jmri.beantable.routtable.RouteSensor
  *
  * @author Paul Bender Copyright (C) 2020
  */

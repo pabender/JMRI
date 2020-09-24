@@ -23,7 +23,7 @@ import org.junit.jupiter.params.provider.MethodSource;
  * @author Randall Wood Copyright 2020
  * @since JMRI 4.3.6
  */
-public class SampleScriptTest {
+public class SampleScriptIT{
 
     /**
      * Create the tests from each sample script in test directory.
@@ -54,7 +54,7 @@ public class SampleScriptTest {
     @BeforeAll
     static public void startTests() {
         // this is to System.out because that's where the test output goes
-        System.out.println("\njmri.jmrit.jython.SampleScriptTest starts, following output is from script tests");
+        System.out.println("\njmri.jmrit.jython.SampleScriptIT starts, following output is from script tests");
     }
 
     @BeforeEach
@@ -85,9 +85,9 @@ public class SampleScriptTest {
     @AfterAll
     static public void endTests() {
         // this is to System.out because that's where the test output goes
-        System.out.println("jmri.jmrit.jython.SampleScriptTest ends, above output was from script tests");
+        System.out.println("jmri.jmrit.jython.SampleScriptIT ends, above output was from script tests");
     }
 
-    private final static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SampleScriptTest.class);
+    private final static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SampleScriptIT.class);
 
 }

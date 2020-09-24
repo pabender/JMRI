@@ -4,6 +4,7 @@ package jmri.jmrit.throttle;
 import java.awt.GraphicsEnvironment;
 import jmri.InstanceManager;
 import jmri.DccLocoAddress;
+import jmri.ThrottlesPreferences;
 import jmri.util.JUnitUtil;
 import jmri.util.junit.rules.RetryRule;
 import org.junit.*;

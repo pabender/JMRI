@@ -33,7 +33,7 @@
     <xs:annotation>
         <xs:appinfo>
             <jmri:class>jmri.implementation.DefaultSignalAppearanceMap</jmri:class>
-            <jmri:class>jmri.jmrit.beantable.signalmast.AddSignalMastPanel</jmri:class>
+            <jmri:class>jmri.beantable.signalmast.AddSignalMastPanel</jmri:class>
         </xs:appinfo>
         <xs:documentation>
         This schema describes the appearance information for a single JMRI signal mast

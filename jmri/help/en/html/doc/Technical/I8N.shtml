@@ -346,7 +346,7 @@ If your package does not already have a Bundle class, you can add it by:
 <p>
 Older code typically references the bundles directly:
 <pre style="font-family: monospace;">
-  java.util.ResourceBundle.getBundle("jmri.jmrit.beantable.LogixTableBundle");
+  java.util.ResourceBundle.getBundle("jmri.beantable.LogixTableBundle");
 </pre>
 
 <p>
@@ -358,7 +358,7 @@ strings in more than one properties file.
 <p>
 You can then retrieve particular strings like this:
 <pre style="font-family: monospace;">
-java.util.ResourceBundle.getBundle("jmri.jmrit.beantable.LogixTableBundle").getString("ButtonNew");
+java.util.ResourceBundle.getBundle("jmri.beantable.LogixTableBundle").getString("ButtonNew");
 </pre>
 <p>
 We no longer recommend defining a class-static variable to hold the 

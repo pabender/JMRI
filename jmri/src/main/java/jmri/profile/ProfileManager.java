@@ -32,8 +32,8 @@ import org.xml.sax.SAXParseException;
 import jmri.InstanceManager;
 import jmri.beans.Bean;
 import jmri.implementation.FileLocationsPreferences;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterConfigManager;
+import jmri.roster.Roster;
+import jmri.roster.RosterConfigManager;
 import jmri.util.FileUtil;
 import jmri.util.prefs.InitializationException;
 

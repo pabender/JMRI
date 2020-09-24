@@ -162,7 +162,7 @@ public class MemoryTableAction extends AbstractTableAction<Memory> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.MemoryTable";
+        return "package.jmri.beantable.MemoryTable";
     }
 
     JmriJFrame addFrame = null;
@@ -182,7 +182,7 @@ public class MemoryTableAction extends AbstractTableAction<Memory> {
         p = jmri.InstanceManager.getDefault(jmri.UserPreferencesManager.class);
         if (addFrame == null) {
             addFrame = new JmriJFrame(Bundle.getMessage("TitleAddMemory"), false, true);
-            addFrame.addHelpMenu("package.jmri.jmrit.beantable.MemoryAddEdit", true);
+            addFrame.addHelpMenu("package.jmri.beantable.MemoryAddEdit", true);
             addFrame.getContentPane().setLayout(new BoxLayout(addFrame.getContentPane(), BoxLayout.Y_AXIS));
 
             ActionListener okListener = (ActionEvent e1) -> {

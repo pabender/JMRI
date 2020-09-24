@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable.signalmast;
+package jmri.beantable.signalmast;
 
 import java.awt.GraphicsEnvironment;
 

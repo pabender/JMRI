@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import java.awt.GraphicsEnvironment;
 import javax.swing.JFrame;
@@ -13,7 +13,7 @@ import org.junit.jupiter.api.*;
 import org.netbeans.jemmy.operators.*;
 
 /**
- * Tests for classes in the jmri.jmrit.beantable package
+ * Tests for classes in the jmri.beantable package
  *
  * @author Bob Jacobsen Copyright 2004
  */
@@ -84,7 +84,7 @@ public class MemoryTableActionTest extends AbstractTableActionBase<Memory> {
         JUnitUtil.setUp();
         jmri.util.JUnitUtil.resetProfileManager();
         jmri.util.JUnitUtil.initDefaultUserMessagePreferences();
-        helpTarget = "package.jmri.jmrit.beantable.MemoryTable";
+        helpTarget = "package.jmri.beantable.MemoryTable";
         a = new MemoryTableAction();
     }
 

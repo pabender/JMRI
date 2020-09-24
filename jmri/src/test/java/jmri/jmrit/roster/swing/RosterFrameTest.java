@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.roster.swing;
+package jmri.roster.swing;
 
 import java.awt.GraphicsEnvironment;
 
 import jmri.*;
-import jmri.jmrit.roster.*;
+import jmri.roster.*;
 import jmri.util.*;
 import jmri.util.junit.rules.RetryRule;
 
@@ -272,7 +272,7 @@ public class RosterFrameTest {
         JUnitUtil.initDefaultUserMessagePreferences();
         JUnitUtil.initGuiLafPreferencesManager();
         jmri.InstanceManager.setDefault(jmri.jmrix.ConnectionConfigManager.class, new jmri.jmrix.ConnectionConfigManager());
-        jmri.InstanceManager.setDefault(jmri.jmrit.symbolicprog.ProgrammerConfigManager.class, new jmri.jmrit.symbolicprog.ProgrammerConfigManager());
+        jmri.InstanceManager.setDefault(jmri.symbolicprog.ProgrammerConfigManager.class, new jmri.symbolicprog.ProgrammerConfigManager());
         JUnitUtil.initDebugProgrammerManager();
         JUnitUtil.initRosterConfigManager();
         Roster.getDefault(); // ensure exists

@@ -4,7 +4,7 @@ package jmri;
 import jmri.jmrit.display.layoutEditor.LayoutBlockManager;
 import jmri.jmrit.logix.OBlockManager;
 import jmri.jmrit.logix.WarrantManager;
-import jmri.jmrit.roster.RosterIconFactory;
+import jmri.roster.RosterIconFactory;
 import jmri.managers.TurnoutManagerScaffold;
 import jmri.progdebugger.DebugProgrammerManager;
 import jmri.util.JUnitAppender;
@@ -80,7 +80,7 @@ public class InstanceManagerTest {
         public InstanceManagerInitCheck() {}
     }
     
-    // the following test was moved from jmri.jmrit.symbolicprog.PackageTet when
+    // the following test was moved from jmri.symbolicprog.PackageTet when
     // it was converted to JUnit4 format.  It seemed out of place there.
     // check configuring the programmer
     @Test

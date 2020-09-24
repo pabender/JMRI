@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
 package jmri.jmrit.automat;
 
+import jmri.util.xml.XmlFile;
+
 import java.awt.event.ActionEvent;
 import java.io.File;
 import javax.swing.AbstractAction;
@@ -27,7 +29,7 @@ public class JythonAutomatonAction extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
         // create a SampleAutomaton
-        JFileChooser fci = jmri.jmrit.XmlFile.userFileChooser("Python script files", "py");
+        JFileChooser fci = XmlFile.userFileChooser("Python script files", "py");
         fci.setDialogTitle("Find desired script file");
         int retVal = fci.showOpenDialog(_who);
         // handle selection or cancel

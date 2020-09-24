@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.roster.rostergroup;
+package jmri.roster.rostergroup;
 
 import jmri.util.JUnitUtil;
 

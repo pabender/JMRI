@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.decoderdefn;
+package jmri.decoderdefn;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.File;
@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 import jmri.LocoAddress;
 import jmri.util.xml.XmlFile;
-import jmri.jmrit.symbolicprog.ResetTableModel;
-import jmri.jmrit.symbolicprog.VariableTableModel;
+import jmri.symbolicprog.ResetTableModel;
+import jmri.symbolicprog.VariableTableModel;
 import org.jdom2.DataConversionException;
 import org.jdom2.Element;
 import org.slf4j.Logger;
@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Bob Jacobsen Copyright (C) 2001
  * @author Howard G. Penny Copyright (C) 2005
- * @see jmri.jmrit.decoderdefn.DecoderIndexFile
+ * @see jmri.decoderdefn.DecoderIndexFile
  */
 public class DecoderFile extends XmlFile {
 

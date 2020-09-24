@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import java.awt.GraphicsEnvironment;
 import javax.swing.JFrame;
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.*;
 import org.netbeans.jemmy.operators.*;
 
 /**
- * Tests for the jmri.jmrit.beantable.SignalGroupTableAction class
+ * Tests for the jmri.beantable.SignalGroupTableAction class
  *
  * @author Egbert Broerse Copyright 2017
  */
@@ -162,7 +162,7 @@ public class SignalGroupTableActionTest extends AbstractTableActionBase<SignalGr
         JUnitUtil.resetProfileManager();
         JUnitUtil.initDefaultUserMessagePreferences();
         JUnitUtil.initInternalSignalHeadManager();
-        helpTarget = "package.jmri.jmrit.beantable.SignalGroupTable";
+        helpTarget = "package.jmri.beantable.SignalGroupTable";
         a = new SignalGroupTableAction();
     }
 

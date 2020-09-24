@@ -53,7 +53,7 @@ import jmri.CatalogTreeManager;
 import jmri.ConfigureManager;
 import jmri.InstanceManager;
 import jmri.jmrit.catalog.ImageIndexEditor;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.CoordinateEdit;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.IndicatorTrack;
@@ -207,7 +207,7 @@ public class ControlPanelEditor extends Editor implements DropTargetListener, Cl
         setMenuAcceleratorKey(mi, KeyEvent.VK_P);
         _iconMenu.add(mi);
 
-        _iconMenu.add(new jmri.jmrit.beantable.OBlockTableAction(Bundle.getMessage("MenuItemOBlockTable")));
+        _iconMenu.add(new jmri.beantable.OBlockTableAction(Bundle.getMessage("MenuItemOBlockTable")));
         mi = (JMenuItem) _iconMenu.getMenuComponent(1);
         setMenuAcceleratorKey(mi, KeyEvent.VK_O);
         mi = new JMenuItem(Bundle.getMessage("CircuitBuilder"));
@@ -215,7 +215,7 @@ public class ControlPanelEditor extends Editor implements DropTargetListener, Cl
         setMenuAcceleratorKey(mi, KeyEvent.VK_B);
         _iconMenu.add(mi);
 
-        _iconMenu.add(new jmri.jmrit.beantable.ListedTableAction(Bundle.getMessage("MenuItemTableList")));
+        _iconMenu.add(new jmri.beantable.ListedTableAction(Bundle.getMessage("MenuItemTableList")));
         mi = (JMenuItem) _iconMenu.getMenuComponent(3);
         setMenuAcceleratorKey(mi, KeyEvent.VK_T);
     }

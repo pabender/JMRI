@@ -30,6 +30,7 @@ import javax.swing.JTextField;
 import jmri.InstanceManager;
 import jmri.util.swing.DrawSquares;
 import jmri.util.swing.ImagePanel;
+import jmri.util.swing.NamedIcon;
 import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

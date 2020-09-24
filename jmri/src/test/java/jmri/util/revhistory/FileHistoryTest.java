@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.jupiter.api.*;
 
 /**
- * Tests for the jmrit.revhistory package & jmrit.revhistory.FileHistory class.
+ * Tests for the jmri.util.revhistory package & jmri.util.revhistory.FileHistory class.
  *
  * @author Bob Jacobsen Copyright (C) 2010
  */

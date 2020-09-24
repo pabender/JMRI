@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.revhistory.swing;
+package jmri.util.revhistory.swing;
 
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
@@ -8,7 +8,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import jmri.InstanceManager;
-import jmri.jmrit.revhistory.FileHistory;
+import jmri.util.revhistory.FileHistory;
 import jmri.util.JmriJFrame;
 
 /**

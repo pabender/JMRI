@@ -40,7 +40,7 @@ public class IdTagTableTabAction extends AbstractTableTabAction<IdTag> {
     /** {@inheritDoc} */
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.IdTagTable";
+        return "package.jmri.beantable.IdTagTable";
     }
 
     @Override

@@ -9,7 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.util.FileUtil;
 import org.jdom2.Document;
 import org.jdom2.Element;

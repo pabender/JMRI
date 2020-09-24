@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import java.awt.GraphicsEnvironment;
 import java.util.ResourceBundle;
@@ -68,7 +68,7 @@ public class SectionTableActionTest extends AbstractTableActionBase<Section> {
         JLabelOperator jlo = new JLabelOperator(jf, Bundle.getMessage("LabelSystemName"));
         ((JTextField) jlo.getLabelFor()).setText("1");
         //press the "Add Selected Block" button to add the only defined block
-        jmri.util.swing.JemmyUtil.pressButton(jf, ResourceBundle.getBundle("jmri.jmrit.beantable.SectionTransitTableBundle").getString("AddBlockButton"));
+        jmri.util.swing.JemmyUtil.pressButton(jf, ResourceBundle.getBundle("jmri.beantable.SectionTransitTableBundle").getString("AddBlockButton"));
         //and press create
         jmri.util.swing.JemmyUtil.pressButton(jf, Bundle.getMessage("ButtonCreate"));
         jmri.util.JUnitAppender.suppressWarnMessage("Block IB12 does not have a user name,may not work correctly in Section IY:AUTO:0001");
@@ -93,7 +93,7 @@ public class SectionTableActionTest extends AbstractTableActionBase<Section> {
         JLabelOperator jlo = new JLabelOperator(jf, Bundle.getMessage("LabelSystemName"));
         ((JTextField) jlo.getLabelFor()).setText("1");
         //press the "Add Selected Block" button to add the only defined block
-        jmri.util.swing.JemmyUtil.pressButton(jf, ResourceBundle.getBundle("jmri.jmrit.beantable.SectionTransitTableBundle").getString("AddBlockButton"));
+        jmri.util.swing.JemmyUtil.pressButton(jf, ResourceBundle.getBundle("jmri.beantable.SectionTransitTableBundle").getString("AddBlockButton"));
         //and press create
         jmri.util.swing.JemmyUtil.pressButton(jf, Bundle.getMessage("ButtonCreate"));
         jmri.util.JUnitAppender.suppressWarnMessage("Block IB12 does not have a user name,may not work correctly in Section IY:AUTO:0001");
@@ -120,7 +120,7 @@ public class SectionTableActionTest extends AbstractTableActionBase<Section> {
     public void setUp() {
         JUnitUtil.setUp();
         jmri.util.JUnitUtil.resetProfileManager();
-        helpTarget = "package.jmri.jmrit.beantable.SectionTable";
+        helpTarget = "package.jmri.beantable.SectionTable";
         InstanceManager.setDefault(jmri.BlockManager.class, new jmri.BlockManager());
         a = new SectionTableAction();
         InstanceManager.getDefault(jmri.BlockManager.class).provideBlock("IB12");

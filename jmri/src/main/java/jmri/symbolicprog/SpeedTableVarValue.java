@@ -435,7 +435,7 @@ public class SpeedTableVarValue extends VariableValue implements ChangeListener 
             decVal.setState(currentState);
 
             Component v = decVal.getCommonRep();
-            String start = ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("TextStep")
+            String start = ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("TextStep")
                     + " " + (i + 1);
             ((JTextField) v).setToolTipText(CvUtil.addCvDescription(start, "CV " + cvList[i], null));
             ((JComponent) v).setBorder(null);  // pack tighter
@@ -470,48 +470,48 @@ public class SpeedTableVarValue extends VariableValue implements ChangeListener 
         // add control buttons
         JPanel k = new JPanel();
         JButton b;
-        k.add(b = new JButton(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("ButtonForceStraight")));
-        b.setToolTipText(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("TooltipForceStraight"));
+        k.add(b = new JButton(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("ButtonForceStraight")));
+        b.setToolTipText(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("TooltipForceStraight"));
         b.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 doForceStraight(e);
             }
         });
-        k.add(b = new JButton(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("ButtonMatchEnds")));
-        b.setToolTipText(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("TooltipMatchEnds"));
+        k.add(b = new JButton(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("ButtonMatchEnds")));
+        b.setToolTipText(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("TooltipMatchEnds"));
         b.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 doMatchEnds(e);
             }
         });
-        k.add(b = new JButton(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("ButtonConstantRatio")));
-        b.setToolTipText(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("TooltipConstantRatio"));
+        k.add(b = new JButton(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("ButtonConstantRatio")));
+        b.setToolTipText(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("TooltipConstantRatio"));
         b.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 doRatioCurve(e);
             }
         });
-        k.add(b = new JButton(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("ButtonLogCurve")));
-        b.setToolTipText(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("TooltipLogCurve"));
+        k.add(b = new JButton(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("ButtonLogCurve")));
+        b.setToolTipText(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("TooltipLogCurve"));
         b.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 doLogCurve(e);
             }
         });
-        k.add(b = new JButton(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("ButtonShiftLeft")));
-        b.setToolTipText(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("TooltipShiftLeft"));
+        k.add(b = new JButton(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("ButtonShiftLeft")));
+        b.setToolTipText(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("TooltipShiftLeft"));
         b.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 doShiftLeft(e);
             }
         });
-        k.add(b = new JButton(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("ButtonShiftRight")));
-        b.setToolTipText(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("TooltipShiftRight"));
+        k.add(b = new JButton(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("ButtonShiftRight")));
+        b.setToolTipText(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("TooltipShiftRight"));
         b.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -544,7 +544,7 @@ public class SpeedTableVarValue extends VariableValue implements ChangeListener 
         stepCheckBoxes = new ArrayList<JCheckBox>();
         for (int i = 0; i < nValues; i++) {
             JCheckBox b = new JCheckBox();
-            b.setToolTipText(ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("TooltipCheckToFix"));
+            b.setToolTipText(ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("TooltipCheckToFix"));
             stepCheckBoxes.add(b);
         }
     }
@@ -922,7 +922,7 @@ public class SpeedTableVarValue extends VariableValue implements ChangeListener 
                 setOpaque(true);
             }
             // tooltip label
-            String start = ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("TextStep")
+            String start = ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("TextStep")
                     + " " + step;
             setToolTipText(CvUtil.addCvDescription(start, "CV " + var.number(), null));
             // listen for changes to original state

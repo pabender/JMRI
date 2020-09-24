@@ -14,7 +14,7 @@ import jmri.NamedBeanHandle;
 import jmri.SignalMast;
 import jmri.Transit;
 import jmri.NamedBean.DisplayOptions;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.palette.SignalMastItemPanel;
 import jmri.jmrit.picker.PickListModel;
 import org.slf4j.Logger;

@@ -68,7 +68,7 @@ public class SignalGroupSubTableAction {
     } // NOI18N is never displayed on screen
 
     String helpTarget() {
-        return "package.jmri.jmrit.beantable.SignalGroupTable";
+        return "package.jmri.beantable.SignalGroupTable";
     }
 
     /**
@@ -313,7 +313,7 @@ public class SignalGroupSubTableAction {
         // Set up sub panel for editing of a Signal Group Signal Head item
         if (addSubFrame == null) { // create one if not yet available
             addSubFrame = new JmriJFrame((Bundle.getMessage("EditSignalGroup") + " - " + Bundle.getMessage("BeanNameSignalHead")), false, true);
-            addSubFrame.addHelpMenu("package.jmri.jmrit.beantable.SignalGroupAddEdit", true);
+            addSubFrame.addHelpMenu("package.jmri.beantable.SignalGroupAddEdit", true);
             addSubFrame.setLocation(100, 30);
             addSubFrame.getContentPane().setLayout(new BoxLayout(addSubFrame.getContentPane(), BoxLayout.Y_AXIS));
             Container contentPane = addSubFrame.getContentPane();

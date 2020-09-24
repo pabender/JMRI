@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import jmri.util.gui.GuiLafPreferencesManager;
 import java.awt.GraphicsEnvironment;
@@ -20,7 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Tests for the jmri.jmrit.beantable.BlockTableAction class
+ * Tests for the jmri.beantable.BlockTableAction class
  *
  * @author Bob Jacobsen Copyright 2004, 2007, 2008
  */
@@ -314,7 +314,7 @@ public class BlockTableActionTest extends AbstractTableActionBase<Block> {
         JUnitUtil.initInternalSensorManager();
         JUnitUtil.initInternalSignalHeadManager();
         InstanceManager.setDefault(jmri.BlockManager.class, new jmri.BlockManager());
-        helpTarget = "package.jmri.jmrit.beantable.BlockTable";
+        helpTarget = "package.jmri.beantable.BlockTable";
         a = new BlockTableAction();
     }
 

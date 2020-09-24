@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package util.xml;
+package jmri.util.xml;
 
-
-import jmri.util.Bundle;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 

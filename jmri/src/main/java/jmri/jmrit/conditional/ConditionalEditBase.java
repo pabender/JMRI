@@ -44,7 +44,7 @@ import jmri.SignalMastManager;
 import jmri.Turnout;
 import jmri.TurnoutManager;
 import jmri.NamedBean.DisplayOptions;
-import jmri.jmrit.beantable.LRouteTableAction;
+import jmri.beantable.LRouteTableAction;
 import jmri.jmrit.entryexit.DestinationPoints;
 import jmri.jmrit.entryexit.EntryExitPairs;
 import jmri.jmrit.logix.OBlock;

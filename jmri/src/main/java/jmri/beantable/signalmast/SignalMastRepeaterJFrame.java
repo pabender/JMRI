@@ -14,7 +14,7 @@ public class SignalMastRepeaterJFrame extends JmriJFrame {
     public SignalMastRepeaterJFrame() {
         super(Bundle.getMessage("TitleSignalMastRepeater"), false, true);
 
-        addHelpMenu("package.jmri.jmrit.beantable.SignalMastRepeater", true);
+        addHelpMenu("package.jmri.beantable.SignalMastRepeater", true);
         getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
 
         add(sigMastPanel = new SignalMastRepeaterPanel());

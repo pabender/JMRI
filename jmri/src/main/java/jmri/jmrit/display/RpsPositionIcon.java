@@ -7,7 +7,7 @@ import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrix.rps.Distributor;
 import jmri.jmrix.rps.Measurement;
 import jmri.jmrix.rps.MeasurementListener;
@@ -141,6 +141,7 @@ public class RpsPositionIcon extends PositionableLabel implements MeasurementLis
     public void rotate(int deg) {
         active.rotate(deg, this);
         error.rotate(deg, this);
+        setDegrees(deg);
         displayState();
     }
 

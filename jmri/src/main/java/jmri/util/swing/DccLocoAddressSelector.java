@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.swing;
+package jmri.util.swing;
 
 import java.awt.Font;
 import java.awt.event.ComponentAdapter;
@@ -287,7 +287,7 @@ public class DccLocoAddressSelector extends JPanel {
        text.addKeyListener(l);
     }
 
-    final static ResourceBundle rb = ResourceBundle.getBundle("jmri.jmrit.DccLocoAddressSelectorBundle");
+    final static ResourceBundle rb = ResourceBundle.getBundle("jmri.util.swing.DccLocoAddressSelectorBundle");
 
     private final static Logger log = LoggerFactory.getLogger(DccLocoAddressSelector.class);
 }

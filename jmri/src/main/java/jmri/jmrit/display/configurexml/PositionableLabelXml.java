@@ -6,7 +6,7 @@ import java.awt.Color;
 import java.awt.Font;
 import jmri.InstanceManager;
 import jmri.configurexml.AbstractXmlAdapter;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.Positionable;
 import jmri.jmrit.display.PositionableLabel;

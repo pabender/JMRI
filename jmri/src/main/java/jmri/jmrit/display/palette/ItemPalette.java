@@ -29,11 +29,12 @@ import jmri.CatalogTreeLeaf;
 import jmri.CatalogTreeNode;
 import jmri.jmrit.catalog.DirectorySearcher;
 import jmri.jmrit.catalog.ImageIndexEditor;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.DisplayFrame;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.picker.PickListModel;
 import jmri.util.FileUtil;
+import jmri.util.xml.XmlFile;
 import org.jdom2.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -292,7 +293,7 @@ public class ItemPalette extends DisplayFrame implements ChangeListener {
         if (file == null) {
             throw new IllegalArgumentException("defaultPanelIcons file (xml/defaultPanelIcons.xml) doesn't exist.");
         }
-        jmri.jmrit.XmlFile xf = new jmri.jmrit.XmlFile() {
+        XmlFile xf = new XmlFile() {
         };
         Element root = xf.rootFromURL(file);
         return (root.getChild("ItemTypes").getChildren());

@@ -39,9 +39,9 @@
 
       </xs:documentation>
       <xs:appinfo>
-        <jmri:usingclass configurexml="false">jmri.jmrit.symbolicprog.NameFile</jmri:usingclass>
-        <jmri:usingclass configurexml="false">jmri.jmrit.decoderdefn.NameCheckAction</jmri:usingclass>
-        <jmri:usingclass configurexml="false">jmri.jmrit.symbolicprog.tabbedframe.ProgCheckAction</jmri:usingclass>
+        <jmri:usingclass configurexml="false">jmri.symbolicprog.NameFile</jmri:usingclass>
+        <jmri:usingclass configurexml="false">jmri.decoderdefn.NameCheckAction</jmri:usingclass>
+        <jmri:usingclass configurexml="false">jmri.symbolicprog.tabbedframe.ProgCheckAction</jmri:usingclass>
       </xs:appinfo>
     </xs:annotation>
 

@@ -487,7 +487,7 @@ abstract public class PaneProgFrame extends JmriJFrame
     }
 
     void addHelp() {
-        addHelpMenu("package.jmri.jmrit.symbolicprog.tabbedframe.PaneProgFrame", true);
+        addHelpMenu("package.jmri.symbolicprog.tabbedframe.PaneProgFrame", true);
     }
 
     @Override

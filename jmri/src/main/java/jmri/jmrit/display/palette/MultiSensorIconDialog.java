@@ -5,7 +5,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -92,7 +92,7 @@ public class MultiSensorIconDialog extends IconDialog {
             return false;
         }
         String fileName = "resources/icons/misc/X-red.gif";
-        NamedIcon icon = new jmri.jmrit.catalog.NamedIcon(fileName, fileName);
+        NamedIcon icon = new NamedIcon(fileName, fileName);
         _iconMap.put(name, icon);
         return true;
     }

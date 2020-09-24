@@ -16,7 +16,7 @@ import jmri.*;
 import jmri.configurexml.LoadXmlUserAction;
 import jmri.jmrit.audio.AudioFactory;
 import jmri.jmrit.operations.OperationsXml;
-import jmri.jmrit.roster.Roster;
+import jmri.roster.Roster;
 import jmri.util.gui.GuiLafPreferencesManager;
 import jmri.jmrix.ConnectionConfigManager;
 import jmri.profile.Profile;

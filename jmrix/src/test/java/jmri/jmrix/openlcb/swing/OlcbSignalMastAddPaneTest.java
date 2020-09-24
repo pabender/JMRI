@@ -2,7 +2,7 @@
 package jmri.jmrix.openlcb.swing;
 
 import jmri.*;
-import jmri.jmrit.beantable.signalmast.*;
+import jmri.beantable.signalmast.*;
 import jmri.jmrix.openlcb.*;
 import jmri.implementation.*;
 import jmri.util.*;

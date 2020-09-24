@@ -3,7 +3,7 @@ package jmri.jmrit.vsdecoder;
 
 import jmri.DccLocoAddress;
 import jmri.LocoAddress;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 import jmri.util.PhysicalLocation;
 
 /**

@@ -34,6 +34,6 @@ public class ReporterTableTabAction extends AbstractTableTabAction<Reporter> {
     /** {@inheritDoc} */
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.ReporterTable";
+        return "package.jmri.beantable.ReporterTable";
     }
 }

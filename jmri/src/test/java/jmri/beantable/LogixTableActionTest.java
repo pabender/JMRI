@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import java.awt.GraphicsEnvironment;
 
@@ -105,7 +105,7 @@ public class LogixTableActionTest extends AbstractTableActionBase<Logix> {
     public void testTreeEditor() {
         Assume.assumeFalse(GraphicsEnvironment.isHeadless());
         InstanceManager.getDefault(jmri.UserPreferencesManager.class).
-                setProperty("jmri.jmrit.beantable.LogixTableAction", "Edit Mode", "TREEEDIT");  // NOI18N
+                setProperty("jmri.beantable.LogixTableAction", "Edit Mode", "TREEEDIT");  // NOI18N
         a.actionPerformed(null);
         LogixTableAction lgxTable = (LogixTableAction) a;
         JFrameOperator lgxFrame = new JFrameOperator(Bundle.getMessage("TitleLogixTable"));  // NOI18N
@@ -231,7 +231,7 @@ public class LogixTableActionTest extends AbstractTableActionBase<Logix> {
         InstanceManager.getDefault(jmri.LogixManager.class).createNewLogix("IX103", "Logix 103");
         InstanceManager.getDefault(jmri.LogixManager.class).createNewLogix("IX104", "Logix 104");
 
-        helpTarget = "package.jmri.jmrit.beantable.LogixTable"; 
+        helpTarget = "package.jmri.beantable.LogixTable";
         a = new LogixTableAction();
     }
 

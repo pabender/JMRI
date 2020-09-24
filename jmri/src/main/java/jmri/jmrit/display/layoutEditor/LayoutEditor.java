@@ -31,7 +31,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import jmri.*;
 import jmri.jmrit.display.EditorManager;
 import jmri.configurexml.StoreXmlUserAction;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.dispatcher.*;
 import jmri.jmrit.display.*;
 import jmri.jmrit.display.layoutEditor.LayoutEditorDialogs.*;

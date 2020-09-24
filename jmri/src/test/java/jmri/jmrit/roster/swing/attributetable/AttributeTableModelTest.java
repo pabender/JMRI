@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.roster.swing.attributetable;
+package jmri.roster.swing.attributetable;
 
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
 import jmri.util.JUnitUtil;
 
 import org.jdom2.Element;

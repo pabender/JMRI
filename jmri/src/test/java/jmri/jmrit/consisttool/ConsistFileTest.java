@@ -7,7 +7,7 @@ import jmri.Consist;
 import jmri.ConsistManager;
 import jmri.DccLocoAddress;
 import jmri.InstanceManager;
-import jmri.jmrit.roster.Roster;
+import jmri.roster.Roster;
 import jmri.util.JUnitUtil;
 
 import org.junit.jupiter.api.*;

@@ -16,7 +16,7 @@ import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableRowSorter;
 import jmri.*;
-import jmri.jmrit.beantable.BeanTableDataModel;
+import jmri.beantable.BeanTableDataModel;
 import jmri.jmrit.entryexit.*;
 import jmri.jmrit.logix.*;
 import jmri.swing.RowSorterUtil;
@@ -59,7 +59,7 @@ public abstract class PickListModel<E extends NamedBean> extends BeanTableDataMo
     public static final int SNAME_COLUMN = 0;
     public static final int UNAME_COLUMN = 1;
     public static final int POSITION_COL = 2;
-    public static final ResourceBundle rb = ResourceBundle.getBundle("jmri.jmrit.beantable.BeanTableBundle");
+    public static final ResourceBundle rb = ResourceBundle.getBundle("jmri.beantable.BeanTableBundle");
 
     static HashMap<String, Integer> _listMap = new HashMap<String, Integer>();
 

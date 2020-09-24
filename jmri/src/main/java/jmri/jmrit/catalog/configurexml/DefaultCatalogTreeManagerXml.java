@@ -10,7 +10,7 @@ import javax.swing.tree.*;
 import jmri.CatalogTree;
 import jmri.CatalogTreeManager;
 import jmri.InstanceManager;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.CatalogTreeLeaf;
 import jmri.CatalogTreeNode;
 import jmri.util.FileUtil;

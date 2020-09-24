@@ -276,7 +276,7 @@ public class ReporterTableAction extends AbstractTableAction<Reporter> {
      */
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.ReporterTable";
+        return "package.jmri.beantable.ReporterTable";
     }
 
     JmriJFrame addFrame = null;
@@ -302,7 +302,7 @@ public class ReporterTableAction extends AbstractTableAction<Reporter> {
         pref = jmri.InstanceManager.getDefault(jmri.UserPreferencesManager.class);
         if (addFrame == null) {
             addFrame = new JmriJFrame(Bundle.getMessage("TitleAddReporter"), false, true);
-            addFrame.addHelpMenu("package.jmri.jmrit.beantable.ReporterAddEdit", true);
+            addFrame.addHelpMenu("package.jmri.beantable.ReporterAddEdit", true);
             ActionListener createListener = this::createPressed;
             ActionListener cancelListener = this::cancelPressed;
             ActionListener rangeListener = this::canAddRange;

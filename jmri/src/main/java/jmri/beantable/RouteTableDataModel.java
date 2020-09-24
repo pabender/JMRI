@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
-import java.awt.event.MouseEvent;
 
 /**
  * TableDataModel for the Route Table.
@@ -187,8 +186,8 @@ public class RouteTableDataModel extends BeanTableDataModel<Route> {
     @Override
     public void configureTable(JTable table) {
         table.setDefaultRenderer(Boolean.class, new EnablingCheckboxRenderer());
-        table.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-        table.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+        table.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+        table.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
         super.configureTable(table);
     }
 

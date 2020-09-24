@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 
 import jmri.InstanceManager;
 import jmri.ReporterManager;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.util.JUnitUtil;
 
 import org.junit.Assume;

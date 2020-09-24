@@ -7,9 +7,9 @@ import com.fasterxml.jackson.databind.node.NullNode;
 import javax.servlet.http.HttpServletResponse;
 
 import jmri.InstanceManager;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterConfigManager;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.Roster;
+import jmri.roster.RosterConfigManager;
+import jmri.roster.RosterEntry;
 import jmri.profile.ProfileManager;
 import jmri.server.json.JSON;
 import jmri.server.json.JsonException;

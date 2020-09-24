@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map.Entry;
 import jmri.NamedBeanHandle;
 import jmri.Sensor;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.IndicatorTrackIcon;
 import jmri.jmrit.logix.OBlock;

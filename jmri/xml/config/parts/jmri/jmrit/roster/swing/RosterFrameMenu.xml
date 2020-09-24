@@ -37,7 +37,7 @@
 		<name xml:lang="ca">Importa fitxer de Descodificador...</name>
         <name xml:lang="cs">Import souboru dekodéru...</name>
         <name xml:lang="nl">Importeer Decoderbestand...</name>
-        <adapter>jmri.jmrit.decoderdefn.InstallDecoderFileAction</adapter>
+        <adapter>jmri.decoderdefn.InstallDecoderFileAction</adapter>
     </node>
     <node name="Import Decoder URL...">
         <name xml:lang="fr">Importer URL Décodeur...</name>
@@ -47,7 +47,7 @@
 		<name xml:lang="ca">Importa URl de Descodificador...</name>
         <name xml:lang="cs">Import URL dekodéru...</name>
         <name xml:lang="nl">Importeer Decoder van URL...</name>
-        <adapter>jmri.jmrit.decoderdefn.InstallDecoderURLAction</adapter>
+        <adapter>jmri.decoderdefn.InstallDecoderURLAction</adapter>
     </node>
     <node>separator</node><!-- separator -->
     <node name="Export Roster Entry...">
@@ -66,7 +66,7 @@
 		<name xml:lang="ca">Importa una entrada de la flota...</name>
         <name xml:lang="cs">Importovat záznam evidence...</name>
         <name xml:lang="nl">Importeer Loc...</name>
-        <adapter>jmri.jmrit.roster.ImportRosterItemAction</adapter>
+        <adapter>jmri.roster.ImportRosterItemAction</adapter>
     </node>
     <node>separator</node><!-- separator -->
     <node name="Export Complete Roster...">
@@ -76,7 +76,7 @@
 		<name xml:lang="ca">Exporta tota la flota...</name>
         <name xml:lang="cs">Exportovat evidenci...</name>
         <name xml:lang="nl">Exporteer hele Loclijst...</name>
-        <adapter>jmri.jmrit.roster.FullBackupExportAction</adapter>
+        <adapter>jmri.roster.FullBackupExportAction</adapter>
     </node>
     <node name="Import Complete Roster...">
         <name xml:lang="fr">Importer l'Inventaire...</name>
@@ -85,7 +85,7 @@
 		<name xml:lang="ca">Importa tota la flota...</name>
         <name xml:lang="cs">Importovat evidenci...</name>
         <name xml:lang="nl">Importeer Loclijst...</name>
-        <adapter>jmri.jmrit.roster.FullBackupImportAction</adapter>
+        <adapter>jmri.roster.FullBackupImportAction</adapter>
     </node>
     <node>separator</node><!-- separator -->
     <node name="Rebuild Roster">
@@ -96,7 +96,7 @@
 		<name xml:lang="ca">Reconstruir la flota...</name>
         <name xml:lang="cs">Obnovit evidenci</name>
         <name xml:lang="nl">Bouw Loclijst opnieuw op</name>
-        <adapter>jmri.jmrit.roster.RecreateRosterAction</adapter>
+        <adapter>jmri.roster.RecreateRosterAction</adapter>
     </node>
     <node name="Validate XML File...">
         <name xml:lang="fr">Valider Fichier XML...</name>
@@ -108,7 +108,7 @@
         <name xml:lang="ja_JP">XML\u30d5\u30a1\u30a4\u30eb\u3092\u8a8d\u8a3c...</name>
 		<name xml:lang="ca">Validar el fitxer XML...</name>
         <name xml:lang="nl">Valideer XML bestand...</name>
-        <adapter>jmri.jmrit.XmlFileValidateAction</adapter>
+        <adapter>jmri.util.xml.XmlFileValidateAction</adapter>
     </node>
     <node>separator</node><!-- separator -->
     <node>separator</node><!-- separator -->
@@ -147,7 +147,7 @@
 			<name xml:lang="ca">Resum</name>
             <name xml:lang="cs">Souhrn</name>
             <name xml:lang="nl">Samenvatting</name>
-            <adapter>jmri.jmrit.roster.PrintRosterAction</adapter>
+            <adapter>jmri.roster.PrintRosterAction</adapter>
             <option class="boolean.class" setting="false">isPreview</option>
         </node>
         <node name="List">
@@ -157,7 +157,7 @@
             <name xml:lang="ca">Llista</name>
             <name xml:lang="cs">Seznam</name>
             <name xml:lang="nl">Lijst</name>
-            <adapter>jmri.jmrit.roster.PrintListAction</adapter>
+            <adapter>jmri.roster.PrintListAction</adapter>
             <option class="boolean.class" setting="false">isPreview</option>
         </node>
     </node>
@@ -185,7 +185,7 @@
 			<name xml:lang="ca">Resum</name>
             <name xml:lang="cs">Souhrn</name>
             <name xml:lang="nl">Samenvatting</name>
-            <adapter>jmri.jmrit.roster.PrintRosterAction</adapter>
+            <adapter>jmri.roster.PrintRosterAction</adapter>
             <option class="boolean.class" setting="true">isPreview</option>
         </node>
         <node name="List">
@@ -195,7 +195,7 @@
             <name xml:lang="ca">Llista</name>
             <name xml:lang="cs">Seznam</name>
             <name xml:lang="nl">Lijst</name>
-            <adapter>jmri.jmrit.roster.PrintListAction</adapter>
+            <adapter>jmri.roster.PrintListAction</adapter>
             <option class="boolean.class" setting="true">isPreview</option>
         </node>
     </node>
@@ -387,7 +387,7 @@
         <name xml:lang="cs">Vytvořit skupinu evidence</name>
         <name xml:lang="nl">Voeg nieuwe Locgroep toe</name>
         <mnemonic>c</mnemonic>
-        <adapter>jmri.jmrit.roster.swing.CreateRosterGroupAction</adapter>
+        <adapter>jmri.roster.swing.CreateRosterGroupAction</adapter>
     </node>
     <node name="Rename Roster Group">
         <name xml:lang="fr">Renommer Groupe d'Inventaire</name>
@@ -398,7 +398,7 @@
         <name xml:lang="cs">Přejmenovat skupinu evidence</name>
         <name xml:lang="nl">Hernoem Locgroep</name>
         <mnemonic>r</mnemonic>
-        <adapter>jmri.jmrit.roster.swing.RenameRosterGroupAction</adapter>
+        <adapter>jmri.roster.swing.RenameRosterGroupAction</adapter>
         </node>
     <node name="Duplicate Roster Group">
         <name xml:lang="fr">Dupliquer Groupe d'Inventaire</name>
@@ -408,7 +408,7 @@
 		<name xml:lang="ca">Duplica grup de la flota</name>
         <name xml:lang="cs">Duplikovat skupinu evidence</name>
         <name xml:lang="nl">Dupliceer Locgroep</name>
-        <adapter>jmri.jmrit.roster.swing.CopyRosterGroupAction</adapter>
+        <adapter>jmri.roster.swing.CopyRosterGroupAction</adapter>
         </node>
     <node name="Delete Roster Group">
         <name xml:lang="fr">Supprimer Groupe d'Inventaire</name>
@@ -419,7 +419,7 @@
         <name xml:lang="cs">Vymazat skupinu evidence</name>
         <name xml:lang="nl">Wis Locgroep</name>
         <mnemonic>d</mnemonic>
-        <adapter>jmri.jmrit.roster.swing.DeleteRosterGroupAction</adapter>
+        <adapter>jmri.roster.swing.DeleteRosterGroupAction</adapter>
         <current>deletegroup</current>
     </node>
     <node>separator</node><!-- separator -->
@@ -431,7 +431,7 @@
         <name xml:lang="cs">Tabulka spojení skupiny evidence</name>
         <name xml:lang="nl">Locgroeplijst-koppelingen</name>
         <mnemonic>t</mnemonic>
-        <adapter>jmri.jmrit.roster.swing.rostergroup.RosterGroupTableAction</adapter>
+        <adapter>jmri.roster.swing.rostergroup.RosterGroupTableAction</adapter>
         <current>grouptable</current>
     </node>
   </node>
@@ -568,7 +568,7 @@
 		<name xml:lang="ca">Reconstrueix l'Índex de la flota</name>
         <name xml:lang="cs">Obnovit rejstřík evidence</name>
         <name xml:lang="nl">Bouw Loclijst opnieuw op</name>
-        <adapter>jmri.jmrit.roster.RecreateRosterAction</adapter>
+        <adapter>jmri.roster.RecreateRosterAction</adapter>
     </node>
     <node name="Recreate Decoder Index">
         <name xml:lang="fr">Reconstruire l'Index des Décodeurs</name>
@@ -578,7 +578,7 @@
 		<name xml:lang="ca">Reconstrueix l'Índex dels Descodificadors</name>
         <name xml:lang="cs">Obnovit rejstřík dekodérů</name>
         <name xml:lang="nl">Bouw Decoder-index opnieuw op</name>
-        <adapter>jmri.jmrit.decoderdefn.DecoderIndexCreateAction</adapter>
+        <adapter>jmri.decoderdefn.DecoderIndexCreateAction</adapter>
     </node>
     <node name="Update Decoder Definitions">
         <name xml:lang="fr">Mise-à-Jour Définitions Décodeurs</name>
@@ -587,7 +587,7 @@
 		<name xml:lang="ca">Actualitza la definició dels Descodificadors</name>
         <name xml:lang="cs">Aktualizovat definice dekodérů</name>
         <name xml:lang="nl">Werk Decoderdefinities bij</name>
-        <adapter>jmri.jmrit.roster.UpdateDecoderDefinitionAction</adapter>
+        <adapter>jmri.roster.UpdateDecoderDefinitionAction</adapter>
     </node>
     <node>separator</node><!-- separator -->
     <node name="Run Script...">

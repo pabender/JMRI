@@ -36,7 +36,7 @@ import jmri.NamedBeanHandle;
 import jmri.Sensor;
 import jmri.CatalogTreeLeaf;
 import jmri.CatalogTreeNode;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

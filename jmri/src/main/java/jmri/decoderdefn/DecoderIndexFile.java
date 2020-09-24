@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.decoderdefn;
+package jmri.decoderdefn;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  * having to manipulate files.
  * <p>
  * This class doesn't provide tools for defining the index; that's done
- * by {@link jmri.jmrit.decoderdefn.DecoderIndexCreateAction}, which 
+ * by {@link jmri.decoderdefn.DecoderIndexCreateAction}, which
  * rebuilds it from the decoder files.
  * <p>
  * Multiple DecoderIndexFile objects don't make sense, so we use an "instance"
@@ -46,7 +46,7 @@ import org.slf4j.LoggerFactory;
  * one is created.
  * 
  * @author Bob Jacobsen Copyright (C) 2001, 2019
- * @see jmri.jmrit.decoderdefn.DecoderIndexCreateAction
+ * @see jmri.decoderdefn.DecoderIndexCreateAction
  * 
  */
 public class DecoderIndexFile extends XmlFile {

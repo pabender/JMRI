@@ -50,7 +50,7 @@ public class SignalMastTableAction extends AbstractTableAction<SignalMast> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.SignalMastTable";
+        return "package.jmri.beantable.SignalMastTable";
     }
 
     // prepare the Add Signal Mast frame

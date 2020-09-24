@@ -1,11 +1,10 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable.usermessagepreferences;
+package jmri.beantable.usermessagepreferences;
 
 import jmri.swing.PreferencesPanelTestBase;
 import jmri.util.JUnitUtil;
 
 import org.junit.jupiter.api.*;
-import org.junit.Assert;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

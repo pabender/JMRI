@@ -30,7 +30,7 @@ import jmri.NamedBean;
 import jmri.NamedBeanHandle;
 import jmri.Sensor;
 import jmri.Turnout;
-import jmri.jmrit.beantable.AddNewDevicePanel;
+import jmri.beantable.AddNewDevicePanel;
 import jmri.jmrit.display.Positionable;
 import jmri.util.JmriJFrame;
 import org.slf4j.Logger;

@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
 package jmri.jmrit.display.layoutEditor;
 
-import static jmri.jmrit.XmlFile.newDocument;
-import static jmri.jmrit.XmlFile.xsltLocation;
+import static jmri.util.xml.XmlFile.newDocument;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,20 +13,17 @@ import jmri.BasicRosterEntry;
 import jmri.Block;
 import jmri.BlockManager;
 import jmri.Path;
-import jmri.jmrit.XmlFile;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.util.xml.XmlFile;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
 import jmri.util.FileUtil;
 import jmri.PowerManager;
-import jmri.JmriException;
 import org.jdom2.Attribute;
 import org.jdom2.DataConversionException;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.ProcessingInstruction;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Handle saving/restoring block value information to XML files. This class
@@ -107,7 +103,7 @@ public class BlockValueFile extends XmlFile {
                                 if (pass.equals("set")) {
                                     Object v = bl.getAttribute("value").getValue();
                                     if (bl.getAttribute("valueClass") != null) {
-                                        if (bl.getAttribute("valueClass").getValue().equals("jmri.jmrit.roster.RosterEntry")) {
+                                        if (bl.getAttribute("valueClass").getValue().equals("jmri.roster.RosterEntry")) {
                                             RosterEntry re = Roster.getDefault().getEntryForId(((String) v));
                                             if (re != null) {
                                                 v = re;
@@ -175,7 +171,7 @@ public class BlockValueFile extends XmlFile {
                         val.setAttribute("systemname", sname);
                         if (o instanceof RosterEntry) {
                             val.setAttribute("value", ((BasicRosterEntry) o).getId());
-                            val.setAttribute("valueClass", "jmri.jmrit.roster.RosterEntry");
+                            val.setAttribute("valueClass", "jmri.roster.RosterEntry");
                         } else {
                             val.setAttribute("value", o.toString());
                         }

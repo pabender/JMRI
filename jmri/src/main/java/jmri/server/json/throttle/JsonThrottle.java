@@ -27,7 +27,7 @@ import jmri.InstanceManager;
 import jmri.LocoAddress;
 import jmri.Throttle;
 import jmri.ThrottleListener;
-import jmri.jmrit.roster.Roster;
+import jmri.roster.Roster;
 import jmri.server.json.JSON;
 import jmri.server.json.JsonException;
 import org.slf4j.Logger;
@@ -85,7 +85,7 @@ public class JsonThrottle implements ThrottleListener, PropertyChangeListener {
      * for an existing throttle.
      * <p>
      * data can contain either a string {@link jmri.server.json.JSON#ID} node
-     * containing the ID of a {@link jmri.jmrit.roster.RosterEntry} or an
+     * containing the ID of a {@link jmri.roster.RosterEntry} or an
      * integer {@link jmri.server.json.JSON#ADDRESS} node. If data contains an
      * ADDRESS, the ID node is ignored. The ADDRESS may be accompanied by a
      * boolean {@link jmri.server.json.JSON#IS_LONG_ADDRESS} node specifying the

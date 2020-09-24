@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import java.awt.GraphicsEnvironment;
 import javax.swing.JFrame;
@@ -76,7 +76,7 @@ public class ReporterTableActionTest extends AbstractTableActionBase<Reporter> {
     public void setUp() {
         JUnitUtil.setUp();
         jmri.util.JUnitUtil.resetProfileManager();
-        helpTarget = "package.jmri.jmrit.beantable.ReporterTable";
+        helpTarget = "package.jmri.beantable.ReporterTable";
         a = new ReporterTableAction();
     }
 

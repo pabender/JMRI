@@ -33,12 +33,12 @@ import javax.swing.SwingConstants;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreeNode;
 import jmri.InstanceManager;
-import jmri.jmrit.decoderdefn.DecoderFile;
-import jmri.jmrit.decoderdefn.DecoderIndexFile;
-import jmri.jmrit.symbolicprog.CombinedLocoSelTreePane;
-import jmri.jmrit.symbolicprog.CvTableModel;
-import jmri.jmrit.symbolicprog.CvValue;
-import jmri.jmrit.symbolicprog.SymbolicProgBundle;
+import jmri.decoderdefn.DecoderFile;
+import jmri.decoderdefn.DecoderIndexFile;
+import jmri.symbolicprog.CombinedLocoSelTreePane;
+import jmri.symbolicprog.CvTableModel;
+import jmri.symbolicprog.CvValue;
+import jmri.symbolicprog.SymbolicProgBundle;
 import jmri.util.swing.JmriAbstractAction;
 import jmri.util.swing.WindowInterface;
 import jmri.util.xml.XmlFile;
@@ -106,9 +106,9 @@ public class UpdateDecoderDefinitionAction extends JmriAbstractAction {
     /**
      * The subset of the <code>replacementList</code> that also matches
      * both the
-     * {@link jmri.jmrit.decoderdefn.IdentifyDecoder} manufacturerID
+     * {@link jmri.decoderdefn.IdentifyDecoder} manufacturerID
      * stored in CV8 and the
-     * {@link jmri.jmrit.decoderdefn.IdentifyDecoder} versionID stored
+     * {@link jmri.decoderdefn.IdentifyDecoder} versionID stored
      * in CV7.
      */
     transient volatile List<DecoderFile> versionMatchList;
@@ -688,9 +688,9 @@ public class UpdateDecoderDefinitionAction extends JmriAbstractAction {
      * A {@link #versionMatchList versionMatchList} that is the subset of
      * {@link #replacementList replacementList} that also matches both a
      * manufacturerID (from 
-     * {@link jmri.jmrit.decoderdefn.IdentifyDecoder} mfgID) 
+     * {@link jmri.decoderdefn.IdentifyDecoder} mfgID)
      * stored in CV8 and a versionID (from
-     * {@link jmri.jmrit.decoderdefn.IdentifyDecoder} modelID)  stored
+     * {@link jmri.decoderdefn.IdentifyDecoder} modelID)  stored
      * in CV7.
      * </li>
      * </ul>

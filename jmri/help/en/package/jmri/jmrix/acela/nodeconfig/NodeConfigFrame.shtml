@@ -93,8 +93,9 @@ It will look something like (note the second "connection port" line):
 <p>
   &lt; gui LAFclass="Metal" class="jmri.configurexml.GuiLafConfigPaneXml" LocaleLanguage="en" LocaleCountry="CA" LocaleVariant="" /&gt;
 <p>
-  &lt; programmer defaultFile="Basic" verifyBeforeWrite="no" class="jmri.jmrit.symbolicprog.configurexml.ProgrammerConfigPaneXml" /&gt;
-<p>
+    &lt; programmer defaultFile="Basic" verifyBeforeWrite="no"
+    class="jmri.symbolicprog.configurexml.ProgrammerConfigPaneXml" /&gt;
+        <p>
   &lt; connection port="COM4" speed="9,600 bps" option1="" option2="" class="jmri.jmrix.acela.serialdriver.configurexml.ConnectionConfigXml" /&gt;
 <p>
   &lt;!--Written by JMRI version 2.2 on Mon Jul 28 20:58:27 EDT 2008 $Id$--&gt;
@@ -131,8 +132,9 @@ It will look something like (note the lines after the second "connection port" l
 <p>
   &lt; gui LAFclass="Metal" class="jmri.configurexml.GuiLafConfigPaneXml" LocaleLanguage="en" LocaleCountry="CA" LocaleVariant="" /&gt;
 <p>
-  &lt; programmer defaultFile="Basic" verifyBeforeWrite="no" class="jmri.jmrit.symbolicprog.configurexml.ProgrammerConfigPaneXml" /&gt;
-<p>
+    &lt; programmer defaultFile="Basic" verifyBeforeWrite="no"
+    class="jmri.symbolicprog.configurexml.ProgrammerConfigPaneXml" /&gt;
+        <p>
   &lt; connection port="COM4" speed="9,600 bps" option1="" option2="" class="jmri.jmrix.acela.serialdriver.configurexml.ConnectionConfigXml" /&gt;
 <p>
     &lt; node name="0"&gt;

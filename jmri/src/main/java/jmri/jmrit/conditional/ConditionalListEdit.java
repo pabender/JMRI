@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 import jmri.Conditional.Operator;
 import jmri.Conditional.State;
 import jmri.implementation.DefaultConditionalAction;
-import jmri.jmrit.beantable.LRouteTableAction;
+import jmri.beantable.LRouteTableAction;
 import jmri.jmrit.logix.OBlock;
 import jmri.jmrit.logix.Warrant;
 import jmri.jmrit.sensorgroup.SensorGroupFrame;

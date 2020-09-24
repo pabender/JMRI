@@ -152,9 +152,9 @@ public class DeleteRosterItemAction extends JmriAbstractAction {
     boolean userOK(String entry, String filename, String fullFileName) {
         return (JOptionPane.YES_OPTION
                 == JOptionPane.showConfirmDialog(_who,
-                        java.text.MessageFormat.format(ResourceBundle.getBundle("jmri.jmrit.roster.JmritRosterBundle").getString("DeletePrompt"),
+                        java.text.MessageFormat.format(ResourceBundle.getBundle("jmri.roster.JmritRosterBundle").getString("DeletePrompt"),
                                 entry, fullFileName),
-                        java.text.MessageFormat.format(ResourceBundle.getBundle("jmri.jmrit.roster.JmritRosterBundle").getString("DeleteTitle"),
+                        java.text.MessageFormat.format(ResourceBundle.getBundle("jmri.roster.JmritRosterBundle").getString("DeleteTitle"),
                                 entry),
                         JOptionPane.YES_NO_OPTION));
     }

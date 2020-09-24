@@ -33,7 +33,7 @@
           Define the XML stucture for storing the contents of a FileHistory implementation.
         </xs:documentation>
         <xs:appinfo>
-            <jmri:usingclass configurexml="true">jmri.jmrit.revhistory.configurexml.FileHistoryXml</jmri:usingclass>
+            <jmri:usingclass configurexml="true">jmri.util.revhistory.configurexml.FileHistoryXml</jmri:usingclass>
         </xs:appinfo>
       </xs:annotation>
       <xs:sequence>

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import jmri.util.gui.GuiLafPreferencesManager;
 import java.awt.GraphicsEnvironment;
@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Tests for the jmri.jmrit.beantable.SensorTableAction class.
+ * Tests for the jmri.beantable.SensorTableAction class.
  *
  * @author Paul Bender Copyright (C) 2017
  */
@@ -146,7 +146,7 @@ public class SensorTableActionTest extends AbstractTableActionBase<Sensor> {
 
         JTableOperator tbl = new JTableOperator(jfo, 0);
         // find the "Edit" button and press it.  This is in the table body.
-        tbl.clickOnCell(0,jmri.jmrit.beantable.sensor.SensorTableDataModel.EDITCOL);
+        tbl.clickOnCell(0, jmri.beantable.sensor.SensorTableDataModel.EDITCOL);
 
         JFrame f2 = JFrameOperator.waitJFrame(getEditFrameName(), true, true);
         jmri.util.swing.JemmyUtil.pressButton(new JFrameOperator(f2),Bundle.getMessage("ButtonCancel"));
@@ -167,7 +167,7 @@ public class SensorTableActionTest extends AbstractTableActionBase<Sensor> {
         JUnitUtil.setUp();
         jmri.util.JUnitUtil.resetProfileManager();
         jmri.util.JUnitUtil.initInternalSensorManager();
-        helpTarget = "package.jmri.jmrit.beantable.SensorTable"; 
+        helpTarget = "package.jmri.beantable.SensorTable";
         a = new SensorTableAction();
     }
 

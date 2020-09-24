@@ -50,10 +50,10 @@ public class DnDJTable extends JTable implements DropTargetListener,
         DragGestureListener, DragSourceListener, Transferable {
 
     public static final String TableCellFlavorMime = DataFlavor.javaJVMLocalObjectMimeType
-            + ";class=jmri.jmrit.beantable.oblock.DnDJTable.TableCellSelection";
+            + ";class=jmri.beantable.oblock.DnDJTable.TableCellSelection";
     public static final DataFlavor TABLECELL_FLAVOR = new DataFlavor(
             jmri.beantable.oblock.DnDJTable.TableCellSelection.class,
-            "application/x-jmri.jmrit.beantable.oblock.DnDJTable.TableCellSelection");
+            "application/x-jmri.beantable.oblock.DnDJTable.TableCellSelection");
 
     private Point _dropPoint;
     private int[] _skipCols = new int[0];

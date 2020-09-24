@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.decoderdefn;
+package jmri.decoderdefn;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Locale;
@@ -25,7 +25,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class Bundle extends jmri.jmrit.Bundle {
 
     @CheckForNull
-    private static final String name = "jmri.jmrit.decoderdefn.DecoderFile"; // NOI18N
+    private static final String name = "jmri.decoderdefn.DecoderFile"; // NOI18N
 
     //
     // below here is boilerplate to be copied exactly

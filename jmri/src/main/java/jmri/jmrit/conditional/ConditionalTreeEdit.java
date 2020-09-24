@@ -28,7 +28,7 @@ import jmri.*;
 import jmri.Conditional.Operator;
 import jmri.implementation.DefaultConditional;
 import jmri.implementation.DefaultConditionalAction;
-import jmri.jmrit.beantable.LRouteTableAction;
+import jmri.beantable.LRouteTableAction;
 import jmri.jmrit.logix.OBlock;
 import jmri.jmrit.logix.Warrant;
 import jmri.util.FileUtil;

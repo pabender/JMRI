@@ -3,7 +3,7 @@ package jmri.jmrit.display.configurexml;
 
 import java.util.List;
 import jmri.Block;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.BlockContentsIcon;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.layoutEditor.LayoutEditor;

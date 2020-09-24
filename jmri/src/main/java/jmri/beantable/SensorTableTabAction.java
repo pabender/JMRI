@@ -30,6 +30,6 @@ public class SensorTableTabAction extends AbstractTableTabAction<Sensor> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.SensorTable";
+        return "package.jmri.beantable.SensorTable";
     }
 }

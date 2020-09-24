@@ -3,10 +3,9 @@ package jmri.jmrit.logix;
 
 import java.awt.GraphicsEnvironment;
 
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 import jmri.util.JUnitUtil;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.*;
 import org.junit.Assume;
 

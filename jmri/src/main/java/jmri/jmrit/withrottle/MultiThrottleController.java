@@ -4,7 +4,7 @@ package jmri.jmrit.withrottle;
 import java.beans.PropertyChangeEvent;
 
 import jmri.*;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

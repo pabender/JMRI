@@ -47,7 +47,7 @@ public class PanelMenu extends JMenu {
 
         super.add(new jmri.configurexml.LoadXmlUserAction(Bundle.getMessage("MenuItemLoad")));
         super.add(new jmri.configurexml.StoreXmlUserAction(Bundle.getMessage("MenuItemStore")));
-        super.add(new jmri.jmrit.revhistory.swing.FileHistoryAction(Bundle.getMessage("MenuItemShowHistory")));
+        super.add(new jmri.util.revhistory.swing.FileHistoryAction(Bundle.getMessage("MenuItemShowHistory")));
         super.add(new JSeparator());
         panelsSubMenu = new JMenu(Bundle.getMessage("MenuShowPanel"));
         // Add the 'No Panels' item to the sub-menu

@@ -208,7 +208,7 @@ public abstract class AbstractRouteAddEditFrame extends JmriJFrame {
         JComboBoxUtil.setupComboBoxMaxRows(cTurnout);
         JComboBoxUtil.setupComboBoxMaxRows(cLockTurnout);
 
-        addHelpMenu("package.jmri.jmrit.beantable.RouteAddEdit", true);
+        addHelpMenu("package.jmri.beantable.RouteAddEdit", true);
         setLocation(100, 30);
 
         JPanel contentPanel = new JPanel();

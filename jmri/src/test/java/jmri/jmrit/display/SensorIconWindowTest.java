@@ -4,7 +4,7 @@ package jmri.jmrit.display;
 import java.awt.GraphicsEnvironment;
 
 import jmri.Sensor;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.util.JUnitUtil;
 
 import org.junit.jupiter.api.*;

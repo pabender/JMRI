@@ -24,7 +24,7 @@ public class SensorDebounceEditAction extends BeanEditAction<Sensor> {
 
     @Override
     public String helpTarget() {
-        return "package.jmri.jmrit.beantable.SensorAddEdit";
+        return "package.jmri.beantable.SensorAddEdit";
     } // NOI18N
 
     @Override

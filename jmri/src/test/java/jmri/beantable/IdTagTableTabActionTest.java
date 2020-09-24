@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import jmri.util.JUnitUtil;
 
@@ -45,7 +45,7 @@ public class IdTagTableTabActionTest extends AbstractTableTabActionBase {
         JUnitUtil.setUp();
         jmri.util.JUnitUtil.resetProfileManager();
         jmri.util.JUnitUtil.initDefaultUserMessagePreferences();
-        helpTarget = "package.jmri.jmrit.beantable.IdTagTable"; 
+        helpTarget = "package.jmri.beantable.IdTagTable";
         a = new IdTagTableTabAction();
     }
 

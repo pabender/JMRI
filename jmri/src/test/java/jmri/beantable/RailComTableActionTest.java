@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import jmri.IdTag;
 import jmri.util.JUnitUtil;
@@ -39,7 +39,7 @@ public class RailComTableActionTest extends AbstractTableActionBase<IdTag> {
     public void setUp() {
         JUnitUtil.setUp();
         jmri.util.JUnitUtil.resetProfileManager();
-        helpTarget = "package.jmri.jmrit.beantable.RailComTable"; 
+        helpTarget = "package.jmri.beantable.RailComTable";
         a = new RailComTableAction();
     }
 

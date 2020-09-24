@@ -7,7 +7,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 
 import jmri.InstanceManager;
-import jmri.jmrit.roster.RosterConfigManager;
+import jmri.roster.RosterConfigManager;
 import jmri.util.JUnitUtil;
 
 import org.junit.Assert;

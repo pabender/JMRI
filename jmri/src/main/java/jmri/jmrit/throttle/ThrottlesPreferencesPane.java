@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import jmri.InstanceManager;
+import jmri.ThrottlesPreferences;
 import jmri.swing.PreferencesPanel;
 import org.openide.util.lookup.ServiceProvider;
 

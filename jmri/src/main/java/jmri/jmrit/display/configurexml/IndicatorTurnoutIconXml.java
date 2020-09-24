@@ -9,7 +9,7 @@ import java.util.Map.Entry;
 import jmri.NamedBeanHandle;
 import jmri.Sensor;
 import jmri.Turnout;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.IndicatorTurnoutIcon;
 import jmri.jmrit.logix.OBlock;

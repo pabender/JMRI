@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.symbolicprog;
+package jmri.symbolicprog;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JLabel;
 
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 
 import org.jdom2.Element;
 import org.junit.Assert;

@@ -57,7 +57,7 @@ public class RouteTableAction extends AbstractTableAction<Route> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.RouteTable";
+        return "package.jmri.beantable.RouteTable";
     }
 
 

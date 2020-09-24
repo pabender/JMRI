@@ -288,7 +288,7 @@ public class RailComTableAction extends AbstractTableAction<IdTag> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.RailComTable";
+        return "package.jmri.beantable.RailComTable";
     }
 
     @Override

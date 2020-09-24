@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import java.awt.GraphicsEnvironment;
 
@@ -28,7 +28,7 @@ public class OBlockTableActionTest {
         a.actionPerformed(new java.awt.event.ActionEvent(a, 1, ""));
 
         // Find new table window by name
-        JmriJFrame doc = JmriJFrame.getFrame(jmri.jmrit.beantable.oblock.Bundle.getMessage("TitleOBlocks"));
+        JmriJFrame doc = JmriJFrame.getFrame(jmri.beantable.oblock.Bundle.getMessage("TitleOBlocks"));
         Assert.assertNotNull("Occupancy window", doc);
         new QueueTool().waitEmpty();
 

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import jmri.util.gui.GuiLafPreferencesManager;
 
@@ -24,7 +24,7 @@ import org.netbeans.jemmy.operators.JTextFieldOperator;
 import org.netbeans.jemmy.util.NameComponentChooser;
 
 /**
- * Tests for the jmri.jmrit.beantable.LightTableAction class.
+ * Tests for the jmri.beantable.LightTableAction class.
  *
  * @author Paul Bender Copyright (C) 2017
  */
@@ -746,7 +746,7 @@ public class LightTableActionTest extends AbstractTableActionBase<Light> {
         jmri.util.JUnitUtil.initInternalSensorManager();
         jmri.util.JUnitUtil.initInternalTurnoutManager();
         jmri.util.JUnitUtil.initDefaultUserMessagePreferences();
-        helpTarget = "package.jmri.jmrit.beantable.LightTable";
+        helpTarget = "package.jmri.beantable.LightTable";
         a = new LightTableAction();
         lightManager = InstanceManager.getDefault(LightManager.class);
         sensorManager = InstanceManager.getDefault(SensorManager.class);

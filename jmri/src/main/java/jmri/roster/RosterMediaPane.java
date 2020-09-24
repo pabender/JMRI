@@ -54,7 +54,7 @@ public class RosterMediaPane extends JPanel {
     JTextField _URL = new JTextField(30);
     RosterAttributesTableModel rosterAttributesModel;
 
-    final ResourceBundle rb = ResourceBundle.getBundle("jmri.jmrit.roster.JmritRosterBundle");
+    final ResourceBundle rb = ResourceBundle.getBundle("jmri.roster.JmritRosterBundle");
 
     /**
      * This constructor allows the panel to be used in visual bean editors, but

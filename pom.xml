@@ -12,6 +12,9 @@
 
     <modules>
        <module>jmri</module>
+       <module>jmrix</module>
+       <module>jmrit</module>
+       <module>jmris</module>
        <module>testutil</module>
        <module>apps</module>
     </modules>

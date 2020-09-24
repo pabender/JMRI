@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.throttle;
+package jmri.util;
 
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeEvent;
@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import jmri.InstanceManager;
 import jmri.JmriException;
 import jmri.PowerManager;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

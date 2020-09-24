@@ -21,7 +21,7 @@ import jmri.AudioException;
 import jmri.AudioManager;
 import jmri.InstanceManager;
 import jmri.jmrit.audio.AudioSource;
-import jmri.jmrit.beantable.AudioTableAction.AudioTableDataModel;
+import jmri.beantable.AudioTableAction.AudioTableDataModel;
 
 /**
  * Defines a GUI for editing AudioSource objects.

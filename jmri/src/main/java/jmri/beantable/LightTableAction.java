@@ -552,7 +552,7 @@ public class LightTableAction extends AbstractTableAction<Light> {
      */
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.LightTable";
+        return "package.jmri.beantable.LightTable";
     }
 
     JmriJFrame addFrame = null;
@@ -619,7 +619,7 @@ public class LightTableAction extends AbstractTableAction<Light> {
         }
         if (addFrame == null) {
             addFrame = new JmriJFrame(Bundle.getMessage("TitleAddLight"), false, true);
-            addFrame.addHelpMenu("package.jmri.jmrit.beantable.LightAddEdit", true);
+            addFrame.addHelpMenu("package.jmri.beantable.LightAddEdit", true);
             addFrame.setLocation(100, 30);
             Container contentPane = addFrame.getContentPane();
             contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
@@ -1431,7 +1431,7 @@ public class LightTableAction extends AbstractTableAction<Light> {
     private void addEditControlWindow() {
         if (addControlFrame == null) {
             addControlFrame = new JmriJFrame(Bundle.getMessage("TitleAddLightControl"), false, true);
-            addControlFrame.addHelpMenu("package.jmri.jmrit.beantable.LightAddEdit", true);
+            addControlFrame.addHelpMenu("package.jmri.beantable.LightAddEdit", true);
             addControlFrame.setLocation(120, 40);
             Container contentPane = addControlFrame.getContentPane();
             contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));

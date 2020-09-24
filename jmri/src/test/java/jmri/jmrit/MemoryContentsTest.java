@@ -1,9 +1,13 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.util;
+package jmri.jmrit;
 
 import java.io.File;
 import java.io.IOException;
 
+import jmri.util.FileUtil;
+import jmri.util.JUnitAppender;
+
+import jmri.util.MemoryContents;
 import org.junit.jupiter.api.*;
 import org.junit.Assert;
 import org.slf4j.Logger;

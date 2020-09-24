@@ -18,7 +18,7 @@
     </node>
     <node><name>Sensors</name>
           <name xml:lang="cs">Snímače</name>
-      <panel>jmri.jmrit.beantable.sensor.SensorTablePanel</panel>
+      <panel>jmri.beantable.sensor.SensorTablePanel</panel>
     </node>
   </node>
 

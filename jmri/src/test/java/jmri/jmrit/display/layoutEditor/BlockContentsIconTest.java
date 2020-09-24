@@ -42,7 +42,7 @@ public class BlockContentsIconTest {
 
         jf.getContentPane().add(new javax.swing.JLabel("| Expect roster entry: "));
 
-        jmri.jmrit.roster.RosterEntry re = jmri.jmrit.roster.RosterEntry.fromFile(new java.io.File("src/test/java/jmri/jmrit/roster/ACL1012-Schema.xml"));
+        jmri.roster.RosterEntry re = jmri.roster.RosterEntry.fromFile(new java.io.File("src/test/java/jmri/jmrit/roster/ACL1012-Schema.xml"));
 
         jmri.InstanceManager.getDefault(BlockManager.class).getBlock("IB1").setValue(re);
         new QueueTool().waitEmpty(100);

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import jmri.InstanceManager;
 import jmri.SignalMastLogic;
@@ -266,7 +266,7 @@ public class SignalMastLogicTableActionTest extends AbstractTableActionBase<Sign
     public void setUp() {
         JUnitUtil.setUp();
         jmri.util.JUnitUtil.resetProfileManager();
-        helpTarget = "package.jmri.jmrit.beantable.SignalMastLogicTable"; 
+        helpTarget = "package.jmri.beantable.SignalMastLogicTable";
         a = new SignalMastLogicTableAction();
     }
 

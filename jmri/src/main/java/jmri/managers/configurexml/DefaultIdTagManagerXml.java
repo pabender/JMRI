@@ -16,11 +16,11 @@ import org.slf4j.LoggerFactory;
 import jmri.Application;
 import jmri.IdTag;
 import jmri.IdTagManager;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.util.FileUtil;
 
 /**
- * Concrete implementation of abstract {@link jmri.jmrit.XmlFile} for
+ * Concrete implementation of abstract {@link XmlFile} for
  * the {@link jmri.managers.DefaultIdTagManager}.
  *
  * @author Bob Jacobsen Copyright (C) 2010

@@ -51,7 +51,7 @@
       they are not stored in each directory alongside the XML
       files. There are just too many locations to keep such a set
       of schema definition files up to date. JMRI itself, via the
-      jmri.jmrit.XmlFile class, provides support for locating those
+      jmri.util.xml.XmlFile class, provides support for locating those
       files when the XML parser needs them.</p>
 
       <h2 id="modschema">Modifying JMRI Schema</h2>This section

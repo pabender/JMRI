@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import jmri.jmrit.catalog.CatalogPane;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 
 /**
  * Provides a simple editor for selecting N NamedIcons, perhaps for use in

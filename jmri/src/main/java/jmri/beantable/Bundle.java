@@ -25,7 +25,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class Bundle extends jmri.jmrit.Bundle {
 
     @CheckForNull
-    private static final String name = "jmri.jmrit.beantable.BeanTableBundle"; // NOI18N
+    private static final String name = "jmri.beantable.BeanTableBundle"; // NOI18N
 
     //
     // below here is boilerplate to be copied exactly

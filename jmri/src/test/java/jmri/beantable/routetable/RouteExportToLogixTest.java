@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable.routetable;
+package jmri.beantable.routetable;
 
 import jmri.*;
 import jmri.implementation.DefaultConditional;
@@ -20,7 +20,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for jmri.jmrit.beantable.routtable.RouteExportToLogix
+ * Tests for jmri.beantable.routtable.RouteExportToLogix
  *
  * @author Paul Bender Copyright (C) 2020
  */

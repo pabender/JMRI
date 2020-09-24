@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.revhistory.configurexml;
+package jmri.util.revhistory.configurexml;
 
 import java.util.ArrayList;
-import jmri.jmrit.revhistory.FileHistory;
+import jmri.util.revhistory.FileHistory;
 import org.jdom2.Element;
 
 /**

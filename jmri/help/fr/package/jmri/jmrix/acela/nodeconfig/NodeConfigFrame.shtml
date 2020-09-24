@@ -89,8 +89,9 @@ Appuyez sur le bouton [Sauvegarder]. Le programme JMRI prendra fin.
 <p>
   &lt; gui LAFclass="Metal" class="jmri.configurexml.GuiLafConfigPaneXml" LocaleLanguage="en" LocaleCountry="CA" LocaleVariant="" />
 <p>
-  &lt; programmer defaultFile="Basic" verifyBeforeWrite="no" class="jmri.jmrit.symbolicprog.configurexml.ProgrammerConfigPaneXml" />
-<p>
+    &lt; programmer defaultFile="Basic" verifyBeforeWrite="no"
+    class="jmri.symbolicprog.configurexml.ProgrammerConfigPaneXml" />
+        <p>
   &lt; connection port="COM4" speed="9,600 bps" option1="" option2="" class="jmri.jmrix.acela.serialdriver.configurexml.ConnectionConfigXml" />
 <p>
   &lt;!--Written by JMRI version 2.2 on Mon Jul 28 20:58:27 EDT 2008 $Id$--&gt;
@@ -127,8 +128,9 @@ Il ressemblera à (notez les lignes après le second "port de connexion" ligne):
 <p>
   &lt; gui LAFclass="Metal" class="jmri.configurexml.GuiLafConfigPaneXml" LocaleLanguage="en" LocaleCountry="CA" LocaleVariant="" />
 <p>
-  &lt; programmer defaultFile="Basic" verifyBeforeWrite="no" class="jmri.jmrit.symbolicprog.configurexml.ProgrammerConfigPaneXml" />
-<p>
+    &lt; programmer defaultFile="Basic" verifyBeforeWrite="no"
+    class="jmri.symbolicprog.configurexml.ProgrammerConfigPaneXml" />
+        <p>
   &lt; connection port="COM4" speed="9,600 bps" option1="" option2="" class="jmri.jmrix.acela.serialdriver.configurexml.ConnectionConfigXml" />
 <p>
     &lt; node name="0">

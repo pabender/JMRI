@@ -27,7 +27,7 @@ import javax.swing.TransferHandler;
 import javax.swing.event.ListSelectionEvent;
 import jmri.NamedBeanHandle;
 import jmri.Turnout;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

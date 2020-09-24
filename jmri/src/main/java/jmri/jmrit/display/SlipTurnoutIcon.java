@@ -10,7 +10,7 @@ import javax.swing.JPopupMenu;
 import jmri.InstanceManager;
 import jmri.NamedBeanHandle;
 import jmri.Turnout;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -577,6 +577,7 @@ public class SlipTurnoutIcon extends PositionableLabel implements java.beans.Pro
         upperWestToUpperEast.rotate(deg, this);
         unknown.rotate(deg, this);
         inconsistent.rotate(deg, this);
+        setDegrees(deg);
         displayState(turnoutState());
     }
 

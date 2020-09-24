@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.beantable;
+package jmri.beantable;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -28,14 +28,14 @@ import jmri.Turnout;
 import jmri.util.JUnitUtil;
 
 /**
- * Tests for the jmri.jmrit.beantable.LRouteTableAction class
+ * Tests for the jmri.beantable.LRouteTableAction class
  *
  * @author Pete Cressman Copyright 2009
  */
 public class LRouteTableActionTest {
 
     static final ResourceBundle rbx = ResourceBundle
-            .getBundle("jmri.jmrit.beantable.LRouteTableBundle");
+            .getBundle("jmri.beantable.LRouteTableBundle");
 
     private LRouteTableAction _lRouteTable;
     private LogixTableAction _logixTable;

@@ -125,8 +125,8 @@ public class WarrantTableFrame extends jmri.util.JmriJFrame implements MouseList
         ControlBoxCellEditor controlEd = new ControlBoxCellEditor(new JComboBox<>(controls));
 
         table.setDefaultRenderer(Boolean.class, new ButtonRenderer());
-        table.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-        table.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+        table.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+        table.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
 
         table.getColumnModel().getColumn(WarrantTableModel.CONTROL_COLUMN).setCellEditor(controlEd);
         table.getColumnModel().getColumn(WarrantTableModel.ROUTE_COLUMN).setCellEditor(comboEd);

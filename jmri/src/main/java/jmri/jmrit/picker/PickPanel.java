@@ -75,7 +75,7 @@ public class PickPanel extends JPanel implements ListSelectionListener, ChangeLi
                 addToTable();
             }
         };
-        _addPanel = new jmri.jmrit.beantable.AddNewDevicePanel(
+        _addPanel = new jmri.beantable.AddNewDevicePanel(
                 _sysNametext, _userNametext, "addToTable", okListener, cancelListener); // No I18N
         // hide Cancel button as not handled bij Picker Panel
 

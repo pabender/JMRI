@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.sound;
+package jmri.util.sound;
 
 import java.util.Arrays;
 import org.slf4j.Logger;

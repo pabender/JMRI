@@ -7,7 +7,7 @@ import javax.swing.BoxLayout;
 import javax.vecmath.Point3d;
 
 import jmri.InstanceManager;
-import jmri.jmrit.roster.RosterConfigManager;
+import jmri.roster.RosterConfigManager;
 import jmri.jmrix.rps.Engine;
 import jmri.jmrix.rps.Measurement;
 import jmri.jmrix.rps.Model;

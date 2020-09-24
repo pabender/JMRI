@@ -247,8 +247,8 @@ public class SignalGroupTableAction extends AbstractTableAction<SignalGroup> imp
             @Override
             public void configureTable(JTable table) {
                 table.setDefaultRenderer(Boolean.class, new EnablingCheckboxRenderer());
-                table.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-                table.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+                table.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+                table.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
                 super.configureTable(table);
             }
 
@@ -338,7 +338,7 @@ public class SignalGroupTableAction extends AbstractTableAction<SignalGroup> imp
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.SignalGroupTable";
+        return "package.jmri.beantable.SignalGroupTable";
     }
 
     /**
@@ -467,7 +467,7 @@ public class SignalGroupTableAction extends AbstractTableAction<SignalGroup> imp
             mainSignalComboBox = new NamedBeanComboBox<>(InstanceManager.getDefault(SignalMastManager.class), null, DisplayOptions.DISPLAYNAME);
             mainSignalComboBox.setAllowNull(true); // causes NPE when user selects that 1st line, so do not respond to result null
             addFrame = new JmriJFrame(Bundle.getMessage("AddSignalGroup"), false, true);
-            addFrame.addHelpMenu("package.jmri.jmrit.beantable.SignalGroupAddEdit", true);
+            addFrame.addHelpMenu("package.jmri.beantable.SignalGroupAddEdit", true);
             addFrame.setLocation(100, 30);
             addFrame.getContentPane().setLayout(new BoxLayout(addFrame.getContentPane(), BoxLayout.Y_AXIS));
             Container contentPane = addFrame.getContentPane();

@@ -38,7 +38,7 @@ public class FactoryResetAction extends AbstractAction {
         String s = (String) JOptionPane.showInputDialog(
                 mParent,
                 "Factory Reset" + (options.length > 1 ? "s" : ""),
-                ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle").getString("FactoryResetTitle"),
+                ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle").getString("FactoryResetTitle"),
                 JOptionPane.WARNING_MESSAGE,
                 null,
                 options,

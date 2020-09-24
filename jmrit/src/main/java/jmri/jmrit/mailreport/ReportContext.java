@@ -92,7 +92,7 @@ public class ReportContext {
         String prog = System.getProperty("user.dir");
         addString("Program directory: " + prog + "   ");
 
-        String roster = jmri.jmrit.roster.Roster.getDefault().getRosterIndexPath();
+        String roster = jmri.roster.Roster.getDefault().getRosterIndexPath();
         addString("Roster index location: " + roster + "   ");
 
         File panel = jmri.configurexml.LoadXmlUserAction.getCurrentFile();

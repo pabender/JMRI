@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.throttle;
+package jmri;
 
 import java.awt.Dimension;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.util.ArrayList;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.util.FileUtil;
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -206,7 +206,7 @@ public class ThrottlesPreferences {
             // <?xml-stylesheet type="text/xsl" href="XSLT/throttle.xsl"?>
 /*TODO      java.util.Map<String,String> m = new java.util.HashMap<String,String>();
              m.put("type", "text/xsl");
-             m.put("href", jmri.jmrit.XmlFile.xsltLocation+"throttles-preferences.xsl");
+             m.put("href", jmri.util.xml.XmlFile.xsltLocation+"throttles-preferences.xsl");
              ProcessingInstruction p = new ProcessingInstruction("xml-stylesheet", m);
              doc.addContent(0,p);*/
             root.setContent(store());

@@ -7,7 +7,7 @@ import java.util.Iterator;
 import javax.swing.JButton;
 import jmri.DccThrottle;
 import jmri.InstanceManager;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 
 public class StopAllButton extends JButton {
 

@@ -28,7 +28,7 @@ public class SpeedProfileFrame extends jmri.util.JmriJFrame {
 
         getContentPane().add(spPanel);
 
-        addHelpMenu("package.jmri.jmrit.roster.swing.speedprofile.SpeedProfileFrame", true);
+        addHelpMenu("package.jmri.roster.swing.speedprofile.SpeedProfileFrame", true);
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.decoderdefn;
+package jmri.decoderdefn;
 
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import jmri.InstanceManager;
 import jmri.util.xml.XmlFile;
-import jmri.jmrit.symbolicprog.NameFile;
+import jmri.symbolicprog.NameFile;
 import org.jdom2.Attribute;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;

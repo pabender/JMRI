@@ -2,7 +2,7 @@
 package jmri.jmrit.display.configurexml;
 
 import java.util.List;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.MultiSensorIcon;
 import org.jdom2.Attribute;

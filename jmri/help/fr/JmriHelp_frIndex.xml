@@ -3,11 +3,11 @@
 
 <index version="1.0">
  <indexitem text="Aiguillage " target="html.tools.Turnouts">
-  <indexitem text="Ajouter Aiguillage " target="package.jmri.jmrit.beantable.TurnoutAddEdit"/>
+  <indexitem text="Ajouter Aiguillage " target="package.jmri.beantable.TurnoutAddEdit"/>
 
   <indexitem text="Commande Aiguillage " target="package.jmri.jmrit.simpleturnoutctrl.SimpleTurnoutCtrl"/>
 
-  <indexitem text="Tableau des Aguillages " target="package.jmri.jmrit.beantable.TurnoutTable"/>
+  <indexitem text="Tableau des Aguillages " target="package.jmri.beantable.TurnoutTable"/>
 
  </indexitem>
  <indexitem text="AppleScript " target="html.tools.scripting.AppleScript"/>
@@ -31,11 +31,11 @@
  <indexitem text="Canton " target="html.tools.tracker.index"/>
 
  <indexitem text="Capteurs " target="html.tools.Sensors">
-  <indexitem text="Ajouter Capteur " target="package.jmri.jmrit.beantable.SensorAddEdit"/>
+  <indexitem text="Ajouter Capteur " target="package.jmri.beantable.SensorAddEdit"/>
 
   <indexitem text="Groupes Capteur " target="package.jmri.jmrit.sensorgroup.SensorGroupFrame"/>
 
-  <indexitem text="Tableau des Capteurs " target="package.jmri.jmrit.beantable.SensorTable"/>
+  <indexitem text="Tableau des Capteurs " target="package.jmri.beantable.SensorTable"/>
 
  </indexitem>
  <indexitem text="CBUS " target="html.hardware.can.cbus.index"/>
@@ -150,9 +150,9 @@
  <indexitem text="iPhone/iPod " target="html.tools.throttle.AdvancedThrottleControl_iphone"/>
 
  <indexitem text="Itin&#233;raire ">
-  <indexitem text="Ajouter Itin&#233;raire " target="package.jmri.jmrit.beantable.RouteAddEdit"/>
+  <indexitem text="Ajouter Itin&#233;raire " target="package.jmri.beantable.RouteAddEdit"/>
 
-  <indexitem text="&#201;diter Itin&#233;raire " target="package.jmri.jmrit.beantable.RouteAddEdit"/>
+  <indexitem text="&#201;diter Itin&#233;raire " target="package.jmri.beantable.RouteAddEdit"/>
 
  </indexitem>
  <indexitem text="JUnit " target="html.doc.Technical.JUnit"/>
@@ -162,9 +162,9 @@
  <indexitem text="Levier Aiguillage " target="package.jmri.jmrit.ussctc.TurnoutLeverFrame"/>
 
  <indexitem text="LItin&#233;raire ">
-  <indexitem text="Ajouter LItin&#233;raire " target="package.jmri.jmrit.beantable.LRouteAddEdit"/>
+  <indexitem text="Ajouter LItin&#233;raire " target="package.jmri.beantable.LRouteAddEdit"/>
 
-  <indexitem text="Editer LItin&#233;raire " target="package.jmri.jmrit.beantable.LRouteAddEdit"/>
+  <indexitem text="Editer LItin&#233;raire " target="package.jmri.beantable.LRouteAddEdit"/>
 
  </indexitem>
  <indexitem text="LocoNet ">
@@ -186,23 +186,23 @@
 
  </indexitem>
  <indexitem text="Logix ">
-  <indexitem text="Add Logix " target="package.jmri.jmrit.beantable.LogixAddEdit"/>
+  <indexitem text="Add Logix " target="package.jmri.beantable.LogixAddEdit"/>
 
-  <indexitem text="Tableau Logix " target="package.jmri.jmrit.beantable.LogixTable"/>
+  <indexitem text="Tableau Logix " target="package.jmri.beantable.LogixTable"/>
 
-  <indexitem text="&#201;diter Condition " target="package.jmri.jmrit.beantable.ConditionalAddEdit"/>
+  <indexitem text="&#201;diter Condition " target="package.jmri.beantable.ConditionalAddEdit"/>
 
-  <indexitem text="&#201;diter Logix " target="package.jmri.jmrit.beantable.LogixAddEdit"/>
+  <indexitem text="&#201;diter Logix " target="package.jmri.beantable.LogixAddEdit"/>
 
  </indexitem>
  <indexitem text="Lumi&#232;re " target="html.tools.Lights">
-  <indexitem text="Ajouter Lumi&#232;re " target="package.jmri.jmrit.beantable.LightAddEdit"/>
+  <indexitem text="Ajouter Lumi&#232;re " target="package.jmri.beantable.LightAddEdit"/>
 
   <indexitem text="Commande Lumi&#232;re " target="package.jmri.jmrit.simplelightctrl.SimpleLightCtrl"/>
 
-  <indexitem text="Tableau des Lumi&#232;res " target="package.jmri.jmrit.beantable.LightTable"/>
+  <indexitem text="Tableau des Lumi&#232;res " target="package.jmri.beantable.LightTable"/>
 
-  <indexitem text="&#201;diter Lumi&#232;re " target="package.jmri.jmrit.beantable.LightAddEdit"/>
+  <indexitem text="&#201;diter Lumi&#232;re " target="package.jmri.beantable.LightAddEdit"/>
 
  </indexitem>
  <indexitem text="Mandat " target="package.jmri.jmrit.logix.Warrant"/>
@@ -264,13 +264,13 @@
  <indexitem text="Moniteur M&#233;moires " target="package.jmri.jmrit.MemoryFrameAction"/>
 
  <indexitem text="M&#226;ts de Signal " target="html.tools.signaling.SignalMasts">
-  <indexitem text="Ajouter M&#226;t de Signal " target="package.jmri.jmrit.beantable.SignalMastAddEdit"/>
+  <indexitem text="Ajouter M&#226;t de Signal " target="package.jmri.beantable.SignalMastAddEdit"/>
 
-  <indexitem text="Tableau des M&#226;ts de Signal " target="package.jmri.jmrit.beantable.SignalMastTable"/>
+  <indexitem text="Tableau des M&#226;ts de Signal " target="package.jmri.beantable.SignalMastTable"/>
 
  </indexitem>
  <indexitem text="M&#233;moires " target="html.tools.Memories">
-  <indexitem text="Ajouter M&#233;moires " target="package.jmri.jmrit.beantable.MemoryAddEdit"/>
+  <indexitem text="Ajouter M&#233;moires " target="package.jmri.beantable.MemoryAddEdit"/>
 
  </indexitem>
  <indexitem text="Noms " target="html.doc.Technical.Names"/>
@@ -318,9 +318,9 @@
  <indexitem text="QSI " target="html.hardware.qsi.index"/>
 
  <indexitem text="Rapport " target="html.tools.Reporters">
-  <indexitem text="Ajouter Rapport " target="package.jmri.jmrit.beantable.ReporterAddEdit"/>
+  <indexitem text="Ajouter Rapport " target="package.jmri.beantable.ReporterAddEdit"/>
 
-  <indexitem text="Tableau des Rapports " target="package.jmri.jmrit.beantable.ReporterTable"/>
+  <indexitem text="Tableau des Rapports " target="package.jmri.beantable.ReporterTable"/>
 
  </indexitem>
  <indexitem text="Remerciements " target="Acknowledgements"/>
@@ -353,8 +353,8 @@
   <indexitem text="Wii Remote comme R&#233;gulateur " target="html.tools.throttle.AdvancedThrottleControl_wii"/>
 
  </indexitem>
- <indexitem text="Sections " target="package.jmri.jmrit.beantable.Sectiontable">
-  <indexitem text="Section Ajouter/&#201;diter " target="package.jmri.jmrit.beantable.SectionAddEdit"/>
+ <indexitem text="Sections " target="package.jmri.beantable.Sectiontable">
+  <indexitem text="Section Ajouter/&#201;diter " target="package.jmri.beantable.SectionAddEdit"/>
 
  </indexitem>
  <indexitem text="Signalisation " target="html.tools.signaling.index"/>
@@ -378,47 +378,47 @@
  <indexitem text="SRCP " target="html.hardware.SRCP.index"/>
 
  <indexitem text="Tableaux ">
-  <indexitem text="Tableau Audio " target="package.jmri.jmrit.beantable.AudioTable"/>
+  <indexitem text="Tableau Audio " target="package.jmri.beantable.AudioTable"/>
 
-  <indexitem text="Tableau des Aiguillages " target="package.jmri.jmrit.beantable.TurnoutTable"/>
+  <indexitem text="Tableau des Aiguillages " target="package.jmri.beantable.TurnoutTable"/>
 
-  <indexitem text="Tableau des Cantons " target="package.jmri.jmrit.beantable.BlockTable"/>
+  <indexitem text="Tableau des Cantons " target="package.jmri.beantable.BlockTable"/>
 
-  <indexitem text="Tableau des Capteurs " target="package.jmri.jmrit.beantable.SensorTable"/>
+  <indexitem text="Tableau des Capteurs " target="package.jmri.beantable.SensorTable"/>
 
-  <indexitem text="Tableau des Itin&#233;raires " target="package.jmri.jmrit.beantable.RouteTable"/>
+  <indexitem text="Tableau des Itin&#233;raires " target="package.jmri.beantable.RouteTable"/>
 
-  <indexitem text="Tableau des Lumi&#232;res " target="package.jmri.jmrit.beantable.LightTable"/>
+  <indexitem text="Tableau des Lumi&#232;res " target="package.jmri.beantable.LightTable"/>
 
-  <indexitem text="Tableau des M&#226;ts de Signal " target="package.jmri.jmrit.beantable.SignalMastTable"/>
+  <indexitem text="Tableau des M&#226;ts de Signal " target="package.jmri.beantable.SignalMastTable"/>
 
-  <indexitem text="Tableau des M&#233;moires " target="package.jmri.jmrit.beantable.MemoryTable"/>
+  <indexitem text="Tableau des M&#233;moires " target="package.jmri.beantable.MemoryTable"/>
 
-  <indexitem text="Tableau des Sections " target="package.jmri.jmrit.beantable.SectionTable"/>
+  <indexitem text="Tableau des Sections " target="package.jmri.beantable.SectionTable"/>
 
-  <indexitem text="Tableau des Transits " target="package.jmri.jmrit.beantable.TransitTable"/>
+  <indexitem text="Tableau des Transits " target="package.jmri.beantable.TransitTable"/>
 
-  <indexitem text="Tableau des T&#234;tes de Signal " target="package.jmri.jmrit.beantable.SignalHeadTable"/>
+  <indexitem text="Tableau des T&#234;tes de Signal " target="package.jmri.beantable.SignalHeadTable"/>
 
-  <indexitem text="Tableau Journeaux " target="package.jmri.jmrit.beantable.ReporterTable"/>
+  <indexitem text="Tableau Journeaux " target="package.jmri.beantable.ReporterTable"/>
 
   <indexitem text="Tableau Lien " target="package.jmri.jmrit.automat.monitor.AutomattableFrame"/>
 
-  <indexitem text="Tableau LItin&#233;raires " target="package.jmri.jmrit.beantable.LRouteTable"/>
+  <indexitem text="Tableau LItin&#233;raires " target="package.jmri.beantable.LRouteTable"/>
 
-  <indexitem text="Tableau Logix " target="package.jmri.jmrit.beantable.LogixTable"/>
+  <indexitem text="Tableau Logix " target="package.jmri.beantable.LogixTable"/>
 
  </indexitem>
  <indexitem text="Tachym&#232;tre " target="html.tools.speedometer.index"/>
 
- <indexitem text="Transits " target="package.jmri.jmrit.beantable.Transitable">
-  <indexitem text="Ajouter/&#201;diter Transit " target="package.jmri.jmrit.beantable.TransitAddEdit"/>
+ <indexitem text="Transits " target="package.jmri.beantable.Transitable">
+  <indexitem text="Ajouter/&#201;diter Transit " target="package.jmri.beantable.TransitAddEdit"/>
 
  </indexitem>
  <indexitem text="T&#233;l&#233;chargement Information de D&#233;bogage " target="package.jmri.jmrit.mailreport.Report"/>
 
  <indexitem text="T&#234;te de Signal ">
-  <indexitem text="Ajouter T&#234;te de Signal " target="package.jmri.jmrit.beantable.SignalAddEdit"/>
+  <indexitem text="Ajouter T&#234;te de Signal " target="package.jmri.beantable.SignalAddEdit"/>
 
  </indexitem>
  <indexitem text="USB " target="package.jmri.jmrix.jinput.treemodel.TreeFrame"/>

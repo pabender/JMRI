@@ -9,38 +9,38 @@ package | jmri.jmris.** | MAINTAINED
 .
 package | jmri.jmrit.** | MAINTAINED
 .
-  package | jmri.jmrit.decoderdefn.** | MAINTAINED
-  class   | jmri.jmrit.decoderdefn.DecoderIndexFile | INTERNAL
+  package | jmri.decoderdefn.** | MAINTAINED
+  class   | jmri.decoderdefn.DecoderIndexFile | INTERNAL
 .
-  package | jmri.jmrit.beantable.** | INTERNAL
-  class   | jmri.jmrit.beantable.AudioTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.BeanTableStartupActionFactory| MAINTAINED
-  class   | jmri.jmrit.beantable.BlockTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.IdTagTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.IdTagTableTabAction| MAINTAINED
-  class   | jmri.jmrit.beantable.LRouteTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.LightTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.LightTableTabAction| MAINTAINED
-  class   | jmri.jmrit.beantable.ListedTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.LogixTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.MemoryTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.OBlockTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.RailComTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.ReporterTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.ReporterTableTabAction| MAINTAINED
-  class   | jmri.jmrit.beantable.RouteTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.SectionTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.SensorTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.SensorTableTabAction| MAINTAINED
-  class   | jmri.jmrit.beantable.SetPhysicalLocationAction| MAINTAINED
-  class   | jmri.jmrit.beantable.SignalGroupSubTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.SignalGroupTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.SignalHeadTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.SignalMastLogicTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.SignalMastTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.TransitTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.TurnoutTableAction| MAINTAINED
-  class   | jmri.jmrit.beantable.TurnoutTableTabAction| MAINTAINED
+  package | jmri.beantable.** | INTERNAL
+  class   | jmri.beantable.AudioTableAction| MAINTAINED
+  class   | jmri.beantable.BeanTableStartupActionFactory| MAINTAINED
+  class   | jmri.beantable.BlockTableAction| MAINTAINED
+  class   | jmri.beantable.IdTagTableAction| MAINTAINED
+  class   | jmri.beantable.IdTagTableTabAction| MAINTAINED
+  class   | jmri.beantable.LRouteTableAction| MAINTAINED
+  class   | jmri.beantable.LightTableAction| MAINTAINED
+  class   | jmri.beantable.LightTableTabAction| MAINTAINED
+  class   | jmri.beantable.ListedTableAction| MAINTAINED
+  class   | jmri.beantable.LogixTableAction| MAINTAINED
+  class   | jmri.beantable.MemoryTableAction| MAINTAINED
+  class   | jmri.beantable.OBlockTableAction| MAINTAINED
+  class   | jmri.beantable.RailComTableAction| MAINTAINED
+  class   | jmri.beantable.ReporterTableAction| MAINTAINED
+  class   | jmri.beantable.ReporterTableTabAction| MAINTAINED
+  class   | jmri.beantable.RouteTableAction| MAINTAINED
+  class   | jmri.beantable.SectionTableAction| MAINTAINED
+  class   | jmri.beantable.SensorTableAction| MAINTAINED
+  class   | jmri.beantable.SensorTableTabAction| MAINTAINED
+  class   | jmri.beantable.SetPhysicalLocationAction| MAINTAINED
+  class   | jmri.beantable.SignalGroupSubTableAction| MAINTAINED
+  class   | jmri.beantable.SignalGroupTableAction| MAINTAINED
+  class   | jmri.beantable.SignalHeadTableAction| MAINTAINED
+  class   | jmri.beantable.SignalMastLogicTableAction| MAINTAINED
+  class   | jmri.beantable.SignalMastTableAction| MAINTAINED
+  class   | jmri.beantable.TransitTableAction| MAINTAINED
+  class   | jmri.beantable.TurnoutTableAction| MAINTAINED
+  class   | jmri.beantable.TurnoutTableTabAction| MAINTAINED
 .
   package | jmri.jmrit.conditional.** | INTERNAL
 .
@@ -52,36 +52,36 @@ package | jmri.jmrit.** | MAINTAINED
   class   | jmri.jmrit.display.panelEditor.PanelEditorAction | MAINTAINED
   class   | jmri.jmrit.display.switchboardEditor.SwitchboardEditorAction | MAINTAINED
 .
-  package | jmri.jmrit.roster.** | INTERNAL
-  class   | jmri.jmrit.roster.Roster | MAINTAINED
-  class   | jmri.jmrit.roster.RosterConfigManager | MAINTAINED
-  class   | jmri.jmrit.roster.RosterConfigPane | MAINTAINED
-  class   | jmri.jmrit.roster.RosterEntry | MAINTAINED
+  package | jmri.roster.** | INTERNAL
+  class   | jmri.roster.Roster | MAINTAINED
+  class   | jmri.roster.RosterConfigManager | MAINTAINED
+  class   | jmri.roster.RosterConfigPane | MAINTAINED
+  class   | jmri.roster.RosterEntry | MAINTAINED
 .
-  package | jmri.jmrit.symbolicprog.** | INTERNAL
-  class   | jmri.jmrit.symbolicprog.CombinedLocoSelListPane | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.CombinedLocoSelPane | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.CombinedLocoSelTreePane | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.CsvExportAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.CsvImportAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.DccAddressPanel | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.FactoryResetAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.LocoSelPane | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.LocoSelTreePane | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.LokProgImportAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.NewLocoSelPane | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.Pr1ExportAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.Pr1ImportAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.Pr1WinExportAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.PrintAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.PrintCvAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.Qualifier | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.QuantumCvMgrImportAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.tabbedframe.PaneEditAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.tabbedframe.PaneNewProgAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.tabbedframe.PaneProgAction | MAINTAINED
-  class   | jmri.jmrit.symbolicprog.tabbedframe.ProgCheckAction | MAINTAINED
+  package | jmri.symbolicprog.** | INTERNAL
+  class   | jmri.symbolicprog.CombinedLocoSelListPane | MAINTAINED
+  class   | jmri.symbolicprog.CombinedLocoSelPane | MAINTAINED
+  class   | jmri.symbolicprog.CombinedLocoSelTreePane | MAINTAINED
+  class   | jmri.symbolicprog.CsvExportAction | MAINTAINED
+  class   | jmri.symbolicprog.CsvImportAction | MAINTAINED
+  class   | jmri.symbolicprog.DccAddressPanel | MAINTAINED
+  class   | jmri.symbolicprog.FactoryResetAction | MAINTAINED
+  class   | jmri.symbolicprog.LocoSelPane | MAINTAINED
+  class   | jmri.symbolicprog.LocoSelTreePane | MAINTAINED
+  class   | jmri.symbolicprog.LokProgImportAction | MAINTAINED
+  class   | jmri.symbolicprog.NewLocoSelPane | MAINTAINED
+  class   | jmri.symbolicprog.Pr1ExportAction | MAINTAINED
+  class   | jmri.symbolicprog.Pr1ImportAction | MAINTAINED
+  class   | jmri.symbolicprog.Pr1WinExportAction | MAINTAINED
+  class   | jmri.symbolicprog.PrintAction | MAINTAINED
+  class   | jmri.symbolicprog.PrintCvAction | MAINTAINED
+  class   | jmri.symbolicprog.Qualifier | MAINTAINED
+  class   | jmri.symbolicprog.QuantumCvMgrImportAction | MAINTAINED
+  class   | jmri.symbolicprog.tabbedframe.PaneEditAction | MAINTAINED
+  class   | jmri.symbolicprog.tabbedframe.PaneNewProgAction | MAINTAINED
+  class   | jmri.symbolicprog.tabbedframe.PaneOpsProgAction | MAINTAINED
+  class   | jmri.symbolicprog.tabbedframe.PaneProgAction | MAINTAINED
+  class   | jmri.symbolicprog.tabbedframe.ProgCheckAction | MAINTAINED
 .
   package | jmri.jmrit.ussctc.** | INTERNAL
 .

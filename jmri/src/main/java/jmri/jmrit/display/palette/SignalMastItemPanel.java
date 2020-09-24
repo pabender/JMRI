@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.event.ListSelectionEvent;
 import jmri.SignalAppearanceMap;
 import jmri.SignalMast;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.DisplayFrame;
 import jmri.jmrit.picker.PickListModel;
 import org.slf4j.Logger;

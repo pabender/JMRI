@@ -602,8 +602,8 @@ public class SensorTableDataModel extends BeanTableDataModel<Sensor> {
         this.table = table;
         showDebounce(false);
         showPullUp(false);
-        this.table.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-        this.table.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+        this.table.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+        this.table.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
         showStateForgetAndQuery(false);
         super.configureTable(table);
     }
@@ -644,7 +644,7 @@ public class SensorTableDataModel extends BeanTableDataModel<Sensor> {
         return jmri.beantable.SensorTableAction.class.getName();
     }
 
-//    public static final ResourceBundle rb = ResourceBundle.getBundle("jmri.jmrit.beantable.BeanTableBundle");
+//    public static final ResourceBundle rb = ResourceBundle.getBundle("jmri.beantable.BeanTableBundle");
     public String getClassDescription() {
         return Bundle.getMessage("TitleSensorTable");
     }

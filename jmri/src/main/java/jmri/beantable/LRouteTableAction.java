@@ -63,7 +63,7 @@ import jmri.util.xml.XmlFile;
  */
 public class LRouteTableAction extends AbstractTableAction<Logix> {
 
-    static final ResourceBundle rbx = ResourceBundle.getBundle("jmri.jmrit.beantable.LRouteTableBundle");
+    static final ResourceBundle rbx = ResourceBundle.getBundle("jmri.beantable.LRouteTableBundle");
 
     /**
      * Create an action with a specific title.
@@ -275,8 +275,8 @@ public class LRouteTableAction extends AbstractTableAction<Logix> {
         @Override
         public void configureTable(JTable table) {
             table.setDefaultRenderer(Boolean.class, new EnablingCheckboxRenderer());
-            table.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-            table.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+            table.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+            table.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
             super.configureTable(table);
         }
 
@@ -316,7 +316,7 @@ public class LRouteTableAction extends AbstractTableAction<Logix> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.LRouteTable";
+        return "package.jmri.beantable.LRouteTable";
     }
 
 ///////////////////////////////////// Edit window //////////////////////////////
@@ -889,7 +889,7 @@ public class LRouteTableAction extends AbstractTableAction<Logix> {
         buildLists();
         if (_addFrame == null) {
             _addFrame = new JmriJFrame(rbx.getString("LRouteAddTitle"), false, false);
-            _addFrame.addHelpMenu("package.jmri.jmrit.beantable.LRouteAddEdit", true);
+            _addFrame.addHelpMenu("package.jmri.beantable.LRouteAddEdit", true);
             _addFrame.setLocation(100, 30);
 
             _tabbedPane = new JTabbedPane();

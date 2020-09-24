@@ -68,8 +68,8 @@ public class InstallTest extends Apps {
         j.setLayout(new BoxLayout(j, BoxLayout.Y_AXIS));
         j.add(super.statusPanel());
 
-        Action serviceprog = new jmri.jmrit.symbolicprog.tabbedframe.PaneProgAction(Bundle.getMessage("DpButtonUseProgrammingTrack"));
-        Action opsprog = new jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgAction(Bundle.getMessage("DpButtonProgramOnMainTrack"));
+        Action serviceprog = new jmri.symbolicprog.tabbedframe.PaneProgAction(Bundle.getMessage("DpButtonUseProgrammingTrack"));
+        Action opsprog = new jmri.symbolicprog.tabbedframe.PaneOpsProgAction(Bundle.getMessage("DpButtonProgramOnMainTrack"));
         Action quit = new AbstractAction(Bundle.getMessage("MenuItemQuit")) {
             @Override
             public void actionPerformed(ActionEvent e) {

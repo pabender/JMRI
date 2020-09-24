@@ -32,7 +32,7 @@ but if the "force" field has the letter "X", it will be forced. Note that if any
 other line later in the table affects a enum/interface/class/method/field that
 is previously marked with forced, that line will be used even if it's not forced.
 For example, if the first line is "jmri.**" and it's forced, and the fifth line
-is "jmri.jmrit.beantable.**" is not forced, that fifth line will be handled as
+is "jmri.beantable.**" is not forced, that fifth line will be handled as
 forced since it affects classes that are already forced by the "jmri.**" rule.
 
 The first line has the lowest priority and the last line has the highest priority.
@@ -55,7 +55,7 @@ package | jmri.** | EXPERIMENTAL | X
 package | jmri | STABLE
 . | This is a comment
 package | jmri.jmrit.** | MAINTAINED
-package | jmri.jmrit.beantable | STABLE
+package | jmri.beantable | STABLE
 
 Empty lines may be inserted in the table as well, but they must start with
 a dot to make the table work when viewed on GitHub.
@@ -78,7 +78,7 @@ class | jmri.Turnout | EXPERIMENTAL
 method | jmri.Turnout.setState | MAINTAINED
 field | jmri.NamedBean.UNKNOWN | INTERNAL
 package | jmri.jmrit.** | MAINTAINED
-package | jmri.jmrit.beantable | STABLE
+package | jmri.beantable | STABLE
 
 
 Valid types are:

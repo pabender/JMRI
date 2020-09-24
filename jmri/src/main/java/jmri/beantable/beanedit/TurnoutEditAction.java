@@ -28,7 +28,7 @@ import jmri.swing.NamedBeanComboBox;
 public class TurnoutEditAction extends BeanEditAction<Turnout> {
     @Override
     public String helpTarget() {
-        return "package.jmri.jmrit.beantable.TurnoutAddEdit";
+        return "package.jmri.beantable.TurnoutAddEdit";
     } // NOI18N
 
     @Override

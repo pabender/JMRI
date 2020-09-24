@@ -126,7 +126,7 @@
 
       <p>NamedBeans are created and configured by the user using explicit
       actions. Most of the UI for these actions is in
-      the <a href="https://jmri.org/JavaDoc/doc/jmri/jmrit/beantable/package-summary.html">jmri.jmrit.beantable</a>
+      the <a href="https://jmri.org/JavaDoc/doc/jmri/jmrit/beantable/package-summary.html">jmri.beantable</a>
       package, using the generic <code>BeanTable{Frame,Pane,Model}</code>
       classes specialized for the particular type, for example in the
       <a href="https://jmri.org/JavaDoc/doc/jmri/jmrit/beantable/TurnoutTableAction.html"><code>TurnoutTableAction</code></a>

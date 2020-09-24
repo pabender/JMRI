@@ -25,8 +25,8 @@ import jmri.DccLocoAddress;
 import jmri.InstanceManager;
 import jmri.LocoAddress;
 import jmri.util.swing.DccLocoAddressSelector;
-import jmri.jmrit.decoderdefn.DecoderFile;
-import jmri.jmrit.decoderdefn.DecoderIndexFile;
+import jmri.decoderdefn.DecoderFile;
+import jmri.decoderdefn.DecoderIndexFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -67,7 +67,7 @@ public class RosterEntryPane extends javax.swing.JPanel {
     Component pane = null;
     RosterEntry re = null;
 
-    final ResourceBundle rb = ResourceBundle.getBundle("jmri.jmrit.roster.JmritRosterBundle");
+    final ResourceBundle rb = ResourceBundle.getBundle("jmri.roster.JmritRosterBundle");
 
     public RosterEntryPane(RosterEntry r) {
 

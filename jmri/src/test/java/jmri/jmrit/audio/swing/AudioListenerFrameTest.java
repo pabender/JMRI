@@ -20,7 +20,7 @@ public class AudioListenerFrameTest extends jmri.util.JmriJFrameTestBase {
         JUnitUtil.resetProfileManager();
         if(!GraphicsEnvironment.isHeadless()){
            // the second parameter should be an
-           // jmri.jmrit.beantable.AudioTableAction.AudioListenerTableDataModel
+           // jmri.beantable.AudioTableAction.AudioListenerTableDataModel
            // object
            frame = new AudioListenerFrame("Listener Frame Test",null);
         }

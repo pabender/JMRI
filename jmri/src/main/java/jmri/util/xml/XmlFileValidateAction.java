@@ -7,7 +7,6 @@ import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-import jmri.jmrit.Bundle;
 import jmri.util.swing.JmriPanel;
 import jmri.util.swing.WindowInterface;
 import org.slf4j.Logger;

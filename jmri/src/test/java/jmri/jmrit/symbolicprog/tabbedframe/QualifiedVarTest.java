@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.symbolicprog.tabbedframe;
+package jmri.symbolicprog.tabbedframe;
 
 import java.awt.GraphicsEnvironment;
 import java.awt.event.WindowEvent;
@@ -7,10 +7,11 @@ import java.io.IOException;
 
 import javax.swing.JPanel;
 
-import jmri.jmrit.decoderdefn.DecoderFile;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.decoderdefn.DecoderFile;
+import jmri.roster.RosterEntry;
 import jmri.util.JUnitUtil;
 
+import jmri.util.xml.XmlFile;
 import org.jdom2.DocType;
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -54,7 +55,7 @@ public class QualifiedVarTest {
 
                 // get the sample info
                 try {
-                    jmri.jmrit.XmlFile file = new jmri.jmrit.XmlFile() {
+                    XmlFile file = new XmlFile() {
                     };
                     org.jdom2.Element el = file.rootFromFile(new java.io.File("src/test/java/jmri/jmrit/symbolicprog/tabbedframe/pass/DecoderWithQualifier.xml"));
 

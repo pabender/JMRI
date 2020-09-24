@@ -128,7 +128,7 @@ public class RosterGroupTableAction extends jmri.util.swing.JmriAbstractAction {
     }
 
     String helpTarget() {
-        return "package.jmri.jmrit.roster.swing"; // NOI18N
+        return "package.jmri.roster.swing"; // NOI18N
     }
 
     void comboSelected(ActionEvent e, String group) {

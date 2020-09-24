@@ -37,7 +37,7 @@ public class SetPhysicalLocationAction extends AbstractAction {
 
     Reporter _reporter;
 
-    static ResourceBundle rb = ResourceBundle.getBundle("jmri.jmrit.beantable.JmritBeantablePhysicalLocationBundle");
+    static ResourceBundle rb = ResourceBundle.getBundle("jmri.beantable.JmritBeantablePhysicalLocationBundle");
 
     /**
      * Constructor.

@@ -15,7 +15,7 @@
 
     <properties>
         <!-- test environment -->
-        <jmri.path.program>${parent.basedir}</jmri.path.program>
+        <jmri.path.program>${basedir}</jmri.path.program>
         <jmri.prefsdir>${basedir}/temp</jmri.prefsdir>
         <jmri.shutdownmanager>jmri.util.MockShutDownManager</jmri.shutdownmanager>
     </properties>
@@ -39,6 +39,13 @@
                         <groupId>org.eluder.coveralls</groupId>
                         <artifactId>coveralls-maven-plugin</artifactId>
                         <version>4.3.0</version>
+                        <configuration>
+                            <sourceDirectories>
+                                <!-- Additional source directories -->
+                                <File>target/generated-sources/javacc</File>
+                                <File>target/generated-sources/jjtree</File>
+                            </sourceDirectories>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
@@ -68,7 +75,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <executable>${parent.basedir}scripts/tidy-check.sh</executable>
+                            <executable>${parent.basedir}/scripts/tidy-check.sh</executable>
                             <arguments>
                                 <argument>help/en/*/*</argument>
                                 <argument>help/fr/*/*</argument>
@@ -231,6 +238,28 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>javacc-maven-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jjtree-javacc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.java.dev.javacc</groupId>
+                        <artifactId>javacc</artifactId>
+                        <version>7.0.3</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>3.1.12</version>
@@ -274,7 +303,7 @@
                         <exclude>jmri.util.TestWaitsForever</exclude>
                     </excludes>
                     <systemPropertyVariables>
-                        <jmri.path.program>${parent.basedir}</jmri.path.program>
+                        <jmri.path.program>${basedir}</jmri.path.program>
                         <jmri.path.resources>${parent.basedir}/resources</jmri.path.resources>
                         <jmri.prefsdir>${basedir}/target/temp</jmri.prefsdir>
                         <jmri.log4jconfigfilename>${basedir}/tests.lcf</jmri.log4jconfigfilename>
@@ -282,7 +311,7 @@
                         <jinput.useDefaultPlugin>false</jinput.useDefaultPlugin><!-- don't load JInput during CI tests -->
                     </systemPropertyVariables>
                     <trimStackTrace>false</trimStackTrace>
-                    <workingDirectory>../</workingDirectory>
+                    <workingDirectory>${basedir}</workingDirectory>
                     <!-- -ea or -da in the next line to control Java asserts -->
                     <argLine>@{argLine} @{surefire.argLine} -Djava.security.policy=../lib/security.policy</argLine>
                     <useSystemClassLoader>true</useSystemClassLoader>
@@ -304,7 +333,7 @@
                             <goal>verify</goal>
                         </goals>
                         <configuration>
-                            <workingDirectory>../</workingDirectory>
+                            <workingDirectory>${basedir}</workingDirectory>
                             <argLine>@{argLine} @{failsafe.argLine} -Djava.security.policy=../lib/security.policy</argLine>
                         </configuration>
                     </execution>
@@ -361,7 +390,7 @@
                         </goals>
                         <configuration>
                             <sources>
-                                <source>../java/acceptancetest/step_definitions/apps</source>
+                                <source>../java/acceptancetest/step_definitions/jmri</source>
                             </sources>
                         </configuration>
                     </execution>
@@ -388,7 +417,9 @@
                     <!-- differs from ant-produced Javadocs by including JMRI version -->
                     <maxmemory>512m</maxmemory>
                     <overview>../java/src/jmri/overview.html</overview>
-                    <sourcepath>../java/src</sourcepath>
+                    <sourcepath>../java/src:${project.build.directory}/generated-sources/javacc:${project.build.directory}/generated-sources/jjtree</sourcepath>
+                    <!-- do not document the generated parser packages -->
+                    <excludePackageNames>*.simpleserver.parser:*.srcp.parser</excludePackageNames>
                     <show>package</show>
                     <!-- change from default 100 warnings; keep number synced with ant javadoc target -->
                     <additionalJOption>-breakiterator -Xmaxwarns 100</additionalJOption><!-- 100 is default, here so we can easily change it -->
@@ -639,19 +670,6 @@
             </plugin>
             -->
             <plugin>
-                <groupId>org.sonatype.ossindex.maven</groupId>
-                <artifactId>ossindex-maven-plugin</artifactId>
-                <version>3.0.4</version>
-                <configuration>
-                    <fail>true</fail>
-                    <!-- List packages with vulnerabilities to ignore. -->
-                    <!-- Include an issue in GitHub for each ignored package -->
-                    <!-- documenting why the vulnerability is ignored. -->
-                    <excludeCoordinates>
-                    </excludeCoordinates>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>3.0.0-M2</version>
@@ -679,7 +697,7 @@
                     <failOnViolation>true</failOnViolation>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     <sourceDirectories>
-                        <sourceDirectory>../java/src/apps</sourceDirectory>
+                        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
                     </sourceDirectories>
                     <includes>**/*</includes>
                     <excludes>**/*.jpg,**/*.PNG,**/*.jar,**/*.dll,**/*.dylib,**/*.so,**/*.exe,
@@ -711,6 +729,24 @@
                     </filesets>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                <file>local.properties</file>
+                            </files>
+                            <quiet>true</quiet>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -738,6 +774,21 @@
                                         </execute>
                                     </action>
                                 </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.codehaus.mojo</groupId>
+                                        <artifactId>javacc-maven-plugin</artifactId>
+                                        <versionRange>[2.6,)</versionRange>
+                                        <goals>
+                                            <goal>jjtree-javacc</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <execute>
+                                            <runOnIncremental>false</runOnIncremental>
+                                        </execute>
+                                    </action>
+                                </pluginExecution>
                             </pluginExecutions>
                         </lifecycleMappingMetadata>
                     </configuration>
@@ -755,17 +806,6 @@
                             </goals>
                         </execution>
                     </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.7</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <serverId>ossrh</serverId>
-                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                        <autoReleaseAfterClose>false</autoReleaseAfterClose>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>com.buschmais.jqassistant</groupId>
@@ -795,6 +835,11 @@
                             <version>8.29</version>
                         </dependency>
                     </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>properties-maven-plugin</artifactId>
+                    <version>1.0.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -1212,7 +1257,7 @@
         <dependency>
             <groupId>com.digi.xbee</groupId>
             <artifactId>xbee-java-library</artifactId>
-            <version>1.2.1</version>
+            <version>1.3.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.slf4j</groupId>

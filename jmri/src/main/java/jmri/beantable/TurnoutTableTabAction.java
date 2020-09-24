@@ -30,6 +30,6 @@ public class TurnoutTableTabAction extends AbstractTableTabAction<Turnout> {
 
     @Override
     protected String helpTarget() {
-        return "package.jmri.jmrit.beantable.TurnoutTable";
+        return "package.jmri.beantable.TurnoutTable";
     }
 }

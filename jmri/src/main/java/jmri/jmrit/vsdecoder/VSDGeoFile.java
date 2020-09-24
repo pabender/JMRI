@@ -5,7 +5,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.Scale;
 import jmri.Reporter;
 import jmri.util.FileUtil;

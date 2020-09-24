@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.throttle;
+package jmri.util;
 
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 
 public class LargePowerManagerButton extends PowerManagerButton {
 

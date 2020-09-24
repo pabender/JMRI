@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.util;
+package jmri.util.xml;
 
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
+import jmri.util.FileUtil;
 import jmri.util.JUnitUtil;
 
 import jmri.util.xml.XmlFile;
@@ -224,7 +225,7 @@ public class XmlFileTest {
         // Document from test file
         Document doc;
         Element e;
-        FileInputStream fs = new FileInputStream(new File("src/test/java/jmri/jmrit/XmlFileTest_PI.xml"));
+        FileInputStream fs = new FileInputStream(new File("src/test/java/jmri/util/xml/XmlFileTest_PI.xml"));
         try {
             SAXBuilder builder = XmlFile.getBuilder(XmlFile.Validate.None);  // argument controls validation
             doc = builder.build(new BufferedInputStream(fs));

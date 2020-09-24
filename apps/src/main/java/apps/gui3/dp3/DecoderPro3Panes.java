@@ -10,7 +10,7 @@ import jmri.util.BusyGlassPane;
  * @author Bob Jacobsen Copyright (C) 2010
  */
 public class DecoderPro3Panes extends javax.swing.JPanel
-        implements jmri.jmrit.symbolicprog.tabbedframe.PaneContainer {
+        implements jmri.symbolicprog.tabbedframe.PaneContainer {
 
     @Override
     public boolean isBusy() {

@@ -100,9 +100,9 @@
 
   </tocitem>
   <tocitem text="Lumi&#232;res " target="html.tools.Lights">
-   <tocitem text="Ajouter/&#201;diter des Lumi&#232;res " target="package.jmri.jmrit.beantable.lightaddedit"/>
+   <tocitem text="Ajouter/&#201;diter des Lumi&#232;res " target="package.jmri.beantable.lightaddedit"/>
 
-   <tocitem text="Tableau lumi&#232;re " target="package.jmri.jmrit.beantable.LightTable"/>
+   <tocitem text="Tableau lumi&#232;re " target="package.jmri.beantable.LightTable"/>
 
   </tocitem>
   <tocitem text="Commande lumi&#232;re " target="package.jmri.jmrit.simplelightctrl.SimpleLightCtrl"/>
@@ -110,25 +110,25 @@
   <tocitem text="Correspondance Vitesse Locomotive " target="html.tools.speedometer.SpeedMatch"/>
 
   <tocitem text="Logix " target="html.tools.Logix">
-   <tocitem text="Tableau Logix " target="package.jmri.jmrit.beantable.LogixTable"/>
+   <tocitem text="Tableau Logix " target="package.jmri.beantable.LogixTable"/>
 
-   <tocitem text="Ajouter/&#201;diter Logix " target="package.jmri.jmrit.beantable.LogixAddEdit"/>
+   <tocitem text="Ajouter/&#201;diter Logix " target="package.jmri.beantable.LogixAddEdit"/>
 
-   <tocitem text="Ajouter/&#201;diter Condition " target="package.jmri.jmrit.beantable.ConditionalAddEdit"/>
+   <tocitem text="Ajouter/&#201;diter Condition " target="package.jmri.beantable.ConditionalAddEdit"/>
 
   </tocitem>
   <tocitem text="LItin&#233;raires " target="html.tools.LRoutes">
-   <tocitem text="Tableau LItin&#233;raire " target="package.jmri.jmrit.beantable.LRouteTable"/>
+   <tocitem text="Tableau LItin&#233;raire " target="package.jmri.beantable.LRouteTable"/>
 
-   <tocitem text="Ajouter/&#201;diter LItin&#233;raires " target="package.jmri.jmrit.beantable.LRouteAddEdit"/>
+   <tocitem text="Ajouter/&#201;diter LItin&#233;raires " target="package.jmri.beantable.LRouteAddEdit"/>
 
   </tocitem>
   <tocitem text="Moniteur M&#233;moire " target="package.jmri.jmrit.MemoryFrameAction"/>
 
   <tocitem text="M&#233;moires " target="html.tools.Memories">
-   <tocitem text="Ajouter/&#201;diter M&#233;moires " target="package.jmri.jmrit.beantable.MemoryAddEdit"/>
+   <tocitem text="Ajouter/&#201;diter M&#233;moires " target="package.jmri.beantable.MemoryAddEdit"/>
 
-   <tocitem text="Tableau des Variables de M&#233;moire " target="package.jmri.jmrit.beantable.MemoryTable"/>
+   <tocitem text="Tableau des Variables de M&#233;moire " target="package.jmri.beantable.MemoryTable"/>
 
   </tocitem>
   <tocitem text="Exploitations " target="package.jmri.jmrit.operations.Operations">
@@ -162,15 +162,15 @@
 
   </tocitem>
   <tocitem text="Rapports " target="html.tools.Reporters">
-   <tocitem text="Ajout/&#201;dition Rapport " target="package.jmri.jmrit.beantable.ReporterAddEdit"/>
+   <tocitem text="Ajout/&#201;dition Rapport " target="package.jmri.beantable.ReporterAddEdit"/>
 
-   <tocitem text="Tableau des Rapports " target="package.jmri.jmrit.beantable.ReporterTable"/>
+   <tocitem text="Tableau des Rapports " target="package.jmri.beantable.ReporterTable"/>
 
   </tocitem>
   <tocitem text="Itin&#233;raires " target="html.tools.Routes">
-   <tocitem text="Ajout/&#201;dition Itin&#233;raires " target="package.jmri.jmrit.beantable.RouteAddEdit"/>
+   <tocitem text="Ajout/&#201;dition Itin&#233;raires " target="package.jmri.beantable.RouteAddEdit"/>
 
-   <tocitem text="Tableau d'Itin&#233;raires " target="package.jmri.jmrit.beantable.RouteTable"/>
+   <tocitem text="Tableau d'Itin&#233;raires " target="package.jmri.beantable.RouteTable"/>
 
   </tocitem>
   <tocitem text="Script " target="html.tools.scripting.index">
@@ -186,26 +186,26 @@
 
   </tocitem>
   <tocitem text="Sections ">
-   <tocitem text="Ajouter/&#201;diter Section " target="package.jmri.jmrit.beantable.SectionAddEdit"/>
+   <tocitem text="Ajouter/&#201;diter Section " target="package.jmri.beantable.SectionAddEdit"/>
 
-   <tocitem text="Tableau des Sections " target="package.jmri.jmrit.beantable.SectionTable"/>
+   <tocitem text="Tableau des Sections " target="package.jmri.beantable.SectionTable"/>
 
   </tocitem>
   <tocitem text="Outil Envoi Paquet DCC " target="package.jmri.jmrit.sendpacket.SendPacketFrame"/>
 
   <tocitem text="Capteurs " target="html.tools.Sensors">
-   <tocitem text="Ajouter/&#201;diter Capteurs " target="package.jmri.jmrit.beantable.SensorAddEdit"/>
+   <tocitem text="Ajouter/&#201;diter Capteurs " target="package.jmri.beantable.SensorAddEdit"/>
 
-   <tocitem text="Tableau des Capteurs " target="package.jmri.jmrit.beantable.SensorTable"/>
+   <tocitem text="Tableau des Capteurs " target="package.jmri.beantable.SensorTable"/>
 
   </tocitem>
   <tocitem text="Groupes de Capteurs " target="package.jmri.jmrit.sensorgroup.SensorGroupFrame"/>
 
   <tocitem text="Signalisation " target="html.tools.signaling.index">
    <tocitem text="T&#234;tes de Signal " target="html.tools.signaling.index">
-    <tocitem text="Ajout T&#234;tes de Signal " target="package.jmri.jmrit.beantable.SignalAddEdit"/>
+    <tocitem text="Ajout T&#234;tes de Signal " target="package.jmri.beantable.SignalAddEdit"/>
 
-    <tocitem text="Table T&#234;tes de Signal " target="package.jmri.jmrit.beantable.SignalHeadTable"/>
+    <tocitem text="Table T&#234;tes de Signal " target="package.jmri.beantable.SignalHeadTable"/>
 
     <tocitem text="Exemples Europ&#233;en " target="html.tools.signaling.ldt.output"/>
 
@@ -213,9 +213,9 @@
    <tocitem text="Aspects Signal " target="html.tools.signaling.AspectSignaling"/>
 
    <tocitem text="M&#226;ts de Signal " target="html.tools.signaling.SignalMasts">
-    <tocitem text="Ajout M&#226;ts de Signal " target="package.jmri.jmrit.beantable.SignalMastAddEdit"/>
+    <tocitem text="Ajout M&#226;ts de Signal " target="package.jmri.beantable.SignalMastAddEdit"/>
 
-    <tocitem text="Tableau M&#226;ts de Signal " target="package.jmri.jmrit.beantable.SignalMastTable"/>
+    <tocitem text="Tableau M&#226;ts de Signal " target="package.jmri.beantable.SignalMastTable"/>
 
    </tocitem>
   </tocitem>
@@ -224,41 +224,41 @@
   <tocitem text="Tachym&#232;tre " target="html.tools.speedometer.index"/>
 
   <tocitem text="Tableaux ">
-   <tocitem text="Tableau des Aiguillages " target="package.jmri.jmrit.beantable.TurnoutTable"/>
+   <tocitem text="Tableau des Aiguillages " target="package.jmri.beantable.TurnoutTable"/>
 
-   <tocitem text="Tableau des Lumi&#232;res " target="package.jmri.jmrit.beantable.LightTable"/>
+   <tocitem text="Tableau des Lumi&#232;res " target="package.jmri.beantable.LightTable"/>
 
-   <tocitem text="Tableau des Capteurs " target="package.jmri.jmrit.beantable.SensorTable"/>
+   <tocitem text="Tableau des Capteurs " target="package.jmri.beantable.SensorTable"/>
 
-   <tocitem text="Tableau T&#234;te de Signal " target="package.jmri.jmrit.beantable.SignalHeadTable"/>
+   <tocitem text="Tableau T&#234;te de Signal " target="package.jmri.beantable.SignalHeadTable"/>
 
-   <tocitem text="Tableau des Itin&#233;raires " target="package.jmri.jmrit.beantable.RouteTable"/>
+   <tocitem text="Tableau des Itin&#233;raires " target="package.jmri.beantable.RouteTable"/>
 
-   <tocitem text="Tableau des LItin&#233;raires " target="package.jmri.jmrit.beantable.LRouteTable"/>
+   <tocitem text="Tableau des LItin&#233;raires " target="package.jmri.beantable.LRouteTable"/>
 
-   <tocitem text="Tableau Logix " target="package.jmri.jmrit.beantable.LogixTable"/>
+   <tocitem text="Tableau Logix " target="package.jmri.beantable.LogixTable"/>
 
-   <tocitem text="Tableau des Variables de M&#233;moire " target="package.jmri.jmrit.beantable.MemoryTable"/>
+   <tocitem text="Tableau des Variables de M&#233;moire " target="package.jmri.beantable.MemoryTable"/>
 
-   <tocitem text="Tableau des Rapports " target="package.jmri.jmrit.beantable.ReporterTable"/>
+   <tocitem text="Tableau des Rapports " target="package.jmri.beantable.ReporterTable"/>
 
-   <tocitem text="Tableau des Cantons " target="package.jmri.jmrit.beantable.BlockTable"/>
+   <tocitem text="Tableau des Cantons " target="package.jmri.beantable.BlockTable"/>
 
   </tocitem>
   <tocitem text="Traqueur(Cantons) " target="html.tools.tracker.index"/>
 
   <tocitem text="Transits ">
-   <tocitem text="Ajouter Transit " target="package.jmri.jmrit.beantable.TransitAddEdit"/>
+   <tocitem text="Ajouter Transit " target="package.jmri.beantable.TransitAddEdit"/>
 
-   <tocitem text="Table Transit " target="package.jmri.jmrit.beantable.TransitTable"/>
+   <tocitem text="Table Transit " target="package.jmri.beantable.TransitTable"/>
 
   </tocitem>
   <tocitem text="Commande Aiguillage " target="package.jmri.jmrit.simpleturnoutctrl.SimpleTurnoutCtrl"/>
 
   <tocitem text="Aiguillages " target="html.tools.Turnouts">
-   <tocitem text="Ajouter&#201;diter Aiguillage " target="package.jmri.jmrit.beantable.TurnoutAddEdit"/>
+   <tocitem text="Ajouter&#201;diter Aiguillage " target="package.jmri.beantable.TurnoutAddEdit"/>
 
-   <tocitem text="Tableau des Aiguillages " target="package.jmri.jmrit.beantable.TurnoutTable"/>
+   <tocitem text="Tableau des Aiguillages " target="package.jmri.beantable.TurnoutTable"/>
 
   </tocitem>
   <tocitem text="Mandat " target="package.jmri.jmrit.logix.Warrant"/>
