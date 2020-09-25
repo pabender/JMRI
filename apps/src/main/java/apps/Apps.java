@@ -33,7 +33,6 @@ import jmri.roster.swing.RosterMenu;
 import jmri.jmrit.throttle.ThrottleFrame;
 import jmri.jmrit.withrottle.WiThrottleCreationAction;
 import jmri.jmrix.*;
-import apps.plaf.macosx.Application;
 import jmri.profile.*;
 import jmri.script.JmriScriptEngineManager;
 import jmri.util.*;
@@ -439,10 +438,6 @@ public class Apps extends JPanel implements PropertyChangeListener, WindowListen
         // for testing startup time
         log.debug("start building menus");
 
-        if (SystemType.isMacOSX()) {
-            Application.getApplication().setQuitHandler((EventObject eo) -> handleQuit());
-        }
-
         fileMenu(menuBar, wi);
         editMenu(menuBar, wi);
         toolsMenu(menuBar, wi);
@@ -524,20 +519,11 @@ public class Apps extends JPanel implements PropertyChangeListener, WindowListen
         a.putValue(Action.NAME, Bundle.getMessage("MenuItemPaste"));
         editMenu.add(a);
 
-        // Put prefs in Apple's prefered area on Mac OS X
-        if (SystemType.isMacOSX()) {
-            Application.getApplication().setPreferencesHandler((EventObject eo) -> {
-                doPreferences();
-            });
+        editMenu.addSeparator();
+        if (prefsAction == null) {
+            prefsAction = new TabbedPreferencesAction();
         }
-        // Include prefs in Edit menu if not on Mac OS X or not using Aqua Look and Feel
-        if (!SystemType.isMacOSX() || !UIManager.getLookAndFeel().isNativeLookAndFeel()) {
-            editMenu.addSeparator();
-            if (prefsAction == null) {
-                prefsAction = new TabbedPreferencesAction();
-            }
-            editMenu.add(prefsAction);
-        }
+        editMenu.add(prefsAction);
 
     }
 

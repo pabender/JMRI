@@ -77,9 +77,6 @@ public abstract class Apps3 extends AppsBase {
 
         // create GUI
         initializeHelpSystem();
-        if (SystemType.isMacOSX()) {
-            initMacOSXMenus();
-        }
         if (((!configOK) || (!configDeferredLoadOK)) && (!preferenceFileExists)) {
             FirstTimeStartUpWizardAction prefsAction = new FirstTimeStartUpWizardAction("Start Up Wizard");
             prefsAction.setApp(this);
@@ -220,17 +217,6 @@ public abstract class Apps3 extends AppsBase {
         debugmsg = true;
 
         debugmsg = false;
-    }
-
-    protected void initMacOSXMenus() {
-        apps.plaf.macosx.Application macApp = apps.plaf.macosx.Application.getApplication();
-        macApp.setAboutHandler((EventObject eo) -> {
-            new AboutDialog(null, true).setVisible(true);
-        });
-        macApp.setPreferencesHandler((EventObject eo) -> {
-            new TabbedPreferencesAction(Bundle.getMessage("MenuItemPreferences")).actionPerformed();
-        });
-        macApp.setQuitHandler((EventObject eo) -> handleQuit());
     }
 
     /**
