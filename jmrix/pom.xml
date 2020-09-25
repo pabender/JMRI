@@ -216,6 +216,23 @@
                     <exclude>**/*.java</exclude>
                 </excludes>
             </testResource>
+            <testResource>
+                <directory>../jmri/src/main/java</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**</include>
+                </includes>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+            <testResource>
+                <directory>../resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**</include>
+                </includes>
+            </testResource>
         </testResources>
         <filters>
             <filter>../release.properties</filter>
