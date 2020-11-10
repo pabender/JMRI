@@ -7,7 +7,7 @@ import java
 import jmri
 
 # to turn off panel file
-jmri.InstanceManager.getDefault(jmri.ConfigureManager).setValidate(jmri.jmrit.XmlFile.Validate.None)
+jmri.InstanceManager.getDefault(jmri.ConfigureManager).setValidate(jmri.util.xml.XmlFile.Validate.None)
 
 # to turn off globally (but might be overridden locally)
-jmri.jmrit.XmlFile.setDefaultValidate(jmri.jmrit.XmlFile.Validate.None)
+jmri.util.xml.XmlFile.setDefaultValidate(jmri.util.xml.XmlFile.Validate.None)

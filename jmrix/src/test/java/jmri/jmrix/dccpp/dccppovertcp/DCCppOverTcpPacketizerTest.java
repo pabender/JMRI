@@ -3,6 +3,7 @@ package jmri.jmrix.dccpp.dccppovertcp;
 
 import jmri.util.JUnitUtil;
 import org.junit.jupiter.api.*;
+import jmri.util.junit.annotations.*;
 import jmri.util.junit.rules.RetryRule;
 
 /**
@@ -19,14 +20,14 @@ public class DCCppOverTcpPacketizerTest extends jmri.jmrix.dccpp.DCCppPacketizer
     @Test
     @Override
     @Disabled("Test in superclass hangs with DCCppPacketizer")
-    // TODO: correct initialization and remove this overriden test so that parent class test can run or reimplement test so that it works with DCCppPacketizer
+    @ToDo("correct initialization and remove this overriden test so that parent class test can run or reimplement test so that it works with DCCppPacketizer")
     public void testOutbound() throws Exception {
     }
 
     @Test
     @Override
     @Disabled("Test in superclass generates an exception with DCCppPacketizer")
-    // TODO: investigate failure in parent class test and make corrections, either to initialization or to this overriden test
+    @ToDo("investigate failure in parent class test and make corrections, either to initialization or to this overriden testi")
     public void testInbound() throws Exception {
     }
 

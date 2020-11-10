@@ -5,6 +5,8 @@ import jmri.util.JUnitUtil;
 
 import org.junit.jupiter.api.*;
 
+import jmri.jmrix.sprog.SprogSystemConnectionMemo;
+
 /**
  * JUnit tests for the SprogPortController class.
  *
@@ -13,12 +15,13 @@ import org.junit.jupiter.api.*;
 public class SprogPortControllerTest extends jmri.jmrix.AbstractSerialPortControllerTestBase {
 
     private SprogTrafficControlScaffold stcs;
+    private SprogSystemConnectionMemo memo = null;
 
     @Override
     @BeforeEach
     public void setUp(){
        JUnitUtil.setUp();
-       SprogSystemConnectionMemo memo = new SprogSystemConnectionMemo();
+       memo = new SprogSystemConnectionMemo();
        stcs = new SprogTrafficControlScaffold(memo);
        apc = new SprogPortController(memo){
             @Override
@@ -61,7 +64,10 @@ public class SprogPortControllerTest extends jmri.jmrix.AbstractSerialPortContro
     @Override
     @AfterEach
     public void tearDown(){
+       memo.dispose();
+       memo = null;
        stcs.dispose();
+       stcs = null;
        JUnitUtil.tearDown();
     }
 

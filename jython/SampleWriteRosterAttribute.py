@@ -4,7 +4,7 @@
 import jmri
 
 # get a specific entry by name
-entry = jmri.jmrit.roster.Roster.getDefault().entryFromTitle("000test attribute")
+entry = jmri.roster.Roster.getDefault().entryFromTitle("000test attribute")
 
 # add an attribute
 entry.putAttribute("newKey", "newValue")

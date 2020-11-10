@@ -2,11 +2,13 @@
 package jmri.jmrit.jython;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
 import javax.annotation.Nonnull;
 
+import jmri.util.FileUtil;
 import jmri.util.JUnitUtil;
 
 import org.junit.Assert;
@@ -32,7 +34,8 @@ public class SampleScriptIT{
      */
     @Nonnull
     public static Stream<File> testsFromDirectory() {
-        File[] files = (new File("jython/test")).listFiles((File a, String b) -> b.endsWith(".py"));
+        File jythonRoot = new File("jython/test");
+        File[] files =  jythonRoot.listFiles((File a, String b) -> b.endsWith(".py"));
         return files != null ? Arrays.stream(files) : Stream.empty();
     }
 

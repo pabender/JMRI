@@ -138,7 +138,7 @@ from jmri import SignalHead
 from jmri import Turnout
 
 from jmri.jmrit import Sound
-from jmri.jmrit import XmlFile
+from jmri.util.xml import XmlFile
 
 from jmri.jmrit.consisttool import ConsistToolFrame
 
@@ -149,7 +149,7 @@ from jmri.implementation import AbstractShutDownTask
 #from jmri.jmrit.operations.rollingstock.cars import CarManager
 #from jmri.jmrit.operations.trains import TrainManager
 
-from jmri.jmrit.roster import Roster
+from jmri.roster import Roster
 
 from jmri.util import JmriJFrame
 

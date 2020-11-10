@@ -19,6 +19,7 @@ public class SprogTrafficControllerTest {
        SprogTrafficController tc = new SprogTrafficController(m);
        Assert.assertNotNull(tc);
        tc.dispose();
+       m.dispose();
    }
 
     @BeforeEach

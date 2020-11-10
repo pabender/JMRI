@@ -4,5 +4,5 @@
 ###############################################################
 import jmri
 
-jmri.InstanceManager.getDefault(jmri.jmrit.revhistory.FileHistory).purge(0)
+jmri.InstanceManager.getDefault(jmri.util.revhistory.FileHistory).purge(0)
 print("The <File History> section has been cleared")

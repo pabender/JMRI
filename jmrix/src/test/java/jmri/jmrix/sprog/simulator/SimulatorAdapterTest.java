@@ -19,7 +19,7 @@ public class SimulatorAdapterTest {
        Assert.assertNotNull(a);
 
        // clean up
-       a.getSystemConnectionMemo().getSprogTrafficController().dispose();
+       a.getSystemConnectionMemo().dispose();
    }
 
     @BeforeEach

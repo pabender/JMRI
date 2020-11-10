@@ -950,7 +950,7 @@ class LocoThrot(jmri.jmrit.automat.AbstractAutomaton) :
                 if (self.loadFromRoster.isSelected() == True) :
                     # take the loco id and try looking up values in roster
                     if (self.rosterInstance == None) :
-                        self.rosterInstance = jmri.jmrit.roster.Roster.getDefault()
+                        self.rosterInstance = jmri.roster.Roster.getDefault()
                         self.msgText("got roster instance\n")
                     rosterEntries = self.rosterInstance.matchingList(None, None, self.locoAddress.text, None, None, None, None)
                     self.msgText("found " + rosterEntries.size().toString() + " entries matching |" + id.toString() + "|\n")
@@ -1203,7 +1203,7 @@ class LocoThrot(jmri.jmrit.automat.AbstractAutomaton) :
     def whenSaveToRosterButtonClicked(self, event):   
         if (self.locoAddress.text != "") :
             if (self.rosterInstance == None) :
-                self.rosterInstance = jmri.jmrit.roster.Roster.getDefault()
+                self.rosterInstance = jmri.roster.Roster.getDefault()
                 self.msgText("got roster instance\n")
             id = int(self.locoAddress.text)
             rosterEntries = self.rosterInstance.matchingList(None, None, id.toString(), None, None, None, None)
@@ -1367,14 +1367,14 @@ class LocoThrot(jmri.jmrit.automat.AbstractAutomaton) :
          
         # get other setup things
 
-        self.greenSignalIcon = jmri.jmrit.catalog.NamedIcon("resources/icons/smallschematics/searchlights/right-green-short.gif", "GreenCabSignal")
-        self.greenFlashSignalIcon = jmri.jmrit.catalog.NamedIcon("resources/icons/smallschematics/searchlights/right-flashgreen-short.gif", "GreenFlashCabSignal")
-        self.yellowSignalIcon = jmri.jmrit.catalog.NamedIcon("resources/icons/smallschematics/searchlights/right-yellow-short.gif", "YellowCabSignal")
-        self.yellowFlashSignalIcon = jmri.jmrit.catalog.NamedIcon("resources/icons/smallschematics/searchlights/right-flashyellow-short.gif", "YellowFlashCabSignal")
-        self.redSignalIcon = jmri.jmrit.catalog.NamedIcon("resources/icons/smallschematics/searchlights/right-red-short.gif", "RedCabSignal")
-        self.redFlashSignalIcon = jmri.jmrit.catalog.NamedIcon("resources/icons/smallschematics/searchlights/right-flashred-short.gif", "RedFlashCabSignal")
-        self.darkSignalIcon = jmri.jmrit.catalog.NamedIcon("resources/icons/smallschematics/searchlights/right-dark-short.gif", "DarkCabSignal")
-        self.unknownSignalIcon = jmri.jmrit.catalog.NamedIcon("resources/icons/misc/Question-black.gif", "UnknownCabSignal")
+        self.greenSignalIcon = jmri.util.swing.NamedIcon("resources/icons/smallschematics/searchlights/right-green-short.gif", "GreenCabSignal")
+        self.greenFlashSignalIcon = jmri.util.swing.NamedIcon("resources/icons/smallschematics/searchlights/right-flashgreen-short.gif", "GreenFlashCabSignal")
+        self.yellowSignalIcon = jmri.util.swing.NamedIcon("resources/icons/smallschematics/searchlights/right-yellow-short.gif", "YellowCabSignal")
+        self.yellowFlashSignalIcon = jmri.util.swing.NamedIcon("resources/icons/smallschematics/searchlights/right-flashyellow-short.gif", "YellowFlashCabSignal")
+        self.redSignalIcon = jmri.util.swing.NamedIcon("resources/icons/smallschematics/searchlights/right-red-short.gif", "RedCabSignal")
+        self.redFlashSignalIcon = jmri.util.swing.NamedIcon("resources/icons/smallschematics/searchlights/right-flashred-short.gif", "RedFlashCabSignal")
+        self.darkSignalIcon = jmri.util.swing.NamedIcon("resources/icons/smallschematics/searchlights/right-dark-short.gif", "DarkCabSignal")
+        self.unknownSignalIcon = jmri.util.swing.NamedIcon("resources/icons/misc/Question-black.gif", "UnknownCabSignal")
         self.throttleManager = jmri.InstanceManager.throttleManagerInstance()
         if (self.throttleManager == None) :
             print("No command station found!!\nRB has no way to control the trains.\n")

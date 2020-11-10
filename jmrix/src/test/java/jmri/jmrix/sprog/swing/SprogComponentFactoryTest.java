@@ -33,5 +33,9 @@ public class SprogComponentFactoryTest {
     }
 
     @AfterEach
-    public void tearDown() {        JUnitUtil.tearDown();    }
+    public void tearDown() {
+        m.dispose();
+        m = null;
+        JUnitUtil.tearDown();
+    }
 }

@@ -32,6 +32,7 @@ import jmri.Sensor;
 import jmri.Turnout;
 import jmri.beantable.AddNewDevicePanel;
 import jmri.jmrit.display.Positionable;
+import jmri.util.FileUtil;
 import jmri.util.JmriJFrame;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,7 +49,6 @@ import org.slf4j.LoggerFactory;
 public class BeanSwitch extends JPanel implements java.beans.PropertyChangeListener, ActionListener {
 
     private final JButton beanButton;
-    //private final boolean connected = false;
     private final int _shape;
     private final String _label;
     private String _uname = "unconnected";
@@ -948,7 +948,7 @@ public class BeanSwitch extends JPanel implements java.beans.PropertyChangeListe
                 javax.swing.JOptionPane.ERROR_MESSAGE);
     }
 
-    String rootPath = "resources/icons/misc/switchboard/";
+    String rootPath = "program:resources/icons/misc/switchboard/";
     String iconOffPath = rootPath + "appslide-off-s.png";
     String iconOnPath = rootPath + "appslide-on-s.png";
     String keyOffPath = rootPath + "markl-off-s.png";
@@ -980,8 +980,8 @@ public class BeanSwitch extends JPanel implements java.beans.PropertyChangeListe
         public IconSwitch(String filepath1, String filepath2) {
             // resize to maximum 100
             try {
-                image1 = ImageIO.read(new File(filepath1));
-                image2 = ImageIO.read(new File(filepath2));
+                image1 = ImageIO.read(FileUtil.getFile(filepath1));
+                image2 = ImageIO.read(FileUtil.getFile(filepath2));
                 image = image1;
             } catch (IOException ex) {
                 log.error("error reading image from {}-{}", filepath1, filepath2, ex);

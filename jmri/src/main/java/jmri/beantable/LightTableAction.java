@@ -21,6 +21,7 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 
+import jmri.util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -432,7 +433,7 @@ public class LightTableAction extends AbstractTableAction<Light> {
             class ImageIconRenderer extends AbstractCellEditor implements TableCellEditor, TableCellRenderer {
 
                 protected JLabel label;
-                protected String rootPath = "resources/icons/misc/switchboard/"; // also used in display.switchboardEditor
+                protected String rootPath = "program:resources/icons/misc/switchboard/"; // also used in display.switchboardEditor
                 protected char beanTypeChar = 'L'; // for Light
                 protected String onIconPath = rootPath + beanTypeChar + "-on-s.png";
                 protected String offIconPath = rootPath + beanTypeChar + "-off-s.png";
@@ -518,8 +519,8 @@ public class LightTableAction extends AbstractTableAction<Light> {
                  */
                 protected void loadIcons() {
                     try {
-                        onImage = ImageIO.read(new File(onIconPath));
-                        offImage = ImageIO.read(new File(offIconPath));
+                        onImage = ImageIO.read(FileUtil.getFile(onIconPath));
+                        offImage = ImageIO.read(FileUtil.getFile(offIconPath));
                     } catch (IOException ex) {
                         log.error("error reading image from {} or {}", onIconPath, offIconPath, ex);
                     }

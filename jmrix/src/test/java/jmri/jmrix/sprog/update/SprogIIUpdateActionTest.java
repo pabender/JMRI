@@ -20,6 +20,7 @@ public class SprogIIUpdateActionTest {
         m.setSprogTrafficController(new SprogTrafficControlScaffold(m));
         SprogIIUpdateAction t = new SprogIIUpdateAction("test",m);
         Assert.assertNotNull("exists",t);
+        m.dispose();
     }
 
     @BeforeEach

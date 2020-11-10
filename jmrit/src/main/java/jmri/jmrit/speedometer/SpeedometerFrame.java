@@ -804,17 +804,17 @@ public class SpeedometerFrame extends jmri.util.JmriJFrame {
 
     private void setupIconMap(SensorIcon sensor) {
         sensor.setIcon("SensorStateActive",
-                new NamedIcon("resources/icons/smallschematics/tracksegments/circuit-occupied.gif",
-                        "resources/icons/smallschematics/tracksegments/circuit-occupied.gif"));
+                new NamedIcon("program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif",
+                        "program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif"));
         sensor.setIcon("SensorStateInactive",
-                new NamedIcon("resources/icons/smallschematics/tracksegments/circuit-empty.gif",
-                        "resources/icons/smallschematics/tracksegments/circuit-empty.gif"));
+                new NamedIcon("program:resources/icons/smallschematics/tracksegments/circuit-empty.gif",
+                        "program:resources/icons/smallschematics/tracksegments/circuit-empty.gif"));
         sensor.setIcon("BeanStateInconsistent",
-                new NamedIcon("resources/icons/smallschematics/tracksegments/circuit-error.gif",
-                        "resources/icons/smallschematics/tracksegments/circuit-error.gif"));
+                new NamedIcon("program:resources/icons/smallschematics/tracksegments/circuit-error.gif",
+                        "program:resources/icons/smallschematics/tracksegments/circuit-error.gif"));
         sensor.setIcon("BeanStateUnknown",
-                new NamedIcon("resources/icons/smallschematics/tracksegments/circuit-error.gif",
-                        "resources/icons/smallschematics/tracksegments/circuit-error.gif"));
+                new NamedIcon("program:resources/icons/smallschematics/tracksegments/circuit-error.gif",
+                        "program:resources/icons/smallschematics/tracksegments/circuit-error.gif"));
     }
 
     private static class SpeedometerXml extends XmlFile {

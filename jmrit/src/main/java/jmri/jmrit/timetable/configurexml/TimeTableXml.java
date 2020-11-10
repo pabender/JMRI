@@ -461,7 +461,7 @@ public class TimeTableXml {
                 try {
                     Files.copy(fromPath, toPath.resolve(fromPath.getFileName()), StandardCopyOption.REPLACE_EXISTING);
                 } catch (IOException ex) {
-                    log.error("Copy TimeTable demo file failed");  // NOI18N
+                    log.error("Copy TimeTable demo file failed",ex);  // NOI18N
                     return null;
                 }
             }

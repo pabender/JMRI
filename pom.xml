@@ -13,6 +13,7 @@
     <modules>
        <module>jmri</module>
        <module>jmrix</module>
+       <module>can</module>
        <module>jmrit</module>
        <module>jmris</module>
        <module>testutil</module>
@@ -41,6 +42,7 @@
         <jacoco.reportDir>${basedir}/target/</jacoco.reportDir>
         <!-- test environment -->
         <jmri.path.program>${basedir}</jmri.path.program>
+        <jmri.path.resources>${basedir}/resources</jmri.path.resources>
         <jmri.prefsdir>${basedir}/temp</jmri.prefsdir>
         <jmri.shutdownmanager>jmri.util.MockShutDownManager</jmri.shutdownmanager>
         <!-- don't load JInput during CI tests -->
@@ -451,9 +453,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.version}</version>
                 <configuration>
-                    <additionalClasspathElements>
-                        <additionalClasspathElement>${basedir}</additionalClasspathElement>
-                    </additionalClasspathElements>
                     <excludes>
                         <!-- ignore until #3492 is resolved -->
                         <exclude>%regex[jmri.jmrix.loconet.locormi.LnMessage[Client|Server]Test]</exclude>
@@ -473,15 +472,17 @@
                         <exclude>jmri.util.TestWaitsForever</exclude>
                     </excludes>
                     <systemPropertyVariables>
-                        <jmri.path.program>${basedir}</jmri.path.program>
-                        <jmri.prefsdir>${basedir}/temp</jmri.prefsdir>
+                        <jmri.path.program>${jmri.path.program}</jmri.path.program>
+                        <jmri.path.resources>${jmri.path.resources}</jmri.path.resources>
+                        <jmri.prefsdir>${jmri.prefsdir}</jmri.prefsdir>
+                        <jmri.log4jconfigfilename>${basedir}/tests.lcf</jmri.log4jconfigfilename>
                         <jmri.shutdownmanager>jmri.util.MockShutDownManager</jmri.shutdownmanager>
                         <jinput.useDefaultPlugin>false</jinput.useDefaultPlugin><!-- don't load JInput during CI tests -->
                     </systemPropertyVariables>
                     <trimStackTrace>false</trimStackTrace>
-                    <workingDirectory>${basedir}</workingDirectory>
+                    <workingDirectory>${workingDirectory}</workingDirectory>
                     <!-- -ea or -da in the next line to control Java asserts -->
-                    <argLine>@{argLine} @{surefire.argLine} -Djava.security.policy=${basedir}/lib/security.policy</argLine>
+                    <argLine>@{argLine} @{surefire.argLine} -Djava.security.policy=../lib/security.policy</argLine>
                     <useSystemClassLoader>true</useSystemClassLoader>
                     <useManifestOnlyJar>false</useManifestOnlyJar>
                     <!-- forkCount causes tests to run in forked JVMs.  The following the number with C says to fork the number multiplied by the number of cores available. -->
@@ -501,7 +502,16 @@
                             <goal>verify</goal>
                         </goals>
                         <configuration>
-                            <argLine>@{argLine} @{failsafe.argLine} -Djava.security.policy=${basedir}/lib/security.policy</argLine>
+                           <systemPropertyVariables>
+                              <jmri.path.program>${jmri.path.program}</jmri.path.program>
+                              <jmri.path.resources>${jmri.path.resources}</jmri.path.resources>
+                              <jmri.prefsdir>${jmri.prefsdir}</jmri.prefsdir>
+                              <jmri.log4jconfigfilename>${basedir}/tests.lcf</jmri.log4jconfigfilename>
+                              <jmri.shutdownmanager>jmri.util.MockShutDownManager</jmri.shutdownmanager>
+                              <jinput.useDefaultPlugin>false</jinput.useDefaultPlugin><!-- don't load JInput during CI tests -->
+                            </systemPropertyVariables>
+                            <workingDirectory>${workingDirectory}</workingDirectory>
+                            <argLine>@{argLine} @{failsafe.argLine} -Djava.security.policy=../lib/security.policy</argLine>
                         </configuration>
                     </execution>
                 </executions>
@@ -1401,33 +1411,6 @@
             <version>2.11.0</version>
         </dependency>
         -->
-        <dependency>
-            <groupId>com.digi.xbee</groupId>
-            <artifactId>xbee-java-library</artifactId>
-            <version>1.3.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-jdk14</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.digi</groupId>
-                    <artifactId>android-sdk</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.digi</groupId>
-                    <artifactId>android-sdk-addon</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.rxtx</groupId>
-                    <artifactId>rxtx</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.rxtx</groupId>
-                    <artifactId>rxtx-native</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
         <dependency>
             <groupId>com.github.purejavacomm</groupId>
             <artifactId>purejavacomm</artifactId>

@@ -42,9 +42,10 @@ public class SprogProgrammerManagerTest {
 
     @AfterEach
     public void tearDown() {
-        stcs.dispose();
         op = null;
+        m.dispose();
         m = null;
+        stcs.dispose();
         stcs = null;
         JUnitUtil.tearDown();
     }

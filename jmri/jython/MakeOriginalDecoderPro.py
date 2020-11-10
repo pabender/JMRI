@@ -18,7 +18,7 @@ f.setLayout(javax.swing.BoxLayout(f, javax.swing.BoxLayout.Y_AXIS))
 r = java.util.ResourceBundle.getBundle("apps.AppsBundle")
 
 # create the first button and add to the main screen
-b = javax.swing.JButton(jmri.jmrit.roster.swing.RosterFrameAction())
+b = javax.swing.JButton(jmri.roster.swing.RosterFrameAction())
 p = javax.swing.JPanel()
 p.add(b)
 f.add(p)

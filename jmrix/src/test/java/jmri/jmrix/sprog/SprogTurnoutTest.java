@@ -13,7 +13,8 @@ import org.junit.jupiter.api.*;
  */
 public class SprogTurnoutTest extends jmri.implementation.AbstractTurnoutTestBase {
 
-   private SprogTrafficControlScaffold stcs = null;
+    private SprogTrafficControlScaffold stcs = null;
+    private SprogSystemConnectionMemo m = null;
 
     @Override
     public int numListeners() {
@@ -41,7 +42,7 @@ public class SprogTurnoutTest extends jmri.implementation.AbstractTurnoutTestBas
         jmri.util.JUnitUtil.initInternalSensorManager();
         jmri.util.JUnitUtil.initInternalTurnoutManager();
 
-        SprogSystemConnectionMemo m = new SprogSystemConnectionMemo(jmri.jmrix.sprog.SprogConstants.SprogMode.SERVICE);
+        m = new SprogSystemConnectionMemo(jmri.jmrix.sprog.SprogConstants.SprogMode.SERVICE);
         stcs = new SprogTrafficControlScaffold(m);
         m.setSprogTrafficController(stcs);
 
@@ -51,7 +52,10 @@ public class SprogTurnoutTest extends jmri.implementation.AbstractTurnoutTestBas
 
     @AfterEach
     public void tearDown() {
+        m.dispose();
+        m = null;
         stcs.dispose();
+        stcs = null;
         JUnitUtil.tearDown();
     }
 

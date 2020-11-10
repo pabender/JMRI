@@ -6,13 +6,13 @@
 #
 
 import jmri
-import jmri.jmrit.roster
+import jmri.roster
 import java
 import javax.swing
 
 # define a routine that looks for a specific model, and offers to change to a list
 def checkForEntries(model, chooseList) :
-    rosterlist = jmri.jmrit.roster.Roster.getDefault().matchingList(None, None, None, None, None, None, None)
+    rosterlist = jmri.roster.Roster.getDefault().matchingList(None, None, None, None, None, None, None)
     # Loop through the list of all Roster entries, checking each one
     for entry in rosterlist.toArray() :
         if (entry.getDecoderModel() == model) :
@@ -38,7 +38,7 @@ def checkEntry(entry, chooseList) :
         print "New model: ", s
         entry.setDecoderModel(s)
         entry.updateFile()
-        jmri.jmrit.roster.Roster.writeRosterFile()
+        jmri.roster.Roster.writeRosterFile()
     else :
         # not selected
         print "no change"

@@ -9,6 +9,8 @@ import org.junit.Assert;
 import org.junit.jupiter.api.*;
 import org.junit.Assume;
 
+import jmri.jmrix.sprog.SprogSystemConnectionMemo;
+
 /**
  * Test simple functioning of SPROGMenu.
  *
@@ -22,8 +24,10 @@ public class SPROGMenuTest {
         // the constructor looks for the default ListedTableFrame class, 
         // which is set by the ListedTableFrame constructor.
         new jmri.beantable.ListedTableFrame();
-        SPROGMenu action = new SPROGMenu(new jmri.jmrix.sprog.SprogSystemConnectionMemo());
+        SprogSystemConnectionMemo memo = new SprogSystemConnectionMemo();
+        SPROGMenu action = new SPROGMenu(memo);
         Assert.assertNotNull("exists", action);
+        memo.dispose();
     }
 
     @BeforeEach

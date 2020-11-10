@@ -92,7 +92,7 @@ public class ScaleConfigXML {
         } catch (JDOMException ex) {
             log.error("File invalid: {}", ex);  // NOI18N
             return false;
-        } catch (IOException ex) {
+        } catch (IOException|NullPointerException ex ) {
             log.error("Error reading file: {}", ex);  // NOI18N
             return false;
         }

@@ -28,8 +28,8 @@ public class ConnectionConfigTest extends jmri.jmrix.AbstractSerialConnectionCon
         if (cc != null) {
             if (cc.getAdapter() != null) {
                 if (cc.getAdapter().getSystemConnectionMemo() != null) {
-                    if (((SprogSystemConnectionMemo)cc.getAdapter().getSystemConnectionMemo()).getSprogTrafficController() != null) {
-                        ((SprogSystemConnectionMemo)cc.getAdapter().getSystemConnectionMemo()).getSprogTrafficController().dispose();
+                    if (((SprogSystemConnectionMemo)cc.getAdapter().getSystemConnectionMemo()) != null) {
+                        ((SprogSystemConnectionMemo)cc.getAdapter().getSystemConnectionMemo()).dispose();
                     }
                 }
             }

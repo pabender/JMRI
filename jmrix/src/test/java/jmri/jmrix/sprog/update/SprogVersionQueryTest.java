@@ -20,6 +20,7 @@ public class SprogVersionQueryTest {
         m.setSprogTrafficController(new SprogTrafficControlScaffold(m));
         SprogVersionQuery t = new SprogVersionQuery(m);
         Assert.assertNotNull("exists",t);
+        m.dispose();
     }
 
     @BeforeEach

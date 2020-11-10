@@ -124,6 +124,8 @@ public class XNetConsistTest extends jmri.implementation.AbstractConsistTestBase
         tc = new XNetInterfaceScaffold(new LenzCommandStation());
         memo = new XNetSystemConnectionMemo(tc);
         c = new XNetConsist(5, tc, memo);
+        InstanceManager.setDefault(jmri.decoderdefn.DecoderIndexFile.class,
+                new jmri.decoderdefn.DecoderIndexFile());
     }
 
     @AfterEach

@@ -932,7 +932,7 @@ class YetAnotherAutoTrain(jmri.jmrit.automat.AbstractAutomaton):
                 return
 
         elif dispType == 'ROSTER':
-            rosterEntry = jmri.jmrit.roster.Roster.getDefault().getEntryForId(dispValue)
+            rosterEntry = jmri.roster.Roster.getDefault().getEntryForId(dispValue)
             if rosterEntry is None:
                 self.compileMessages.append('{} - Value error at line {}: the roster entry, {}, does not exist'
                         .format(self.threadName, self.lineNumber, dispValue))

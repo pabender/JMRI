@@ -35,6 +35,7 @@ public class SprogTurnoutManagerTest extends jmri.managers.AbstractTurnoutMgrTes
 
     @AfterEach
     public void tearDown() {
+        m.dispose();
         m = null;
         l = null;
         JUnitUtil.tearDown();

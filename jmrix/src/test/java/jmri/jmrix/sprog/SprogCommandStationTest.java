@@ -20,6 +20,7 @@ public class SprogCommandStationTest {
        SprogCommandStation cs = new SprogCommandStation(tc);
        Assert.assertNotNull(cs);
        tc.dispose();
+       m.dispose();
    }
 
     @BeforeEach

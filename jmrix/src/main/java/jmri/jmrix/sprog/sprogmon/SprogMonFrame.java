@@ -35,8 +35,11 @@ public class SprogMonFrame extends jmri.jmrix.AbstractMonFrame implements SprogL
 
     @Override
     public void dispose() {
-        _memo.getSprogTrafficController().removeSprogListener(this);
+       try {
+           _memo.getSprogTrafficController().removeSprogListener(this);
+       } finally {
         super.dispose();
+       }
     }
 
     @Override

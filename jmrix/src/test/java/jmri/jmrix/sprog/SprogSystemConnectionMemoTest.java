@@ -89,7 +89,8 @@ public class SprogSystemConnectionMemoTest extends SystemConnectionMemoTestBase<
     @Override
     @AfterEach
     public void tearDown() {
-        scm.getSprogTrafficController().dispose();
+        scm.dispose();
+        scm = null;
         JUnitUtil.tearDown();
     }
 

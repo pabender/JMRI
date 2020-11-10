@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
 package jmri.beantable;
 
+import jmri.util.FileUtil;
 import jmri.util.gui.GuiLafPreferencesManager;
 import java.awt.Color;
 import java.awt.Component;
@@ -587,7 +588,7 @@ public class BlockTableAction extends AbstractTableAction<Block> {
             class ImageIconRenderer extends AbstractCellEditor implements TableCellEditor, TableCellRenderer {
 
                 protected JLabel label;
-                protected String rootPath = "resources/icons/misc/switchboard/"; // also used in display.switchboardEditor
+                protected String rootPath = "program:resources/icons/misc/switchboard/"; // also used in display.switchboardEditor
                 protected char beanTypeChar = 'S'; // reuse Sensor icon for block state
                 protected String onIconPath = rootPath + beanTypeChar + "-on-s.png";
                 protected String offIconPath = rootPath + beanTypeChar + "-off-s.png";
@@ -672,8 +673,8 @@ public class BlockTableAction extends AbstractTableAction<Block> {
                  */
                 protected void loadIcons() {
                     try {
-                        onImage = ImageIO.read(new File(onIconPath));
-                        offImage = ImageIO.read(new File(offIconPath));
+                        onImage = ImageIO.read(FileUtil.getFile(onIconPath));
+                        offImage = ImageIO.read(FileUtil.getFile(offIconPath));
                     } catch (IOException ex) {
                         log.error("error reading image from {} or {}", onIconPath, offIconPath, ex);
                     }

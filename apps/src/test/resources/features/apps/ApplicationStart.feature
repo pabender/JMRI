@@ -31,7 +31,7 @@ Scenario Outline: Application Start
    | apps.DecoderPro.DecoderPro | apps/src/test/java/apps/PanelPro/profiles/Grapevine_Simulator | DecoderPro | DecoderPro version |
    | apps.DecoderPro.DecoderPro | apps/src/test/java/apps/PanelPro/profiles/Sprog_Simulator | DecoderPro | DecoderPro version |
 
-   @DecoderPro3Test 
+   @DecoderPro3Test
    Examples: DecoderPro3 Tests
    | application | profile | name | infoline |
    | apps.gui3.dp3.DecoderPro3 | apps/src/test/java/apps/PanelPro/profiles/LocoNet_Simulator | DecoderPro: All Entries | DecoderPro version |

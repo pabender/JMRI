@@ -15,6 +15,7 @@ import org.junit.jupiter.api.*;
 public class SprogProgrammerTest extends jmri.jmrix.AbstractProgrammerTest {
 
     private SprogTrafficControlScaffold stcs = null;
+    private SprogSystemConnectionMemo m = null; 
 
     @Test
     @Override
@@ -43,7 +44,7 @@ public class SprogProgrammerTest extends jmri.jmrix.AbstractProgrammerTest {
         // prepare an interface
         jmri.util.JUnitUtil.resetInstanceManager();
 
-        SprogSystemConnectionMemo m = new SprogSystemConnectionMemo(jmri.jmrix.sprog.SprogConstants.SprogMode.SERVICE);
+        m = new SprogSystemConnectionMemo(jmri.jmrix.sprog.SprogConstants.SprogMode.SERVICE);
         stcs = new SprogTrafficControlScaffold(m);
         m.setSprogTrafficController(stcs);
         m.configureManagers();
@@ -53,7 +54,10 @@ public class SprogProgrammerTest extends jmri.jmrix.AbstractProgrammerTest {
     @AfterEach
     @Override
     public void tearDown() {
+        m.dispose();
         stcs.dispose();
+        m = null;
+        stcs = null;
         programmer = null;
         JUnitUtil.tearDown();
     }

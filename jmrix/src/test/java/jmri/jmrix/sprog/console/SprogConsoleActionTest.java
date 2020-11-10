@@ -9,6 +9,8 @@ import org.junit.Assert;
 import org.junit.jupiter.api.*;
 import org.junit.Assume;
 
+import jmri.jmrix.sprog.SprogSystemConnectionMemo;
+
 /**
  * Test simple functioning of SprogConsoleAction.
  *
@@ -20,8 +22,10 @@ public class SprogConsoleActionTest {
     @Test
     public void testCtor() {
         Assume.assumeFalse(GraphicsEnvironment.isHeadless()); 
-        SprogConsoleAction action = new SprogConsoleAction("SPROG Action Test", new jmri.jmrix.sprog.SprogSystemConnectionMemo());
+        SprogSystemConnectionMemo memo = new SprogSystemConnectionMemo();
+        SprogConsoleAction action = new SprogConsoleAction("SPROG Action Test", memo);
         Assert.assertNotNull("exists", action);
+        memo.dispose();
     }
 
     @BeforeEach

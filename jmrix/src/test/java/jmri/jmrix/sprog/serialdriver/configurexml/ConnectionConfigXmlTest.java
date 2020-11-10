@@ -29,8 +29,8 @@ public class ConnectionConfigXmlTest extends jmri.jmrix.configurexml.AbstractSer
         // if we've started a traffic controller, dispose of it
         if (cc.getAdapter() != null) {
             if (cc.getAdapter().getSystemConnectionMemo() != null) {
-                if ( ((SprogSystemConnectionMemo)cc.getAdapter().getSystemConnectionMemo()).getSprogTrafficController() != null)
-                    ((SprogSystemConnectionMemo)cc.getAdapter().getSystemConnectionMemo()).getSprogTrafficController().dispose();
+                if ( ((SprogSystemConnectionMemo)cc.getAdapter().getSystemConnectionMemo()) != null)
+                    ((SprogSystemConnectionMemo)cc.getAdapter().getSystemConnectionMemo()).dispose();
             }
         }
 

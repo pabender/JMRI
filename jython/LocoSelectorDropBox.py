@@ -41,7 +41,7 @@ class LocoSelector(jmri.jmrit.automat.AbstractAutomaton) :
 
     def rosterBoxChange(self, event) :
         entry = self.box.getSelectedItem()
-                if isinstance(entry, jmri.jmrit.roster.RosterEntry):
+                if isinstance(entry, jmri.roster.RosterEntry):
             theDccAddress = entry.getDccAddress()
             # print theDccAddress
             self.address.text = theDccAddress
@@ -67,8 +67,8 @@ class LocoSelector(jmri.jmrit.automat.AbstractAutomaton) :
 
         # create the drop-box from the roster,
         # getEntriesWithAttributeKeyValue(String key, String value)
-        self.roster = jmri.jmrit.roster.Roster.getDefault()
-        self.box = jmri.jmrit.roster.swing.GlobalRosterEntryComboBox()
+        self.roster = jmri.roster.Roster.getDefault()
+        self.box = jmri.roster.swing.GlobalRosterEntryComboBox()
         self.box.itemStateChanged = self.rosterBoxChange
 
         # create the text field

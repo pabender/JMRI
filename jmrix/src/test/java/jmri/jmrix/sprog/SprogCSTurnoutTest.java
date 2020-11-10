@@ -61,8 +61,10 @@ public class SprogCSTurnoutTest extends jmri.implementation.AbstractTurnoutTestB
 
     @AfterEach
     public void tearDown() {
-        m.getSlotThread().interrupt();
+        m.dispose();
+        m = null;
         stcs.dispose();
+        stcs = null;
         JUnitUtil.tearDown();
     }
 

@@ -4,6 +4,7 @@ jmri.jar
 java/docs
 **/target
 **/temp
+**/*.iml
 
 # test artifacts
 junit-results.xml

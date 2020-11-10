@@ -35,9 +35,10 @@ public class SprogConsoleFrameTest extends jmri.util.JmriJFrameTestBase {
     @AfterEach
     @Override
     public void tearDown() {
-        m.getSlotThread().interrupt();
-        JUnitUtil.waitFor(() -> {return m.getSlotThread().getState() == Thread.State.TERMINATED;}, "Slot thread failed to stop");
+        m.dispose();
+        m = null;
         stcs.dispose();
+        stcs = null;
         JUnitUtil.clearShutDownManager(); // put in place because AbstractMRTrafficController implementing subclass was not terminated properly
         super.tearDown();
     }

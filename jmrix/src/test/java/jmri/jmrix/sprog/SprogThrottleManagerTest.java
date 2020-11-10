@@ -14,6 +14,7 @@ import org.junit.jupiter.api.*;
 public class SprogThrottleManagerTest extends jmri.managers.AbstractThrottleManagerTestBase {
 
     private SprogTrafficControlScaffold stcs = null;
+    private SprogSystemConnectionMemo m = null;
 
     @Test
     public void testCtor(){
@@ -27,7 +28,7 @@ public class SprogThrottleManagerTest extends jmri.managers.AbstractThrottleMana
         // prepare an interface
         jmri.util.JUnitUtil.resetInstanceManager();
 
-        SprogSystemConnectionMemo m = new SprogSystemConnectionMemo(jmri.jmrix.sprog.SprogConstants.SprogMode.SERVICE);
+        m = new SprogSystemConnectionMemo(jmri.jmrix.sprog.SprogConstants.SprogMode.SERVICE);
         stcs = new SprogTrafficControlScaffold(m);
         m.setSprogTrafficController(stcs);
 
@@ -36,7 +37,10 @@ public class SprogThrottleManagerTest extends jmri.managers.AbstractThrottleMana
 
     @AfterEach
     public void tearDown() {
+        m.dispose();
+        m = null;
         stcs.dispose();
+        stcs = null;
         JUnitUtil.tearDown();
     }
 

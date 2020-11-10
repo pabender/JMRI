@@ -15,6 +15,7 @@ import org.junit.jupiter.api.*;
 public class SprogPowerManagerTest extends jmri.jmrix.AbstractPowerManagerTestBase {
 
     private SprogTrafficControlScaffold stc = null;
+    private SprogSystemConnectionMemo m = null; 
 
     // service routines to simulate receiving on, off from interface
     @Override
@@ -106,7 +107,7 @@ public class SprogPowerManagerTest extends jmri.jmrix.AbstractPowerManagerTestBa
     @Override
     public void setUp() {
         JUnitUtil.setUp();
-        SprogSystemConnectionMemo m = new SprogSystemConnectionMemo();
+        m = new SprogSystemConnectionMemo();
         stc = new SprogTrafficControlScaffold(m);
         stc.setTestReplies(true);
         m.setSprogTrafficController(stc);  // constructor calls getSprogTrafficController.
@@ -115,7 +116,10 @@ public class SprogPowerManagerTest extends jmri.jmrix.AbstractPowerManagerTestBa
 
     @AfterEach
     public void tearDown() {
+        m.dispose();
+        m = null;
         stc.dispose();
+        stc = null;
         JUnitUtil.tearDown();
     }
 

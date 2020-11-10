@@ -38,7 +38,7 @@ public class SprogCSThrottleManagerTest {
 
     @AfterEach
     public void tearDown() {
-        m.getSlotThread().interrupt();
+        m.dispose();
         stcs.dispose();
         op = null;
         stcs = null;

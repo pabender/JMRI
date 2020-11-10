@@ -33,8 +33,10 @@ public class SprogOpsModeProgrammerTest extends jmri.jmrix.AbstractOpsModeProgra
     @AfterEach
     @Override
     public void tearDown() {
-        m.getSlotThread().interrupt();
+        m.dispose();
+        m = null;
         stcs.dispose();
+        stcs = null;
         programmer = null;
         JUnitUtil.tearDown();
     }

@@ -263,7 +263,14 @@ public class SprogSystemConnectionMemo extends DefaultSystemConnectionMemo imple
 
     @Override
     public void dispose() {
-        st = null;
+        if(st!=null) {
+           st.dispose();
+        }
+        //st = null;
+        if(slotThread!=null) {
+           slotThread.interrupt();
+           slotThread = null;
+        }
         InstanceManager.deregister(this, SprogSystemConnectionMemo.class);
         if (cf != null) {
             InstanceManager.deregister(cf, jmri.jmrix.swing.ComponentFactory.class);

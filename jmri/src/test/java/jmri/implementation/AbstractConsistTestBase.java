@@ -11,6 +11,7 @@ import jmri.roster.RosterEntry;
 import jmri.symbolicprog.CvTableModel;
 import jmri.symbolicprog.CvValue;
 import jmri.symbolicprog.VariableTableModel;
+import jmri.util.JUnitUtil;
 
 import org.junit.jupiter.api.*;
 import org.junit.Assert;
