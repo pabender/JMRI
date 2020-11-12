@@ -16,7 +16,7 @@ public class NamedBeanUsageReportTest {
     public void testReport() {
         NamedBeanUsageReport report = new NamedBeanUsageReport("Test_Bean_Report");
         Assert.assertNotNull("exists", report);
-        Assert.assertEquals("Test_Bean_Report", report.usageKey);
+        Assert.assertEquals("Test_Bean_Report", report.getUsageKey());
     }
 
     @BeforeEach

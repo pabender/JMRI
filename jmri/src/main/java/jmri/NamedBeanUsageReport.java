@@ -12,9 +12,9 @@ import javax.annotation.Nonnull;
 @javax.annotation.concurrent.Immutable
 public class NamedBeanUsageReport {
 
-    final public String usageKey;
-    final public NamedBean usageBean;
-    final public String usageData;
+    final private String usageKey;
+    final private NamedBean usageBean;
+    final private String usageData;
 
     /**
      * Create report with the required key.
@@ -55,4 +55,17 @@ public class NamedBeanUsageReport {
         this.usageBean = usageBean;
         this.usageData = usageData;
     }
+
+    public String getUsageKey() {
+        return usageKey;
+    }
+
+    public NamedBean getUsageBean() {
+        return usageBean;
+    }
+
+    public String getUsageData() {
+        return usageData;
+    }
+
 }
