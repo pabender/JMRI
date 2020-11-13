@@ -45,6 +45,8 @@ import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
+
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import jmri.InstanceManager;
 import jmri.JmriException;
 import jmri.Manager;
@@ -1117,6 +1119,7 @@ abstract public class BeanTableDataModel<T extends NamedBean> extends AbstractTa
          * {@inheritDoc} Minimal implementation to catch and log errors
          */
         @Override
+        @SuppressFBWarnings({"NM_CONFUSING","flagged against a generated class."})
         protected void done() {
             try {
                 get();  // called to get errors

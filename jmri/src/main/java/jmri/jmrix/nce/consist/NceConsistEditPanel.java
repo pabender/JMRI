@@ -433,13 +433,14 @@ public class NceConsistEditPanel extends jmri.jmrix.nce.swing.NcePanel implement
                 return;
             }
             int locoAddr = validLocoAdr(locoTextField1.getText());
-            boolean isLong = (adrButton1.getText().equals(Bundle.getMessage("KeyLONG")));
             if (locoAddr < 0) {
                 return;
             }
             consistNum = validConsist(consistTextField.getText());
             // the following code disabled to remove dependency on jmri.jmrit.throttle.
-            /*jmri.jmrit.throttle.ThrottleFrame tf
+            /*
+            boolean isLong = (adrButton1.getText().equals(Bundle.getMessage("KeyLONG")));
+            jmri.jmrit.throttle.ThrottleFrame tf
                     = InstanceManager.getDefault(ThrottleFrameManager.class).createThrottleFrame();
             tf.getAddressPanel().setAddress(consistNum, false); // use consist address
             if (JOptionPane.showConfirmDialog(null,
