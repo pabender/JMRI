@@ -313,7 +313,7 @@ Si votre paquet ne poss&#232;de pas d&#233;j&#224; une classe Bundle*, vous pouv
 L'ancien code r&#233;f&#233;rence directement les Bundles :
 
 <pre> <code>
-   java.util.ResourceBundle.getBundle ("jmri.jmrit.beantable.LogixTableBundle");
+   java.util.ResourceBundle.getBundle ("jmri.beantable.LogixTableBundle");
 </code> </pre>
 
 <p>
@@ -325,7 +325,7 @@ cha&#238;nes dans plus d'un fichier properties.
 <p>
 Vous pouvez ensuite r&#233;cup&#233;rer des cha&#238;nes particuli&#232;res comme ceci:
 <pre> <code>
-java.util.ResourceBundle.getBundle ("jmri.jmrit.beantable.LogixTableBundle") getString ("ButtonNew").;
+java.util.ResourceBundle.getBundle ("jmri.beantable.LogixTableBundle") getString ("ButtonNew").;
 </code> </pre>
 <p>
 Nous vous recommandons de ne d&#233;finir qu'une variable de classe statique pour maintenir la

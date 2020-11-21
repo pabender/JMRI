@@ -11,8 +11,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import jmri.InstanceManager;
-import jmri.jmrit.decoderdefn.DecoderIndexFile;
-import jmri.jmrit.roster.Roster;
+import jmri.decoderdefn.DecoderIndexFile;
+import jmri.roster.Roster;
 import jmri.util.JmriJFrame;
 
 /**

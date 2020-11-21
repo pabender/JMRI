@@ -45,7 +45,7 @@ import jmri.SignalMastManager;
 import jmri.Turnout;
 import jmri.NamedBean.DisplayOptions;
 import jmri.implementation.SignalSpeedMap;
-import jmri.jmrit.beantable.RowComboBoxPanel;
+import jmri.beantable.RowComboBoxPanel;
 import jmri.jmrit.display.layoutEditor.LayoutBlockConnectivityTools;
 import jmri.jmrit.display.layoutEditor.LayoutBlockManager;
 import jmri.swing.NamedBeanComboBox;
@@ -1587,7 +1587,7 @@ public class SignallingPanel extends JmriPanel {
          * editor/renderer for the manual tables on all except the Masts tab.
          * <p>
          * This is a lightweight version of the
-         * {@link jmri.jmrit.beantable.RowComboBoxPanel} RowComboBox cell editor
+         * {@link jmri.beantable.RowComboBoxPanel} RowComboBox cell editor
          * class, some of the hashtables not needed here since we only need
          * identical options for all rows in a column.
          *
@@ -2056,7 +2056,7 @@ public class SignallingPanel extends JmriPanel {
          * A row specific Aspect combobox cell editor/renderer.
          * <p>
          * This is a full version of the
-         * {@link jmri.jmrit.beantable.RowComboBoxPanel} RowComboBox cell editor
+         * {@link jmri.beantable.RowComboBoxPanel} RowComboBox cell editor
          * class, including all hashtables and row specific comboBox choices.
          *
          * @see StateComboBoxPanel for a lightweight application when all that's

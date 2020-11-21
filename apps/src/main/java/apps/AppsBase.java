@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import javax.swing.SwingUtilities;
 
 import jmri.*;
-import jmri.jmrit.revhistory.FileHistory;
+import jmri.util.revhistory.FileHistory;
 import jmri.profile.Profile;
 import jmri.profile.ProfileManager;
 import jmri.script.JmriScriptEngineManager;

@@ -1241,7 +1241,7 @@
     <!-- ============================================================================= -->
 
     <target name="decodercheck" depends="debug, tests, runtime-library-selection" description="run decoder XML checks">
-        <java classname="jmri.jmrit.decoderdefn.SchemaTest"
+        <java classname="jmri.decoderdefn.SchemaTest"
           dir="."
           fork="yes" >
             <classpath refid="test.class.path"/>

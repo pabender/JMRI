@@ -27,7 +27,7 @@ import javax.swing.border.BevelBorder;
 import jmri.Application;
 import jmri.ConfigureManager;
 import jmri.InstanceManager;
-import jmri.jmrit.roster.RosterConfigManager;
+import jmri.roster.RosterConfigManager;
 import jmri.jmrix.AbstractConnectionConfig;
 import jmri.jmrix.ConnectionConfig;
 import jmri.jmrix.JmrixConfigPane;

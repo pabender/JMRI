@@ -3,7 +3,7 @@ package jmri.jmrit.display.palette;
 
 import java.util.HashMap;
 
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.DisplayFrame;
 import jmri.jmrit.display.controlPanelEditor.PortalIcon;
 

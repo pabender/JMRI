@@ -34,7 +34,7 @@
       <a href="/xml/DTD">xml/DTD</a> directory. Note that they are
       not stored in each directory alongside the XML files. There
       are just too many locations to keep such a set of DTD files
-      up to date. JMRI itself, via the jmri.jmrit.XmlFile class,
+      up to date. JMRI itself, via the jmri.util.xml.XmlFile class,
       provides support for locating those files when the XML parser
       needs them.</p>Each file contains a DOCTYPE line that
       specifies a DTD name. There are three different methods used

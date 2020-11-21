@@ -9,6 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import jmri.util.FileUtil;
 import jmri.util.XmlFilenameFilter;
+import jmri.util.xml.XmlFile;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.slf4j.Logger;
@@ -37,7 +38,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Dave Duchamp Copyright (C) 2009
  */
-public class TrainInfoFile extends jmri.jmrit.XmlFile {
+public class TrainInfoFile extends XmlFile {
 
     public TrainInfoFile() {
         super();

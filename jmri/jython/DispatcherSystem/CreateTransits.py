@@ -514,8 +514,8 @@ class CreateTransits(jmri.jmrit.automat.AbstractAutomaton):
         
     def get_all_roster_entries_with_speed_profile(self):
         roster_entries_with_speed_profile = []
-        r = jmri.jmrit.roster.Roster.getDefault()
-        for roster_entry in jmri.jmrit.roster.Roster.getAllEntries(r):
+        r = jmri.roster.Roster.getDefault()
+        for roster_entry in jmri.roster.Roster.getAllEntries(r):
             #if self.loglevel > 0: print roster_entry.getId(), roster_entry.getSpeedProfile()
             if roster_entry.getSpeedProfile() != None:
                 roster_entries_with_speed_profile.append(roster_entry.getId())

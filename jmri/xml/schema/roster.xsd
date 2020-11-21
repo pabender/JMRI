@@ -38,7 +38,7 @@
           This is the schema representing the over-all roster element
         </xs:documentation>
         <xs:appinfo>
-            <jmri:usingclass configurexml="false">jmri.jmrit.roster.Roster</jmri:usingclass>
+            <jmri:usingclass configurexml="false">jmri.roster.Roster</jmri:usingclass>
         </xs:appinfo>
     </xs:annotation>
     <xs:complexType>

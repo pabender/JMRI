@@ -7,6 +7,7 @@ import java.io.File;
 
 import javax.swing.*;
 
+import jmri.util.xml.XmlFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -131,7 +132,7 @@ public class TrainManifestOptionFrame extends OperationsFrame {
      * We always use the same file chooser in this class, so that the user's
      * last-accessed directory remains available.
      */
-    JFileChooser fc = jmri.jmrit.XmlFile.userFileChooser(Bundle.getMessage("Images"));
+    JFileChooser fc = XmlFile.userFileChooser(Bundle.getMessage("Images"));
 
     private File selectFile() {
         if (fc == null) {

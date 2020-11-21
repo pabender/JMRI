@@ -9,7 +9,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import jmri.InstanceManager;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import org.jdom2.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,7 +49,7 @@ public class LoadXmlThrottlesLayoutAction extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (fileChooser == null) {
-            fileChooser = jmri.jmrit.XmlFile.userFileChooser(Bundle.getMessage("PromptXmlFileTypes"), "xml");
+            fileChooser = XmlFile.userFileChooser(Bundle.getMessage("PromptXmlFileTypes"), "xml");
             fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
             fileChooser.setCurrentDirectory(new File(ThrottleFrame.getDefaultThrottleFolder()));
         }

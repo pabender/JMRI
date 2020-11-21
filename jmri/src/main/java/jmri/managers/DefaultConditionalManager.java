@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  * Conditional system names are set automatically when the Conditional is
  * created. All alphabetic characters in a Conditional system name must be upper
  * case. This is enforced when a new Conditional is created via
- * {@link jmri.jmrit.beantable.LogixTableAction}
+ * {@link jmri.beantable.LogixTableAction}
  * <p>
  * Conditional user names have specific requirements that are
  * addressed in the {@link jmri.Conditional} class.
@@ -380,7 +380,7 @@ public class DefaultConditionalManager extends AbstractManager<Conditional>
 
     /**
      * Return a copy of the entire map.  Used by
-     * {@link jmri.jmrit.beantable.LogixTableAction#buildWhereUsedListing}
+     * {@link jmri.beantable.LogixTableAction#buildWhereUsedListing}
      * @since 4.7.4
      * @return a copy of the map
      */

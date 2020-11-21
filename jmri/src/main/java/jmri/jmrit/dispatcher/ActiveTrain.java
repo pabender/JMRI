@@ -173,7 +173,7 @@ public class ActiveTrain {
     private Transit mTransit = null;
     private String mTrainName = "";
     private int mTrainSource = ROSTER;
-    private jmri.jmrit.roster.RosterEntry mRoster = null;
+    private jmri.roster.RosterEntry mRoster = null;
     private int mStatus = WAITING;
     private int mMode = DISPATCHED;
     private boolean mTransitReversed = false;  // true if Transit is running in reverse
@@ -255,14 +255,14 @@ public class ActiveTrain {
         return mTrainSource;
     }
 
-    public void setRosterEntry(jmri.jmrit.roster.RosterEntry re) {
+    public void setRosterEntry(jmri.roster.RosterEntry re) {
         mRoster = re;
     }
 
-    public jmri.jmrit.roster.RosterEntry getRosterEntry() {
+    public jmri.roster.RosterEntry getRosterEntry() {
         if (mRoster == null && getTrainSource() == ROSTER) {
             //Try to resolve the roster based upon the train name
-            mRoster = jmri.jmrit.roster.Roster.getDefault().getEntryForId(getTrainName());
+            mRoster = jmri.roster.Roster.getDefault().getEntryForId(getTrainName());
         } else if (getTrainSource() != ROSTER) {
             mRoster = null;
         }
@@ -300,7 +300,7 @@ public class ActiveTrain {
         } else if (mStatus == WAITING) {
             if (!mStarted) {
                 if (mDelayedStart == TIMEDDELAY) {
-                    return jmri.jmrit.beantable.LogixTableAction.formatTime(mDepartureTimeHr,
+                    return jmri.beantable.LogixTableAction.formatTime(mDepartureTimeHr,
                             mDepartureTimeMin) + " " + Bundle.getMessage("START");
                 } else if (mDelayedStart == SENSORDELAY) {
                     return (Bundle.getMessage("BeanNameSensor") + " " + getDelaySensorName());
@@ -311,7 +311,7 @@ public class ActiveTrain {
             return Bundle.getMessage("WORKING");
         } else if (mStatus == READY) {
             if (restartPoint && getDelayedRestart() == TIMEDDELAY) {
-                return jmri.jmrit.beantable.LogixTableAction.formatTime(restartHr,
+                return jmri.beantable.LogixTableAction.formatTime(restartHr,
                         restartMin) + " " + Bundle.getMessage("START");
             } else if (restartPoint && getDelayedRestart() == SENSORDELAY) {
                 return (Bundle.getMessage("BeanNameSensor") + " " + getRestartSensorName());

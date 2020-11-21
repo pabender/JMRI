@@ -14,7 +14,8 @@ import javax.swing.border.BevelBorder;
 import javax.swing.table.TableCellRenderer;
 import jmri.InstanceManager;
 import jmri.Throttle;
-import jmri.jmrit.roster.RosterIconFactory;
+import jmri.ThrottlesPreferences;
+import jmri.roster.RosterIconFactory;
 import jmri.util.FileUtil;
 
 public class ThrottlesTableCellRenderer implements TableCellRenderer {

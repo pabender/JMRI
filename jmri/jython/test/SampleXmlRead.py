@@ -4,7 +4,7 @@
 # Bob Jacobsen   (C) 2019
 
 import org.jdom2
-from jmri.jmrit import XmlFile
+from jmri.util.xml import XmlFile
 class myXmlFile(XmlFile) :   # XmlFile is abstract
     def nullMethod() :
         return

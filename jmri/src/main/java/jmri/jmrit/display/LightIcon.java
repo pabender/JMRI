@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import jmri.InstanceManager;
 import jmri.Light;
 import jmri.NamedBean.DisplayOptions;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -213,6 +213,7 @@ public class LightIcon extends PositionableLabel implements java.beans.PropertyC
         unknown.rotate(deg, this);
         inconsistent.rotate(deg, this);
         displayState(lightState());
+        setDegrees(deg);
     }
 
     @Override

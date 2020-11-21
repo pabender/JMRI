@@ -13,6 +13,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import jmri.util.FileUtil;
 import jmri.util.jdom.LocaleSelector;
+import jmri.util.xml.XmlFile;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.slf4j.Logger;
@@ -245,7 +246,7 @@ public class GuiUtilBase {
      */
     static protected Element rootFromName(String name) {
         try {
-            return new jmri.jmrit.XmlFile() {
+            return new XmlFile() {
             }.rootFromName(name);
         } catch (JDOMException | IOException e) {
             log.error("Could not parse file \"{}\" due to: {}", name, e);

@@ -97,11 +97,11 @@ log4j.category.javax.jmdns=OFF
 # Examples of changing priority of specific categories (classes, packages):
 #
 # log4j.category.jmri=DEBUG
-# log4j.category.jmri.jmrit.symbolicprog=DEBUG
-# log4j.category.jmri.jmrit.symbolicprog.tabbedframe=DEBUG
-# log4j.category.jmri.jmrit.symbolicprog.tabbedframe.PaneProgPaneTest=DEBUG
-# log4j.category.jmri.jmrit.symbolicprog.DecVariableValue=DEBUG
-# log4j.category.jmri.jmrit.symbolicprog.LongAddrVariableValueTest=DEBUG
+# log4j.category.jmri.symbolicprog=DEBUG
+# log4j.category.jmri.symbolicprog.tabbedframe=DEBUG
+# log4j.category.jmri.symbolicprog.tabbedframe.PaneProgPaneTest=DEBUG
+# log4j.category.jmri.symbolicprog.DecVariableValue=DEBUG
+# log4j.category.jmri.symbolicprog.LongAddrVariableValueTest=DEBUG
 # log4j.category.jmri.jmrix.nce=DEBUG
 # log4j.category.jmri.jmrix.nce.NceTrafficController=WARN
 # log4j.category.org.eclipse.jetty=INFO

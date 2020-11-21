@@ -4,9 +4,8 @@ package jmri.jmrit.withrottle;
 import jmri.LocoAddress;
 import jmri.DccLocoAddress;
 import jmri.DccThrottle;
-import jmri.InstanceManager;
 import jmri.ThrottleListener;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

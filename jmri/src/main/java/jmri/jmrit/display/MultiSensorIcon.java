@@ -13,7 +13,7 @@ import javax.swing.JPopupMenu;
 import jmri.InstanceManager;
 import jmri.NamedBeanHandle;
 import jmri.Sensor;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.palette.MultiSensorItemPanel;
 import jmri.jmrit.picker.PickListModel;
 import org.slf4j.Logger;
@@ -225,6 +225,7 @@ public class MultiSensorIcon extends PositionableLabel implements java.beans.Pro
         inactive.rotate(deg, this);
         unknown.rotate(deg, this);
         inconsistent.rotate(deg, this);
+        setDegrees(deg);
         displayState();
     }
 

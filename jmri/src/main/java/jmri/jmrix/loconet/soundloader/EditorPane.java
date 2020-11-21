@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
 package jmri.jmrix.loconet.soundloader;
 
+import jmri.util.xml.XmlFile;
+
 import java.awt.FlowLayout;
 import java.io.File;
 import java.io.IOException;
@@ -82,7 +84,7 @@ public class EditorPane extends jmri.jmrix.loconet.swing.LnPanel {
 
     void selectInputFile() {
         if (chooser == null) {
-            chooser = jmri.jmrit.XmlFile.userFileChooser();
+            chooser = XmlFile.userFileChooser();
         }
         chooser.rescanCurrentDirectory();
         int retVal = chooser.showOpenDialog(this);

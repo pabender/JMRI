@@ -4,7 +4,7 @@ package apps.gui3.dp3;
 import java.io.File;
 import javax.swing.AbstractAction;
 import jmri.InstanceManager;
-import jmri.jmrit.decoderdefn.DecoderIndexFile;
+import jmri.decoderdefn.DecoderIndexFile;
 import jmri.util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

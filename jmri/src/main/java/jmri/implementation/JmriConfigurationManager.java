@@ -35,7 +35,7 @@ import jmri.InstanceManager;
 import jmri.JmriException;
 import jmri.configurexml.ConfigXmlManager;
 import jmri.configurexml.swing.DialogErrorHandler;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.profile.Profile;
 import jmri.profile.ProfileManager;
 import jmri.spi.PreferencesManager;

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
 package jmri.jmrit.display.configurexml;
 
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.SlipTurnoutIcon;
 import org.jdom2.Attribute;

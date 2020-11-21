@@ -1,0 +1,48 @@
+// SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
+package jmri.jmrix.sprog;
+
+import jmri.util.JUnitUtil;
+
+import org.junit.Assert;
+import org.junit.jupiter.api.*;
+
+/**
+ * Tests for SprogThrottleManager.
+ *
+ * @author Paul Bender Copyright (C) 2017
+ */
+public class SprogThrottleManagerTest extends jmri.managers.AbstractThrottleManagerTestBase {
+
+    private SprogTrafficControlScaffold stcs = null;
+    private SprogSystemConnectionMemo m = null;
+
+    @Test
+    public void testCtor(){
+       Assert.assertNotNull("exists",tm);
+    }
+
+    @BeforeEach
+    @Override
+    public void setUp() {
+        JUnitUtil.setUp();
+        // prepare an interface
+        jmri.util.JUnitUtil.resetInstanceManager();
+
+        m = new SprogSystemConnectionMemo(jmri.jmrix.sprog.SprogConstants.SprogMode.SERVICE);
+        stcs = new SprogTrafficControlScaffold(m);
+        m.setSprogTrafficController(stcs);
+
+        tm = new SprogThrottleManager(m);
+    }
+
+    @AfterEach
+    public void tearDown() {
+        m.dispose();
+        m = null;
+        stcs.dispose();
+        stcs = null;
+        JUnitUtil.tearDown();
+    }
+
+
+}

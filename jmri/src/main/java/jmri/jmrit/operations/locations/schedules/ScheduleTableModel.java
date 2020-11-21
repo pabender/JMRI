@@ -123,8 +123,8 @@ public class ScheduleTableModel extends javax.swing.table.AbstractTableModel imp
         tcm.getColumn(DOWN_COLUMN).setCellEditor(buttonEditor);
         tcm.getColumn(DELETE_COLUMN).setCellRenderer(buttonRenderer);
         tcm.getColumn(DELETE_COLUMN).setCellEditor(buttonEditor);
-        _table.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-        _table.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+        _table.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+        _table.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
 
         // set column preferred widths
         _table.getColumnModel().getColumn(ID_COLUMN).setPreferredWidth(35);

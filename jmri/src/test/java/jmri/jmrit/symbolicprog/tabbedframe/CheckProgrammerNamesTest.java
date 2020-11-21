@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.symbolicprog.tabbedframe;
+package jmri.symbolicprog.tabbedframe;
 
 import java.io.File;
 
+import jmri.util.xml.XmlFile;
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
 
@@ -10,7 +11,7 @@ import org.junit.jupiter.api.*;
  * Check the names in an XML programmer file against the names.xml definitions
  *
  * @author Bob Jacobsen Copyright (C) 2001, 2007, 2008
- * @see jmri.jmrit.XmlFile
+ * @see XmlFile
  */
 public class CheckProgrammerNamesTest {
 

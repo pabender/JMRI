@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
 import javax.swing.event.ListSelectionEvent;
 import jmri.SignalHead;
 import jmri.jmrit.catalog.DragJLabel;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.DisplayFrame;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.SignalHeadIcon;

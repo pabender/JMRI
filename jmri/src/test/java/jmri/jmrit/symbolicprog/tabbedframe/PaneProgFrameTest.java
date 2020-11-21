@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.symbolicprog.tabbedframe;
+package jmri.symbolicprog.tabbedframe;
 
 import java.awt.GraphicsEnvironment;
 import java.awt.event.WindowEvent;
@@ -7,10 +7,10 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import jmri.jmrit.decoderdefn.DecoderFile;
-import jmri.jmrit.roster.RosterEntry;
-import jmri.jmrit.symbolicprog.CvTableModel;
-import jmri.jmrit.symbolicprog.VariableTableModel;
+import jmri.decoderdefn.DecoderFile;
+import jmri.roster.RosterEntry;
+import jmri.symbolicprog.CvTableModel;
+import jmri.symbolicprog.VariableTableModel;
 import jmri.util.JUnitUtil;
 
 import org.jdom2.DocType;
@@ -73,7 +73,7 @@ public class PaneProgFrameTest {
         };
 
         // ugly, temporary way to load the decoder info
-        jmri.jmrit.decoderdefn.DecoderFileTest t = new jmri.jmrit.decoderdefn.DecoderFileTest();
+        jmri.decoderdefn.DecoderFileTest t = new jmri.decoderdefn.DecoderFileTest();
         t.setupDecoder();
         DecoderFile df = new DecoderFile();  // used as a temporary
         df.loadVariableModel(t.decoder, p.variableModel);
@@ -136,7 +136,7 @@ public class PaneProgFrameTest {
         Assert.assertEquals("default maxFnNum is loaded", "28", o.getChild("decoder").getAttribute("maxFnNum").getValue());
 
         // ugly, temporary way to load the decoder info
-        jmri.jmrit.decoderdefn.DecoderFileTest t = new jmri.jmrit.decoderdefn.DecoderFileTest();
+        jmri.decoderdefn.DecoderFileTest t = new jmri.decoderdefn.DecoderFileTest();
         t.setupDecoder();
         DecoderFile df = new DecoderFile() { // a temporary storage, need to override some methods
             @Override

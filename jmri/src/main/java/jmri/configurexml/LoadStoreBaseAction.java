@@ -8,6 +8,7 @@ import jmri.ConfigureManager;
 import jmri.InstanceManager;
 import jmri.implementation.JmriConfigurationManager;
 import jmri.util.FileUtil;
+import jmri.util.xml.XmlFile;
 
 /**
  * Base implementation for the load and store actions.
@@ -20,7 +21,7 @@ import jmri.util.FileUtil;
  * each time an action is invoked.
  *
  * @author Bob Jacobsen Copyright (C) 2004
- * @see jmri.jmrit.XmlFile
+ * @see XmlFile
  */
 abstract public class LoadStoreBaseAction extends AbstractAction {
 

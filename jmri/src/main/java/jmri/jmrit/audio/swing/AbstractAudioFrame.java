@@ -8,7 +8,7 @@ import javax.swing.event.ChangeEvent;
 import javax.vecmath.Vector3f;
 import jmri.Audio;
 import jmri.implementation.AbstractAudio;
-import jmri.jmrit.beantable.AudioTableAction.AudioTableDataModel;
+import jmri.beantable.AudioTableAction.AudioTableDataModel;
 import jmri.util.JmriJFrame;
 
 /**
@@ -67,7 +67,7 @@ abstract public class AbstractAudioFrame extends JmriJFrame {
      * Sub-classes will override this method and provide additional GUI items.
      */
     public void layoutFrame() {
-        frame.addHelpMenu("package.jmri.jmrit.beantable.AudioAddEdit", true);
+        frame.addHelpMenu("package.jmri.beantable.AudioAddEdit", true);
         frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
         main.setLayout(new BoxLayout(main, BoxLayout.Y_AXIS));
 

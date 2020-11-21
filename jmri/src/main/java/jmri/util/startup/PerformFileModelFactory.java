@@ -4,7 +4,7 @@ package jmri.util.startup;
 
 import javax.swing.JFileChooser;
 
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 
 import org.openide.util.lookup.ServiceProvider;
 

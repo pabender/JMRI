@@ -37,7 +37,7 @@ import jmri.NamedBean;
 import jmri.NamedBeanHandle;
 import jmri.SpeedStepMode;
 import jmri.jmrit.picker.PickListModel;
-import jmri.jmrit.roster.RosterSpeedProfile;
+import jmri.roster.RosterSpeedProfile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -733,7 +733,7 @@ public class WarrantFrame extends WarrantRoute {
 
     private JPanel makeThrottleTablePanel() {
         _commandTable = new JTable(_commandModel);
-        _commandTable.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+        _commandTable.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
         for (int i = 0; i < _commandModel.getColumnCount(); i++) {
             int width = _commandModel.getPreferredWidth(i);
             _commandTable.getColumnModel().getColumn(i).setPreferredWidth(width);

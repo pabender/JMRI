@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.jmrit.vsdecoder.listener.ListeningSpot;
 import jmri.util.FileUtil;
 import jmri.util.PhysicalLocation;
@@ -218,7 +218,7 @@ public class VSDecoderPreferences {
             // <?xml-stylesheet type="text/xsl" href="XSLT/throttle.xsl"?>
 /*TODO      java.util.Map<String,String> m = new java.util.HashMap<String,String>();
              m.put("type", "text/xsl");
-             m.put("href", jmri.jmrit.XmlFile.xsltLocation+"throttles-preferences.xsl");
+             m.put("href", jmri.util.xml.XmlFile.xsltLocation+"throttles-preferences.xsl");
              ProcessingInstruction p = new ProcessingInstruction("xml-stylesheet", m);
              doc.addContent(0,p);*/
             root.setContent(store());

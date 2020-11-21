@@ -52,7 +52,7 @@ r&#233;pertoire <a href="/xml/schema ">xml/schema </a>
 Notez qu'ils ne sont pas stock&#233;s dans chaque r&#233;pertoire
 &#224; c&#244;t&#233; des fichiers XML. Il y a tout simplement de trop nombreux
 endroits pour garder un tel ensemble de fichiers de d&#233;finition de schema &#224; jour.
-JMRI lui-m&#234;me, via la classe jmri.jmrit.XmlFile, fournit
+JMRI lui-m&#234;me, via la classe jmri.util.xml.XmlFile, fournit
 le support pour localiser ces fichiers quand l'analyseur XML
 a besoin d'eux.
 </p>

@@ -12,7 +12,7 @@
 # Part of the JMRI distribution
 
 import jmri
-import jmri.jmrit.roster
+import jmri.roster
 import org.apache.commons.csv
 from javax.swing import JFileChooser, JOptionPane
 from jmri.jmrit.symbolicprog import CvTableModel
@@ -25,7 +25,7 @@ import java.io
 # Default filename - located in the same location as the Roster itself
 # The script does show a pop-up 'Save As' dialog allowing this to be
 # changed when executed
-outFile = jmri.jmrit.roster.Roster.getDefault().getRosterLocation()+"roster.csv"
+outFile = jmri.roster.Roster.getDefault().getRosterLocation()+"roster.csv"
 print "Default output file:", outFile
 
 # Determine if to output the header or not
@@ -83,7 +83,7 @@ def writeCvValue(cvValue, format):
 def writeDetails(csvFile):
     # Get a list of matched roster entries;
     # the list of None's means match everything
-    rosterlist = jmri.jmrit.roster.Roster.getDefault().matchingList(None, None, None, None, None, None, None)
+    rosterlist = jmri.roster.Roster.getDefault().matchingList(None, None, None, None, None, None, None)
 
     # now loop through the matched entries, outputing things
     for entry in rosterlist.toArray() :

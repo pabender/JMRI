@@ -5,13 +5,13 @@ import java.util.List;
 import java.io.File;
 import java.io.IOException;
 import jmri.InstanceManager;
-import jmri.jmrit.decoderdefn.DecoderFile;
-import jmri.jmrit.decoderdefn.DecoderIndexFile;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterConfigManager;
-import jmri.jmrit.roster.RosterEntry;
-import jmri.jmrit.symbolicprog.CvTableModel;
-import jmri.jmrit.symbolicprog.VariableTableModel;
+import jmri.decoderdefn.DecoderFile;
+import jmri.decoderdefn.DecoderIndexFile;
+import jmri.roster.Roster;
+import jmri.roster.RosterConfigManager;
+import jmri.roster.RosterEntry;
+import jmri.symbolicprog.CvTableModel;
+import jmri.symbolicprog.VariableTableModel;
 import jmri.profile.ProfileManager;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -44,19 +44,16 @@ public class RosterTestUtil {
         Roster r = new Roster(rosterDir.getAbsolutePath() + File.separator + rosterFileName);
         r.setRosterLocation(rosterDir.getAbsolutePath());
         r.setRosterIndexFileName(rosterFileName);
-        RosterEntry e1 = new RosterEntry("SP123");
-        e1.setId("SP123");
-        e1.setDccAddress("123");
-        e1.setRoadNumber("123");
-        e1.setRoadName("SP");
-        e1.ensureFilenameExists();
-        e1.putAttribute("key a", "value a");
-        e1.putAttribute("key b", "value b");
-        CvTableModel cvTable = new CvTableModel(null, null);
-        VariableTableModel varTable = new VariableTableModel(null, new String[]{"Name", "Value"}, cvTable);
-        loadDecoderFromLoco(e1, varTable);
-        e1.writeFile(cvTable, varTable);
-        r.addEntry(e1);
+        addSP123ToRoster(r);
+        addATSF123ToRoster(r);
+        addUP123ToRoster(r);
+        InstanceManager.getDefault(RosterConfigManager.class).setRoster(ProfileManager.getDefault().getActiveProfile(), r);
+        return r;
+    }
+
+    private static void addATSF123ToRoster(Roster r) {
+        CvTableModel cvTable;
+        VariableTableModel varTable;
         RosterEntry e2 = new RosterEntry("ATSF123");
         e2.setId("ATSF123");
         e2.setDccAddress("456");
@@ -72,6 +69,11 @@ public class RosterTestUtil {
         loadDecoderFromLoco(e2, varTable);
         e2.writeFile(cvTable, varTable);
         r.addEntry(e2);
+    }
+
+    private static void addUP123ToRoster(Roster r) {
+        CvTableModel cvTable;
+        VariableTableModel varTable;
         RosterEntry e3 = new RosterEntry("UP123");
         e3.setId("UP123");
         e3.setRoadNumber("123");
@@ -80,11 +82,25 @@ public class RosterTestUtil {
         e3.putAttribute("key b", "value b");
         cvTable = new CvTableModel(null, null);
         varTable = new VariableTableModel(null, new String[]{"Name", "Value"}, cvTable);
-        loadDecoderFromLoco(e2, varTable);
+        loadDecoderFromLoco(e3, varTable);
         e3.writeFile(cvTable, varTable);
         r.addEntry(e3);
-        InstanceManager.getDefault(RosterConfigManager.class).setRoster(ProfileManager.getDefault().getActiveProfile(), r);
-        return r;
+    }
+
+    private static void addSP123ToRoster(Roster r) {
+        RosterEntry e1 = new RosterEntry("SP123");
+        e1.setId("SP123");
+        e1.setDccAddress("123");
+        e1.setRoadNumber("123");
+        e1.setRoadName("SP");
+        e1.ensureFilenameExists();
+        e1.putAttribute("key a", "value a");
+        e1.putAttribute("key b", "value b");
+        CvTableModel cvTable = new CvTableModel(null, null);
+        VariableTableModel varTable = new VariableTableModel(null, new String[]{"Name", "Value"}, cvTable);
+        loadDecoderFromLoco(e1, varTable);
+        e1.writeFile(cvTable, varTable);
+        r.addEntry(e1);
     }
 
     /**

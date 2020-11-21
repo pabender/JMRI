@@ -10,12 +10,10 @@ import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 import javax.swing.WindowConstants;
-import jmri.DccThrottle;
-import jmri.InstanceManager;
-import jmri.LocoAddress;
-import jmri.Throttle;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
+
+import jmri.*;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
 import org.jdom2.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

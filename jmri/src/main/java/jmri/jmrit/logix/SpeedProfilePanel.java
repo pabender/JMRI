@@ -22,8 +22,8 @@ import javax.swing.JTextField;
 import javax.swing.TransferHandler;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
-import jmri.jmrit.roster.RosterSpeedProfile;
-import jmri.jmrit.roster.RosterSpeedProfile.SpeedStep;
+import jmri.roster.RosterSpeedProfile;
+import jmri.roster.RosterSpeedProfile.SpeedStep;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

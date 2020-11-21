@@ -2,7 +2,7 @@
 package jmri.jmrit.display.controlPanelEditor;
 
 import jmri.InstanceManager;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.Positionable;
 import jmri.jmrit.display.PositionableLabel;
 //import jmri.jmrit.display.IndicatorTrackIcon;

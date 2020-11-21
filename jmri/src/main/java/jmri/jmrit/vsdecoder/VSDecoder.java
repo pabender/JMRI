@@ -16,7 +16,7 @@ import jmri.jmrit.operations.routes.RouteLocation;
 import jmri.jmrit.operations.routes.Route;
 import jmri.jmrit.operations.trains.Train;
 import jmri.jmrit.operations.trains.TrainManager;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 import jmri.jmrit.vsdecoder.swing.VSDControl;
 import jmri.jmrit.vsdecoder.swing.VSDManagerFrame;
 import jmri.util.PhysicalLocation;

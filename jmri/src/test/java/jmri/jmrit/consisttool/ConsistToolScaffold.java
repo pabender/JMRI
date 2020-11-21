@@ -4,7 +4,7 @@ package jmri.jmrit.consisttool;
 import java.awt.Component;
 import javax.swing.JButton;
 import jmri.DccLocoAddress;
-import jmri.jmrit.DccLocoAddressSelector;
+import jmri.util.swing.DccLocoAddressSelector;
 import org.netbeans.jemmy.operators.JButtonOperator;
 import org.netbeans.jemmy.operators.JDialogOperator;
 import org.netbeans.jemmy.operators.JFrameOperator;

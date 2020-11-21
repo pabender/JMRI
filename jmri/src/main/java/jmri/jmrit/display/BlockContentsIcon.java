@@ -14,7 +14,7 @@ import jmri.Block;
 import jmri.InstanceManager;
 import jmri.NamedBeanHandle;
 import jmri.NamedBean.DisplayOptions;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.throttle.ThrottleFrame;
 import jmri.jmrit.throttle.ThrottleFrameManager;
 import org.slf4j.Logger;

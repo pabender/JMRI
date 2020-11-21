@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import jmri.util.JUnitAppender;
 import jmri.util.JUnitUtil;
 
+import jmri.util.swing.NamedIcon;
 import org.junit.jupiter.api.*;
 import org.junit.Assert;
 

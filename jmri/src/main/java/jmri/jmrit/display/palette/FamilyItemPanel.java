@@ -32,7 +32,7 @@ import javax.swing.JRadioButton;
 import javax.swing.KeyStroke;
 
 import jmri.jmrit.catalog.CatalogPanel;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.DisplayFrame;
 import jmri.jmrit.display.Editor;
 import jmri.util.swing.ImagePanel;

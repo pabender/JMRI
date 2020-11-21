@@ -23,13 +23,13 @@ import jmri.*;
 import apps.jmrit.DebugMenu;
 
 import jmri.jmrit.ToolsMenu;
-import jmri.jmrit.decoderdefn.DecoderIndexFile;
-import jmri.jmrit.decoderdefn.PrintDecoderListAction;
+import jmri.decoderdefn.DecoderIndexFile;
+import jmri.decoderdefn.PrintDecoderListAction;
 import jmri.jmrit.display.PanelMenu;
 import jmri.jmrit.jython.*;
 import jmri.jmrit.operations.OperationsMenu;
-import jmri.jmrit.revhistory.FileHistory;
-import jmri.jmrit.roster.swing.RosterMenu;
+import jmri.util.revhistory.FileHistory;
+import jmri.roster.swing.RosterMenu;
 import jmri.jmrit.throttle.ThrottleFrame;
 import jmri.jmrit.withrottle.WiThrottleCreationAction;
 import jmri.jmrix.*;
@@ -611,7 +611,7 @@ public class Apps extends JPanel implements PropertyChangeListener, WindowListen
     protected void developmentMenu(JMenuBar menuBar, WindowInterface wi) {
         JMenu devMenu = new JMenu("Development");
         menuBar.add(devMenu);
-        devMenu.add(new jmri.jmrit.symbolicprog.autospeed.AutoSpeedAction("Auto-speed tool"));
+        devMenu.add(new jmri.symbolicprog.autospeed.AutoSpeedAction("Auto-speed tool"));
         devMenu.add(new JSeparator());
         devMenu.add(new jmri.jmrit.automat.SampleAutomatonAction("Sample automaton 1"));
         devMenu.add(new jmri.jmrit.automat.SampleAutomaton2Action("Sample automaton 2"));

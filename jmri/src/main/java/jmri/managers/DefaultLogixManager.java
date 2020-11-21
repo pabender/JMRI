@@ -7,7 +7,7 @@ import jmri.Logix;
 import jmri.LogixManager;
 import jmri.Manager;
 import jmri.implementation.DefaultLogix;
-import jmri.jmrit.beantable.LRouteTableAction;
+import jmri.beantable.LRouteTableAction;
 import jmri.jmrix.internal.InternalSystemConnectionMemo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 import jmri.beans.Bean;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.profile.ProfileManager;
 import jmri.profile.ProfileUtils;
 import jmri.util.FileUtil;

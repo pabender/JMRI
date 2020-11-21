@@ -7,7 +7,7 @@ import jmri.InstanceManager;
 import jmri.Memory;
 import jmri.MemoryManager;
 import jmri.configurexml.JmriConfigureXmlException;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 import org.jdom2.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -143,8 +143,8 @@ public abstract class AbstractMemoryManagerConfigXML extends AbstractNamedBeanMa
         String value = memory.getAttribute("value").getValue();
         if (memory.getAttribute("valueClass") != null) {
             String adapter = memory.getAttribute("valueClass").getValue();
-            if (adapter.equals("jmri.jmrit.roster.RosterEntry")) {
-                RosterEntry re = jmri.jmrit.roster.Roster.getDefault().getEntryForId(value);
+            if (adapter.equals("jmri.roster.RosterEntry")) {
+                RosterEntry re = jmri.roster.Roster.getDefault().getEntryForId(value);
                 m.setValue(re);
                 return;
             }

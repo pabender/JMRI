@@ -3,7 +3,7 @@ package jmri.jmrix.loconet.swing;
 
 import jmri.*;
 import jmri.implementation.DccSignalMast;
-import jmri.jmrit.beantable.signalmast.SignalMastAddPane;
+import jmri.beantable.signalmast.SignalMastAddPane;
 import jmri.jmrix.loconet.LNCPSignalMast;
 import jmri.jmrix.loconet.SlotManager;
 
@@ -14,11 +14,11 @@ import org.openide.util.lookup.ServiceProvider;
 /**
  * A pane for configuring LNCPSignalMast objects
  *
- * @see jmri.jmrit.beantable.signalmast.SignalMastAddPane
+ * @see jmri.beantable.signalmast.SignalMastAddPane
  * @author Bob Jacobsen Copyright (C) 2018
  * @since 4.11.2
  */
-public class LNCPSignalMastAddPane extends jmri.jmrit.beantable.signalmast.DccSignalMastAddPane {
+public class LNCPSignalMastAddPane extends jmri.beantable.signalmast.DccSignalMastAddPane {
 
     public LNCPSignalMastAddPane() {
         super();

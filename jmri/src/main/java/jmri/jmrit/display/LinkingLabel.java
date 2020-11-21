@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import javax.annotation.Nonnull;
 import javax.swing.JPopupMenu;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

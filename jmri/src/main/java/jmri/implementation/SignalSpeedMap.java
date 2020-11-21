@@ -19,6 +19,7 @@ import jmri.InstanceManagerAutoInitialize;
 import jmri.beans.Bean;
 import jmri.jmrit.logix.WarrantPreferences;
 import jmri.util.FileUtil;
+import jmri.util.xml.XmlFile;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.slf4j.Logger;
@@ -94,7 +95,7 @@ public class SignalSpeedMap extends Bean implements InstanceManagerAutoDefault, 
 
     void loadMap() {
         URL path = FileUtil.findURL("signalSpeeds.xml", new String[]{"", "xml/signals"});
-        jmri.jmrit.XmlFile xf = new jmri.jmrit.XmlFile() {
+        XmlFile xf = new XmlFile() {
         };
         try {
             loadRoot(xf.rootFromURL(path));

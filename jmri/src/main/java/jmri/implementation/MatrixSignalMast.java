@@ -36,7 +36,7 @@ public class MatrixSignalMast extends AbstractSignalMast {
     /**
      *  Number of columns in logix matrix, default to 6, set in Matrix Mast panel &amp; on loading xml.
      *  Used to set size of char[] bitString.
-     *  See MAXMATRIXBITS in {@link jmri.jmrit.beantable.signalmast.MatrixSignalMastAddPane}.
+     *  See MAXMATRIXBITS in {@link jmri.beantable.signalmast.MatrixSignalMastAddPane}.
      */
     private int mastBitNum = 6;
     private int mDelay = 0;

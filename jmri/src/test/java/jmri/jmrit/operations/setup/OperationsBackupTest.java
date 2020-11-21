@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Calendar;
 
 import jmri.InstanceManager;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.jmrit.operations.OperationsXml;
 import jmri.jmrit.operations.locations.LocationManagerXml;
 import jmri.jmrit.operations.rollingstock.cars.CarManagerXml;

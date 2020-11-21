@@ -4,7 +4,7 @@ package jmri;
 import java.util.Date;
 import java.util.ResourceBundle;
 import jmri.Conditional.Operator;
-import jmri.jmrit.beantable.LogixTableAction;
+import jmri.beantable.LogixTableAction;
 import jmri.jmrit.logix.OBlock;
 import jmri.jmrit.logix.Warrant;
 import jmri.jmrit.logix.WarrantManager;

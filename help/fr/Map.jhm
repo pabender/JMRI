@@ -12,7 +12,7 @@
 
 <mapID target="html.doc.Technical.getoldcode" url="html/doc/Technical/getoldcode.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.LightAddEdit_cautions" url="package/jmri/jmrit/beantable/LightAddEdit.shtml#cautions"/>
+<mapID target="package.jmri.beantable.LightAddEdit_cautions" url="package/jmri/jmrit/beantable/LightAddEdit.shtml#cautions"/>
 
 <mapID target="package.jmri.jmrix.nce.packetgen.NcePacketGenFrame" url="package/jmri/jmrix/nce/packetgen/NcePacketGenFrame.shtml"/>
 
@@ -32,7 +32,7 @@
 
 <mapID target="html.apps.SignalPro.index" url="html/apps/SignalPro/index.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.TurnoutTable" url="package/jmri/jmrit/beantable/TurnoutTable.shtml"/>
+<mapID target="package.jmri.beantable.TurnoutTable" url="package/jmri/jmrit/beantable/TurnoutTable.shtml"/>
 
 <mapID target="html.apps.DecoderPro.Programmer_display" url="html/apps/DecoderPro/Programmer.shtml#display"/>
 
@@ -44,7 +44,7 @@
 
 <mapID target="package.jmri.jmrit.ussctc.SignalLeverFrame" url="package/jmri/jmrit/ussctc/SignalLeverFrame.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.TurnoutTable_Turnout Feedback" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#Turnout Feedback"/>
+<mapID target="package.jmri.beantable.TurnoutTable_Turnout Feedback" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#Turnout Feedback"/>
 
 <mapID target="package.jmri.jmrix.nce.consist.NceConsistEditFrame" url="package/jmri/jmrix/nce/consist/NceConsistEditFrame.shtml"/>
 
@@ -62,7 +62,7 @@
 
 <mapID target="html.apps.PanelPro.FAQ_multifile" url="html/apps/PanelPro/FAQ.shtml#multifile"/>
 
-<mapID target="package.jmri.jmrit.beantable.SectionTable_tools" url="package/jmri/jmrit/beantable/SectionTable.shtml#tools"/>
+<mapID target="package.jmri.beantable.SectionTable_tools" url="package/jmri/jmrit/beantable/SectionTable.shtml#tools"/>
 
 <mapID target="html.doc.Technical.WebSite" url="html/doc/Technical/WebSite.shtml"/>
 
@@ -74,7 +74,7 @@
 
 <mapID target="html.hardware.can.index" url="html/hardware/can/index.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.SignalMastRepeater" url="package/jmri/jmrit/beantable/SignalMastRepeater.shtml"/>
+<mapID target="package.jmri.beantable.SignalMastRepeater" url="package/jmri/jmrit/beantable/SignalMastRepeater.shtml"/>
 
 <mapID target="package.jmri.jmrix.loconet.locomon.LocoMonFrame" url="package/jmri/jmrix/loconet/locomon/LocoMonFrame.shtml"/>
 
@@ -90,11 +90,11 @@
 
 <mapID target="package.jmri.jmrit.operations.Operations_QuickStartHelp" url="package/jmri/jmrit/operations/Operations.shtml#QuickStartHelp"/>
 
-<mapID target="package.jmri.jmrit.beantable.TransitAddEdit" url="package/jmri/jmrit/beantable/TransitAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.TransitAddEdit" url="package/jmri/jmrit/beantable/TransitAddEdit.shtml"/>
 
 <mapID target="html.hardware.loconet.StandaloneLocoNet_sneakpaths" url="html/hardware/loconet/StandaloneLocoNet.shtml#sneakpaths"/>
 
-<mapID target="package.jmri.jmrit.beantable.UserMessagePreferences" url="package/jmri/jmrit/beantable/UserMessagePreferences.shtml"/>
+<mapID target="package.jmri.beantable.UserMessagePreferences" url="package/jmri/jmrit/beantable/UserMessagePreferences.shtml"/>
 
 <mapID target="package.jmri.jmrit.operations.Operations_EditRoute" url="package/jmri/jmrit/operations/Operations.shtml#EditRoute"/>
 
@@ -110,7 +110,7 @@
 
 <mapID target="html.doc.Technical.XmlUsage" url="html/doc/Technical/XmlUsage.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.BlockAddEdit" url="package/jmri/jmrit/beantable/BlockAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.BlockAddEdit" url="package/jmri/jmrit/beantable/BlockAddEdit.shtml"/>
 
 <mapID target="package.jmri.jmrix.cmri.serial.nodeconfig.NodeConfigFrame" url="package/jmri/jmrix/cmri/serial/nodeconfig/NodeConfigFrame.shtml"/>
 
@@ -120,9 +120,9 @@
 
 <mapID target="package.jmri.jmrit.ToolsMenu" url="package/jmri/jmrit/ToolsMenu.shtml"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.MemoryFrameAction" url="package/jmri/jmrit/symbolicprog/MemoryFrameAction.shtml"/>
+<mapID target="package.jmri.symbolicprog.MemoryFrameAction" url="package/jmri/jmrit/symbolicprog/MemoryFrameAction.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.BlockTable" url="package/jmri/jmrit/beantable/BlockTable.shtml"/>
+<mapID target="package.jmri.beantable.BlockTable" url="package/jmri/jmrit/beantable/BlockTable.shtml"/>
 
 <mapID target="html.apps.PanelPro.ShowPanel" url="html/apps/PanelPro/ShowPanel.shtml"/>
 
@@ -144,13 +144,13 @@
 
 <mapID target="package.jmri.jmrit.display.CoordinateEdit" url="package/jmri/jmrit/display/CoordinateEdit.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.AudioTable" url="package/jmri/jmrit/beantable/AudioTable.shtml"/>
+<mapID target="package.jmri.beantable.AudioTable" url="package/jmri/jmrit/beantable/AudioTable.shtml"/>
 
 <mapID target="html.hardware.oaktree.OakTree" url="html/hardware/oaktree/OakTree.shtml"/>
 
 <mapID target="package.jmri.jmrit.operations.Operations_demo" url="package/jmri/jmrit/operations/Operations.shtml#demo"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneProgFrame_SpeedTable" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml#SpeedTable"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneProgFrame_SpeedTable" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml#SpeedTable"/>
 
 <mapID target="html.hardware.cmri.CMRI_signals" url="html/hardware/cmri/CMRI.shtml#signals"/>
 
@@ -196,7 +196,7 @@
 
 <mapID target="package.jmri.jmrit.display.LayoutEditor_track" url="package/jmri/jmrit/display/LayoutEditor.shtml#track"/>
 
-<mapID target="package.jmri.jmrit.beantable.ConditionalAddEdit_variable" url="package/jmri/jmrit/beantable/ConditionalAddEdit.shtml#variable"/>
+<mapID target="package.jmri.beantable.ConditionalAddEdit_variable" url="package/jmri/jmrit/beantable/ConditionalAddEdit.shtml#variable"/>
 
 <mapID target="html.doc.Technical.Help_limitations" url="html/doc/Technical/Help.shtml#limitations"/>
 
@@ -206,31 +206,31 @@
 
 <mapID target="package.jmri.jmrit.operations.Operations_TrainShowCarTypesServiced" url="package/jmri/jmrit/operations/Operations.shtml#TrainShowCarTypesServiced"/>
 
-<mapID target="package.jmri.jmrit.beantable.BlockEdit_basic" url="package/jmri/jmrit/beantable/BlockEdit.shtml#basic"/>
+<mapID target="package.jmri.beantable.BlockEdit_basic" url="package/jmri/jmrit/beantable/BlockEdit.shtml#basic"/>
 
 <mapID target="html.hardware.loconet.Digitrax_TurnoutCmdHandling" url="html/hardware/loconet/Digitrax.shtml#TurnoutCmdHandling"/>
 
 <mapID target="html.tools.throttle.ThrottleChapter2_Acquiring" url="html/tools/throttle/ThrottleChapter2.shtml#Acquiring"/>
 
-<mapID target="package.jmri.jmrit.beantable.SectionTable" url="package/jmri/jmrit/beantable/SectionTable.shtml"/>
+<mapID target="package.jmri.beantable.SectionTable" url="package/jmri/jmrit/beantable/SectionTable.shtml"/>
 
 <mapID target="html.hardware.loconet.LocoBufferII_locoBufferIIPower" url="html/hardware/loconet/LocoBufferII.shtml#locoBufferIIPower"/>
 
 <mapID target="html.tools.Lights" url="html/tools/Lights.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.ConditionalAddEdit_action" url="package/jmri/jmrit/beantable/ConditionalAddEdit.shtml#action"/>
+<mapID target="package.jmri.beantable.ConditionalAddEdit_action" url="package/jmri/jmrit/beantable/ConditionalAddEdit.shtml#action"/>
 
 <mapID target="package.apps.TabbedPreferences_Roster" url="package/apps/TabbedPreferences.shtml#Roster"/>
 
 <mapID target="package.jmri.jmrix.sprog.update.Sprogv4UpdateFrame" url="package/jmri/jmrix/sprog/update/Sprogv4UpdateFrame.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.LightTable" url="package/jmri/jmrit/beantable/LightTable.shtml"/>
+<mapID target="package.jmri.beantable.LightTable" url="package/jmri/jmrit/beantable/LightTable.shtml"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgFrame_contents" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml#contents"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneOpsProgFrame_contents" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml#contents"/>
 
 <mapID target="html.hardware.cmri.CMRI_diagnostics" url="html/hardware/cmri/CMRI.shtml#diagnostics"/>
 
-<mapID target="package.jmri.jmrit.beantable.SensorTable" url="package/jmri/jmrit/beantable/SensorTable.shtml"/>
+<mapID target="package.jmri.beantable.SensorTable" url="package/jmri/jmrit/beantable/SensorTable.shtml"/>
 
 <mapID target="html.hardware.cmri.CMRI_iobits" url="html/hardware/cmri/CMRI.shtml#iobits"/>
 
@@ -254,7 +254,7 @@
 
 <mapID target="package.jmri.jmrit.display.LayoutEditor_intro" url="package/jmri/jmrit/display/LayoutEditor.shtml#intro"/>
 
-<mapID target="package.jmri.jmrit.roster.swing.RosterGroupTable" url="package/jmri/jmrit/roster/swing/RosterGroupTable.shtml"/>
+<mapID target="package.jmri.roster.swing.RosterGroupTable" url="package/jmri/jmrit/roster/swing/RosterGroupTable.shtml"/>
 
 <mapID target="html.doc.Technical.CVSFAQ_update" url="html/doc/Technical/CVSFAQ.shtml#update"/>
 
@@ -278,7 +278,7 @@
 
 <mapID target="html.hardware.secsi.index" url="html/hardware/secsi/index.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.ConditionalAddEdit" url="package/jmri/jmrit/beantable/ConditionalAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.ConditionalAddEdit" url="package/jmri/jmrit/beantable/ConditionalAddEdit.shtml"/>
 
 <mapID target="html.apps.LocoTools.index_locoio" url="html/apps/LocoTools/index.shtml#locoio"/>
 
@@ -290,7 +290,7 @@
 
 <mapID target="package.jmri.jmrit.display.SetSignalsAt3WayTurnout" url="package/jmri/jmrit/display/SetSignalsAt3WayTurnout.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.BlockEdit_reporter" url="package/jmri/jmrit/beantable/BlockEdit.shtml#reporter"/>
+<mapID target="package.jmri.beantable.BlockEdit_reporter" url="package/jmri/jmrit/beantable/BlockEdit.shtml#reporter"/>
 
 <mapID target="package.jmri.jmrit.logix.Warrant" url="package/jmri/jmrit/logix/Warrant.shtml"/>
 
@@ -298,9 +298,9 @@
 
 <mapID target="Acknowledgements_U" url="Acknowledgements.shtml#U"/>
 
-<mapID target="package.jmri.jmrit.beantable.LRouteTable" url="package/jmri/jmrit/beantable/LRouteTable.shtml"/>
+<mapID target="package.jmri.beantable.LRouteTable" url="package/jmri/jmrit/beantable/LRouteTable.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.ReporterTable" url="package/jmri/jmrit/beantable/ReporterTable.shtml"/>
+<mapID target="package.jmri.beantable.ReporterTable" url="package/jmri/jmrit/beantable/ReporterTable.shtml"/>
 
 <mapID target="Acknowledgements_R" url="Acknowledgements.shtml#R"/>
 
@@ -378,7 +378,7 @@
 
 <mapID target="Acknowledgements_A" url="Acknowledgements.shtml#A"/>
 
-<mapID target="package.jmri.jmrit.beantable.SignalMastLogicTable" url="package/jmri/jmrit/beantable/SignalMastLogicTable.shtml"/>
+<mapID target="package.jmri.beantable.SignalMastLogicTable" url="package/jmri/jmrit/beantable/SignalMastLogicTable.shtml"/>
 
 <mapID target="html.tools.Routes_turnoutlogic" url="html/tools/Routes.shtml#turnoutlogic"/>
 
@@ -466,7 +466,7 @@
 
 <mapID target="package.jmri.jmrit.logix.OBlockEdit" url="package/jmri/jmrit/logix/OBlockEdit.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.SignalGroupAddEdit" url="package/jmri/jmrit/beantable/SignalGroupAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.SignalGroupAddEdit" url="package/jmri/jmrit/beantable/SignalGroupAddEdit.shtml"/>
 
 <mapID target="html.apps.LocoTools.index_soundloader" url="html/apps/LocoTools/index.shtml#soundloader"/>
 
@@ -520,7 +520,7 @@
 
 <mapID target="package.jmri.jmrix.acela.nodeconfig.NodeConfigFrame" url="package/jmri/jmrix/acela/nodeconfig/NodeConfigFrame.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.SensorTable_Debounce" url="package/jmri/jmrit/beantable/SensorTable.shtml#Debounce"/>
+<mapID target="package.jmri.beantable.SensorTable_Debounce" url="package/jmri/jmrit/beantable/SensorTable.shtml#Debounce"/>
 
 <mapID target="package.jmri.jmrit.operations.Operations_ManifestComments" url="package/jmri/jmrit/operations/Operations.shtml#ManifestComments"/>
 
@@ -528,11 +528,11 @@
 
 <mapID target="html.hardware.rfid.index" url="html/hardware/rfid/index.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.RouteTable_Turnout lock feature" url="package/jmri/jmrit/beantable/RouteTable.shtml#Turnout lock feature"/>
+<mapID target="package.jmri.beantable.RouteTable_Turnout lock feature" url="package/jmri/jmrit/beantable/RouteTable.shtml#Turnout lock feature"/>
 
 <mapID target="html.tools.index" url="html/tools/index.shtml"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneProgFrame_Other Tabs" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml#Other Tabs"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneProgFrame_Other Tabs" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml#Other Tabs"/>
 
 <mapID target="html.apps.LocoTools.index_throttlemsg" url="html/apps/LocoTools/index.shtml#throttlemsg"/>
 
@@ -550,7 +550,7 @@
 
 <mapID target="package.jmri.jmrit.operations.Operations_TrainOptions" url="package/jmri/jmrit/operations/Operations.shtml#TrainOptions"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgFrame" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneOpsProgFrame" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml"/>
 
 <mapID target="html.hardware.loconet.Fleischmann" url="html/hardware/loconet/Fleischmann.shtml"/>
 
@@ -574,7 +574,7 @@
 
 <mapID target="html.tools.throttle.ThrottleChapter2_AddressPanel" url="html/tools/throttle/ThrottleChapter2.shtml#AddressPanel"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgFrame_Other Tabs" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml#Other Tabs"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneOpsProgFrame_Other Tabs" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml#Other Tabs"/>
 
 <mapID target="html.doc.Technical.I8N" url="html/doc/Technical/I8N.shtml"/>
 
@@ -600,7 +600,7 @@
 
 <mapID target="html.apps.DecoderPro.MoreInfo" url="html/apps/DecoderPro/MoreInfo.shtml"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneProgFrame" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneProgFrame" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml"/>
 
 <mapID target="package.jmri.jmrit.operations.Operations_HazardousComment" url="package/jmri/jmrit/operations/Operations.shtml#HazardousComment"/>
 
@@ -614,11 +614,11 @@
 
 <mapID target="html.tools.throttle.AdvancedThrottleControl_iphone" url="html/tools/throttle/AdvancedThrottleControl.shtml#iphone"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgFrame_Basic" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml#Basic"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneOpsProgFrame_Basic" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml#Basic"/>
 
 <mapID target="package.apps.TabbedPreferences_Messages" url="package/apps/TabbedPreferences.shtml#Messages"/>
 
-<mapID target="package.jmri.jmrit.beantable.BlockEdit_sensor" url="package/jmri/jmrit/beantable/BlockEdit.shtml#sensor"/>
+<mapID target="package.jmri.beantable.BlockEdit_sensor" url="package/jmri/jmrit/beantable/BlockEdit.shtml#sensor"/>
 
 <mapID target="package.jmri.jmrix.cmri.serial.assignment.ListFrame" url="package/jmri/jmrix/cmri/serial/assignment/ListFrame.shtml"/>
 
@@ -626,7 +626,7 @@
 
 <mapID target="package.jmri.jmrit.blockboss.BlockBossFrame_SSL" url="package/jmri/jmrit/blockboss/BlockBossFrame.shtml#SSL"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneProgFrame_Roster" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml#Roster"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneProgFrame_Roster" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml#Roster"/>
 
 <mapID target="html.tools.throttle.ThrottleWindowMenus_EditMenu" url="html/tools/throttle/ThrottleWindowMenus.shtml#EditMenu"/>
 
@@ -640,7 +640,7 @@
 
 <mapID target="html.tools.Lights_addLight" url="html/tools/Lights.shtml#addLight"/>
 
-<mapID target="package.jmri.jmrit.beantable.TurnoutTable_decodercol" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#decodercol"/>
+<mapID target="package.jmri.beantable.TurnoutTable_decodercol" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#decodercol"/>
 
 <mapID target="html.hardware.openlcb.index" url="html/hardware/openlcb/index.shtml"/>
 
@@ -664,7 +664,7 @@
 
 <mapID target="html.hardware.USBtoSerial_LocoBuffer" url="html/hardware/USBtoSerial.shtml#LocoBuffer"/>
 
-<mapID target="package.jmri.jmrit.beantable.TurnoutTable_speeds" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#speeds"/>
+<mapID target="package.jmri.beantable.TurnoutTable_speeds" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#speeds"/>
 
 <mapID target="html.hardware.loconet.StandaloneLocoNet_bdl168wnondtcs" url="html/hardware/loconet/StandaloneLocoNet.shtml#bdl168wnondtcs"/>
 
@@ -692,7 +692,7 @@
 
 <mapID target="package.jmri.jmrix.loconet.soundloader.LoaderFrame" url="package/jmri/jmrix/loconet/soundloader/LoaderFrame.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.LightAddEdit_addLight" url="package/jmri/jmrit/beantable/LightAddEdit.shtml#addLight"/>
+<mapID target="package.jmri.beantable.LightAddEdit_addLight" url="package/jmri/jmrit/beantable/LightAddEdit.shtml#addLight"/>
 
 <mapID target="package.apps.InstallTest.InstallTest" url="package/apps/InstallTest/InstallTest.shtml"/>
 
@@ -708,7 +708,7 @@
 
 <mapID target="html.tools.throttle.ThrottleMain" url="html/tools/throttle/ThrottleMain.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.BlockEdit_properties" url="package/jmri/jmrit/beantable/BlockEdit.shtml#properties"/>
+<mapID target="package.jmri.beantable.BlockEdit_properties" url="package/jmri/jmrit/beantable/BlockEdit.shtml#properties"/>
 
 <mapID target="package.jmri.jmrit.operations.Operations_PromptDepartureTrack" url="package/jmri/jmrit/operations/Operations.shtml#PromptDepartureTrack"/>
 
@@ -730,7 +730,7 @@
 
 <mapID target="html.tools.signaling.SignalMastLogic" url="html/tools/signaling/SignalMastLogic.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.SignalAddEdit" url="package/jmri/jmrit/beantable/SignalAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.SignalAddEdit" url="package/jmri/jmrit/beantable/SignalAddEdit.shtml"/>
 
 <mapID target="html.apps.DecoderPro.CreateDecoderAdvanced" url="html/apps/DecoderPro/CreateDecoderAdvanced.shtml"/>
 
@@ -868,7 +868,7 @@
 
 <mapID target="package.jmri.jmrit.display.SlipTurnoutIcon" url="package/jmri/jmrit/display/SlipTurnoutIcon.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.TransitTable" url="package/jmri/jmrit/beantable/TransitTable.shtml"/>
+<mapID target="package.jmri.beantable.TransitTable" url="package/jmri/jmrit/beantable/TransitTable.shtml"/>
 
 <mapID target="package.jmri.jmrit.display.LayoutEditor_turn" url="package/jmri/jmrit/display/LayoutEditor.shtml#turn"/>
 
@@ -878,9 +878,9 @@
 
 <mapID target="html.tools.uss.index" url="html/tools/uss/index.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.LRouteAddEdit" url="package/jmri/jmrit/beantable/LRouteAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.LRouteAddEdit" url="package/jmri/jmrit/beantable/LRouteAddEdit.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.TurnoutTable_Lock Mode" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#Lock Mode"/>
+<mapID target="package.jmri.beantable.TurnoutTable_Lock Mode" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#Lock Mode"/>
 
 <mapID target="html.web.index_security" url="html/web/index.shtml#security"/>
 
@@ -904,7 +904,7 @@
 
 <mapID target="html.doc.Technical.Names" url="html/doc/Technical/Names.shtml"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneProgFrame_Basic" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml#Basic"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneProgFrame_Basic" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml#Basic"/>
 
 <mapID target="webindex" url="webindex.shtml"/>
 
@@ -916,7 +916,7 @@
 
 <mapID target="html.hardware.cmri.CMRI_usb" url="html/hardware/cmri/CMRI.shtml#usb"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgFrame_SpeedTable" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml#SpeedTable"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneOpsProgFrame_SpeedTable" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml#SpeedTable"/>
 
 <mapID target="html.hardware.loconet.StandaloneLocoNet_rsfromnondtcs" url="html/hardware/loconet/StandaloneLocoNet.shtml#rsfromnondtcs"/>
 
@@ -928,7 +928,7 @@
 
 <mapID target="package.jmri.jmrit.operations.Operations_Interchange" url="package/jmri/jmrit/operations/Operations.shtml#Interchange"/>
 
-<mapID target="package.jmri.jmrit.beantable.ReporterAddEdit" url="package/jmri/jmrit/beantable/ReporterAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.ReporterAddEdit" url="package/jmri/jmrit/beantable/ReporterAddEdit.shtml"/>
 
 <mapID target="html.setup.profiles" url="html/setup/profiles.shtml"/>
 
@@ -942,7 +942,7 @@
 
 <mapID target="html.apps.LocoTools.index_pm4" url="html/apps/LocoTools/index.shtml#pm4"/>
 
-<mapID target="package.jmri.jmrit.beantable.LogixAddEdit" url="package/jmri/jmrit/beantable/LogixAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.LogixAddEdit" url="package/jmri/jmrit/beantable/LogixAddEdit.shtml"/>
 
 <mapID target="html.hardware.grapevine.index" url="html/hardware/grapevine/index.shtml"/>
 
@@ -984,7 +984,7 @@
 
 <mapID target="html.tools.Lights_variablelight" url="html/tools/Lights.shtml#variablelight"/>
 
-<mapID target="package.jmri.jmrit.beantable.SectionAddEdit_addSection" url="package/jmri/jmrit/beantable/SectionAddEdit.shtml#addSection"/>
+<mapID target="package.jmri.beantable.SectionAddEdit_addSection" url="package/jmri/jmrit/beantable/SectionAddEdit.shtml#addSection"/>
 
 <mapID target="package.jmri.jmrit.operations.Operations_Settings" url="package/jmri/jmrit/operations/Operations.shtml#Settings"/>
 
@@ -1054,7 +1054,7 @@
 
 <mapID target="html.tools.signaling.IntroToSignalingYourMRR__Computer_Program" url="html/tools/signaling/IntroToSignalingYourMRR.html#_Computer_Program"/>
 
-<mapID target="package.jmri.jmrit.beantable.ViewSpecialActions" url="package/jmri/jmrit/beantable/ViewSpecialActions.shtml"/>
+<mapID target="package.jmri.beantable.ViewSpecialActions" url="package/jmri/jmrit/beantable/ViewSpecialActions.shtml"/>
 
 <mapID target="html.doc.Technical.Logging" url="html/doc/Technical/Logging.shtml"/>
 
@@ -1094,9 +1094,9 @@
 
 <mapID target="html.doc.Technical.SystemStructure" url="html/doc/Technical/SystemStructure.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.BlockEdit" url="package/jmri/jmrit/beantable/BlockEdit.shtml"/>
+<mapID target="package.jmri.beantable.BlockEdit" url="package/jmri/jmrit/beantable/BlockEdit.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.AddEditAction" url="package/jmri/jmrit/beantable/AddEditAction.shtml"/>
+<mapID target="package.jmri.beantable.AddEditAction" url="package/jmri/jmrit/beantable/AddEditAction.shtml"/>
 
 <mapID target="html.tools.signaling.index" url="html/tools/signaling/index.shtml"/>
 
@@ -1124,7 +1124,7 @@
 
 <mapID target="package.jmri.jmrit.operations.Operations_Yards" url="package/jmri/jmrit/operations/Operations.shtml#Yards"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneProgFrame_contents" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml#contents"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneProgFrame_contents" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneProgFrame.shtml#contents"/>
 
 <mapID target="html.hardware.loconet.Digitrax" url="html/hardware/loconet/Digitrax.shtml"/>
 
@@ -1154,9 +1154,9 @@
 
 <mapID target="html.tools.throttle.ThrottleChapter2_WinConfig" url="html/tools/throttle/ThrottleChapter2.shtml#WinConfig"/>
 
-<mapID target="package.jmri.jmrit.beantable.SensorAddEdit" url="package/jmri/jmrit/beantable/SensorAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.SensorAddEdit" url="package/jmri/jmrit/beantable/SensorAddEdit.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.LightAddEdit_lightcontrol" url="package/jmri/jmrit/beantable/LightAddEdit.shtml#lightcontrol"/>
+<mapID target="package.jmri.beantable.LightAddEdit_lightcontrol" url="package/jmri/jmrit/beantable/LightAddEdit.shtml#lightcontrol"/>
 
 <mapID target="html.tools.signaling.index_intro" url="html/tools/signaling/index.shtml#intro"/>
 
@@ -1170,7 +1170,7 @@
 
 <mapID target="html.apps.DecoderPro.FAQ_newfile" url="html/apps/DecoderPro/FAQ.shtml#newfile"/>
 
-<mapID target="package.jmri.jmrit.beantable.MemoryAddEdit" url="package/jmri/jmrit/beantable/MemoryAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.MemoryAddEdit" url="package/jmri/jmrit/beantable/MemoryAddEdit.shtml"/>
 
 <mapID target="html.tools.signaling.Logic" url="html/tools/signaling/Logic.shtml"/>
 
@@ -1180,7 +1180,7 @@
 
 <mapID target="html.apps.DecoderPro.FAQ_newdecoder" url="html/apps/DecoderPro/FAQ.shtml#newdecoder"/>
 
-<mapID target="package.jmri.jmrit.beantable.TurnoutTable_Turnout lock feature" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#Turnout lock feature"/>
+<mapID target="package.jmri.beantable.TurnoutTable_Turnout lock feature" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#Turnout lock feature"/>
 
 <mapID target="webtoc" url="webtoc.shtml"/>
 
@@ -1192,7 +1192,7 @@
 
 <mapID target="html.tools.throttle.ThrottleChapter2_StructWin" url="html/tools/throttle/ThrottleChapter2.shtml#StructWin"/>
 
-<mapID target="package.jmri.jmrit.beantable.SignalMastTable" url="package/jmri/jmrit/beantable/SignalMastTable.shtml"/>
+<mapID target="package.jmri.beantable.SignalMastTable" url="package/jmri/jmrit/beantable/SignalMastTable.shtml"/>
 
 <mapID target="package.jmri.jmrix.loconet.cmdstnconfig.CmdStnConfigFrame" url="package/jmri/jmrix/loconet/cmdstnconfig/CmdStnConfigFrame.shtml"/>
 
@@ -1202,7 +1202,7 @@
 
 <mapID target="html.apps.PanelPro.AdvIcons" url="html/apps/PanelPro/AdvIcons.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.SignalGroupTable" url="package/jmri/jmrit/beantable/SignalGroupTable.shtml"/>
+<mapID target="package.jmri.beantable.SignalGroupTable" url="package/jmri/jmrit/beantable/SignalGroupTable.shtml"/>
 
 <mapID target="html.apps.DecoderPro.index" url="html/apps/DecoderPro/index.shtml"/>
 
@@ -1212,7 +1212,7 @@
 
 <mapID target="package.jmri.jmrit.display.SetSignalsAtBoundary" url="package/jmri/jmrit/display/SetSignalsAtBoundary.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.IdTagAddEdit" url="package/jmri/jmrit/beantable/IdTagAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.IdTagAddEdit" url="package/jmri/jmrit/beantable/IdTagAddEdit.shtml"/>
 
 <mapID target="package.jmri.jmrit.ussctc.OsIndicatorFrame" url="package/jmri/jmrit/ussctc/OsIndicatorFrame.shtml"/>
 
@@ -1290,7 +1290,7 @@
 
 <mapID target="html.tools.signaling.SimpleSignalExample" url="html/tools/signaling/SimpleSignalExample.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.AudioAddEdit" url="package/jmri/jmrit/beantable/AudioAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.AudioAddEdit" url="package/jmri/jmrit/beantable/AudioAddEdit.shtml"/>
 
 <mapID target="package.jmri.jmrit.throttle.ThrottleFrame" url="package/jmri/jmrit/throttle/ThrottleFrame.shtml"/>
 
@@ -1350,11 +1350,11 @@
 
 <mapID target="package.jmri.jmrit.dispatcher.Dispatcher_glossary" url="package/jmri/jmrit/dispatcher/Dispatcher.shtml#glossary"/>
 
-<mapID target="package.jmri.jmrit.beantable.SignalHeadTable" url="package/jmri/jmrit/beantable/SignalHeadTable.shtml"/>
+<mapID target="package.jmri.beantable.SignalHeadTable" url="package/jmri/jmrit/beantable/SignalHeadTable.shtml"/>
 
 <mapID target="package.jmri.jmrit.operations.Operations_TrainRequires" url="package/jmri/jmrit/operations/Operations.shtml#TrainRequires"/>
 
-<mapID target="package.jmri.jmrit.roster.swing.speedprofile.SpeedProfileFrame" url="package/jmri/jmrit/roster/swing/speedprofile/SpeedProfileFrame.shtml"/>
+<mapID target="package.jmri.roster.swing.speedprofile.SpeedProfileFrame" url="package/jmri/jmrit/roster/swing/speedprofile/SpeedProfileFrame.shtml"/>
 
 <mapID target="html.hardware.loconet.LocoBufferUSB" url="html/hardware/loconet/LocoBufferUSB.shtml"/>
 
@@ -1362,13 +1362,13 @@
 
 <mapID target="html.apps.DecoderPro.Debug" url="html/apps/DecoderPro/Debug.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.SectionAddEdit" url="package/jmri/jmrit/beantable/SectionAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.SectionAddEdit" url="package/jmri/jmrit/beantable/SectionAddEdit.shtml"/>
 
 <mapID target="package.jmri.jmrix.powerline.packetgen.SerialPacketGenFrame" url="package/jmri/jmrix/powerline/packetgen/SerialPacketGenFrame.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.MemoryTable" url="package/jmri/jmrit/beantable/MemoryTable.shtml"/>
+<mapID target="package.jmri.beantable.MemoryTable" url="package/jmri/jmrit/beantable/MemoryTable.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.TurnoutAddEdit" url="package/jmri/jmrit/beantable/TurnoutAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.TurnoutAddEdit" url="package/jmri/jmrit/beantable/TurnoutAddEdit.shtml"/>
 
 <mapID target="html.tools.signaling.index_Tableau" url="html/tools/signaling/index.shtml#Tableau"/>
 
@@ -1380,7 +1380,7 @@
 
 <mapID target="html.hardware.loconet.StandaloneLocoNet_rspowersupply" url="html/hardware/loconet/StandaloneLocoNet.shtml#rspowersupply"/>
 
-<mapID target="package.jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgFrame_Roster" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml#Roster"/>
+<mapID target="package.jmri.symbolicprog.tabbedframe.PaneOpsProgFrame_Roster" url="package/jmri/jmrit/symbolicprog/tabbedframe/PaneOpsProgFrame.shtml#Roster"/>
 
 <mapID target="package.jmri.jmrit.operations.Operations_AllowCarsToReturnToStaging" url="package/jmri/jmrit/operations/Operations.shtml#AllowCarsToReturnToStaging"/>
 
@@ -1390,7 +1390,7 @@
 
 <mapID target="html.hardware.acela.Names" url="html/hardware/acela/Names.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.TransitAddEdit_addTransit" url="package/jmri/jmrit/beantable/TransitAddEdit.shtml#addTransit"/>
+<mapID target="package.jmri.beantable.TransitAddEdit_addTransit" url="package/jmri/jmrit/beantable/TransitAddEdit.shtml#addTransit"/>
 
 <mapID target="html.tools.Sensors_add" url="html/tools/Sensors.shtml#add"/>
 
@@ -1410,7 +1410,7 @@
 
 <mapID target="html.tools.signaling.IntroToSignalingYourMRR__Type_of_Signals_to_Use" url="html/tools/signaling/IntroToSignalingYourMRR.html#_Type_of_Signals_to_Use"/>
 
-<mapID target="package.jmri.jmrit.beantable.RouteAddEdit" url="package/jmri/jmrit/beantable/RouteAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.RouteAddEdit" url="package/jmri/jmrit/beantable/RouteAddEdit.shtml"/>
 
 <mapID target="html.apps.DecoderPro.IntroXML" url="html/apps/DecoderPro/IntroXML.shtml"/>
 
@@ -1418,9 +1418,9 @@
 
 <mapID target="html.doc.Technical.NewType" url="html/doc/Technical/NewType.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.LightAddEdit" url="package/jmri/jmrit/beantable/LightAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.LightAddEdit" url="package/jmri/jmrit/beantable/LightAddEdit.shtml"/>
 
-<mapID target="package.jmri.jmrit.beantable.SignalMastAddEdit" url="package/jmri/jmrit/beantable/SignalMastAddEdit.shtml"/>
+<mapID target="package.jmri.beantable.SignalMastAddEdit" url="package/jmri/jmrit/beantable/SignalMastAddEdit.shtml"/>
 
 <mapID target="package.jmri.jmrit.vsdecoder.swing.VSDManagerFrame" url="package/jmri/jmrit/vsdecoder/swing/VSDManagerFrame.shtml"/>
 
@@ -1470,7 +1470,7 @@
 
 <mapID target="html.apps.LocoTools.index_soundedit" url="html/apps/LocoTools/index.shtml#soundedit"/>
 
-<mapID target="package.jmri.jmrit.beantable.SectionTable_SignalMast" url="package/jmri/jmrit/beantable/SectionTable.shtml#SignalMast"/>
+<mapID target="package.jmri.beantable.SectionTable_SignalMast" url="package/jmri/jmrit/beantable/SectionTable.shtml#SignalMast"/>
 
 <mapID target="package.jmri.jmrit.blockboss.BlockBossFrame_start" url="package/jmri/jmrit/blockboss/BlockBossFrame.shtml#start"/>
 
@@ -1512,7 +1512,7 @@
 
 <mapID target="html.tools.signaling.index_logic" url="html/tools/signaling/index.shtml#logic"/>
 
-<mapID target="package.jmri.jmrit.beantable.IdTagTable" url="package/jmri/jmrit/beantable/IdTagTable.shtml"/>
+<mapID target="package.jmri.beantable.IdTagTable" url="package/jmri/jmrit/beantable/IdTagTable.shtml"/>
 
 <mapID target="package.jmri.jmrit.vsdecoder.VSDecoderFrame_1" url="package/jmri/jmrit/vsdecoder/VSDecoderFrame_1.shtml"/>
 
@@ -1532,7 +1532,7 @@
 
 <mapID target="html.tools.Lights_VariableLightSettings" url="html/tools/Lights.shtml#VariableLightSettings"/>
 
-<mapID target="package.jmri.jmrit.beantable.LightAddEdit_varLight" url="package/jmri/jmrit/beantable/LightAddEdit.shtml#varLight"/>
+<mapID target="package.jmri.beantable.LightAddEdit_varLight" url="package/jmri/jmrit/beantable/LightAddEdit.shtml#varLight"/>
 
 <mapID target="html.tools.signaling.index_logix" url="html/tools/signaling/index.shtml#logix"/>
 
@@ -1554,7 +1554,7 @@
 
 <mapID target="html.tools.signaling.index_variable" url="html/tools/signaling/index.shtml#variable"/>
 
-<mapID target="package.jmri.jmrit.beantable.RouteTable" url="package/jmri/jmrit/beantable/RouteTable.shtml"/>
+<mapID target="package.jmri.beantable.RouteTable" url="package/jmri/jmrit/beantable/RouteTable.shtml"/>
 
 <mapID target="html.setup.Dropbox" url="html/setup/Dropbox.shtml"/>
 
@@ -1586,7 +1586,7 @@
 
 <mapID target="html.hardware.loconet.StandaloneLocoNet_hwdataterm" url="html/hardware/loconet/StandaloneLocoNet.shtml#hwdataterm"/>
 
-<mapID target="package.jmri.jmrit.beantable.LogixTable" url="package/jmri/jmrit/beantable/LogixTable.shtml"/>
+<mapID target="package.jmri.beantable.LogixTable" url="package/jmri/jmrit/beantable/LogixTable.shtml"/>
 
 <mapID target="html.web.JsonServlet" url="html/web/JsonServlet.shtml"/>
 
@@ -1594,7 +1594,7 @@
 
 <mapID target="package.apps.TabbedPreferences_Defaults" url="package/apps/TabbedPreferences.shtml#Defaults"/>
 
-<mapID target="package.jmri.jmrit.beantable.TurnoutTable_automation" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#automation"/>
+<mapID target="package.jmri.beantable.TurnoutTable_automation" url="package/jmri/jmrit/beantable/TurnoutTable.shtml#automation"/>
 
 <mapID target="html.apps.index" url="html/apps/index.shtml"/>
 

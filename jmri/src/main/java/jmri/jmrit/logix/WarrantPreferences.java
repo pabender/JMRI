@@ -14,7 +14,7 @@ import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 import jmri.InstanceManager;
 import jmri.implementation.SignalSpeedMap;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.jmrit.logix.WarrantPreferencesPanel.DataPair;
 import jmri.profile.Profile;
 import jmri.profile.ProfileManager;

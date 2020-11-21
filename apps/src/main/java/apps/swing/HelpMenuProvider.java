@@ -8,7 +8,7 @@ import javax.swing.UIManager;
 
 import apps.*;
 
-import jmri.jmrit.XmlFileLocationAction;
+import jmri.util.xml.XmlFileLocationAction;
 import jmri.util.*;
 
 import org.openide.util.lookup.ServiceProvider;

@@ -51,8 +51,8 @@ class LocoSelector(jmri.jmrit.automat.AbstractAutomaton) :
 
         # create the drop-box from the roster, 
         # getEntriesWithAttributeKeyValue(String key, String value) 
-        self.roster = jmri.jmrit.roster.Roster.getDefault()
-        self.box = jmri.jmrit.roster.swing.GlobalRosterEntryComboBox()
+        self.roster = jmri.roster.Roster.getDefault()
+        self.box = jmri.roster.swing.GlobalRosterEntryComboBox()
 
         # add the drop-box, address field, and start button to the panel
         temppanel1.add(self.box)

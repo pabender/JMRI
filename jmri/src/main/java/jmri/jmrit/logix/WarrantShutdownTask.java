@@ -7,9 +7,9 @@ import java.util.Map;
 
 import jmri.InstanceManager;
 import jmri.implementation.AbstractShutDownTask;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
-import jmri.jmrit.roster.RosterSpeedProfile;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
+import jmri.roster.RosterSpeedProfile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

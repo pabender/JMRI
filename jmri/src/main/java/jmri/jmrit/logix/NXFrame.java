@@ -22,7 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 
 import jmri.JmriException;
-import jmri.jmrit.roster.RosterSpeedProfile;
+import jmri.roster.RosterSpeedProfile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

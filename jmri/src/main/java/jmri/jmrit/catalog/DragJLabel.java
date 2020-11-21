@@ -14,6 +14,8 @@ import java.awt.dnd.DragSourceEvent;
 import java.awt.dnd.DragSourceListener;
 import java.io.IOException;
 import javax.swing.JLabel;
+
+import jmri.util.swing.NamedIcon;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

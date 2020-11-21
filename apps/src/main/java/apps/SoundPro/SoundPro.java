@@ -73,7 +73,7 @@ public class SoundPro extends Apps {
         j.add(super.statusPanel());
 
         // Buttons
-        Action audioTable = new jmri.jmrit.beantable.AudioTableAction(Bundle.getMessage("SpButtonAudioTable"));
+        Action audioTable = new jmri.beantable.AudioTableAction(Bundle.getMessage("SpButtonAudioTable"));
         Action quit = new AbstractAction(Bundle.getMessage("MenuItemQuit")) {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -2,7 +2,7 @@
 package jmri.jmrix.loconet;
 
 import jmri.*;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 import jmri.util.JUnitUtil;
 import jmri.util.junit.annotations.*;
 

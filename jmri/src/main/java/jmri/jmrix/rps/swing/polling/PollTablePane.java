@@ -59,8 +59,8 @@ public class PollTablePane extends javax.swing.JPanel {
         pollTable.setDefaultRenderer(JButton.class, buttonRenderer);
         TableCellEditor buttonEditor = new ButtonEditor(new JButton());
         pollTable.setDefaultEditor(JButton.class, buttonEditor);
-        pollTable.setDefaultRenderer(JComboBox.class, new jmri.jmrit.symbolicprog.ValueRenderer());
-        pollTable.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+        pollTable.setDefaultRenderer(JComboBox.class, new jmri.symbolicprog.ValueRenderer());
+        pollTable.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
 
         TableRowSorter<PollDataModel> sorter = new TableRowSorter<>(pollModel);
         RowSorterUtil.setSortOrder(sorter, PollDataModel.ADDRCOL, SortOrder.ASCENDING);

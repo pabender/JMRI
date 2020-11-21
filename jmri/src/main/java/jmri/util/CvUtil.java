@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import jmri.jmrit.symbolicprog.tabbedframe.PaneProgFrame;
+import jmri.symbolicprog.tabbedframe.PaneProgFrame;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

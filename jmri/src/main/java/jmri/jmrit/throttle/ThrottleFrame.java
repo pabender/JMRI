@@ -32,12 +32,13 @@ import javax.swing.event.InternalFrameEvent;
 import jmri.DccThrottle;
 import jmri.InstanceManager;
 import jmri.LocoAddress;
+import jmri.ThrottlesPreferences;
 import jmri.configurexml.LoadXmlConfigAction;
 import jmri.configurexml.StoreXmlConfigAction;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.jmrit.jython.Jynstrument;
 import jmri.jmrit.jython.JynstrumentFactory;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 import jmri.util.FileUtil;
 import jmri.util.iharder.dnd.URIDrop;
 import jmri.util.iharder.dnd.URIDrop.Listener;
@@ -186,7 +187,7 @@ public class ThrottleFrame extends JDesktopPane implements ComponentListener, Ad
             // <?xml-stylesheet type="text/xsl" href="XSLT/throttle.xsl"?>
 /*   java.util.Map<String,String> m = new java.util.HashMap<String,String>();
              m.put("type", "text/xsl");
-             m.put("href", jmri.jmrit.XmlFile.xsltLocation+"throttle.xsl");
+             m.put("href", jmri.util.xml.XmlFile.xsltLocation+"throttle.xsl");
              ProcessingInstruction p = new ProcessingInstruction("xml-stylesheet", m);
              doc.addContent(0,p);*/
             Element throttleElement = getXml();
@@ -208,7 +209,7 @@ public class ThrottleFrame extends JDesktopPane implements ComponentListener, Ad
 
     public void loadThrottle(String sfile) {
         if (sfile == null) {
-            JFileChooser fileChooser = jmri.jmrit.XmlFile.userFileChooser(Bundle.getMessage("PromptXmlFileTypes"), "xml");
+            JFileChooser fileChooser = XmlFile.userFileChooser(Bundle.getMessage("PromptXmlFileTypes"), "xml");
             fileChooser.setCurrentDirectory(new File(getDefaultThrottleFolder()));
             fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
             java.io.File file = LoadXmlConfigAction.getFile(fileChooser);
@@ -904,7 +905,7 @@ public class ThrottleFrame extends JDesktopPane implements ComponentListener, Ad
     }
 
     public void saveThrottleAs() {
-        JFileChooser fileChooser = jmri.jmrit.XmlFile.userFileChooser(Bundle.getMessage("PromptXmlFileTypes"), "xml");
+        JFileChooser fileChooser = XmlFile.userFileChooser(Bundle.getMessage("PromptXmlFileTypes"), "xml");
         fileChooser.setCurrentDirectory(new File(getDefaultThrottleFolder()));
         fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
         java.io.File file = StoreXmlConfigAction.getFileName(fileChooser);

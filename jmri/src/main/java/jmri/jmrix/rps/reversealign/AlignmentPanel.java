@@ -23,6 +23,7 @@ import jmri.jmrix.rps.PositionFile;
 import jmri.jmrix.rps.Reading;
 import jmri.jmrix.rps.ReadingListener;
 import jmri.jmrix.rps.RpsSystemConnectionMemo;
+import jmri.util.xml.XmlFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -139,7 +140,7 @@ public class AlignmentPanel extends javax.swing.JPanel
         dummy3();
     }
 
-    JFileChooser fci = jmri.jmrit.XmlFile.userFileChooser();
+    JFileChooser fci = XmlFile.userFileChooser();
 
     void load() {
         try {

@@ -78,7 +78,7 @@ public class LayoutBlockTest {
         Block block = jmri.InstanceManager.getDefault(jmri.BlockManager.class).getByUserName("Test Block");
 
         // add a roster entry as the block value
-        jmri.jmrit.roster.RosterEntry re = jmri.jmrit.roster.RosterEntry.fromFile(new java.io.File("src/test/java/jmri/jmrit/roster/ACL1012-Schema.xml"));
+        jmri.roster.RosterEntry re = jmri.roster.RosterEntry.fromFile(new java.io.File("src/test/java/jmri/roster/ACL1012-Schema.xml"));
 
         // change the value of the block.
         block.setValue(re);

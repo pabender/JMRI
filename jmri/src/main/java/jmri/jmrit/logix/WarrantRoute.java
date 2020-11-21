@@ -36,10 +36,10 @@ import javax.swing.tree.TreeNode;
 import jmri.InstanceManager;
 import jmri.Path;
 import jmri.jmrit.picker.PickListModel;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
-import jmri.jmrit.roster.RosterSpeedProfile;
-import jmri.jmrit.roster.swing.speedprofile.SpeedProfileTable;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
+import jmri.roster.RosterSpeedProfile;
+import jmri.roster.swing.speedprofile.SpeedProfileTable;
 import jmri.util.JmriJFrame;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -230,7 +230,7 @@ abstract class WarrantRoute extends jmri.util.JmriJFrame implements ActionListen
 
     private void getRoster() {
         List<RosterEntry> list = Roster.getDefault().matchingList(null, null, null, null, null, null, null);
-        _rosterBox.setRenderer(new jmri.jmrit.roster.swing.RosterEntryListCellRenderer());
+        _rosterBox.setRenderer(new jmri.roster.swing.RosterEntryListCellRenderer());
         _rosterBox.addItem(" ");
         _rosterBox.addItem(Bundle.getMessage("noSuchAddress"));
         for (int i = 0; i < list.size(); i++) {
@@ -1072,7 +1072,7 @@ abstract class WarrantRoute extends jmri.util.JmriJFrame implements ActionListen
 
     protected JPanel makeRouteTablePanel() {
         JTable routeTable = new JTable(_routeModel);
-        routeTable.setDefaultEditor(JComboBox.class, new jmri.jmrit.symbolicprog.ValueEditor());
+        routeTable.setDefaultEditor(JComboBox.class, new jmri.symbolicprog.ValueEditor());
         //routeTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         for (int i = 0; i < _routeModel.getColumnCount(); i++) {
             int width = _routeModel.getPreferredWidth(i);

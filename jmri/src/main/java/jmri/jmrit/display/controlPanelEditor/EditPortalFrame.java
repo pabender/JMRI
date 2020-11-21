@@ -26,7 +26,7 @@ import javax.swing.event.ListSelectionListener;
 
 import jmri.InstanceManager;
 import jmri.jmrit.catalog.DragJLabel;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.Positionable;
 import jmri.jmrit.logix.OBlock;

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.symbolicprog.tabbedframe;
+package jmri.symbolicprog.tabbedframe;
 
 import java.awt.GraphicsEnvironment;
 import java.util.HashMap;
@@ -7,9 +7,9 @@ import java.util.HashMap;
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 
-import jmri.jmrit.symbolicprog.CvValue;
-import jmri.jmrit.symbolicprog.DecVariableValue;
-import jmri.jmrit.symbolicprog.VariableValue;
+import jmri.symbolicprog.CvValue;
+import jmri.symbolicprog.DecVariableValue;
+import jmri.symbolicprog.VariableValue;
 import jmri.util.JUnitUtil;
 
 import org.junit.Assert;

@@ -45,7 +45,7 @@ public class ProgDeferredServiceModePane extends ProgModeSelector implements jav
     ProgServiceModePane servicePane;
     JFrame setFrame;
     JLabel currentMode = new JLabel();
-    protected JButton setButton = new JButton(java.util.ResourceBundle.getBundle("jmri/jmrit/symbolicprog/SymbolicProgBundle").getString("SET..."));
+    protected JButton setButton = new JButton(java.util.ResourceBundle.getBundle("jmri/symbolicprog/SymbolicProgBundle").getString("SET..."));
 
     /**
      * Enable/Disable the "set" button in GUI

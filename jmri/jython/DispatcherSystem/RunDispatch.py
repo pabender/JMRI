@@ -184,8 +184,8 @@ class NewTrainMaster(jmri.jmrit.automat.AbstractAutomaton):
     
     def get_all_roster_entries_with_speed_profile(self):
         roster_entries_with_speed_profile = []
-        r = jmri.jmrit.roster.Roster.getDefault()
-        for roster_entry in jmri.jmrit.roster.Roster.getAllEntries(r):
+        r = jmri.roster.Roster.getDefault()
+        for roster_entry in jmri.roster.Roster.getAllEntries(r):
             if self.logLevel > 0: print "roster_entry.getSpeedProfile()",roster_entry,roster_entry.getSpeedProfile()
             if roster_entry.getSpeedProfile() != None:
                 roster_entries_with_speed_profile.append(roster_entry.getId())
@@ -305,7 +305,7 @@ class NewTrainMaster(jmri.jmrit.automat.AbstractAutomaton):
         return [None, None]
 
     def is_roster_entry(self, v):
-        return type(v) is jmri.jmrit.roster.RosterEntry
+        return type(v) is jmri.roster.RosterEntry
 
     # def new_train_thread_required(self, train_name):
         # for thread in instanceList:
@@ -818,7 +818,7 @@ class MoveTrain(jmri.jmrit.automat.AbstractAutomaton):
             print "got here 6a"  
             if (tSource == jmri.jmrit.dispatcher.ActiveTrain.ROSTER):
                 print "got here 6aaz"
-                RosterEntry = jmri.jmrit.roster.Roster.getDefault().getEntryForId(trainNameToUse)
+                RosterEntry = jmri.roster.Roster.getDefault().getEntryForId(trainNameToUse)
                 print "got here 6ab"
                 if (RosterEntry != None):
                     print "got here 6b" 
@@ -1169,8 +1169,8 @@ class DispatchMaster(jmri.jmrit.automat.AbstractAutomaton):
 
     def get_all_roster_entries_with_speed_profile(self):
         roster_entries_with_speed_profile = []
-        r = jmri.jmrit.roster.Roster.getDefault()
-        for roster_entry in jmri.jmrit.roster.Roster.getAllEntries(r):
+        r = jmri.roster.Roster.getDefault()
+        for roster_entry in jmri.roster.Roster.getAllEntries(r):
             if self.logLevel > 0: print "roster_entry.getSpeedProfile()",roster_entry,roster_entry.getSpeedProfile()
             if roster_entry.getSpeedProfile() != None:
                 roster_entries_with_speed_profile.append(roster_entry.getId())

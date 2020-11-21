@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
 package jmri.jmrit.display.controlPanelEditor.configurexml;
 
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.configurexml.PositionableLabelXml;
 import jmri.jmrit.display.controlPanelEditor.ControlPanelEditor;
 import jmri.jmrit.display.controlPanelEditor.PortalIcon;

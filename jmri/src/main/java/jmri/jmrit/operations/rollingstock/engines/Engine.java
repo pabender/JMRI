@@ -13,8 +13,8 @@ import jmri.jmrit.operations.locations.Track;
 import jmri.jmrit.operations.rollingstock.RollingStock;
 import jmri.jmrit.operations.routes.RouteLocation;
 import jmri.jmrit.operations.trains.Train;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
 
 /**
  * Represents a locomotive on the layout

@@ -14,8 +14,8 @@ import jmri.InstanceManager;
 import jmri.jmrit.operations.rollingstock.engines.Engine;
 import jmri.jmrit.operations.rollingstock.engines.EngineManager;
 import jmri.jmrit.operations.setup.Control;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
 
 /**
  * Import engines from the jmri Roster

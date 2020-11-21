@@ -11,7 +11,7 @@ import javax.swing.AbstractAction;
 import javax.swing.JFileChooser;
 import jmri.InstanceManager;
 import jmri.configurexml.StoreXmlConfigAction;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.output.Format;
@@ -52,7 +52,7 @@ public class StoreXmlThrottlesLayoutAction extends AbstractAction {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        JFileChooser fileChooser = jmri.jmrit.XmlFile.userFileChooser(Bundle.getMessage("PromptXmlFileTypes"), "xml");
+        JFileChooser fileChooser = XmlFile.userFileChooser(Bundle.getMessage("PromptXmlFileTypes"), "xml");
         fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
         fileChooser.setCurrentDirectory(new File(ThrottleFrame.getDefaultThrottleFolder()));
         java.io.File file = StoreXmlConfigAction.getFileName(fileChooser);
@@ -72,7 +72,7 @@ public class StoreXmlThrottlesLayoutAction extends AbstractAction {
             // <?xml-stylesheet type="text/xsl" href="XSLT/throttle-layout-config.xsl"?>
 /*TODO   java.util.Map<String,String> m = new java.util.HashMap<String,String>();
              m.put("type", "text/xsl");
-             m.put("href", jmri.jmrit.XmlFile.xsltLocation + "throttle-layout-config.xsl");
+             m.put("href", jmri.util.xml.XmlFile.xsltLocation + "throttle-layout-config.xsl");
              ProcessingInstruction p = new ProcessingInstruction("xml-stylesheet", m);
              doc.addContent(0, p); */
             java.util.ArrayList<Element> children = new java.util.ArrayList<Element>(5);

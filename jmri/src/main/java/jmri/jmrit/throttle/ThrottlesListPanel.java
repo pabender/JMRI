@@ -14,7 +14,8 @@ import javax.swing.JTable;
 import javax.swing.JToolBar;
 import javax.swing.ListSelectionModel;
 import jmri.InstanceManager;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
+import jmri.util.LargePowerManagerButton;
 import org.jdom2.Element;
 
 public class ThrottlesListPanel extends JPanel {

@@ -1,13 +1,12 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
 package apps.jmrit;
 
-import jmri.jmrit.*;
-
 import java.awt.Component;
 import java.io.File;
 
-import jmri.util.swing.WindowInterface;
-
+import jmri.util.xml.XmlFile;
+import jmri.util.xml.XmlFileCheckAction;
+import jmri.util.xml.XmlFileValidateAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,10 +20,10 @@ import org.slf4j.LoggerFactory;
  * (The dialog form has to be manually canceled when done)
  *
  * @author Bob Jacobsen Copyright (C) 2005, 2007
- * @see jmri.jmrit.XmlFile
- * @see jmri.jmrit.XmlFileCheckAction
+ * @see XmlFile
+ * @see XmlFileCheckAction
  */
-public class XmlFileValidateRunner extends jmri.jmrit.XmlFileValidateAction {
+public class XmlFileValidateRunner extends XmlFileValidateAction {
 
     private XmlFileValidateRunner(String s, Component who) {
         super(s, who);

@@ -38,7 +38,7 @@ import jmri.jmrit.catalog.CatalogPanel;
 import jmri.CatalogTreeLeaf;
 import jmri.CatalogTreeNode;
 import jmri.jmrit.catalog.ImageIndexEditor;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.picker.PickListModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -211,7 +211,7 @@ public class IconAdder extends JPanel implements ListSelectionListener {
 
         if (_allowDeletes) {
             String fileName = "resources/icons/misc/X-red.gif";
-            button.setSelectedIcon(new jmri.jmrit.catalog.NamedIcon(fileName, fileName));
+            button.setSelectedIcon(new NamedIcon(fileName, fileName));
         }
         if (icon != null) {
             icon.reduceTo(CatalogPanel.ICON_WIDTH, CatalogPanel.ICON_HEIGHT, CatalogPanel.ICON_SCALE);

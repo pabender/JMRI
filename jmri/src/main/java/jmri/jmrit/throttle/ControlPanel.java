@@ -23,8 +23,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.MouseInputAdapter;
 
 import jmri.*;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
 import jmri.util.FileUtil;
 import jmri.util.MouseInputAdapterInstaller;
 import org.jdom2.Attribute;

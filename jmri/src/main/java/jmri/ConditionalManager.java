@@ -95,7 +95,7 @@ public interface ConditionalManager extends Manager<Conditional> {
 
     /**
      * Return a copy of the entire map.  Used by
-     * {@link jmri.jmrit.beantable.LogixTableAction#buildWhereUsedListing}
+     * {@link jmri.beantable.LogixTableAction#buildWhereUsedListing}
      * @return a copy of the map
      * @since 4.7.4
      */

@@ -12,7 +12,7 @@ import jmri.InstanceManager;
 import jmri.NamedBeanHandle;
 import jmri.NamedBeanHandleManager;
 import jmri.Sensor;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.palette.IndicatorItemPanel;
 import jmri.jmrit.logix.OBlock;
 import org.slf4j.Logger;

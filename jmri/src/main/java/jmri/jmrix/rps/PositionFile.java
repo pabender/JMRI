@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import javax.vecmath.Point3d;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.util.FileUtil;
 import org.jdom2.Attribute;
 import org.jdom2.Document;

@@ -46,8 +46,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import jmri.InstanceManager;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
 import jmri.server.json.JSON;
 import jmri.server.json.JsonException;
 import jmri.server.json.roster.JsonRosterServiceFactory;
@@ -303,7 +303,7 @@ public class RosterServlet extends HttpServlet {
      * <p>
      * Lists roster entries in the specified group and return an XML document
      * conforming to the JMRI JSON schema. This method can be passed multiple
-     * filters matching the filter in {@link jmri.jmrit.roster.Roster#getEntriesMatchingCriteria(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+     * filters matching the filter in {@link jmri.roster.Roster#getEntriesMatchingCriteria(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
      * }. <b>Note:</b> Any given filter can be specified only once.
      * <p>
      * This method responds to the following GET URL patterns: <ul>
@@ -348,7 +348,7 @@ public class RosterServlet extends HttpServlet {
      * Lists roster entries and return an XML document conforming to the JMRI
      * Roster XML schema. This method can be passed multiple filter filter
      * matching the filter in
-     * {@link jmri.jmrit.roster.Roster#getEntriesMatchingCriteria(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
+     * {@link jmri.roster.Roster#getEntriesMatchingCriteria(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
      * <b>Note:</b> Any given filter can be specified only once.
      * <p>
      * This method responds to the following GET URL patterns: <ul>
@@ -482,7 +482,7 @@ public class RosterServlet extends HttpServlet {
      * @param request  servlet request with format and locale for response
      * @param response servlet response
      * @param filter   a JSON object with name-value pairs of parameters for
-     *                 {@link jmri.jmrit.roster.Roster#getEntriesMatchingCriteria(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
+     *                 {@link jmri.roster.Roster#getEntriesMatchingCriteria(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
      * @throws java.io.IOException if communications is cut with client
      */
     protected void doRoster(HttpServletRequest request, HttpServletResponse response, JsonNode filter) throws IOException {

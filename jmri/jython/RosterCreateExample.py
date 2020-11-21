@@ -5,14 +5,14 @@
 # Part of the JMRI distribution
 
 import jmri
-import jmri.jmrit.roster
+import jmri.roster
 import java
 
 # create a new entry
-entry = jmri.jmrit.roster.RosterEntry()
+entry = jmri.roster.RosterEntry()
 
 # first, include it in the Roster
-jmri.jmrit.roster.Roster.getDefault().addEntry(entry)
+jmri.roster.Roster.getDefault().addEntry(entry)
 
 # need to set the ID to something
 entry.setId("New empty entry")
@@ -26,4 +26,4 @@ entry.ensureFilenameExists()
 
 # store results
 entry.writeFile(None, None, None)
-jmri.jmrit.roster.Roster.writeRosterFile()
+jmri.roster.Roster.writeRosterFile()

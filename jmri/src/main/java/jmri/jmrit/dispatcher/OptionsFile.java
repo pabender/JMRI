@@ -9,6 +9,7 @@ import jmri.ScaleManager;
 import jmri.jmrit.display.EditorManager;
 import jmri.jmrit.display.layoutEditor.LayoutEditor;
 import jmri.util.FileUtil;
+import jmri.util.xml.XmlFile;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.slf4j.Logger;
@@ -36,7 +37,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Dave Duchamp Copyright (C) 2008
  */
-public class OptionsFile extends jmri.jmrit.XmlFile implements InstanceManagerAutoDefault {
+public class OptionsFile extends XmlFile implements InstanceManagerAutoDefault {
 
     public OptionsFile() {
         super();

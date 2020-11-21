@@ -10,7 +10,7 @@ import jmri.ConfigureManager;
 import jmri.InstanceManager;
 import jmri.configurexml.AbstractXmlAdapter;
 import jmri.configurexml.XmlAdapter;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.EditorManager;
 import jmri.jmrit.display.Positionable;

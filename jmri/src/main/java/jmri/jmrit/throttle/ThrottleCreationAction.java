@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.Icon;
 import jmri.InstanceManager;
 import jmri.beans.BeanUtil;
-import jmri.jmrit.roster.rostergroup.RosterGroupSelector;
+import jmri.roster.rostergroup.RosterGroupSelector;
 import jmri.util.swing.JmriAbstractAction;
 import jmri.util.swing.WindowInterface;
 

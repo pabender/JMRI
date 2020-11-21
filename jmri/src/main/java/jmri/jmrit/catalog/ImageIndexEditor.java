@@ -43,7 +43,7 @@ public final class ImageIndexEditor extends JmriJFrame {
     private JTree _indexTree;
 
     public static final String IconDataFlavorMime = DataFlavor.javaJVMLocalObjectMimeType
-            + ";class=jmri.jmrit.catalog.NamedIcon";
+            + ";class=jmri.util.swing.NamedIcon";
 
     /**
      * Ctor for an unnamed ImageIndexEditor.

@@ -11,6 +11,7 @@ import java.util.List;
 import javax.swing.*;
 import javax.swing.colorchooser.AbstractColorChooserPanel;
 
+import jmri.util.xml.XmlFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -546,7 +547,7 @@ public class PrintOptionPanel extends OperationsPreferencesPanel {
      * We always use the same file chooser in this class, so that the user's
      * last-accessed directory remains available.
      */
-    JFileChooser fc = jmri.jmrit.XmlFile.userFileChooser(Bundle.getMessage("Images"));
+    JFileChooser fc = XmlFile.userFileChooser(Bundle.getMessage("Images"));
 
     private File selectFile() {
         if (fc == null) {

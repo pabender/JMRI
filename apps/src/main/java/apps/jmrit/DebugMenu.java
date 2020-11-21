@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
 package apps.jmrit;
 
+import jmri.util.xml.XmlFileValidateAction;
+
 import javax.swing.JMenu;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
@@ -25,15 +27,15 @@ public class DebugMenu extends JMenu {
 
         add(new jmri.jmrit.MemoryFrameAction(Bundle.getMessage("MenuItemMemoryUsageMonitor")));
         add(new JSeparator());
-        add(new jmri.jmrit.decoderdefn.InstallDecoderFileAction(Bundle.getMessage("MenuItemImportDecoderFile"), panel));
-        add(new jmri.jmrit.decoderdefn.InstallDecoderURLAction(Bundle.getMessage("MenuItemImportDecoderURL"), panel));
-        add(new jmri.jmrit.decoderdefn.DecoderIndexCreateAction(Bundle.getMessage("MenuItemRecreateDecoderIndex")));
-        add(new jmri.jmrit.roster.RecreateRosterAction(Bundle.getMessage("MenuItemRecreateRoster")));
-        add(new jmri.jmrit.roster.UpdateDecoderDefinitionAction(Bundle.getMessage("MenuItemUpdateDecoderDefinition")));
+        add(new jmri.decoderdefn.InstallDecoderFileAction(Bundle.getMessage("MenuItemImportDecoderFile"), panel));
+        add(new jmri.decoderdefn.InstallDecoderURLAction(Bundle.getMessage("MenuItemImportDecoderURL"), panel));
+        add(new jmri.decoderdefn.DecoderIndexCreateAction(Bundle.getMessage("MenuItemRecreateDecoderIndex")));
+        add(new jmri.roster.RecreateRosterAction(Bundle.getMessage("MenuItemRecreateRoster")));
+        add(new jmri.roster.UpdateDecoderDefinitionAction(Bundle.getMessage("MenuItemUpdateDecoderDefinition")));
         add(new JSeparator());
-        add(new jmri.jmrit.XmlFileValidateAction(Bundle.getMessage("MenuItemValidateXMLFile"), panel));
-        add(new jmri.jmrit.decoderdefn.NameCheckAction(Bundle.getMessage("MenuItemCheckDecoderNames"), panel));
-        add(new jmri.jmrit.symbolicprog.tabbedframe.ProgCheckAction(Bundle.getMessage("MenuItemCheckProgrammerNames"), panel));
+        add(new XmlFileValidateAction(Bundle.getMessage("MenuItemValidateXMLFile"), panel));
+        add(new jmri.decoderdefn.NameCheckAction(Bundle.getMessage("MenuItemCheckDecoderNames"), panel));
+        add(new jmri.symbolicprog.tabbedframe.ProgCheckAction(Bundle.getMessage("MenuItemCheckProgrammerNames"), panel));
         add(new JSeparator());
         add(new jmri.jmrit.LogixLoadAction(Bundle.getMessage("MenuItemLogixDisabled"), panel));
         add(new apps.jmrit.log.LogAction(Bundle.getMessage("MenuItemLogAction")));

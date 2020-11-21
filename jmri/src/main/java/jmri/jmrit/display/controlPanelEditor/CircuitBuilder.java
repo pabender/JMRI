@@ -42,7 +42,7 @@ import jmri.NamedBeanHandle;
 import jmri.NamedBeanHandleManager;
 import jmri.SignalHeadManager;
 import jmri.SignalMastManager;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.Editor.TargetPane;
 import jmri.jmrit.display.palette.ItemPalette;
 import jmri.jmrit.display.IndicatorTrack;

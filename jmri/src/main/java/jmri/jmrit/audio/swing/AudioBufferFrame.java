@@ -23,7 +23,7 @@ import jmri.AudioException;
 import jmri.AudioManager;
 import jmri.InstanceManager;
 import jmri.jmrit.audio.AudioBuffer;
-import jmri.jmrit.beantable.AudioTableAction.AudioTableDataModel;
+import jmri.beantable.AudioTableAction.AudioTableDataModel;
 import jmri.util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -19,13 +19,12 @@ import javax.swing.text.DefaultEditorKit;
 
 import apps.jmrit.DebugMenu;
 
-import jmri.InstanceManager;
 import jmri.jmrit.ToolsMenu;
-import jmri.jmrit.decoderdefn.PrintDecoderListAction;
+import jmri.decoderdefn.PrintDecoderListAction;
 import jmri.jmrit.display.PanelMenu;
 import jmri.jmrit.jython.RunJythonScript;
 import jmri.jmrit.operations.OperationsMenu;
-import jmri.jmrit.roster.swing.RosterMenu;
+import jmri.roster.swing.RosterMenu;
 import jmri.jmrit.withrottle.WiThrottleCreationAction;
 import jmri.jmrix.ActiveSystemsMenu;
 import jmri.util.FileUtil;
@@ -244,7 +243,7 @@ public class AppsLaunchFrame extends jmri.util.JmriJFrame {
     protected void developmentMenu(JMenuBar menuBar, WindowInterface wi) {
         JMenu devMenu = new JMenu("Development");
         menuBar.add(devMenu);
-        devMenu.add(new jmri.jmrit.symbolicprog.autospeed.AutoSpeedAction("Auto-speed tool"));
+        devMenu.add(new jmri.symbolicprog.autospeed.AutoSpeedAction("Auto-speed tool"));
         devMenu.add(new JSeparator());
         devMenu.add(new jmri.jmrit.automat.SampleAutomatonAction("Sample automaton 1"));
         devMenu.add(new jmri.jmrit.automat.SampleAutomaton2Action("Sample automaton 2"));

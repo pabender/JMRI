@@ -99,7 +99,7 @@ displayed from the text in the "label" attribute, which is:
         certain manufacturers. The read process is handled in the
         code (the <a href=
         "/JavaDoc/doc/jmri/jmrit/decoderdefn/IdentifyDecoder.html" target="_blank">
-        jmri.jmrit.decoderdefn.IdentifyDecoder</a> class) and has
+            jmri.decoderdefn.IdentifyDecoder</a> class) and has
         to be updated each time a manufacturer starts providing
         values in one or more new CVs. When the product code is
         present, it should break any degeneracy between

@@ -9,8 +9,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import jmri.InstanceManager;
-import jmri.jmrit.XmlFile;
-import jmri.jmrit.revhistory.FileHistory;
+import jmri.util.xml.XmlFile;
+import jmri.util.revhistory.FileHistory;
 import jmri.util.FileUtil;
 import org.jdom2.Attribute;
 import org.jdom2.Document;
@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
  * overall structure</a>
  * @author Bob Jacobsen Copyright (c) 2002, 2008
  */
-public class ConfigXmlManager extends jmri.jmrit.XmlFile
+public class ConfigXmlManager extends XmlFile
         implements jmri.ConfigureManager {
 
     /**
@@ -331,7 +331,7 @@ public class ConfigXmlManager extends jmri.jmrit.XmlFile
     protected void includeHistory(Element root) {
         // add history to end of document
         if (InstanceManager.getNullableDefault(FileHistory.class) != null) {
-            root.addContent(jmri.jmrit.revhistory.configurexml.FileHistoryXml.storeDirectly(InstanceManager.getDefault(FileHistory.class)));
+            root.addContent(jmri.util.revhistory.configurexml.FileHistoryXml.storeDirectly(InstanceManager.getDefault(FileHistory.class)));
         }
     }
 
@@ -720,7 +720,7 @@ public class ConfigXmlManager extends jmri.jmrit.XmlFile
             if (root != null) {
                 Element filehistory = root.getChild("filehistory");
                 if (filehistory != null) {
-                    included = jmri.jmrit.revhistory.configurexml.FileHistoryXml.loadFileHistory(filehistory);
+                    included = jmri.util.revhistory.configurexml.FileHistoryXml.loadFileHistory(filehistory);
                 }
             }
             r.addOperation((result ? "Load OK" : "Load with errors"), url.getFile(), included);

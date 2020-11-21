@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import jmri.jmrix.rps.Engine;
 import jmri.jmrix.rps.PositionFile;
+import jmri.util.xml.XmlFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,7 +53,7 @@ public class LoadStorePanel extends javax.swing.JPanel {
         add(b1);
     }
 
-    JFileChooser fci = jmri.jmrit.XmlFile.userFileChooser();
+    JFileChooser fci = XmlFile.userFileChooser();
 
     public void load() {
         try {

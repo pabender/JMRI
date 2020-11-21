@@ -20,7 +20,7 @@ public class AudioBufferFrameTest extends jmri.util.JmriJFrameTestBase {
         JUnitUtil.resetProfileManager();
         if(!GraphicsEnvironment.isHeadless()){
            // the second parameter should be an
-           // jmri.jmrit.beantable.AudioTableAction.AudioBufferTableDataModel
+           // jmri.beantable.AudioTableAction.AudioBufferTableDataModel
            // object
            frame = new AudioBufferFrame("Buffer Frame Test",null);
         }

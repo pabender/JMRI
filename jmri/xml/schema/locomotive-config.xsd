@@ -39,7 +39,7 @@
           This is the schema representing the over-all loco element
         </xs:documentation>
         <xs:appinfo>
-            <jmri:usingclass configurexml="false">jmri.jmrit.roster.LocoFile</jmri:usingclass>
+            <jmri:usingclass configurexml="false">jmri.roster.LocoFile</jmri:usingclass>
         </xs:appinfo>
     </xs:annotation>
     <xs:complexType>

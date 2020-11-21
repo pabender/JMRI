@@ -11,7 +11,7 @@ import java.text.MessageFormat;
 import java.util.List;
 import javax.swing.JOptionPane;
 import jmri.InstanceManager;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.jmrit.operations.setup.OperationsSetupXml;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;

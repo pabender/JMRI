@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import jmri.jmrit.catalog.CatalogPanel;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.DisplayFrame;
 import jmri.jmrit.display.PreviewPanel;
 import jmri.jmrit.display.controlPanelEditor.PortalIcon;

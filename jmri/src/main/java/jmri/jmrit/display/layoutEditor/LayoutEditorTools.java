@@ -21,14 +21,13 @@ import jmri.NamedBean.DisplayOptions;
 import jmri.implementation.DefaultConditionalAction;
 import jmri.jmrit.blockboss.BlockBossLogic;
 import jmri.jmrit.blockboss.BlockBossLogicProvider;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.*;
 import jmri.jmrit.signalling.SignallingGuiTools;
 import jmri.swing.NamedBeanComboBox;
 import jmri.util.JmriJFrame;
 import jmri.util.MathUtil;
 import jmri.util.swing.JComboBoxUtil;
-import org.slf4j.*;
 
 /**
  * Layout Editor Tools provides tools making use of layout connectivity

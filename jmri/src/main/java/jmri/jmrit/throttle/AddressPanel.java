@@ -25,12 +25,12 @@ import jmri.InstanceManager;
 import jmri.LocoAddress;
 import jmri.Programmer;
 import jmri.ThrottleListener;
-import jmri.jmrit.DccLocoAddressSelector;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
-import jmri.jmrit.roster.swing.RosterEntrySelectorPanel;
-import jmri.jmrit.symbolicprog.ProgDefault;
-import jmri.jmrit.symbolicprog.tabbedframe.PaneOpsProgFrame;
+import jmri.util.swing.DccLocoAddressSelector;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
+import jmri.roster.swing.RosterEntrySelectorPanel;
+import jmri.symbolicprog.ProgDefault;
+import jmri.symbolicprog.tabbedframe.PaneOpsProgFrame;
 import jmri.jmrix.nce.consist.NceConsistRoster;
 import jmri.jmrix.nce.consist.NceConsistRosterEntry;
 import org.jdom2.Element;
@@ -588,7 +588,7 @@ public class AddressPanel extends JInternalFrame implements ThrottleListener, Pr
             return;
         }
 
-        java.util.ResourceBundle rbt = java.util.ResourceBundle.getBundle("jmri.jmrit.symbolicprog.SymbolicProgBundle");
+        java.util.ResourceBundle rbt = java.util.ResourceBundle.getBundle("jmri.symbolicprog.SymbolicProgBundle");
         String title = java.text.MessageFormat.format(rbt.getString("FrameOpsProgrammerTitle"), new Object[]{rosterEntry.getId()});
         // find the ops-mode programmer
         int address = Integer.parseInt(rosterEntry.getDccAddress());

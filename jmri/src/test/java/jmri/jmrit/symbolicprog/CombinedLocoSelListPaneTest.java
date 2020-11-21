@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.symbolicprog;
+package jmri.symbolicprog;
 
 import javax.swing.JLabel;
 
@@ -34,7 +34,7 @@ public class CombinedLocoSelListPaneTest {
 
         JLabel val1 = new JLabel();
         // ensure a valid DecoderIndexFile
-        jmri.jmrit.decoderdefn.DecoderIndexFile.resetInstance();
+        jmri.decoderdefn.DecoderIndexFile.resetInstance();
         CombinedLocoSelListPane combinedlocosellistpane = new CombinedLocoSelListPane(val1, sel);
         Assert.assertEquals("initial state", false, combinedlocosellistpane.isDecoderSelected());
         combinedlocosellistpane.mDecoderList.setSelectedIndex(1);
@@ -63,7 +63,7 @@ public class CombinedLocoSelListPaneTest {
 
         JLabel val1 = new JLabel();
         // ensure a valid DecoderIndexFile
-        jmri.jmrit.decoderdefn.DecoderIndexFile.resetInstance();
+        jmri.decoderdefn.DecoderIndexFile.resetInstance();
 
         CombinedLocoSelListPane combinedlocosellistpane = new CombinedLocoSelListPane(val1, sel);
         combinedlocosellistpane.mDecoderList.setSelectedIndex(4);

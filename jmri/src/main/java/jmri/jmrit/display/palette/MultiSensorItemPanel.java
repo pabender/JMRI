@@ -22,7 +22,7 @@ import javax.swing.SwingConstants;
 import javax.swing.table.TableColumn;
 import jmri.Sensor;
 import jmri.jmrit.catalog.DragJLabel;
-import jmri.jmrit.catalog.NamedIcon;
+import jmri.util.swing.NamedIcon;
 import jmri.jmrit.display.DisplayFrame;
 import jmri.jmrit.display.Editor;
 import jmri.jmrit.display.MultiSensorIcon;

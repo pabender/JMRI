@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.decoderdefn;
+package jmri.decoderdefn;
 
 import javax.swing.JLabel;
 
-import jmri.jmrit.symbolicprog.CvTableModel;
-import jmri.jmrit.symbolicprog.VariableTableModel;
+import jmri.symbolicprog.CvTableModel;
+import jmri.symbolicprog.VariableTableModel;
 import jmri.progdebugger.ProgDebugger;
 import jmri.util.JUnitUtil;
 

@@ -18,9 +18,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import jmri.DccLocoAddress;
 import jmri.InstanceManager;
-import jmri.jmrit.roster.RosterEntry;
-import jmri.jmrit.roster.swing.RosterEntryComboBox;
-import jmri.jmrit.throttle.ThrottleFrameManager;
+import jmri.roster.RosterEntry;
+import jmri.roster.swing.RosterEntryComboBox;
 import jmri.jmrix.nce.NceBinaryCommand;
 import jmri.jmrix.nce.NceCmdStationMemory;
 import jmri.jmrix.nce.NceMessage;
@@ -254,7 +253,7 @@ public class NceConsistEditPanel extends jmri.jmrix.nce.swing.NcePanel implement
     public List<JMenu> getMenus() {
         // build menu
         JMenu toolMenu = new JMenu("Tools");
-        toolMenu.add(new NceConsistRosterMenu("Roster", jmri.jmrit.roster.swing.RosterMenu.MAINMENU, this));
+        toolMenu.add(new NceConsistRosterMenu("Roster", jmri.roster.swing.RosterMenu.MAINMENU, this));
         List<JMenu> l = new ArrayList<>();
         l.add(toolMenu);
         return l;
@@ -302,7 +301,7 @@ public class NceConsistEditPanel extends jmri.jmrix.nce.swing.NcePanel implement
         textConModel.setText("");
 
         throttleButton.setText(Bundle.getMessage("L_Throttle"));
-        throttleButton.setEnabled(true);
+        throttleButton.setEnabled(false); // set disabled because there is currently no effect.
         throttleButton.setToolTipText(Bundle.getMessage("ToolTipThrottle"));
 
         clearCancelButton.setText(Bundle.getMessage("KeyCLEAR"));
@@ -434,11 +433,13 @@ public class NceConsistEditPanel extends jmri.jmrix.nce.swing.NcePanel implement
                 return;
             }
             int locoAddr = validLocoAdr(locoTextField1.getText());
-            boolean isLong = (adrButton1.getText().equals(Bundle.getMessage("KeyLONG")));
             if (locoAddr < 0) {
                 return;
             }
             consistNum = validConsist(consistTextField.getText());
+            // the following code disabled to remove dependency on jmri.jmrit.throttle.
+            /*
+            boolean isLong = (adrButton1.getText().equals(Bundle.getMessage("KeyLONG")));
             jmri.jmrit.throttle.ThrottleFrame tf
                     = InstanceManager.getDefault(ThrottleFrameManager.class).createThrottleFrame();
             tf.getAddressPanel().setAddress(consistNum, false); // use consist address
@@ -447,7 +448,7 @@ public class NceConsistEditPanel extends jmri.jmrix.nce.swing.NcePanel implement
                     JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                 tf.getAddressPanel().setAddress(locoAddr, isLong);  // use lead loco address
             }
-            tf.toFront();
+            tf.toFront();*/
             return;
         }
         // clear or cancel button

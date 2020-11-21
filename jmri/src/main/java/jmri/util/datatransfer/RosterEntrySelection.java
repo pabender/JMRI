@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import jmri.jmrit.roster.Roster;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.Roster;
+import jmri.roster.RosterEntry;
 
 /**
  * Transfer roster entries either via drag-and-drop or via the clipboard.

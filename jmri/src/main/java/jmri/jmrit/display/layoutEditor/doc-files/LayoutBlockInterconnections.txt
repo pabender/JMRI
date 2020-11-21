@@ -106,7 +106,7 @@ jmri.SignalHead *-- PositionablePoint
 jmri.SignalMast *-- LayoutTurnout
 jmri.SignalMast *-- PositionablePoint
    
-jmri.jmrit.beantable.beanedit.BlockEditAction <|-- LayoutBlockEditAction
+jmri.beantable.beanedit.BlockEditAction <|-- LayoutBlockEditAction
 @end
 
 

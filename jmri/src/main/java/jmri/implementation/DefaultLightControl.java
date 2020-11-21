@@ -333,11 +333,11 @@ public class DefaultLightControl implements LightControl {
     /** {@inheritDoc} */
     @Override
     public String getDescriptionText(String lightName){
-        StringBuilder name = new StringBuilder(jmri.jmrit.beantable.LightTableAction.lightControlTitle);
+        StringBuilder name = new StringBuilder(jmri.beantable.LightTableAction.lightControlTitle);
         name.append(" ");
         name.append(lightName);
         name.append(" ");
-        name.append(jmri.jmrit.beantable.LightTableAction.getDescriptionText(this, getControlType()));
+        name.append(jmri.beantable.LightTableAction.getDescriptionText(this, getControlType()));
         return name.toString();
     }
 

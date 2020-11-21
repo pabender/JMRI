@@ -8,10 +8,10 @@
     <modifier>.4</modifier>
   </jmriversion>
   <UserMessagePreferences class="jmri.managers.configurexml.DefaultUserMessagePreferencesXml">
-    <setting>jmri.jmrit.beantable.RouteTableAction.AutoSystemName</setting>
+    <setting>jmri.beantable.RouteTableAction.AutoSystemName</setting>
     <comboBoxLastValue>
       <comboBox name="Digitrax" lastSelected="LocoNet LocoBuffer" />
-      <comboBox name="jmri.jmrit.beantable.SensorTableAction.SystemSelected" lastSelected="Internal" />
+      <comboBox name="jmri.beantable.SensorTableAction.SystemSelected" lastSelected="Internal" />
     </comboBoxLastValue>
     <windowDetails class="Roseville">
       <locX>270.0</locX>
@@ -77,7 +77,7 @@
       <width>1022.0</width>
       <height>426.0</height>
     </windowDetails>
-    <windowDetails class="jmri.jmrit.roster.Roster">
+    <windowDetails class="jmri.roster.Roster">
       <locX>0.0</locX>
       <locY>0.0</locY>
       <properties>
@@ -106,7 +106,7 @@
       <locX>1235.0</locX>
       <locY>117.0</locY>
     </windowDetails>
-    <windowDetails class="jmri.jmrit.beantable.ListedTableAction$1$1:Logix">
+    <windowDetails class="jmri.beantable.ListedTableAction$1$1:Logix">
       <locX>0.0</locX>
       <locY>45.0</locY>
       <width>1920.0</width>
@@ -146,7 +146,7 @@
       <locX>100.0</locX>
       <locY>30.0</locY>
     </windowDetails>
-    <windowDetails class="jmri.jmrit.beantable.ListedTableAction$1$1:Sensors">
+    <windowDetails class="jmri.beantable.ListedTableAction$1$1:Sensors">
       <locX>589.0</locX>
       <locY>250.0</locY>
       <width>1241.0</width>
@@ -216,7 +216,7 @@
       <width>595.0</width>
       <height>543.0</height>
     </windowDetails>
-    <windowDetails class="jmri.jmrit.beantable.ListedTableAction$1$1:Turnouts">
+    <windowDetails class="jmri.beantable.ListedTableAction$1$1:Turnouts">
       <locX>0.0</locX>
       <locY>0.0</locY>
       <width>1920.0</width>
@@ -265,7 +265,7 @@
       <height>232.0</height>
     </windowDetails>
     <tableDetails>
-      <table name="jmri.jmrit.beantable.RouteTableAction">
+      <table name="jmri.beantable.RouteTableAction">
         <column name="Locked">
           <order>6</order>
           <width>82</width>
@@ -288,7 +288,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.LightTableAction:All">
+      <table name="jmri.beantable.LightTableAction:All">
         <column name="Intensity">
           <order>6</order>
           <width>82</width>
@@ -315,7 +315,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SignalGroupTableAction">
+      <table name="jmri.beantable.SignalGroupTableAction">
         <column name="Enabled">
           <order>4</order>
           <width>82</width>
@@ -334,7 +334,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.LightTableAction:LocoNet">
+      <table name="jmri.beantable.LightTableAction:LocoNet">
         <column name="Intensity">
           <order>6</order>
           <width>82</width>
@@ -361,7 +361,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.ReporterTableAction">
+      <table name="jmri.beantable.ReporterTableAction">
         <column name="Report">
           <order>2</order>
           <width>290</width>
@@ -384,7 +384,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.LogixTableAction">
+      <table name="jmri.beantable.LogixTableAction">
         <column name="Enabled">
           <order>2</order>
           <width>134</width>
@@ -403,7 +403,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.TurnoutTableAction:All">
+      <table name="jmri.beantable.TurnoutTableAction:All">
         <column name="Thrown Speed">
           <order>17</order>
           <width>75</width>
@@ -475,7 +475,7 @@
           <hidden>yes</hidden>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.BlockTableAction">
+      <table name="jmri.beantable.BlockTableAction">
         <column name="Speed">
           <order>14</order>
           <width>95</width>
@@ -534,7 +534,7 @@
           <width>95</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SectionTableAction">
+      <table name="jmri.beantable.SectionTableAction">
         <column name="Last Block">
           <order>6</order>
           <width>199</width>
@@ -561,7 +561,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.TransitTableAction">
+      <table name="jmri.beantable.TransitTableAction">
         <column name="User Name">
           <order>1</order>
           <width>225</width>
@@ -580,7 +580,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.LRouteTableAction">
+      <table name="jmri.beantable.LRouteTableAction">
         <column name="Enabled">
           <order>2</order>
           <width>69</width>
@@ -599,7 +599,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.TurnoutTableAction:Internal">
+      <table name="jmri.beantable.TurnoutTableAction:Internal">
         <column name="Thrown Speed">
           <order>17</order>
           <width>75</width>
@@ -671,7 +671,7 @@
           <hidden>yes</hidden>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SensorTableAction:All">
+      <table name="jmri.beantable.SensorTableAction:All">
         <column name="Use Global Delay">
           <order>7</order>
           <width>75</width>
@@ -709,7 +709,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.LightTableAction:Internal">
+      <table name="jmri.beantable.LightTableAction:Internal">
         <column name="Intensity">
           <order>6</order>
           <width>82</width>
@@ -736,7 +736,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SignalHeadTableAction">
+      <table name="jmri.beantable.SignalHeadTableAction">
         <column name="Held">
           <order>6</order>
           <width>56</width>
@@ -763,7 +763,7 @@
           <width>56</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SensorTableAction:Internal">
+      <table name="jmri.beantable.SensorTableAction:Internal">
         <column name="Use Global Delay">
           <order>7</order>
           <width>75</width>
@@ -801,7 +801,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.MemoryTableAction">
+      <table name="jmri.beantable.MemoryTableAction">
         <column name="User Name">
           <order>1</order>
           <width>199</width>
@@ -820,7 +820,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SensorTableAction:LocoNet">
+      <table name="jmri.beantable.SensorTableAction:LocoNet">
         <column name="Use Global Delay">
           <order>7</order>
           <width>75</width>
@@ -858,7 +858,7 @@
           <sort>1</sort>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.TurnoutTableAction:LocoNet">
+      <table name="jmri.beantable.TurnoutTableAction:LocoNet">
         <column name="Thrown Speed">
           <order>17</order>
           <width>75</width>
@@ -930,7 +930,7 @@
           <hidden>yes</hidden>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SignalMastTableAction">
+      <table name="jmri.beantable.SignalMastTableAction">
         <column name="Edit Logic">
           <order>6</order>
           <width>108</width>
@@ -965,7 +965,7 @@
           <width>134</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.IdTagTableAction">
+      <table name="jmri.beantable.IdTagTableAction">
         <column name="User Name">
           <order>1</order>
           <width>199</width>
@@ -992,7 +992,7 @@
           <width>160</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SignalMastLogicTableAction">
+      <table name="jmri.beantable.SignalMastLogicTableAction">
         <column name="Enabled">
           <order>6</order>
           <width>69</width>

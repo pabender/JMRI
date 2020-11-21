@@ -12,7 +12,7 @@ import jmri.NamedBean;
 import jmri.SignalSystem;
 import jmri.SignalSystemManager;
 import jmri.implementation.DefaultSignalSystem;
-import jmri.jmrit.XmlFile;
+import jmri.util.xml.XmlFile;
 import jmri.jmrix.internal.InternalSystemConnectionMemo;
 import jmri.util.FileUtil;
 import org.jdom2.Element;

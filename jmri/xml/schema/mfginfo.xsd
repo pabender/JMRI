@@ -37,7 +37,7 @@
       Defines the equipment-manufacturer information kept by JMRI.
       </xs:documentation>
       <xs:appinfo>
-        <jmri:usingclass configurexml="false">jmri.jmrit.decoderdefn.DecoderFile</jmri:usingclass>
+        <jmri:usingclass configurexml="false">jmri.decoderdefn.DecoderFile</jmri:usingclass>
       </xs:appinfo>
     </xs:annotation>
 

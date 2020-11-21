@@ -18,7 +18,7 @@ import jmri.SignalMast;
 import jmri.ThrottleListener;
 import jmri.Timebase;
 import jmri.implementation.SignalSpeedMap;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.roster.RosterEntry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

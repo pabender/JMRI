@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import javax.annotation.Nonnull;
 
 import jmri.*;
-import jmri.jmrit.beantable.LRouteTableAction;
+import jmri.beantable.LRouteTableAction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

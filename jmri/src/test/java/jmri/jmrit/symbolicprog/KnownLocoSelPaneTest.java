@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0 WITH Classpath-exception-2.0
-package jmri.jmrit.symbolicprog;
+package jmri.symbolicprog;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
@@ -10,8 +10,8 @@ import javax.swing.JLabel;
 
 import jmri.InstanceManager;
 import jmri.util.JUnitUtil;
-import jmri.jmrit.decoderdefn.DecoderFile;
-import jmri.jmrit.roster.RosterEntry;
+import jmri.decoderdefn.DecoderFile;
+import jmri.roster.RosterEntry;
 
 /**
  *

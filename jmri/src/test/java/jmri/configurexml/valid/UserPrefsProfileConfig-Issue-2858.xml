@@ -8,13 +8,13 @@
     <modifier>.4ish</modifier>
   </jmriversion>
   <UserMessagePreferences class="jmri.managers.configurexml.DefaultUserMessagePreferencesXml">
-    <windowDetails class="jmri.jmrit.beantable.ListedTableAction$1$1:Sensors">
+    <windowDetails class="jmri.beantable.ListedTableAction$1$1:Sensors">
       <locX>75.0</locX>
       <locY>34.0</locY>
       <width>1297.0</width>
       <height>543.0</height>
     </windowDetails>
-    <windowDetails class="jmri.jmrit.beantable.ListedTableAction$1$1:Reporters">
+    <windowDetails class="jmri.beantable.ListedTableAction$1$1:Reporters">
       <locX>65.0</locX>
       <locY>202.0</locY>
       <width>1295.0</width>
@@ -56,7 +56,7 @@
       <locX>843.0</locX>
       <locY>56.0</locY>
     </windowDetails>
-    <windowDetails class="jmri.jmrit.roster.Roster">
+    <windowDetails class="jmri.roster.Roster">
       <locX>0.0</locX>
       <locY>0.0</locY>
       <properties>
@@ -77,7 +77,7 @@
       <width>671.0</width>
       <height>251.0</height>
     </windowDetails>
-    <windowDetails class="jmri.jmrit.beantable.ListedTableAction$1$1:Id Tags">
+    <windowDetails class="jmri.beantable.ListedTableAction$1$1:Id Tags">
       <locX>118.0</locX>
       <locY>130.0</locY>
       <width>1756.0</width>
@@ -93,14 +93,14 @@
       <width>1259.0</width>
       <height>570.0</height>
     </windowDetails>
-    <windowDetails class="jmri.jmrit.beantable.ListedTableAction$1$1:ID Tags">
+    <windowDetails class="jmri.beantable.ListedTableAction$1$1:ID Tags">
       <locX>75.0</locX>
       <locY>34.0</locY>
       <width>1295.0</width>
       <height>543.0</height>
     </windowDetails>
     <tableDetails>
-      <table name="jmri.jmrit.beantable.RouteTableAction">
+      <table name="jmri.beantable.RouteTableAction">
         <column name="User Name">
           <order>1</order>
           <width>169</width>
@@ -123,7 +123,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.LightTableAction:All">
+      <table name="jmri.beantable.LightTableAction:All">
         <column name="Intensity">
           <order>6</order>
           <width>70</width>
@@ -150,7 +150,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SignalGroupTableAction">
+      <table name="jmri.beantable.SignalGroupTableAction">
         <column name="User Name">
           <order>1</order>
           <width>169</width>
@@ -169,7 +169,7 @@
           <width>70</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.ReporterTableAction">
+      <table name="jmri.beantable.ReporterTableAction">
         <column name="Report">
           <order>2</order>
           <width>246</width>
@@ -192,7 +192,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.LogixTableAction">
+      <table name="jmri.beantable.LogixTableAction">
         <column name="User Name">
           <order>1</order>
           <width>191</width>
@@ -211,7 +211,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.TurnoutTableAction:All">
+      <table name="jmri.beantable.TurnoutTableAction:All">
         <column name="Thrown Speed">
           <order>17</order>
           <width>75</width>
@@ -283,7 +283,7 @@
           <hidden>yes</hidden>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.BlockTableAction">
+      <table name="jmri.beantable.BlockTableAction">
         <column name="Speed">
           <order>14</order>
           <width>81</width>
@@ -342,7 +342,7 @@
           <width>81</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SensorTableAction:XBee">
+      <table name="jmri.beantable.SensorTableAction:XBee">
         <column name="Use Global Delay">
           <order>7</order>
           <width>75</width>
@@ -380,7 +380,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.TurnoutTableAction:XBee">
+      <table name="jmri.beantable.TurnoutTableAction:XBee">
         <column name="Thrown Speed">
           <order>17</order>
           <width>75</width>
@@ -452,7 +452,7 @@
           <hidden>yes</hidden>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SectionTableAction">
+      <table name="jmri.beantable.SectionTableAction">
         <column name="Last Block">
           <order>6</order>
           <width>169</width>
@@ -479,7 +479,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.TransitTableAction">
+      <table name="jmri.beantable.TransitTableAction">
         <column name="User Name">
           <order>1</order>
           <width>191</width>
@@ -498,7 +498,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.LRouteTableAction">
+      <table name="jmri.beantable.LRouteTableAction">
         <column name="User Name">
           <order>1</order>
           <width>279</width>
@@ -517,7 +517,7 @@
           <width>279</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.TurnoutTableAction:Internal">
+      <table name="jmri.beantable.TurnoutTableAction:Internal">
         <column name="Thrown Speed">
           <order>17</order>
           <width>75</width>
@@ -589,7 +589,7 @@
           <hidden>yes</hidden>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SensorTableAction:All">
+      <table name="jmri.beantable.SensorTableAction:All">
         <column name="Use Global Delay">
           <order>7</order>
           <width>75</width>
@@ -627,7 +627,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SensorTableAction:Rfid">
+      <table name="jmri.beantable.SensorTableAction:Rfid">
         <column name="Use Global Delay">
           <order>7</order>
           <width>75</width>
@@ -665,7 +665,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.LightTableAction:Internal">
+      <table name="jmri.beantable.LightTableAction:Internal">
         <column name="Intensity">
           <order>6</order>
           <width>70</width>
@@ -692,7 +692,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.LightTableAction:XBee">
+      <table name="jmri.beantable.LightTableAction:XBee">
         <column name="Intensity">
           <order>6</order>
           <width>70</width>
@@ -719,7 +719,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SignalHeadTableAction">
+      <table name="jmri.beantable.SignalHeadTableAction">
         <column name="User Name">
           <order>1</order>
           <width>169</width>
@@ -746,7 +746,7 @@
           <width>48</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SensorTableAction:Internal">
+      <table name="jmri.beantable.SensorTableAction:Internal">
         <column name="Use Global Delay">
           <order>7</order>
           <width>75</width>
@@ -784,7 +784,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.MemoryTableAction">
+      <table name="jmri.beantable.MemoryTableAction">
         <column name="User Name">
           <order>1</order>
           <width>169</width>
@@ -803,7 +803,7 @@
           <width>169</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SignalMastTableAction">
+      <table name="jmri.beantable.SignalMastTableAction">
         <column name="Edit Logic">
           <order>6</order>
           <width>92</width>
@@ -838,7 +838,7 @@
           <width>126</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.TurnoutTableAction:Sprog">
+      <table name="jmri.beantable.TurnoutTableAction:Sprog">
         <column name="Thrown Speed">
           <order>17</order>
           <width>75</width>
@@ -910,7 +910,7 @@
           <hidden>yes</hidden>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.SignalMastLogicTableAction">
+      <table name="jmri.beantable.SignalMastLogicTableAction">
         <column name="Enabled">
           <order>6</order>
           <width>59</width>
@@ -941,7 +941,7 @@
           <width>75</width>
         </column>
       </table>
-      <table name="jmri.jmrit.beantable.IdTagTableAction">
+      <table name="jmri.beantable.IdTagTableAction">
         <column name="User Name">
           <order>1</order>
           <width>169</width>

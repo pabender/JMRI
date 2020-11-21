@@ -8,6 +8,7 @@ import java.util.Iterator;
 import javax.swing.JFrame;
 import jmri.InstanceManager;
 import jmri.InstanceManagerAutoDefault;
+import jmri.ThrottlesPreferences;
 import jmri.util.JmriJFrame;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

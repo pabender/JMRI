@@ -7,6 +7,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import jmri.ConfigureManager;
 import jmri.InstanceManager;
+import jmri.util.xml.XmlFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,7 +20,7 @@ import org.slf4j.LoggerFactory;
  * files.
  *
  * @author Bob Jacobsen Copyright (C) 2002
- * @see jmri.jmrit.XmlFile
+ * @see XmlFile
  */
 public class StoreXmlUserAction extends StoreXmlConfigAction {
 

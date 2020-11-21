@@ -21,7 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import jmri.InstanceManager;
-import jmri.jmrit.beantable.EnablingCheckboxRenderer;
+import jmri.beantable.EnablingCheckboxRenderer;
 import jmri.jmrit.operations.setup.Control;
 import jmri.jmrit.operations.setup.Setup;
 import jmri.util.swing.XTableColumnModel;
