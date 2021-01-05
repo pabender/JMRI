@@ -221,16 +221,16 @@ public class ConnectionConfigXml extends AbstractSerialConnectionConfigXml {
                         log.error("Unable to load {} into {}", shared, className, ex);
                     }
 
-                   // after loading either config or controller, connect them.
-                   if (connectedConfig != null) {
-                       node.connectPortController(connectedConfig);
-                   } else if (connectedController != null) {
-                       // fallback for connections created with a script
-                       node.connectPortController(connectedController);
-                   }
-                   log.info("loaded {} onto node ", node.getConnectionConfig(), node);
-                   log.info("manuf {} userName {} ", node.getConnectionConfig().getManufacturer(), node.getConnectionConfig().name());
                 }
+                // after loading either config or controller, connect them.
+                if (connectedConfig != null) {
+                   node.connectPortController(connectedConfig);
+                } else if (connectedController != null) {
+                   // fallback for connections created with a script
+                   node.connectPortController(connectedController);
+                }
+                log.info("loaded {} onto node ", node.getConnectionConfig(), node);
+                log.info("manuf {} userName {} ", node.getConnectionConfig().getManufacturer(), node.getConnectionConfig().name());
             } catch (TimeoutException toe) {
                 log.error("Timeout adding node {} from configuration file.",
                         remoteDevice);
