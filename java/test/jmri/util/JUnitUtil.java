@@ -1453,7 +1453,7 @@ public class JUnitUtil {
                                            LoggingUtil.shortenStacktrace(timeoutException));
                                }
                             }
-			    e.dispose();
+                            e.dispose();
                         }));
     }
 
