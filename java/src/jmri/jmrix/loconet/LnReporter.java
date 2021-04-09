@@ -3,12 +3,8 @@ package jmri.jmrix.loconet;
 import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import jmri.DccLocoAddress;
-import jmri.InstanceManager;
-import jmri.IdTag;
-import jmri.LocoAddress;
-import jmri.CollectingReporter;
-import jmri.PhysicalLocationReporter;
+
+import jmri.*;
 import jmri.implementation.AbstractIdTagReporter;
 import jmri.util.PhysicalLocation;
 import org.slf4j.Logger;
@@ -186,6 +182,28 @@ public class LnReporter extends AbstractIdTagReporter implements CollectingRepor
         log.debug("Tag: {}", idTag);
         notify(idTag);
         setState(loco);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void notify(IdTag id) {
+        log.debug("Notify: {}",mSystemName);
+        if (id != null) {
+            if ((id.getPropertyKeys().contains("entryexit"))
+                    && "exits".equals(id.getProperty("entryexit")))
+                return;
+            log.debug("Tag: {}",id);
+            Reporter r = id.getWhereLastSeen();
+            if (r != null ) {
+                notifyPreviousReporter(r,id);
+            }
+            id.setWhereLastSeen(this);
+            log.debug("Seen here: {}",this.mSystemName);
+        }
+        setReport(id);
+        setState(id != null ? IdTag.SEEN : IdTag.UNSEEN);
     }
 
     /**

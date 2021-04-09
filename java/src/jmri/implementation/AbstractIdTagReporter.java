@@ -50,7 +50,7 @@ public class AbstractIdTagReporter extends AbstractReporter
         setState(id != null ? IdTag.SEEN : IdTag.UNSEEN);
     }
     
-    private void notifyPreviousReporter(Reporter r, IdTag id) {
+    protected void notifyPreviousReporter(Reporter r, IdTag id) {
         log.debug("Previous reporter: {}",r.getSystemName());
         if (!(r.equals(this)) && r.getCurrentReport() == id
            && (r instanceof IdTagListener)) {
