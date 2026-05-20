@@ -74,6 +74,11 @@ public abstract class AbstractMonFrame extends JmriJFrame {
     protected JButton openFileChooserButton = new JButton(Bundle.getMessage("ButtonChooseLogFile"));
     protected JTextField entryField = new JTextField();
     protected JButton enterButton = new JButton(Bundle.getMessage("ButtonAddMessage"));
+
+    /** Bracket characters wrapping the raw data in the displayed line; subclasses may override. */
+    protected String rawOpenBracket = "[";
+    protected String rawCloseBracket = "]";
+
     private final String rawDataCheck = this.getClass().getName() + ".RawData"; // NOI18N
     private final String timeStampCheck = this.getClass().getName() + ".TimeStamp"; // NOI18N
     private final String alwaysOnTopCheck = this.getClass().getName() + ".alwaysOnTop"; // NOI18N
@@ -119,15 +124,32 @@ public abstract class AbstractMonFrame extends JmriJFrame {
         // add items to GUI
         getContentPane().add(jScrollPane1);
 
-        JPanel paneA = new JPanel();
+        JPanel paneA;
+        if (useStackedControlsLayout()) {
+            // Track preferred height so WrapLayout-based control rows can grow when
+            // the window narrows; unconstrained width lets the area stretch.
+            paneA = new JPanel() {
+                @Override
+                public Dimension getMaximumSize() {
+                    return new Dimension(Short.MAX_VALUE, getPreferredSize().height);
+                }
+            };
+        } else {
+            paneA = new JPanel();
+        }
         paneA.setLayout(new BoxLayout(paneA, BoxLayout.Y_AXIS));
 
-        JPanel topActions = new JPanel();
-        topActions.add(getActionButtonsPanel());
-        topActions.add(getCheckBoxPanel());
-
-        paneA.add(topActions);
-        paneA.add(getLogToFilePanel());
+        if (useStackedControlsLayout()) {
+            paneA.add(getActionButtonsPanel());
+            paneA.add(getCheckBoxPanel());
+            paneA.add(getLogToFilePanel());
+        } else {
+            JPanel topActions = new JPanel();
+            topActions.add(getActionButtonsPanel());
+            topActions.add(getCheckBoxPanel());
+            paneA.add(topActions);
+            paneA.add(getLogToFilePanel());
+        }
 
         JPanel pane3 = new JPanel();
         pane3.setLayout(new BoxLayout(pane3, BoxLayout.X_AXIS));
@@ -149,8 +171,25 @@ public abstract class AbstractMonFrame extends JmriJFrame {
 
         // prevent button areas from expanding
         pack();
-        paneA.setMaximumSize(paneA.getSize());
-        pack();
+        if (!useStackedControlsLayout()) {
+            // Legacy path pins the controls area at its packed size; the stacked
+            // path handles this via paneA's getMaximumSize override above.
+            paneA.setMaximumSize(paneA.getSize());
+            pack();
+        }
+    }
+
+    /**
+     * Whether to lay out the action, checkbox, and log button panels as separate
+     * stacked rows directly inside paneA (with paneA's height tracking its
+     * preferred so {@code WrapLayout}-based rows can grow when the window is
+     * narrowed). Defaults to {@code false} — legacy side-by-side layout with a
+     * FlowLayout wrapper and a static max-size pin. Subclasses opt in.
+     *
+     * @return true for stacked rows, false for the legacy layout
+     */
+    protected boolean useStackedControlsLayout() {
+        return false;
     }
 
     protected JPanel getCheckBoxPanel() {
@@ -254,6 +293,17 @@ public abstract class AbstractMonFrame extends JmriJFrame {
      * @param raw is the "raw form" , should NOT end with \n
      */
     public void nextLine(String line, String raw) {
+        nextLine(line, raw, null);
+    }
+
+    /**
+     * Handle display of traffic with an explicit direction marker (e.g. "TX:" or "RX:")
+     * that is shown regardless of which display checkboxes are selected.
+     * @param line is the traffic in 'normal form'. Should end with \n
+     * @param raw is the "raw form", should NOT end with \n
+     * @param direction direction marker to display, or null/empty to omit
+     */
+    public void nextLine(String line, String raw, String direction) {
         // Reuse workSB rather than allocating a new StringBuilder each call.
         workSB.setLength(0);
 
@@ -262,9 +312,13 @@ public abstract class AbstractMonFrame extends JmriJFrame {
             workSB.append(df.format(new Date())).append(": "); // NOI18N
         }
 
+        if (direction != null && !direction.isEmpty()) {
+            workSB.append(direction).append(' ');
+        }
+
         // display the raw data if requested
         if (rawCheckBox.isSelected()) {
-            workSB.append('[').append(raw).append("]  "); // NOI18N
+            workSB.append(rawOpenBracket).append(raw).append(rawCloseBracket).append("  "); // NOI18N
         }
 
         // display decoded data
