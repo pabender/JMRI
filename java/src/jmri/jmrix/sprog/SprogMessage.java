@@ -79,16 +79,25 @@ public class SprogMessage extends jmri.jmrix.AbstractMRMessage {
         // add each byte of the input message
         for (j = 0; j < packet.length; j++) {
             this.setElement(i++, ' ');
-            String s = Integer.toHexString(packet[j] & 0xFF).toUpperCase();
-            if (s.length() == 1) {
-                this.setElement(i++, '0');
-                this.setElement(i++, s.charAt(0));
-            } else {
-                this.setElement(i++, s.charAt(0));
-                this.setElement(i++, s.charAt(1));
-            }
+            // Use direct nibble-to-hex-char conversion to avoid allocating two
+            // String objects (Integer.toHexString + toUpperCase) per byte.
+            // At 75 Hz this saves ~600 String allocations per second.
+            int v = packet[j] & 0xFF;
+            this.setElement(i++, hexChar(v >>> 4));
+            this.setElement(i++, hexChar(v & 0xF));
         }
         _id = newMsgId();
+    }
+
+    /**
+     * Convert a nibble (0–15) to its uppercase hex character without allocating
+     * a String.
+     *
+     * @param nibble value 0–15
+     * @return '0'–'9' or 'A'–'F'
+     */
+    private static char hexChar(int nibble) {
+        return nibble < 10 ? (char) ('0' + nibble) : (char) ('A' + nibble - 10);
     }
 
     // from String

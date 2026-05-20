@@ -289,7 +289,10 @@ public class SprogProgrammer extends AbstractProgrammer implements SprogListener
         // clear the current listener _first_
         jmri.ProgListener temp = _usingProgrammer;
         _usingProgrammer = null;
-        notifyProgListenerEnd(temp, value, status);
+        // ProgListener implementations update Swing components; ensure the
+        // callback is always delivered on the EDT regardless of which thread
+        // (serial event thread or Swing timer thread) reaches this method.
+        jmri.util.ThreadingUtil.runOnGUIEventually(() -> notifyProgListenerEnd(temp, value, status));
     }
 
     SprogTrafficController _controller = null;

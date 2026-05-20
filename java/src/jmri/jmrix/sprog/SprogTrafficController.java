@@ -27,7 +27,9 @@ public class SprogTrafficController implements SprogInterface,
         Runnable {
 
     private SprogReply reply = new SprogReply();
-    SprogListener lastSender = null;
+    // volatile so that sendreply() on the serial event thread reads the value
+    // written by run() on the TC thread without requiring explicit synchronization.
+    volatile SprogListener lastSender = null;
     private SprogState sprogState = SprogState.NORMAL;
     private int lastId;
 
@@ -63,6 +65,10 @@ public class SprogTrafficController implements SprogInterface,
     // Methods to implement the Sprog Interface
 
     protected Vector<SprogListener> cmdListeners = new Vector<SprogListener>();
+    // Cached snapshot of listeners rebuilt only on add/remove; avoids cloning
+    // the Vector on every DCC packet cycle.  Must only be read/written while
+    // synchronized on 'this'.
+    private SprogListener[] listenersSnapshot = new SprogListener[0];
 
     @Override
     public boolean status() {
@@ -87,6 +93,7 @@ public class SprogTrafficController implements SprogInterface,
         }
         if (!cmdListeners.contains(l)) {
             cmdListeners.addElement(l);
+            listenersSnapshot = cmdListeners.toArray(new SprogListener[0]);
             log.debug("SprogListener added to {} tc", memo.getUserName());
         }
     }
@@ -95,6 +102,7 @@ public class SprogTrafficController implements SprogInterface,
     public synchronized void removeSprogListener(SprogListener l) {
         if (cmdListeners.contains(l)) {
             cmdListeners.removeElement(l);
+            listenersSnapshot = cmdListeners.toArray(new SprogListener[0]);
         }
     }
 
@@ -145,19 +153,21 @@ public class SprogTrafficController implements SprogInterface,
         return sprogState == SprogState.V4BOOTMODE;
     }
 
-    @SuppressWarnings("unchecked")
-    private synchronized Vector<SprogListener> getCopyOfListeners() {
-        return (Vector<SprogListener>) cmdListeners.clone();
-
-    }
 
     protected synchronized void notifyMessage(SprogMessage m, SprogListener originator) {
-        for (SprogListener listener : this.getCopyOfListeners()) {
+        // Notify non-originator, non-lastSender listeners synchronously on the
+        // calling thread.  Listeners such as SprogMonFrame use
+        // AbstractMonFrame.nextLine() which dispatches the actual Swing update
+        // via invokeLater internally, so calling them here is safe from any
+        // thread.  Pushing each notification to the EDT via invokeLater would
+        // create an unbounded queue of tasks and starve the GUI.
+        final SprogListener senderForNow = lastSender;
+        for (SprogListener listener : listenersSnapshot) {
             try {
                 // don't send it back to the originator!
                 if (listener != originator) {
-                    // skip forwarding to the last sender for now, we'll get them later
-                    if (lastSender != listener) {
+                    // skip forwarding to the last sender for now
+                    if (senderForNow != listener) {
                         listener.notifyMessage(m);
                     }
                 }
@@ -166,77 +176,79 @@ public class SprogTrafficController implements SprogInterface,
             }
         }
         // forward to the last listener who sent a message
-        // this is done _second_ so monitoring can have already stored the reply
-        // before a response is sent
-        if (lastSender != null && lastSender != originator) {
-            lastSender.notifyMessage(m);
+        // this is done _second_ so monitoring can have already stored the
+        // reply before a response is sent
+        if (senderForNow != null && senderForNow != originator) {
+            senderForNow.notifyMessage(m);
         }
     }
 
     protected synchronized void notifyReply(SprogReply r) {
-        log.debug("notifyReply starts for later, last sender: {}", lastSender);
+        // Use getName() (cached by the JVM) rather than lastSender.toString() to
+        // avoid generating a large Swing-component string on every DCC reply.
+        if (log.isTraceEnabled()) {
+            log.trace("notifyReply starts, last sender: {}",
+                lastSender == null ? "null" : lastSender.getClass().getName());
+        }
 
-        final Vector<SprogListener> listeners = this.getCopyOfListeners();
-        final SprogReply replyForLater = r;
-        final SprogListener senderForLater = lastSender;
+        final SprogListener senderForNow = lastSender;
 
-        // Notify non-sender listeners on the GUI thread (e.g. monitor frames)
-        Runnable rl = () -> {
-            for (SprogListener listener : listeners) {
-                try {
-                    // don't send message back to the originator!
-                    // skip forwarding to the last sender for now, we'll get them later
-                    if (senderForLater != listener) {
-                        listener.notifyReply(replyForLater);
-                    }
-
-                } catch (Exception e) {
-                    log.warn("notify: During dispatch to {}", listener, e);
+        // Notify non-sender listeners synchronously on the calling thread.
+        // Each listener (SprogMonFrame, SprogPowerManager, etc.) is
+        // thread-safe: monitor frames use AbstractMonFrame.nextLine() which
+        // internally dispatches to the EDT via invokeLater; non-GUI listeners
+        // use volatile fields or their own synchronization.  Dispatching all
+        // notifications via invokeLater here would flood the EDT at the DCC
+        // packet rate and starve the GUI event loop.
+        for (SprogListener listener : listenersSnapshot) {
+            try {
+                if (senderForNow != listener) {
+                    listener.notifyReply(r);
                 }
+            } catch (Exception e) {
+                log.warn("notify: During dispatch to {}", listener, e);
             }
-        };
-        javax.swing.SwingUtilities.invokeLater(rl);
-
-        // Notify the sender synchronously on the current thread so that
-        // time-critical listeners (e.g. SprogCommandStation slot thread)
-        // are woken immediately, without waiting for the EDT to be free.
-        if (senderForLater != null) {
-            senderForLater.notifyReply(replyForLater);
+        }
+        if (senderForNow != null) {
+            senderForNow.notifyReply(r);
         }
     }
 
     protected synchronized void notifyReply(SprogReply r, SprogListener lastSender) {
-        log.debug("notifyReply starts for later, last sender: {}", lastSender);
+        // Use getName() (cached by the JVM) rather than lastSender.toString() to
+        // avoid generating a large Swing-component string on every DCC reply.
+        if (log.isTraceEnabled()) {
+            log.trace("notifyReply starts, last sender: {}",
+                lastSender == null ? "null" : lastSender.getClass().getName());
+        }
 
-        final Vector<SprogListener> listeners = this.getCopyOfListeners();
-        final SprogReply replyForLater = r;
-        final SprogListener senderForLater = lastSender;
+        final SprogListener senderForNow = lastSender;
 
-        // Notify non-sender listeners on the GUI thread (e.g. monitor frames)
-        Runnable rl = () -> {
-            log.debug("notifyReply starts last sender: {}", senderForLater);
-            for (SprogListener listener : listeners) {
-                try {
-                //if is message don't send it back to the originator!
-                    // skip forwarding to the last sender for now, we'll get them later
-                    if (senderForLater != listener) {
-                        log.debug("Notify listener: {} {}", listener, r.toString());
-                        listener.notifyReply(replyForLater);
+        // Notify non-sender listeners synchronously on the calling thread
+        // (serial event thread).  See notifyReply(SprogReply) for rationale.
+        for (SprogListener listener : listenersSnapshot) {
+            try {
+                if (senderForNow != listener) {
+                    // Use Class.getName() (JVM-cached) instead of listener.toString()
+                    // to avoid allocating a verbose Swing component string (~500 bytes
+                    // for SprogMonFrame) on every DCC packet notification.
+                    if (log.isTraceEnabled()) {
+                        log.trace("Notify listener: {}", listener.getClass().getName());
                     }
-
-                } catch (Exception e) {
-                    log.warn("notify: During dispatch to {}", listener, e);
+                    listener.notifyReply(r);
                 }
+            } catch (Exception e) {
+                log.warn("notify: During dispatch to {}", listener, e);
             }
-        };
-        javax.swing.SwingUtilities.invokeLater(rl);
+        }
 
-        // Notify the sender synchronously on the current thread so that
-        // time-critical listeners (e.g. SprogCommandStation slot thread)
-        // are woken immediately, without waiting for the EDT to be free.
-        if (senderForLater != null) {
-            log.debug("notify last sender: {} {}", senderForLater, replyForLater.toString());
-            senderForLater.notifyReply(replyForLater);
+        // Notify the sender last so monitors have already stored the reply
+        // before a response is sent.
+        if (senderForNow != null) {
+            if (log.isTraceEnabled()) {
+                log.trace("notify last sender: {}", senderForNow.getClass().getName());
+            }
+            senderForNow.notifyReply(r);
         }
     }
 
@@ -266,7 +278,9 @@ public class SprogTrafficController implements SprogInterface,
      * @param m The message to be forwarded
      */
     public void sendSprogMessage(SprogMessage m) {
-        log.debug("Add message to queue: [{}] id: {}", m.toString(isSIIBootMode()), m.getId());
+        if (log.isTraceEnabled()) {
+            log.trace("Add message to queue: [{}] id: {}", m.toString(isSIIBootMode()), m.getId());
+        }
         try {
             sendQueue.add(new MessageTuple(m, null));
         } catch (Exception e) {
@@ -282,7 +296,9 @@ public class SprogTrafficController implements SprogInterface,
      */
     @Override
     public synchronized void sendSprogMessage(SprogMessage m, SprogListener replyTo) {
-        log.debug("Add message to queue: [{}] id: {}", m.toString(isSIIBootMode()), m.getId());
+        if (log.isTraceEnabled()) {
+            log.trace("Add message to queue: [{}] id: {}", m.toString(isSIIBootMode()), m.getId());
+        }
         try {
             sendQueue.add(new MessageTuple(m, replyTo));
         } catch (Exception e) {
@@ -301,14 +317,16 @@ public class SprogTrafficController implements SprogInterface,
         MessageTuple messageToSend;
         log.debug("Traffic controller queuing thread starts");
         while (true) {
-            log.debug("Traffic controller queue waiting");
+            log.trace("Traffic controller queue waiting");
             try {
-                messageToSend = new MessageTuple(sendQueue.take());
+                messageToSend = sendQueue.take();
             } catch (InterruptedException e) {
                 log.debug("Thread interrupted while dequeuing message to send");
                 return;
             }
-            log.debug("Message dequeued {} id: {}", messageToSend.message, messageToSend.message.getId());
+            if (log.isTraceEnabled()) {
+                log.trace("Message dequeued {} id: {}", messageToSend.message, messageToSend.message.getId());
+            }
             // remember who sent this
             lastSender = messageToSend.listener;
             lastId = messageToSend.message.getId();
@@ -316,7 +334,7 @@ public class SprogTrafficController implements SprogInterface,
             notifyMessage(messageToSend.message, messageToSend.listener);
             replyAvailable = false;
             sendToInterface(messageToSend.message);
-            log.debug("Waiting {} for a reply", timeout);
+            log.trace("Waiting {} for a reply", timeout);
             try {
                 synchronized (lock) {
                     lock.wait(timeout); // Wait for notify
@@ -328,7 +346,7 @@ public class SprogTrafficController implements SprogInterface,
                 // Timed out
                 log.warn("Timeout waiting for reply from hardware in SprogState {}", sprogState);
             } else {
-                log.debug("Notified of reply");
+                log.trace("Notified of reply");
             }
         }
     }
@@ -343,7 +361,7 @@ public class SprogTrafficController implements SprogInterface,
         try {
             if (ostream != null) {
                 ostream.write(m.getFormattedMessage(sprogState));
-                log.debug("sendSprogMessage written to ostream");
+                log.trace("sendSprogMessage written to ostream");
             } else {
                 // no stream connected
                 log.warn("sendMessage: no connection established");
@@ -448,7 +466,7 @@ public class SprogTrafficController implements SprogInterface,
      */
     private void sendreply() {
         //send the reply
-        log.debug("dispatch reply of length {} in SprogState {}", reply.getNumDataElements(), sprogState);
+        log.trace("dispatch reply of length {} in SprogState {}", reply.getNumDataElements(), sprogState);
         if (unsolicited) {
             log.debug("Unsolicited Reply");
             reply.setUnsolicited();
@@ -456,7 +474,7 @@ public class SprogTrafficController implements SprogInterface,
         // Insert the id
         reply.setId(lastId);
         notifyReply(reply, lastSender);
-        log.debug("Notify() wait");
+        log.trace("Notify() wait");
         replyAvailable = true;
         synchronized(lock) {
             lock.notifyAll();

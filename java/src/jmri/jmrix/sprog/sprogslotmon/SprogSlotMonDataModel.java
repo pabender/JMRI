@@ -306,17 +306,12 @@ public class SprogSlotMonDataModel extends javax.swing.table.AbstractTableModel 
 //    }
     // methods to communicate with SprogSlotManager
     @Override
-    public synchronized void notifyChangedSlot(SprogSlot s) {
-        // update model from this slot
-
-        int slotNum = -1;
-        if (_allSlots) {          // this will be row until we show only active slots
-            slotNum = s.getSlotNumber();  // and we are displaying the System slots
-        }
-        log.debug("Received notification of changed slot: {}", slotNum);
-        // notify the JTable object that a row has changed; do that in the Swing thread!
-        Runnable r = new Notify(slotNum, this);   // -1 in first arg means all
-        javax.swing.SwingUtilities.invokeLater(r);
+    public void notifyChangedSlot(SprogSlot s) {
+        log.debug("Slot changed: {}", s.getSlotNumber());
+        // Firethe table changed event on the EDT
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            fireTableDataChanged();
+        });
     }
 
     static class Notify implements Runnable {

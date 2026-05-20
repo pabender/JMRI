@@ -46,7 +46,14 @@ public class SprogIIUpdateFrame
      * @param v SPROG version to be decoded
      */
     @Override
-    synchronized public void notifyVersion(SprogVersion v) {
+    public void notifyVersion(SprogVersion v) {
+        // notifyVersion may be called from the serial event thread or a Swing
+        // timer thread. Dispatch to the EDT so that statusBar updates and
+        // timer starts are safe.
+        jmri.util.ThreadingUtil.runOnGUIEventually(() -> handleNotifyVersion(v));
+    }
+
+    private synchronized void handleNotifyVersion(SprogVersion v) {
         sv = v;
         if (sv!=null && sv.sprogType.isSprog() == false) {
             // Didn't recognize a SPROG so check if it is in boot mode already

@@ -231,15 +231,14 @@ public class SprogSlotMonFrame extends jmri.util.JmriJFrame implements SprogList
     }
 
     /**
-     * Internal routine to handle a timeout
+     * Handle timeout notification.
+     * <p>
+     * The Swing timer fires on the EDT, so sendSprogMessage can be called
+     * directly without any invokeLater wrapping.
      */
-    synchronized protected void timeout() {
-        Runnable r = () -> {
-            // Send a status request
-            log.debug("Sending status request");
-            tc.sendSprogMessage(SprogMessage.getStatus(), this);
-        };
-        javax.swing.SwingUtilities.invokeLater(r);
+    protected void timeout() {
+        log.debug("Sending status request");
+        tc.sendSprogMessage(SprogMessage.getStatus(), this);
     }
 
     /**

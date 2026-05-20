@@ -180,14 +180,26 @@ abstract public class SprogUpdateFrame
     }
 
     /**
+     * Receives a reply from the hardware and dispatches processing to the EDT
+     * so that state-handler methods can safely update Swing components and
+     * show modal dialogs.
+     *
+     * @param m the SprogReply received from the SPROG
+     */
+    @Override
+    public void notifyReply(SprogReply m) {
+        jmri.util.ThreadingUtil.runOnGUIEventually(() -> handleNotifyReply(m));
+    }
+
+    /**
      * State machine to catch replies that calls functions to handle each state.
+     * Always executed on the EDT (called via notifyReply).
      * <p>
      * These functions can be overridden for each SPROG type.
      *
      * @param m the SprogReply received from the SPROG
      */
-    @Override
-    synchronized public void notifyReply(SprogReply m) {
+    protected synchronized void handleNotifyReply(SprogReply m) {
         reply = m;
         frameCheck();
         replyString = m.toString();

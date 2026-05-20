@@ -245,52 +245,57 @@ public abstract class AbstractMonFrame extends JmriJFrame {
 
     /**
      * Handle display of traffic.
+     * <p>
+     * This method may be called at a high rate from the TC thread and the
+     * serial-event thread. It is designed to minimise object allocation so as
+     * not to drive JVM garbage-collection pauses.
+     *
      * @param line is the traffic in 'normal form'. Should end with \n
      * @param raw is the "raw form" , should NOT end with \n
      */
     public void nextLine(String line, String raw) {
-        StringBuilder sb = new StringBuilder(120);
+        // Reuse workSB rather than allocating a new StringBuilder each call.
+        workSB.setLength(0);
 
         // display the timestamp if requested
         if (timeCheckBox.isSelected()) {
-            sb.append(df.format(new Date())).append(": "); // NOI18N
+            workSB.append(df.format(new Date())).append(": "); // NOI18N
         }
 
         // display the raw data if requested
         if (rawCheckBox.isSelected()) {
-            sb.append('[').append(raw).append("]  "); // NOI18N
+            workSB.append('[').append(raw).append("]  "); // NOI18N
         }
 
         // display decoded data
-        sb.append(line);
+        workSB.append(line);
+
+        // Append to the shared line buffer.  StringBuilder implements CharSequence
+        // so StringBuffer.append(workSB) copies the characters without creating an
+        // intermediate String object.
         synchronized (self) {
-            linesBuffer.append(sb.toString());
+            linesBuffer.append(workSB);
         }
 
-        // if not frozen, display it in the Swing thread
+        // if not frozen, display it in the Swing thread.
+        // Reuse the pre-allocated Runnable rather than creating a new lambda each call.
         if (!freezeButton.isSelected()) {
-            Runnable r = () -> {
-                synchronized (self) {
-                    monTextPane.append(linesBuffer.toString());
-                    linesBuffer.setLength(0);
-                }
-            };
-            javax.swing.SwingUtilities.invokeLater(r);
+            javax.swing.SwingUtilities.invokeLater(sendToMonitor);
         }
 
         // if requested, log to a file.
         if (logStream != null) {
             synchronized (logStream) {
-                String logLine = sb.toString();
+                String logLine = workSB.toString();
                 if (!newline.equals("\n")) {
                     // have to massage the line-ends
-                    int lim = sb.length();
-                    StringBuilder out = new StringBuilder(sb.length() + 10);  // arbitrary guess at space
+                    int lim = workSB.length();
+                    StringBuilder out = new StringBuilder(lim + 10);  // arbitrary guess at space
                     for (int i = 0; i < lim; i++) {
-                        if (sb.charAt(i) == '\n') {
+                        if (workSB.charAt(i) == '\n') {
                             out.append(newline);
                         } else {
-                            out.append(sb.charAt(i));
+                            out.append(workSB.charAt(i));
                         }
                     }
                     logLine = out.toString();
@@ -375,6 +380,22 @@ public abstract class AbstractMonFrame extends JmriJFrame {
 
     StringBuffer linesBuffer = new StringBuffer();
     private static int MAX_LINES = 500;
+
+    // Reusable work buffer for nextLine() – avoids allocating a new StringBuilder on
+    // every call when messages arrive at a high rate.
+    // nextLine() is always called from the same thread (serialized by the TC's
+    // synchronized notifyMessage / notifyReply), so unsynchronized access is safe.
+    private final StringBuilder workSB = new StringBuilder(120);
+
+    // Pre-allocated, non-capturing Runnable for invokeLater in nextLine() – one
+    // reusable instance instead of a new lambda object per message.
+    private final Runnable sendToMonitor = () -> {
+        synchronized (this) {
+            monTextPane.append(linesBuffer.toString());
+            linesBuffer.setLength(0);
+        }
+    };
+
 
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AbstractMonFrame.class);
 

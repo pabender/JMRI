@@ -39,13 +39,16 @@ public class SprogMonFrame extends jmri.jmrix.AbstractMonFrame implements SprogL
     }
 
     @Override
-    public synchronized void notifyMessage(SprogMessage l) { // receive a message and log it
+    public void notifyMessage(SprogMessage l) { // receive a message and log it
+        // Called on the TC thread; AbstractMonFrame.nextLine() dispatches the
+        // actual text-area update to the EDT via SwingUtilities.invokeLater.
         nextLine("cmd: \"" + l.toString(_memo.getSprogTrafficController().isSIIBootMode()) + "\"\n", "");
 
     }
 
     @Override
-    public synchronized void notifyReply(SprogReply l) { // receive a reply and log it
+    public void notifyReply(SprogReply l) { // receive a reply and log it
+        // Called on the serial event thread; see notifyMessage for threading note.
         nextLine("rep: \"" + l.toString() + "\"\n", "");
         log.debug("reply heard");
     }

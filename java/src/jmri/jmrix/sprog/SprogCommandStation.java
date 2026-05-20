@@ -71,7 +71,9 @@ public class SprogCommandStation implements CommandStation, SprogListener, Runna
     private boolean replyAvailable = false;
     private boolean sendSprogAddress = false;
     private long time, timeNow, packetDelay;
-    private int lastId;
+    // volatile so that notifyReply() reads the value written by sendMessage()
+    // on the slot thread without requiring explicit synchronization.
+    private volatile int lastId;
     private int timeoutCount = 0;
 
     PowerManager powerMgr = null;
@@ -89,7 +91,11 @@ public class SprogCommandStation implements CommandStation, SprogListener, Runna
             slots.add(new SprogSlot(i));
         }
         tc = controller;
-        tc.addSprogListener(this);
+        // CS is always registered as 'lastSender' when it sends a packet, so
+        // TC will call notifyReply() on it directly (on the serial/TC thread).
+        // There is no need to also register as a general listener: that would
+        // cause the EDT to invoke notifyReply() for every non-CS reply, adding
+        // needless lock contention on 'lock' and spurious slot-thread wakes.
     }
 
     /**
@@ -121,7 +127,9 @@ public class SprogCommandStation implements CommandStation, SprogListener, Runna
      * @param m       The message to be sent
      */
     protected void sendMessage(SprogMessage m) {
-        log.debug("Sending message [{}] id {}", m.toString(tc.isSIIBootMode()), m.getId());
+        if (log.isTraceEnabled()) {
+            log.trace("Sending message [{}] id {}", m.toString(tc.isSIIBootMode()), m.getId());
+        }
         lastId = m.getId();
         tc.sendSprogMessage(m, this);
     }
@@ -660,7 +668,7 @@ public class SprogCommandStation implements CommandStation, SprogListener, Runna
                // and exit
                return;
             }
-            log.debug("Slot thread wakes");
+            log.trace("Slot thread wakes");
 
             if (powerMgr == null) {
                 // Wait until power manager is available
@@ -687,7 +695,7 @@ public class SprogCommandStation implements CommandStation, SprogListener, Runna
                     powerChanged = false;
                     time = System.currentTimeMillis();
                 } else if (replyAvailable && (powerState == PowerManager.ON)) {
-                    log.debug("Reply available");
+                    log.trace("Reply available");
                     // Received a reply whilst power is on, so send another packet
                     // Get next packet to send if track power is on
                     byte[] p;
@@ -700,7 +708,7 @@ public class SprogCommandStation implements CommandStation, SprogListener, Runna
                         // Or take the next one from the stack
                         p = getNextPacket();
                         if (p != null) {
-                            log.debug("Packet from stack");
+                            log.trace("Packet from stack");
                         }
                     }
                     replyAvailable = false;
@@ -708,7 +716,7 @@ public class SprogCommandStation implements CommandStation, SprogListener, Runna
                     if (p != null) {
                         // Send the packet
                         sendPacket(p, SprogConstants.S_REPEATS);
-                        log.debug("Packet sent");
+                        log.trace("Packet sent");
                     } else {
                         // Send a decoder idle packet to prompt a reply from hardware and keep things running
                         log.debug("Idle sent");
@@ -814,7 +822,9 @@ public class SprogCommandStation implements CommandStation, SprogListener, Runna
             log.debug("Ignore reply with mismatched id {} looking for {}", m.getId(), lastId);
             return;
         } else {
-            log.debug("Reply received [{}]", m.toString());
+            if (log.isTraceEnabled()) {
+                log.trace("Reply received [{}]", m.toString());
+            }
             // Log the reply and wake the slot thread
             synchronized (lock) {
                 replyAvailable = true;

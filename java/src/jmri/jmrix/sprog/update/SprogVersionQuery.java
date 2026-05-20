@@ -50,7 +50,7 @@ public class SprogVersionQuery implements SprogListener {
         state = QueryState.IDLE;
     }
 
-    protected static final Vector<SprogVersionListener> versionListeners = new Vector<SprogVersionListener>();
+    protected final Vector<SprogVersionListener> versionListeners = new Vector<SprogVersionListener>();
 
     protected synchronized void addSprogVersionListener(SprogVersionListener l) {
         // add only if not already registered

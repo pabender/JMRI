@@ -36,7 +36,9 @@ public class SprogCSTurnoutTest extends jmri.implementation.AbstractTurnoutTestB
         t.setCommandedState(jmri.Turnout.CLOSED);    // in case registration with TrafficController
         //is deferred to after first use
         t.dispose();
-        Assert.assertEquals("controller listeners remaining", 1, numListeners());
+        // SprogCommandStation no longer registers itself as a general TC listener
+        // (it receives replies as lastSender directly), so 0 listeners remain.
+        Assert.assertEquals("controller listeners remaining", 0, numListeners());
     }
 
     @Override

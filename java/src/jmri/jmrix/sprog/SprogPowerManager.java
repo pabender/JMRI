@@ -15,8 +15,9 @@ import org.slf4j.LoggerFactory;
 public class SprogPowerManager extends AbstractPowerManager<SprogSystemConnectionMemo>
         implements SprogListener {
 
-    boolean waiting = false;
-    int onReply = UNKNOWN;
+    // volatile for cross-thread visibility; no synchronized needed (see notifyReply)
+    volatile boolean waiting = false;
+    volatile int onReply = UNKNOWN;
     SprogTrafficController trafficController = null;
 
     public SprogPowerManager(SprogSystemConnectionMemo memo) {
@@ -81,14 +82,21 @@ public class SprogPowerManager extends AbstractPowerManager<SprogSystemConnectio
 
     /**
      * Listen for status changes from Sprog system.
+     * <p>
+     * Called on the serial event thread (as lastSender) or on the EDT (as a
+     * general listener). Must not be synchronized: SprogTrafficController
+     * holds its own lock when calling here, and setPower() holds no lock when
+     * calling sendSprogMessage(), so adding synchronization would create an
+     * ABBA deadlock. volatile fields provide the necessary visibility.
      */
     @Override
     public void notifyReply(SprogReply m) {
         if (waiting) {
             log.debug("Reply while waiting");
-            int old = power;
-            power = onReply;
-            firePowerPropertyChange(old, power);
+            final int old = power;
+            final int newPower = onReply;
+            power = newPower;
+            jmri.util.ThreadingUtil.runOnGUIEventually(() -> firePowerPropertyChange(old, newPower));
         }
         waiting = false;
     }
